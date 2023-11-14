@@ -90,8 +90,8 @@ code {
 pre {
   background: #111;
   border-radius: 0.2em;
+  box-shadow: 0 0 0.5em #39323288;
   font-size: 10pt;
-  margin: 1em -1em;
   overflow-x: scroll;
   padding: 1em;
 }
@@ -109,14 +109,23 @@ code .blue {
   color: #66f;
 }
 
+code .yellow {
+  color: #ff6;
+}
+
 code .gray {
   color: #888;
+}
+
+figure {
+  margin: 1em;
 }
 
 /* Tableaux */
 
 table {
   border-collapse: collapse;
+  box-shadow: 0 0 0.5em #39323244;
   margin: auto;
 }
 
@@ -228,6 +237,47 @@ section:is(#decouverte, #atelier) h2::before {
   width: 8em;
 }
 
+.documents a {
+  text-decoration: inherit;
+}
+
 .documents ul {
   list-style: "➡️ ";
+}
+
+.annexes {
+  counter-reset: annexe;
+}
+
+.annexes h4::before {
+  content: "Annexe " counter(annexe) " : ";
+  counter-increment: annexe;
+}
+
+figure.console figcaption,
+figure.fichier figcaption {
+  background: #efecec;
+  border-radius: 0.2em 0.2em 0 0;
+  box-shadow: 0 -0.5em 0.5em -0.5em #39323244 inset;
+  font-family: Arial;
+  font-size: 0.8em;
+  padding: 0.5em 1em;
+  width: max-content;
+}
+
+figure.console pre,
+figure.fichier pre {
+  border-top-left-radius: 0;
+  margin: 0;
+}
+
+figure.fichier figcaption code {
+  background: none;
+  color: inherit;
+}
+
+figure.fichier pre {
+  background: #efecec88;
+  box-shadow: none;
+  color: inherit;
 }

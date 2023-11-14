@@ -149,10 +149,10 @@
           </section>
           <aside class="documents">
             <ul>
-              <li><a>Annexe 1</a></li>
-              <li><a>FR 1</a></li>
-              <li><a>FR 2</a></li>
-              <li><a>FR 4</a></li>
+              <li><a href="#annexe-1-1">Annexe 1</a></li>
+              <li><a href="#installation">FR 1</a></li>
+              <li><a href="#configuration">FR 2</a></li>
+              <li><a href="#commandes">FR 4</a></li>
             </ul>
           </aside>
           <ol class="questions">
@@ -168,13 +168,14 @@
             <li>
               Dans votre terminal, allez dans le dossier où vous voulez créer
               votre dépôt, puis créez ce dépôt en le nommant « traductions ».
-              Allez dans le dépôt puis affichez les informations sur son état
-              actuel.
+              Allez dans le dossier du dépôt, puis affichez les informations
+              sur son état actuel.
             </li>
             <li>
               Avec votre éditeur de texte, créez votre premier fichier
-              « bonjour.txt » dans le dépôt, contenant le texte « Bonjour
-              monde ! ». Dans votre terminal, affichez l’état du dépôt.
+              « bonjour.txt » dans le dossier dépôt, contenant le texte
+              « Bonjour monde ! ». Dans votre terminal, affichez l’état du
+              dépôt.
             </li>
             <li>
               Votre fichier n’est pas encore suivi par votre dépôt, parce qu’il
@@ -206,6 +207,45 @@
               les informations concernant cette version précise ?
             </li>
           </ol>
+          <section class="annexes">
+            <h4 id="annexe-1-1">Résultat attendu</h4>
+            <p>
+              À la suite de ce travail, vous devez avoir 2 fichiers dans votre
+              dépôt :
+            </p>
+            <figure class="fichier">
+              <figcaption><code>bonjour.txt</code></figcaption>
+              <pre>Bonjour tout le monde !</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>hello.txt</code></figcaption>
+              <pre>Hello world!</pre>
+            </figure>
+            <p>
+              Votre historique doit ressembler à cela :
+            </p>
+            <figure class="console">
+              <figcaption>Historique</figcaption>
+              <pre><code><span class="green">user@laptop</span>:<span class="blue">~</span>$ git log
+<span class="yellow">commit b1619edefaedb0c024efd0678fe763c972184b84</span> <span class="blue">(HEAD -> <span class="green">master</span>)</span>
+Author: Alice Liddell &lt;alice@wonderland.org>
+Date:   Tue Nov 14 14:40:20 2040 +0000
+
+    Mise à jour du fichier en français
+
+<span class="yellow">commit 8a7eb387651f7c1fc69cedca5e051fc39a3cf2d9</span>
+Author: Alice Liddell &lt;alice@wonderland.org>
+Date:   Tue Nov 14 14:40:02 2040 +0000
+
+    Ajout du fichier en anglais
+
+<span class="yellow">commit 12891ec485e12796459e11332f93300bc87f1d7e</span>
+Author: Alice Liddell &lt;alice@wonderland.org>
+Date:   Tue Nov 14 14:39:13 2040 +0000
+
+    Création du fichier en français</code></pre>
+            </figure>
+          </section>
         </section>
 
         <section id="branches-et-conflits">
@@ -322,10 +362,11 @@
             dossiers et fichiers avec votre explorateur de fichiers habituel.
           </p>
           <figure>
-            <todo>Terminal sous Windows</todo>
             <figcaption>Exemple de commandes sous Windows</figcaption>
+            <todo>Terminal sous Windows</todo>
           </figure>
-          <figure>
+          <figure class="console">
+            <figcaption>Exemple de commandes sous macOS ou Linux</figcaption>
             <pre><code><span class="green">user@laptop</span>:<span class="blue">~</span>$ ls  <span class="gray"># (lister les fichiers et dossiers)</span>
 Docs  Images  Modèles  Musique  Vidéos
 <span class="green">user@laptop</span>:<span class="blue">~</span>$ cd Docs  <span class="gray"># (aller dans le dossier Docs)</span>
@@ -334,7 +375,6 @@ Administratif  Cours  Secrets
 <span class="green">user@laptop</span>:<span class="blue">~/Docs</span>$ mkdir Info  <span class="gray"># (créer un dossier Info)</span>
 <span class="green">user@laptop</span>:<span class="blue">~/Docs</span>$ cd Info  <span class="gray"># (aller dans le dossier Info)</span>
 <span class="green">user@laptop</span>:<span class="blue">~/Docs/Info</span>$</code></pre>
-            <figcaption>Exemple de commandes sous macOS ou Linux</figcaption>
           </figure>
           <p>
             L’autre outil que nous utiliserons pour ce module est
