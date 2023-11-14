@@ -1,0 +1,402 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../style.css" />
+    <title>Git et outils de travail du développeur</title>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        Module B4M5 — MODXXX<br />
+        Git et outils de travail du développeur
+      </h1>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Bloc</th>
+            <td>B4 — <todo></todo></td>
+          </tr>
+          <tr>
+            <th>I-manuel</th>
+            <td>Recenser les outils de travail du développeur</td>
+          </tr>
+          <tr>
+            <th>Module</th>
+            <td>B4M5 — Git et outils de travail du développeur</td>
+          </tr>
+        </tbody>
+      </table>
+    </header>
+
+    <aside id="sommaire">
+      <h2>Sommaire du module</h2>
+      <ul>
+        <li><a href="#video">Vidéo de présentation du module</a></li>
+        <li><a href="#quiz-amont">Quiz de positionnement en amont</a></li>
+        <li>
+          <a href="#decouverte">Découverte (5h)</a>
+          <ul>
+            <li><a href="#depot-et-commandes">Créer un dépôt et effectuer les premières commandes</a></li>
+            <li><a href="#branches-et-conflits">Manipuler des branches et gérer les conflits</a></li>
+            <li><a href="#navigation">Naviguer dans l’historique</a></li>
+            <li><a href="#partage">Partager son dépôt et travailler à plusieurs</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#atelier">Atelier (2h)</a>
+        </li>
+        <li>
+          <a href="#fiches-ressources">Fiches ressources</a>
+          <ul>
+            <li><a href="#installation">Installation et utilisation de Git</a></li>
+            <li><a href="#configuration">Configuration générale, configuration de dépôts</a></li>
+            <li><a href="#vocabulaire">Vocabulaire et anatomie d’un dépôt Git</a></li>
+            <li><a href="#commandes">Commandes principales</a></li>
+            <li><a href="#integration">Intégration dans d’autres outils</a></li>
+          </ul>
+        </li>
+        <li><a href="#quiz-aval">Quiz de positionnement en aval</a></li>
+      </ul>
+    </aside>
+
+    <main>
+
+      <section id="video">
+        <h2>Vidéo de présentation du module</h2>
+        <p>
+          Le développement nécessite d’écrire et de partager du code avec
+          d’autres. Pour cela, on voudrait avoir un endroit où stocker nos
+          fichiers et garder un historique de tout ce qui a été fait. Évidemment,
+          on veut avoir une vision d’ensemble de ce qui a été fait, et bien sûr
+          revenir en arrière en cas de gros problème.
+        </p>
+        <p>
+          Ces besoins viennent malheureusement avec quelques petites
+          complications que tout le monde connaît. Lorsque l’on travaille à
+          plusieurs, chacun et chacune devant son ordinateur, on veut gérer les
+          cas où l’on fait des changements incompatibles avec ceux des autres !
+          On veut également garder trace de toutes les versions, mais on veut
+          éviter l’enfer des numéros de versions 1, 2, 2.1-bis, 2.2-final-final,
+          2.3-avec-les-changements-de-jeudi-dernier.
+        </p>
+        <p>
+          On veut surtout éviter de perdre notre précieux travail !
+        </p>
+        <p>
+          Heureusement pour nous, il existe des outils faits pour cela : les
+          gestionnaires de versions. À l’heure actuelle, le plus connu d’entre
+          eux se nomme Git, et c’est celui que nous allons découvrir dans ce
+          module de formation.
+        </p>
+        <p>
+          Nous allons tout d’abord comprendre le fonctionnement global des
+          gestionnaires de versions, pour créer ensuite notre premier dépôt Git
+          et effectuer dessus nos premières commandes. Avec ces bases, nous
+          pourrons alors apprendre à manipuler les branches, gérer les conflits
+          de code, et visualiser les différentes versions de notre travail.
+          Enfin nous pourrons partager notre dépôt en ligne pour effectuer du
+          travail collaboratif.
+        </p>
+        <p>
+          Tout au long du module, nous utiliserons Git et ses commandes dans le
+          terminal, afin de bien comprendre en profondeur comment fonctionne ce
+          gestionnaire de versions. À l’issue de la formation, vous serez à
+          même de pouvoir l’utiliser en équipe pour tous vos projets
+          informatiques, directement, ou intégré dans des outils tiers, comme
+          votre éditeur de texte par exemple.
+        </p>
+        <p>
+          Finis les échanges de code en pièces jointes ou copiés-collés dans les
+          salons de discussion, il est temps de versionner son code avec Git !
+        </p>
+      </section>
+
+
+      <section id="quiz-amont">
+        <h2>Quiz de positionnement en amont</h2>
+        <todo></todo>
+      </section>
+
+
+      <section id="decouverte">
+        <h2>Découverte</h2>
+
+        <section id="depot-et-commandes">
+          <h3>Créer un dépôt et effectuer les premières commandes</h3>
+          <section class="sujet">
+            <p>
+              Nous voulons créer des fichiers texte qui stockent la traduction du
+              texte « Bonjour le monde ! » dans différentes langues, pour montrer
+              au monde que nous maîtrisons la création de dépôts Git, et
+              accessoirement que nous savons parler plein de langues
+              différentes.
+            </p>
+            <p>
+              Notre but est de créer un fichier par langue, avec le texte à
+              l’intérieur. Pour chaque langue ajoutée ou chaque texte modifié,
+              nous voulons enregistrer une version différente.
+            </p>
+            <p>
+              Avant de nous lancer, si c’est la première fois que l’on utilise
+              Git, il est important de l’installer et de le configurer un
+              minimum. Ainsi, Git connaîtra notre nom pour l’enregistrer dans les
+              informations de versions. Le monde entier saura que c’est vous qui
+              avez réalisé ce projet !
+            </p>
+          </section>
+          <aside class="documents">
+            <ul>
+              <li><a>Annexe 1</a></li>
+              <li><a>FR 1</a></li>
+              <li><a>FR 2</a></li>
+              <li><a>FR 4</a></li>
+            </ul>
+          </aside>
+          <ol class="questions">
+            <li>
+              Installez Git et vérifiez que la commande fonctionne correctement
+              dans un terminal. Pouvez-vous voir dans le terminal quelle
+              version de Git vous avez installée ?
+            </li>
+            <li>
+              Configurez Git pour qu’il connaisse votre nom et votre adresse
+              mail. Pouvez-vous retrouver ces informations dans le terminal ?
+            </li>
+            <li>
+              Dans votre terminal, allez dans le dossier où vous voulez créer
+              votre dépôt, puis créez ce dépôt en le nommant « traductions ».
+              Allez dans le dépôt puis affichez les informations sur son état
+              actuel.
+            </li>
+            <li>
+              Avec votre éditeur de texte, créez votre premier fichier
+              « bonjour.txt » dans le dépôt, contenant le texte « Bonjour
+              monde ! ». Dans votre terminal, affichez l’état du dépôt.
+            </li>
+            <li>
+              Votre fichier n’est pas encore suivi par votre dépôt, parce qu’il
+              n’a pas encore été enregistré dans une version. Il est temps de
+              remédier à cela ! Ajoutez donc votre fichier à la liste des
+              fichiers à sauvegarder dans votre prochaine version.
+            </li>
+            <li>
+              Il est l’heure de sauvegarder votre première version. Choisissez
+              un beau message pour indiquer que vous avez ajouté le texte en
+              français.
+            </li>
+            <li>
+              Recommencez ces étapes avec un fichier « hello.txt » contenant le
+              texte « Hello world! ». Vous avez désormais deux versions dans
+              votre dépôt. Comment afficher dans le terminal le message et la
+              date associés à ces deux versions ?
+            </li>
+            <li>
+              Changez le texte de « bonjour.txt » pour qu’il contienne
+              « Bonjour tout le monde ! ». Pouvez-vous afficher un
+              récapitulatif des changements effectués depuis la dernière
+              version, et qui ne sont pas encore sauvegardés dans une version ?
+              Créez une nouvelle version avec ces changements.
+            </li>
+            <li>
+              Vous souhaitez afficher les changements qui ont été effectués
+              lors de l’ajout du fichier en anglais. Comment retrouver toutes
+              les informations concernant cette version précise ?
+            </li>
+          </ol>
+        </section>
+
+        <section id="branches-et-conflits">
+          <h3>Manipuler des branches et gérer les conflits</h3>
+          <todo></todo>
+        </section>
+
+        <section id="navigation">
+          <h3>Naviguer dans l’historique</h3>
+          <todo></todo>
+        </section>
+
+        <section id="partage">
+          <h3>Partager son dépôt et travailler à plusieurs</h3>
+          <todo></todo>
+        </section>
+      </section>
+
+
+      <section id="atelier">
+        <h2>Atelier</h2>
+        <todo></todo>
+      </section>
+
+
+      <section id="fiches-ressources">
+        <h2>Fiches ressources</h2>
+
+        <section id="installation">
+          <h3>Installation et utilisation de Git</h3>
+
+          <h4>Installation</h4>
+          <p>
+            Pour utiliser Git sur votre ordinateur, vous allez avoir besoin de
+            l’installer. La procédure d’installation est différente selon votre
+            système d’exploitation, et vous retrouverez toutes les informations
+            nécessaires sur <a href="https://git-scm.com/downloads">le site de Git</a>.
+          </p>
+          <p>
+            Si vous êtes sous Linux ou macOS, peut-être est-il déjà installé.
+            Ouvrez un terminal, tapez <code>git version</code> dedans, et appuyez
+            sur la touche <kbd>Entrée</kbd> : si le numéro de version apparaît, Git
+            est déjà là, il n’y a rien d’autre à faire ! Sinon, il est possible que
+            des indications soient affichées dans le terminal pour l’installer,
+            vous n’avez alors qu’à les suivre.
+          </p>
+          <p>
+            Dans tous les autres cas, voici les instructions à suivre pour avoir
+            une version de Git fonctionnelle sur votre ordinateur.
+          </p>
+          <h5>Windows</h5>
+          <p>
+            Sous Windows, l’outil
+            <a href="https://github.com/git-for-windows/git"><em>Git for Windows</em></a>
+            installe une version de Git spécifiquement configurée
+            pour Windows, comme son nom l’indique ! Un lien direct vers
+            l’installeur ainsi que des méthodes alternatives d’installation sont
+            disponibles sur
+            <a href="https://git-scm.com/download/win">la page dédiée du site de Git</a>.
+          </p>
+          <h5>macOS</h5>
+          <p>
+            Sous macOS, la solution la plus simple pour installer Git est de
+            taper <code>git</code> dans un terminal et de suivre les
+            instructions. Si cette méthode ne fonctionne pas, il existe
+            <a href="https://git-scm.com/download/mac">différentes manières alternatives d’installer Git</a>
+            dont l’une vous conviendra sans doute.
+          </p>
+          <h5>Linux</h5>
+          <p>
+            Sous Linux, un paquet pour Git est proposé par votre distribution. Vous
+            pouvez l’installer en utilisant votre gestionnaire de paquets
+            (<code>apt</code> sous Debian, Ubuntu ou Mint, <code>yum</code> sous
+            Fedora, <code>pacman</code> sous Arch…)
+          </p>
+
+          <todo>image d’un terminal</todo>
+
+          <h4>Utilisation</h4>
+          <p>
+            Pour ce module, nous allons utiliser <strong>le terminal</strong>
+            pour lancer les commandes Git. Vous pouvez ouvrir un terminal :
+          </p>
+          <ul>
+            <li>sous <strong>Windows</strong> en lançant l’« invite de commandes » dans le menu Démarrer,</li>
+            <li>sous <strong>macOS</strong> en saisissant « terminal » dans <em>Spotlight</em>,</li>
+            <li>sous <strong>Linux</strong> en lançant une application de terminal (GNOME terminal, Konsole…) fournie par votre distribution.</li>
+          </ul>
+          <p>
+            Bien qu’il soit toujours utile d’avoir une bonne connaissance du
+            terminal lorsque l’on développe, vous n’aurez besoin de connaître
+            que quelques commandes de base pour réaliser les étapes de ce module :
+          </p>
+          <ul>
+            <li>
+              changer le dossier dans lequel vous êtes avec <code>cd</code> ;
+            </li>
+            <li>
+              créer un dossier avec <code>mkdir</code> ;
+            </li>
+            <li>
+              lister le contenu du dossier actuel avec <code>ls</code> sous
+              Linux et macOS, et <code>dir</code> sous Windows.
+            </li>
+          </ul>
+          <p>
+            Si vous n’avez jamais utilisé ces commandes, nous vous conseillons
+            de vous familiariser avec elles dans un terminal avant de lancer
+            vos premières commandes Git. De nombreuses ressources sont
+            disponibles sur Internet pour en apprendre plus à leur sujet.
+          </p>
+          <p>
+            Évidemment, il est possible de vérifier la structure de vos
+            dossiers et fichiers avec votre explorateur de fichiers habituel.
+          </p>
+          <figure>
+            <todo>Terminal sous Windows</todo>
+            <figcaption>Exemple de commandes sous Windows</figcaption>
+          </figure>
+          <figure>
+            <pre><code><span class="green">user@laptop</span>:<span class="blue">~</span>$ ls  <span class="gray"># (lister les fichiers et dossiers)</span>
+Docs  Images  Modèles  Musique  Vidéos
+<span class="green">user@laptop</span>:<span class="blue">~</span>$ cd Docs  <span class="gray"># (aller dans le dossier Docs)</span>
+<span class="green">user@laptop</span>:<span class="blue">~/Docs</span>$ ls  <span class="gray"># (lister les fichiers et les dossiers)</span>
+Administratif  Cours  Secrets
+<span class="green">user@laptop</span>:<span class="blue">~/Docs</span>$ mkdir Info  <span class="gray"># (créer un dossier Info)</span>
+<span class="green">user@laptop</span>:<span class="blue">~/Docs</span>$ cd Info  <span class="gray"># (aller dans le dossier Info)</span>
+<span class="green">user@laptop</span>:<span class="blue">~/Docs/Info</span>$</code></pre>
+            <figcaption>Exemple de commandes sous macOS ou Linux</figcaption>
+          </figure>
+          <p>
+            L’autre outil que nous utiliserons pour ce module est
+            <strong>un éditeur de texte</strong>. Avec lui, nous pouvons créer
+            fichiers contenant du texte brut, c’est à dire sans formatage, à
+            l’inverse de ce que proposent des traitements de texte comme
+            Microsoft Word ou LibreOffice.
+          </p>
+          <p>
+            Si vous avez l’habitude d’écrire du code, vous avez sans doute déjà
+            un éditeur favori : Visual Studio Code, Sublime Text, Vim, Emacs…
+            N’importe quel éditeur fera l’affaire, tant qu’il enregistre texte
+            brut. Le choix est une histoire de goût personnel !
+          </p>
+          <p>
+            Si vous n’avez jamais utilisé d’éditeur de texte, nous vous
+            conseillons pour ce module d’en utiliser un déjà installé sur votre
+            système. Ces programmes vous paraîtront sans doute trop simples
+            pour écrire du code à l’avenir, mais ils sont largement suffisants
+            pour les exercices de cette formation :
+          </p>
+          <ul>
+            <li>
+              Bloc-notes sous <strong>Windows</strong>,
+            </li>
+            <li>
+              TextEdit sous <strong>macOS</strong> en prenant soin d’activer
+              <a href="https://support.apple.com/fr-fr/guide/textedit/txted1063/1.19/mac/14.0#txte8a01e4aa">l’option « format texte »</a> dans la configuration de vos nouveaux documents,
+            </li>
+            <li>
+              l’éditeur de texte proposé par défaut par votre distribution
+              sous <strong>Linux</strong>.
+            </li>
+          </ul>
+        </section>
+
+        <section id="configuration">
+          <h3>Configuration générale, configuration de dépôts</h3>
+          <todo></todo>
+        </section>
+
+        <section id="vocabulaire">
+          <h3>Vocabulaire et anatomie d’un dépôt Git</h3>
+          <todo></todo>
+        </section>
+
+        <section id="commandes">
+          <h3>Commandes principales</h3>
+          <todo></todo>
+        </section>
+
+        <section id="integration">
+          <h3>Intégration dans d’autres outils</h3>
+          <todo></todo>
+        </section>
+      </section>
+
+
+      <section>
+        <h2 id="quiz-aval">Quiz de positionnement en aval</h2>
+        <todo></todo>
+      </section>
+    </main>
+  </body>
+</html>

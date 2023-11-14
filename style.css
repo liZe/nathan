@@ -1,0 +1,233 @@
+/* Page */
+
+:root {
+  font-family: Times New Roman;
+  font-size: 12pt;
+  line-height: 1.3;
+}
+
+@media screen {
+  html {
+    background: #eaeaea;
+    padding: 4em;
+  }
+
+  body {
+    background: white;
+    border-radius: 0.2em;
+    box-shadow: 0 0 1em #1d1b1b33;
+    box-sizing: border-box;
+    padding: 2cm 2.5cm;
+    max-width: 21cm;
+    margin: auto;
+  }
+}
+
+/* Titres */
+
+h1,
+h2,
+h3 {
+  color: #28716b;
+  font-family: Arial;
+}
+
+h1 {
+  font-size: 20pt;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 18pt;
+  margin: 5rem 0 2rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 16pt;
+  margin: 2rem 0 1rem;
+}
+
+h4 {
+  border-bottom: 0.15em solid;
+  font-size: 12pt;
+  margin: 1rem 0;
+}
+
+h5 {
+  font-size: 12pt;
+  margin: 1rem 0 0;
+}
+
+/* Tags communs */
+
+p {
+  text-align: justify;
+}
+
+a {
+  color: #2e74b5;
+}
+
+kbd {
+  background: #e9e1e1;
+  border: 1px solid #b3b1b1;
+  border-radius: 0.2em;
+  box-shadow: 0.1em 0.1em 0 #393232;
+  padding: 0.1em;
+  white-space: pre;
+}
+
+code {
+  background: #393232;
+  border-radius: 0.2em;
+  color: white;
+  padding: 0.1em 0.2em;
+  white-space: pre;
+}
+
+pre {
+  background: #111;
+  border-radius: 0.2em;
+  font-size: 10pt;
+  margin: 1em -1em;
+  overflow-x: scroll;
+  padding: 1em;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+code .green {
+  color: #8f8;
+}
+
+code .blue {
+  color: #66f;
+}
+
+code .gray {
+  color: #888;
+}
+
+/* Tableaux */
+
+table {
+  border-collapse: collapse;
+  margin: auto;
+}
+
+thead th {
+  text-align: center;
+}
+
+tbody th {
+  text-align: left;
+}
+
+td,
+th {
+  border: 1px solid;
+  padding: 0.2em 0.5em;
+}
+
+/* TODO */
+
+todo {
+  background: red;
+  border-radius: 0.2em;
+  color: white;
+  padding: 0.1em 0.3em;
+}
+
+todo::before {
+  content: "À compléter (";
+}
+
+todo::after {
+  content: ")";
+}
+
+todo:empty::before {
+  content: "À compléter";
+}
+
+todo:empty::after {
+  content: none;
+}
+
+/* Identifiants spécifiques */
+
+#sommaire a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+#sommaire ul {
+  padding-left: 1.5em;
+}
+
+#sommaire > ul {
+  font-weight: bold;
+  list-style: none;
+  margin: 2em 0;
+}
+
+#sommaire > ul > li {
+  margin-top: 0.5em;
+}
+
+#sommaire ul ul {
+  font-weight: normal;
+}
+
+main {
+  counter-reset: partie;
+}
+
+section:is(#decouverte, #atelier) h2::before {
+  content: "Partie " counter(partie) " : ";
+  counter-increment: partie;
+}
+
+#decouverte {
+  counter-reset: etape;
+}
+
+#decouverte h3::before {
+  content: "Étape " counter(etape) " : ";
+  counter-increment: etape;
+}
+
+#fiches-ressources {
+  counter-reset: ressource;
+}
+
+#fiches-ressources h3::before {
+  content: "Fiche ressource " counter(ressource);
+  counter-increment: ressource;
+  display: block;
+}
+
+/* Classes spécifiques */
+
+.questions {
+  font-family: Arial;
+  font-weight: bold;
+}
+
+.documents {
+  background: #efecec;
+  border-radius: 3px;
+  box-shadow: 0 0 0.1em #1d1b1b33;
+  float: right;
+  margin: 0 0 1em 1em;
+  width: 8em;
+}
+
+.documents ul {
+  list-style: "➡️ ";
+}
