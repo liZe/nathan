@@ -70,6 +70,11 @@ a {
   color: #2e74b5;
 }
 
+dt,
+dd {
+  margin-top: 0.5em;
+}
+
 kbd {
   background: #e9e1e1;
   border: 1px solid #b3b1b1;
