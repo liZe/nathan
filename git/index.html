@@ -126,82 +126,103 @@
 
         <section id="depot-et-commandes">
           <h3>Créer un dépôt et effectuer les premières commandes</h3>
+          <p class="time">Temps estimé : 1h.</p>
           <section class="sujet">
             <p>
-              Nous voulons créer des fichiers texte qui stockent la traduction du
-              texte « Bonjour le monde ! » dans différentes langues, pour montrer
-              au monde que nous maîtrisons la création de dépôts Git, et
-              accessoirement que nous savons parler plein de langues
-              différentes.
+              Vous souhaitez créer une application pour apprendre à parler des
+              langues étrangères. Pour créer votre premier prototype, vous
+              commencez par créer des fichiers texte qui stockent la traduction
+              du texte « Bonjour le monde ! » dans différentes langues. Comme
+              vous travaillez en collaboration avec des équipes de traduction
+              réparties dans plusieurs pays, vous décidez d’utiliser le
+              gestionnaire de versions le plus courant : Git.
             </p>
             <p>
-              Notre but est de créer un fichier par langue, avec le texte à
+              Votre but est de créer un fichier par langue, avec le texte à
               l’intérieur. Pour chaque langue ajoutée ou chaque texte modifié,
-              nous voulons enregistrer une version différente.
+              vous enregistrez une version différente afin de garder trace de
+              tous les changements effectués.
             </p>
             <p>
-              Avant de nous lancer, si c’est la première fois que l’on utilise
+              Avant de vous lancer, si c’est la première fois que vous utilisez
               Git, il est important de l’installer et de le configurer un
-              minimum. Ainsi, Git connaîtra notre nom pour l’enregistrer dans les
-              informations de versions. Le monde entier saura que c’est vous qui
-              avez réalisé ce projet !
+              minimum. Ainsi, Git connaîtra votre nom pour l’enregistrer dans
+              les informations de versions. Le monde entier saura que c’est
+              vous qui avez réalisé ce projet !
             </p>
           </section>
-          <aside class="documents">
-            <ul>
-              <li><a href="#annexe-1-1">Annexe 1</a></li>
-              <li><a href="#installation">FR 1</a></li>
-              <li><a href="#configuration">FR 2</a></li>
-              <li><a href="#commandes">FR 4</a></li>
-            </ul>
-          </aside>
-          <ol class="questions">
-            <li>
-              Installez Git et vérifiez que la commande fonctionne correctement
-              dans un terminal. Quelle commande pouvez-vous lancer dans le
-              terminal pour voir quelle version de Git vous avez installée ?
-            </li>
-            <li>
-              Configurez Git pour qu’il connaisse votre nom et votre adresse
-              mail. Quelles commandes utilisez-vous pour cela ? Avec quelle
-              commande pouvez-vous afficher ces informations ?
-            </li>
-            <li>
-              Dans votre terminal, allez dans le dossier où vous voulez créer
-              votre dépôt, puis créez ce dépôt en le nommant « traductions ».
-              Quelle commande utilisez-vous ?
-            </li>
-            <li>
-              Avec votre éditeur de texte, créez votre premier fichier
-              « bonjour.txt » dans le dossier dépôt, contenant le texte
-              « Bonjour monde ! ». Dans votre terminal, allez dans le dossier
-              du dépôt. Quelle commande pouvez-vous utiliser pour afficher
-              l’état du dépôt ?
-            </li>
-            <li>
-              Votre fichier n’est pas encore suivi par votre dépôt, parce qu’il
-              n’a pas encore été enregistré dans une version. Il est temps de
-              remédier à cela ! Comment faites-vous pour ajouter votre fichier
-              à la liste des fichiers à sauvegarder dans votre prochaine
-              version ?
-            </li>
-            <li>
-              Il est l’heure de sauvegarder votre première version. Choisissez
-              un beau message pour indiquer que vous avez ajouté le texte en
-              français, et trouvez la commande pour créer votre version.
-            </li>
-            <li>
-              Recommencez ces étapes avec un fichier « hello.txt » contenant le
-              texte « Hello world! ». Vous avez désormais deux versions dans
-              votre dépôt. Comment afficher dans le terminal le message et la
-              date associés à ces deux versions ?
-            </li>
-            <li>
-              Changez le texte de « bonjour.txt » pour qu’il contienne
-              « Bonjour tout le monde ! ». Quelles commandes utilisez-vous pour
-              créer une nouvelle version avec ces changements ?
-            </li>
-          </ol>
+          <section class="questions">
+            <h4>Installez et configurez Git</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#installation">FR 1</a></li>
+                <li><a href="#configuration">FR 2</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Installez Git et vérifiez que la commande fonctionne correctement
+                dans un terminal. Quelle commande pouvez-vous lancer dans le
+                terminal pour voir quelle version de Git vous avez installée ?
+              </li>
+              <li>
+                Configurez Git pour qu’il connaisse votre nom et votre adresse
+                mail. Quelles commandes utilisez-vous pour cela ? Avec quelle
+                commande pouvez-vous afficher ces informations ?
+              </li>
+            </ol>
+            <h4>Créez votre dépôt et enregistrez votre première version</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#commandes">FR 3</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Dans votre terminal, allez dans le dossier où vous voulez créer
+                votre dépôt, puis créez ce dépôt en le nommant « traductions ».
+                Quelle commande utilisez-vous ?
+              </li>
+              <li>
+                Avec votre éditeur de texte, créez votre premier fichier
+                « bonjour.txt » dans le dossier dépôt, contenant le texte
+                « Bonjour monde ! ». Dans votre terminal, allez dans le dossier
+                du dépôt. Quelle commande pouvez-vous utiliser pour afficher
+                l’état du dépôt ?
+              </li>
+              <li>
+                Votre fichier n’est pas encore suivi par votre dépôt, parce qu’il
+                n’a pas encore été enregistré dans une version. Il est temps de
+                remédier à cela ! Comment faites-vous pour ajouter votre fichier
+                à la liste des fichiers à sauvegarder dans votre prochaine
+                version ?
+              </li>
+              <li>
+                Il est l’heure de sauvegarder votre première version. Choisissez
+                un beau message pour indiquer que vous avez ajouté le texte en
+                français, et trouvez la commande pour créer votre version.
+              </li>
+            </ol>
+            <h4>Modifiez vos fichiers et enregistrez de nouvelles versions</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#annexe-1-1">Annexe 1</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Recommencez ces étapes avec un fichier « hello.txt » contenant le
+                texte « Hello world! ». Vous avez désormais deux versions dans
+                votre dépôt. Comment afficher dans le terminal le message et la
+                date associés à ces deux versions ?
+              </li>
+              <li>
+                Changez le texte de « bonjour.txt » pour qu’il contienne
+                « Bonjour tout le monde ! ». Quelles commandes utilisez-vous pour
+                créer une nouvelle version avec ces changements ?
+              </li>
+            </ol>
+          </section>
           <section class="annexes">
             <h4 id="annexe-1-1">Résultat attendu</h4>
             <p>
@@ -274,18 +295,18 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
 
           <h4>Installation</h4>
           <p>
-            Pour utiliser Git sur votre ordinateur, vous allez avoir besoin de
-            l’installer. La procédure d’installation est différente selon votre
-            système d’exploitation, et vous retrouverez toutes les informations
-            nécessaires sur <a href="https://git-scm.com/downloads">le site de Git</a>.
+            Avant une première utilisation de Git, il est nécessaire de
+            l’installer. La procédure d’installation varie selon le système
+            système d’exploitation, toutes les informations nécessaires sont
+            disponibles sur
+            <a href="https://git-scm.com/downloads">le site de Git</a>.
           </p>
           <p>
-            Si vous êtes sous Linux ou macOS, peut-être est-il déjà installé.
-            Ouvrez un terminal, tapez <code>git version</code> dedans, et appuyez
-            sur la touche <kbd>Entrée</kbd> : si le numéro de version apparaît, Git
-            est déjà là, il n’y a rien d’autre à faire ! Sinon, il est possible que
-            des indications soient affichées dans le terminal pour l’installer,
-            vous n’avez alors qu’à les suivre.
+            Sous Linux ou macOS, Git est peut-être déjà installé. Il est
+            possible de tester en tapant <code>git version</code> dans un
+            terminal, puis en appuyant sur la touche <kbd>Entrée</kbd> : si le
+            numéro de version apparaît, Git est déjà là, il n’y a rien d’autre
+            à faire !
           </p>
           <p>
             Dans tous les autres cas, voici les instructions à suivre pour avoir
@@ -411,11 +432,6 @@ Administratif  Cours  Secrets
           <todo></todo>
         </section>
 
-        <section id="vocabulaire">
-          <h3>Vocabulaire et anatomie d’un dépôt Git</h3>
-          <todo></todo>
-        </section>
-
         <section id="commandes">
           <h3>Commandes principales</h3>
           <todo>Paragraphe expliquant que c’est une version très partielle de la documentation</todo>
@@ -481,6 +497,11 @@ Administratif  Cours  Secrets
             <dt><code>restore</code></dt>
             <dd><todo></todo></dd>
           </dl>
+        </section>
+
+        <section id="vocabulaire">
+          <h3>Vocabulaire et anatomie d’un dépôt Git</h3>
+          <todo></todo>
         </section>
 
         <section id="configuration">

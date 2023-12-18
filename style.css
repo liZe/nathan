@@ -228,9 +228,26 @@ section:is(#decouverte, #atelier) h2::before {
 
 /* Classes spécifiques */
 
+.time {
+  opacity: 0.5;
+}
+
 .questions {
+  counter-reset: question-number;
+}
+
+.questions ol {
   font-family: Arial;
   font-weight: bold;
+  list-style: none;
+}
+
+.questions ol li::before {
+  content: counter(question-number) ".";
+  counter-increment: question-number;
+  padding-right: 0.5em;
+  position: absolute;
+  transform: translate(-100%, 0);
 }
 
 .documents {
