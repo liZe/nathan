@@ -266,7 +266,257 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
 
         <section id="branches-et-conflits">
           <h3>Manipuler des branches et gérer les conflits</h3>
-          <todo></todo>
+          <p class="time">Temps estimé : 2h.</p>
+          <section class="sujet">
+            <p>
+              Votre entreprise lance un projet visant à mettre en ligne des
+              contes pour enfants. Les histoires seront adaptées à partir de
+              romans célèbres, et plusieurs auteurs travailleront en même temps
+              sur le contenu. Vous êtes en charge de mettre en place la
+              structure du projet !
+            </p>
+            <p>
+              La première histoire que vous allez mettre en ligne est inspirée
+              d’<em>Alice au pays des merveilles</em>. Pour des raisons
+              techniques imposées par votre direction, vous devez avoir chaque
+              paragraphe dans un fichier séparé.
+            </p>
+            <p>
+              Dans cette entreprise, vos différents supérieurs ont beaucoup
+              d’idées qu’il faut souvent développer rapidement et en parallèle.
+              Vous vous dites que c’est une excellente raison d’utiliser les
+              branches de Git, afin que vous puissiez vous retrouver dans les
+              nombreuses demandes qui vous sont adressées.
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Rédigez le premier chapitre</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#commandes">FR 3</a></li>
+                <li><a href="#vocabulaire">FR 4</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Dans votre terminal, allez dans le dossier où vous voulez créer
+                votre dépôt, puis créez un dépôt nommé « contes ». Dans votre
+                dépôt, créez des fichiers « paragraphe1.txt »,
+                « paragraphe2.txt » et « paragraphe3.txt », qui contiennent
+                <a href="https://www.gutenberg.org/cache/epub/55456/pg55456-images.html#ch_1">les 3 premiers paragraphes d’<em>Alice au pays des merveilles</em></a>.
+                Vous pouvez copier-coller le contenu, mais conservez bien les
+                mêmes sauts de ligne. Faites votre premier <em>commit</em>.
+              </li>
+              <li>
+                Ce premier « commit » est automatiquement créé sur la branche
+                par défaut. Comment s’appelle cette branche ? Quelles commandes
+                vous permettent de connaître cette information ?
+              </li>
+            </ol>
+            <h4>Gérez les demandes</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#annexe-2-1">Annexe 1</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                L’un de vos supérieurs, M. Lewis, n’aime pas les lapins aux
+                yeux roses et souhaiterait plutôt que les yeux soient bleus.
+                Pour accéder à sa demande, vous créez une branche
+                « lewis-bleu » à partir de votre branche principale. Quelle
+                commande utilisez-vous ? Vous changez la couleur des yeux dans
+                « paragraphe2.txt », puis vous <em>commitez</em> ce changement.
+                Vérifiez bien que vous êtes sur la bonne branche avant de créer
+                ce <em>commit</em> !
+              </li>
+              <li>
+                En attendant que M. Lewis vous donne son feu vert pour intégrer
+                sa modification dans la branche principale, vous décidez
+                d’avancer sur le premier chapitre. Comment pouvez-vous
+                retourner sur la branche principale ? Une fois sur la branche
+                principale, créez « paragraphe4.txt » et faites un
+                nouveau <em>commit</em>.
+              </li>
+              <li>
+                M. Lewis est ravi de la modification qu’il a demandée et
+                souhaite l’intégrer dans la branche principale. Quelle commande
+                utilisez-vous pour fusionner la branche « lewis-bleu » dans la
+                branche principale ?
+              </li>
+            </ol>
+            <h4>Réglez les conflits</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#annexe-2-2">Annexe 2</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Mme Caroll, votre supérieure qui adore Star Wars, vous demande
+                de changer le prénom « Alice » en « Leia » dans tous les
+                paragraphes. Vous créez une branche « caroll-leia » à partir de
+                la branche principale, puis vous y intégrez la modification
+                avec un <em>commit</em> unique pour les 4 fichiers modifiés.
+              </li>
+              <li>
+                Le temps que Mme Caroll valide ses demandes, vous retournez sur
+                la branche principale et y ajoutez « paragraphe5.txt » avec
+                un <em>commit</em>. Bien sûr, dans votre branche principale,
+                l’héroïne s’appelle toujours Alice.
+              </li>
+              <li>
+                M. Lewis a une nouvelle idée ! Alice n’est pas avec sa sœur,
+                elle est en réalité avec son chien. À partir de votre branche
+                principale, vous créez donc une branche « lewis-chien ». Dans
+                cette branche, vous changez les phrases du premier paragraphe
+                pour que le chien remplace la sœur (oui, le chien d’Alice sait
+                lire). Faites un <em>commit</em> avec ces changements.
+              </li>
+              <li>
+                Mme Caroll vous rappelle : il est temps d’utiliser la force
+                dans pour intégrer sa demande dans la branche principale ! Vous
+                vous rendez sur la branche principale et <em>mergez</em> la
+                branche « caroll-leia ». Le « merge » doit se dérouler sans
+                encombres, mais en vérifiant le contenu, vous devez vous rendre
+                compte que quelque chose cloche dans le dernier paragraphe. Que
+                faut-il changer ? Faites un nouveau commit pour corriger cela.
+              </li>
+              <li>
+                M. Lewis souhaite lui-aussi intégrer sa modification au plus
+                vite. Vous <em>mergez</em> donc la branche « lewis-chien » dans
+                la branche principale. Vous devez alors avoir un conflit dans
+                le premier paragraphe… Pas de panique ! Résolvez ce conflit en
+                veillant bien à ce que les demandes de Mme Caroll et de M.
+                Lewis soient toutes respectées.
+              </li>
+              <li>
+                Vérifiez que le contenu des 5 paragraphes est conforme à toutes
+                les attentes. Maintenant que tout est dans la branche
+                principale, vous pouvez supprimer les branches « lewis-bleu »,
+                « caroll-leia » et « lewis-chien ».
+              </li>
+            </ol>
+          </section>
+          <section class="annexes">
+            <h4 id="annexe-2-1">Résultat attendu après intégration de la première demande</h4>
+            <p>
+              À la suite de l’intégration de la première demande, vous devez
+              avoir 4 fichiers dans votre dépôt :
+            </p>
+            <figure class="fichier">
+              <figcaption><code>paragraphe1.txt</code></figcaption>
+              <pre>ALICE, assise auprès de sa sœur sur le gazon, commençait à s’ennuyer
+de rester là à ne rien faire; une ou deux fois elle avait jeté les yeux sur le livre
+que lisait sa sœur; mais quoi! pas d’images, pas de dialogues! “La belle
+avance,” 2 pensait Alice, “qu’un livre sans images, sans causeries!”.</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>paragraphe2.txt</code></figcaption>
+              <pre>Elle s’était mise à réfléchir, (tant bien que mal, car la chaleur du jour
+l’endormait et la rendait lourde,) se demandant si le plaisir de faire une
+couronne de marguerites valait bien la peine de se lever et de cueillir les
+fleurs, quand tout à coup un lapin blanc aux yeux bleus passa près d’elle.</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>paragraphe3.txt</code></figcaption>
+              <pre>Il n’y avait rien là de bien étonnant, et Alice ne trouva même pas très-
+extraordinaire d’entendre parler le Lapin qui se disait: “Ah! j’arriverai trop
+tard!” (En y songeant après, il lui sembla bien qu’elle aurait dû s’en étonner,
+mais sur le moment cela lui avait paru tout naturel.) Cependant, quand le
+Lapin vint à tirer une montre de son gousset, la regarda, puis se prit à courir
+de plus belle, Alice sauta sur ses pieds, frappée de cette idée que jamais elle
+n’avait vu de lapin avec un gousset et une montre. Entraînée par la curiosité
+elle s’élança sur ses traces à travers le champ, et arriva tout juste à temps
+pour le voir disparaître dans un large trou au pied d’une haie.</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>paragraphe4.txt</code></figcaption>
+              <pre>Un instant après, Alice était à la poursuite du Lapin dans le terrier, sans
+songer comment elle en sortirait.</pre>
+            </figure>
+            <p>
+              Votre historique doit ressembler à cela :
+            </p>
+            <figure class="console">
+              <figcaption>Historique</figcaption>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git log --oneline --date-order --graph --all --decorate
+*   <span class="yellow">2e7e53f (<span class="blue">HEAD</span> -> <span class="green">main</span>)</span> Merge branch 'lewis-bleu'
+|\  
+* | <span class="yellow">a9244b3</span> Ajout du 4e paragraphe
+| * <span class="yellow">d376eb0 (<span class="green">lewis-bleu</span>)</span> Changement de la couleur des yeux du lapin
+|/  
+* <span class="yellow">a709fb6</span> Ajout des 3 premiers paragraphes</code></pre>
+            </figure>
+
+            <h4 id="annexe-2-2">Résultat attendu à la fin</h4>
+            <p>
+              À la fin de votre exercice, vous devez avoir 5 fichiers dans
+              votre dépôt :
+            </p>
+            <figure class="fichier">
+              <figcaption><code>paragraphe1.txt</code></figcaption>
+              <pre>LEIA, assise auprès de son chien sur le gazon, commençait à s’ennuyer
+de rester là à ne rien faire; une ou deux fois elle avait jeté les yeux sur le livre
+que lisait son chien; mais quoi! pas d’images, pas de dialogues! “La belle
+avance,” 2 pensait Leia, “qu’un livre sans images, sans causeries!”.</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>paragraphe2.txt</code></figcaption>
+              <pre>Elle s’était mise à réfléchir, (tant bien que mal, car la chaleur du jour
+l’endormait et la rendait lourde,) se demandant si le plaisir de faire une
+couronne de marguerites valait bien la peine de se lever et de cueillir les
+fleurs, quand tout à coup un lapin blanc aux yeux bleus passa près d’elle.</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>paragraphe3.txt</code></figcaption>
+              <pre>Il n’y avait rien là de bien étonnant, et Leia ne trouva même pas très-
+extraordinaire d’entendre parler le Lapin qui se disait: “Ah! j’arriverai trop
+tard!” (En y songeant après, il lui sembla bien qu’elle aurait dû s’en étonner,
+mais sur le moment cela lui avait paru tout naturel.) Cependant, quand le
+Lapin vint à tirer une montre de son gousset, la regarda, puis se prit à courir
+de plus belle, Leia sauta sur ses pieds, frappée de cette idée que jamais elle
+n’avait vu de lapin avec un gousset et une montre. Entraînée par la curiosité
+elle s’élança sur ses traces à travers le champ, et arriva tout juste à temps
+pour le voir disparaître dans un large trou au pied d’une haie.</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>paragraphe4.txt</code></figcaption>
+              <pre>Un instant après, Leia était à la poursuite du Lapin dans le terrier, sans
+songer comment elle en sortirait.</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>paragraphe5.txt</code></figcaption>
+              <pre>Pendant un bout de chemin le trou allait tout droit comme un tunnel,
+puis tout à coup il plongeait perpendiculairement d’une façon si brusque
+que Leia se sentit tomber comme dans un puits d’une grande profondeur,
+avant même d’avoir pensé à se retenir.</pre>
+            </figure>
+            <p>
+              Votre historique doit ressembler à cela :
+            </p>
+            <figure class="console">
+              <figcaption>Historique</figcaption>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git log --oneline --date-order --graph --all --decorate
+*   <span class="yellow">69743d5 (<span class="blue">HEAD</span> -> <span class="green">main</span>)</span> Merge branch 'lewis-chien'
+|\  
+* | <span class="yellow">a75af37</span> Changement du nom Alice en Leia dans le 5e paragraphe
+* |   <span class="yellow">659aad7</span> Merge branch 'caroll-leia'
+|\ \  
+| | * <span class="yellow">971188e</span> Changement de la sœur en chien
+| |/  
+|/|   
+* | <span class="yellow">d15cd74</span> Ajout du 5e paragraphe
+| * <span class="yellow">ddd4ab7</span> Changement du nom d’Alice en Leia
+|/  
+*   <span class="yellow">2e7e53f</span> Merge branch 'lewis-bleu'
+|\  
+* | <span class="yellow">a9244b3</span> Ajout du 4e paragraphe
+| * <span class="yellow">d376eb0</span> Changement de la couleur des yeux du lapin
+|/  
+* <span class="yellow">a709fb6</span> Ajout des 3 premiers paragraphes</code></pre>
+            </figure>
+          </section>
         </section>
 
         <section id="navigation">
@@ -504,17 +754,11 @@ Administratif  Cours  Secrets
           <todo></todo>
         </section>
 
-        <section id="configuration">
-          <h3>Configuration générale, configuration de dépôts</h3>
-          <todo></todo>
-        </section>
-
         <section id="integration">
           <h3>Intégration dans d’autres outils</h3>
           <todo></todo>
         </section>
       </section>
-
 
       <section>
         <h2 id="quiz-aval">Quiz de positionnement en aval</h2>
