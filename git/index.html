@@ -243,7 +243,7 @@
             <figure class="console">
               <figcaption>Historique</figcaption>
               <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git log
-<span class="yellow">commit b1619edefaedb0c024efd0678fe763c972184b84</span> <span class="blue">(HEAD -> <span class="green">master</span>)</span>
+<span class="yellow">commit b1619edefaedb0c024efd0678fe763c972184b84 (<span class="blue">HEAD</span> -> <span class="green">master</span>)</span>
 Author: Alice Liddell &lt;alice@wonderland.org>
 Date:   Tue Nov 14 14:40:20 2040 +0000
 
@@ -348,6 +348,7 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
             <h4>Réglez les conflits</h4>
             <aside class="documents">
               <ul>
+                <li><a href="#conflits">FR 4</a></li>
                 <li><a href="#annexe-2-2">Annexe 2</a></li>
               </ul>
             </aside>
@@ -684,69 +685,351 @@ Administratif  Cours  Secrets
 
         <section id="commandes">
           <h3>Commandes principales</h3>
-          <todo>Paragraphe expliquant que c’est une version très partielle de la documentation</todo>
+          <p>
+            Les commandes principales de Git sont présentées ici de manière
+            succinctes, pour les cas d’usage les plus courants. Certaines
+            explications sont parfois simplifiées. Il existe beaucoup d’autres
+            commandes et beaucoup d’autres options pour ces commandes.
+          </p>
+          <p>
+            Il est possible de lancer la commande <code>git help</code> dans un
+            terminal pour en savoir plus sur les commandes communes, ou pour
+            connaître de manière exhaustive les options d’une commande.
+          </p>
 
           <h4>Créer et partager des dépôts</h4>
           <dl>
             <dt><code>init</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Crée un nouveau dépôt vide.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git init depot
+Dépôt Git vide initialisé dans /home/alice/depot/.git/
+<span class="green">alice@laptop</span>:<span class="blue">~</span>$ cd depot
+<span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git status
+Sur la branche main
+Aucun commit</code></pre>
+            </dd>
             <dt><code>clone</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <todo>trouver un dépôt d’exemple</todo>
+              <p>
+                Télécharge un dépôt et le met dans un nouveau dossier.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git clone xxx
+Clonage dans 'xxx'...
+[…]
+<span class="green">alice@laptop</span>:<span class="blue">~</span>$ cd xxx
+<span class="green">alice@laptop</span>:<span class="blue">~/xxx</span>$ git log
+[…]</code></pre>
+            </dd>
             <dt><code>fetch</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Télécharge les objets et les références d’un dépôt.
+              </p>
+              <p>
+                Il est essentiellement utilisé pour récupérer les nouveaux
+                <em>commits</em>, les nouvelles branches et les nouvelles
+                étiquettes du dépôt distant qui correspond au dépôt local.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git fetch
+[…]
+Depuis git://example.com/git/depot
+   a04786b93..ee07a8118  main       -> origin/main
+ * [nouvelle étiquette]  v1.2       -> v1.2
+[…]</code></pre>
+            </dd>
             <dt><code>pull</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Récupère les informations du dépôt distant et les intègre dans
+                le dépôt local.
+              </p>
+              <p>
+                Cette commande est généralement utilisée pour récupérer les
+                <em>commits</em> qui ont été faits sur le dépôt distant, et
+                pour les intégrer sur la branche actuelle du dépôt local.
+              </p>
+              <p>
+                Par exemple, si le dépôt local est sur la
+                branche « main », il revient à faire
+                <code>git fetch</code> puis <code>git merge origin/main</code>.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git pull
+[…]
+Mise à jour a04786b93..ee07a8118
+Fast-forward
+fichier1           |  241 <span class="green">+++++++</span><span class="red">---</span>
+[…]</code></pre>
+            </dd>
             <dt><code>push</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Envoie les informations du dépôt local sur le dépôt distant.
+              </p>
+              <p>
+                Cette commande est généralement utilisée pour envoyer sur le
+                dépôt distant les <em>commits</em> que l’on a faits sur le
+                dépôt local.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git push
+Poussée vers git://example.com/git/depot
+[…]
+To git://example.com/git/depot
+   fcca709..ce796c9  main -> main
+[…]</code></pre>
+            </dd>
           </dl>
 
           <h4>Afficher des informations sur Git et les dépôts</h4>
           <dl>
             <dt><code>help</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Affiche l’aide de Git et liste les commandes principales.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git help
+usage : git [-v | --version]
+[…]
+Ci-dessous les commandes Git habituelles dans diverses situations :
+[…]</code></pre>
+            </dd>
             <dt><code>version</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Affiche la version de Git.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git version
+git version 2.43.0</code></pre>
+            </dd>
             <dt><code>log</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Affiche un historique des <em>commits</em>, par défaut ceux de la
+                branche actuelle.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git log
+<span class="yellow">commit a75af376edaf0ff80b54d92ed46fba8e997e2ce7 (<span class="blue">HEAD</span> -> <span class="green">master</span>)</span>
+Author: Alice Liddell &lt;alice@wonderland.org>
+Date:   Tue Dec 19 14:25:06 2023 +0100
+
+    Changement du nom Alice en Leia dans le 5e paragraphe
+
+<span class="yellow">commit 659aad7b4205b25cadb10785108cc5fe71526c90</span>
+Merge: d15cd74 ddd4ab7
+Author: Alice Liddell &lt;alice@wonderland.org>
+Date:   Tue Dec 19 14:24:53 2023 +0100
+
+    Merge branch 'caroll-leia'
+
+[…]</code></pre>
+            </dd>
             <dt><code>status</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Affiche le statut actuel de l’arbre de travail.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git status
+Sur la branche main
+Fichiers non suivis:
+  (utilisez "git add &lt;fichier>..." pour inclure dans ce qui sera validé)
+	paragraphe6.txt
+[…]</code></pre></dd>
             <dt><code>show</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Affiche différentes informations sur un objet.
+              </p>
+              <p>
+                Il est généralement utilisé pour afficher les métadonnées d’un <em>commit</em>.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git show 8a7eb387
+<span class="yellow">commit 8a7eb387651f7c1fc69cedca5e051fc39a3cf2d9</span>
+Author: Alice Liddell &lt;alice@wonderland.org>
+Date:   Tue Dec 19 14:25:06 2023 +0100
+
+    Changement du nom Alice en Leia dans le 5e paragraphe
+
+<span class="yellow">diff --git a/paragraphe5.txt b/paragraphe5.txt
+index e47c0d7..d61b3b8 100644
+--- a/paragraphe5.txt
++++ b/paragraphe5.txt</span>
+<span class="purple">@@ -1,4 +1,4 @@</span>
+ Pendant un bout de chemin le trou allait tout droit comme un tunnel,
+ puis tout à coup il plongeait perpendiculairement d’une façon si brusque
+<span class="red">-qu’Alice se sentit tomber comme dans un puits d’une grande profondeur,</span>
+<span class="green">+que Leia se sentit tomber comme dans un puits d’une grande profondeur,</span>
+ avant même d’avoir pensé à se retenir.
+[…]</code></pre></dd>
             <dt><code>diff</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Affiche les modifications entre deux <em>commits</em>, ou entre
+                un <em>commit</em> et l’arbre de travail.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git diff
+<span class="yellow">diff --git a/paragraphe1.txt b/paragraphe1.txt
+index 65a4c91..c06a09e 100644
+--- a/paragraphe1.txt
++++ b/paragraphe1.txt</span>
+<span class="purple">@@ -1,4 +1,4 @@</span>
+ LEIA, assise auprès de son chien sur le gazon, commençait à s’ennuyer
+ de rester là à ne rien faire; une ou deux fois elle avait jeté les yeux sur le livre
+<span class="red">-que lisait son chien; mais quoi! pas d’images, pas de dialogues! “La belle</span>
+<span class="green">+que lisait son chien; mais quoi! pas de photos, pas de dialogues! “La belle</span>
+ avance,” 2 pensait Leia, “qu’un livre sans images, sans causeries!”.
+</code></pre>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git diff a75af37
+<span class="yellow">diff --git a/paragraphe1.txt b/paragraphe1.txt
+index 45e1f13..65a4c91 100644
+--- a/paragraphe1.txt
++++ b/paragraphe1.txt</span>
+<span class="purple">@@ -1,4 +1,4 @@</span>
+<span class="red">-LEIA, assise auprès de sa sœur sur le gazon, commençait à s’ennuyer</span>
+<span class="green">+LEIA, assise auprès de son chien sur le gazon, commençait à s’ennuyer</span>
+ de rester là à ne rien faire; une ou deux fois elle avait jeté les yeux sur le livre
+<span class="red">-que lisait sa sœur; mais quoi! pas d’images, pas de dialogues! “La belle</span>
+<span class="green">+que lisait son chien; mais quoi! pas d’images, pas de dialogues! “La belle</span>
+ avance,” 2 pensait Leia, “qu’un livre sans images, sans causeries!”.
+</code></pre>
+            </dd>
             <dt><code>config</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Affiche et modifie la configuration de Git et du dépôt.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git config user.email
+alice@wonderland.org
+<span class="green">alice@laptop</span>:<span class="blue">~</span>$ git config user.name "Alice Liddell"</code></pre>
+            </dd>
           </dl>
 
           <h4>Créer et gérer des branches et étiquettes</h4>
           <dl>
             <dt><code>branch</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Liste, crée ou supprime des branches.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git branch
+  <span class="yellow">caroll-leia</span>
+  <span class="yellow">lewis-bleu</span>
+* <span class="green">main</span>
+<span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git branch lewis-chien
+<span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git branch --delete caroll-leia
+Branche caroll-leia supprimée (précédemment 69743d5).</code></pre>
+            </dd>
             <dt><code>switch</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Change de branche.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git switch lewis-bleu
+Basculement sur la branche 'lewis-bleu'</code></pre>
+            </dd>
             <dt><code>merge</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Fusionne deux branches.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git merge lewis-bleu
+Merge made by the 'ort' strategy.
+paragraphe2.txt | 2 <span class="green">+</span><span class="red">-</span>
+ 1 file changed, 1 insertion(+), 1 deletion(-)</code></pre>
+            </dd>
             <dt><code>rebase</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Applique des <em>commits</em> au-dessus d’une autre branche.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git rebase lewis-bleu
+Rebasage et mise à jour de refs/heads/main avec succès.</code></pre>
+            </dd>
             <dt><code>tag</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Crée, liste ou supprime des étiquettes.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git tag
+v1.0
+v2.0
+<span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git tag v3.0</code></pre>
+            </dd>
           </dl>
 
-          <h4>Créer et gérer les versions</h4>
+          <h4>Créer et gérer les <em>commits</em></h4>
           <dl>
             <dt><code>add</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Ajoute le contenu de fichiers à l’index.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git add paragraphe1.txt</code></pre>
+            </dd>
             <dt><code>commit</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Enregistre les changements de l’index dans le dépôt.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git commit -m "Ajout d’un fichier"
+[main 2e363ea] Ajout d’un fichier
+ 1 file changed, 3 insertions(+), 0 deletions(-)
+ create mode 100644 paragraphe1.txt
+</code></pre>
+            </dd>
             <dt><code>checkout</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Bascule sur un <em>commit</em> et met à jour les fichiers de
+                l’arbre de travail.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git checkout d15cd74
+Note : basculement sur 'd15cd74'.
+Vous êtes dans l'état « HEAD détachée ». […]
+HEAD est maintenant sur d15cd74 Ajout du 5e paragraphe
+<span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>git checkout main
+La position précédente de HEAD était sur d15cd74 Ajout du 5e paragraphe
+Basculement sur la branche 'main'</code></pre>
+            </dd>
             <dt><code>revert</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Crée un nouveau <em>commit</em> qui annule les changements d’un
+                autre <em>commit</em>.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git revert a2de2c68
+[main 106aff9] Revert "Ajout du 6e paragraphe"
+ 1 file changed, 11 deletions(-)
+ delete mode 100644 paragraphe6.txt</code></pre>
+            </dd>
             <dt><code>reset</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Réinitialise la branche sur un <em>commit</em>.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git reset --hard 69743d5
+HEAD est maintenant à 69743d5 Merge branch 'lewis-chien'
+<span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git reset a9244b3
+Modifications non indexées après reset :
+M	paragraphe1.txt
+M	paragraphe2.txt</code></pre>
+            </dd>
             <dt><code>restore</code></dt>
-            <dd><todo></todo></dd>
+            <dd>
+              <p>
+                Restaure les fichiers de l’arbre de travail dans l’état du
+                <em>commit</em> actuel.
+              </p>
+              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git restore paragraphe1.txt</code></pre>
+            </dd>
           </dl>
+        </section>
+
+        <section id="conflits">
+          <h3>Résolution des conflits</h3>
+          <todo></todo>
         </section>
 
         <section id="vocabulaire">

@@ -70,9 +70,16 @@ a {
   color: #2e74b5;
 }
 
-dt,
+dt {
+  margin-top: 1em;
+}
+
 dd {
   margin-top: 0.5em;
+}
+
+dd > :first-child {
+  margin-top: 0;
 }
 
 kbd {
@@ -110,8 +117,16 @@ code .green {
   color: #8f8;
 }
 
+code .red {
+  color: #f44;
+}
+
 code .blue {
   color: #66f;
+}
+
+code .purple {
+  color: #a6a;
 }
 
 code .yellow {
