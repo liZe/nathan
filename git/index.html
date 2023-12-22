@@ -40,8 +40,8 @@
           <a href="#decouverte">Découverte (5h)</a>
           <ul>
             <li><a href="#depot-et-commandes">Créer un dépôt et effectuer les premières commandes</a></li>
-            <li><a href="#branches-et-conflits">Manipuler des branches et gérer les conflits</a></li>
             <li><a href="#navigation">Naviguer dans l’historique</a></li>
+            <li><a href="#branches-et-conflits">Manipuler des branches et gérer les conflits</a></li>
             <li><a href="#partage">Partager son dépôt et travailler à plusieurs</a></li>
           </ul>
         </li>
@@ -53,8 +53,9 @@
           <ul>
             <li><a href="#installation">Installation et utilisation de Git</a></li>
             <li><a href="#configuration">Configuration générale, configuration de dépôts</a></li>
-            <li><a href="#vocabulaire">Vocabulaire et anatomie d’un dépôt Git</a></li>
             <li><a href="#commandes">Commandes principales</a></li>
+            <li><a href="#vocabulaire">Vocabulaire et anatomie d’un dépôt Git</a></li>
+            <li><a href="#conflits">Résolution des conflits</a></li>
             <li><a href="#integration">Intégration dans d’autres outils</a></li>
           </ul>
         </li>
@@ -264,6 +265,99 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
           </section>
         </section>
 
+        <section id="navigation">
+          <h3>Naviguer dans l’historique</h3>
+          <p class="time">Temps estimé : 1h.</p>
+          <section class="sujet">
+            <p>
+              Dans votre entreprise, vous vous trouvez en charge de l’édition
+              d’un livre de recettes de desserts. Ce livre a déjà été publié
+              plusieurs fois, avec des modifications apportées à chaque nouvelle
+              version.
+            </p>
+            <p>
+              Votre mission est de préparer la publication d’une nouvelle
+              version, en prenant en compte les demandes de modifications
+              formulées par les membres de votre équipe. Pour cela, vous allez
+              d’abord devoir vous replonger dans l’historique de ce contenu,
+              afin de mieux comprendre comment il a été construit.
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Prenez connaissance de l’historique</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#commandes">FR 3</a></li>
+                <li><a href="#vocabulaire">FR 4</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Clonez le dépôt <todo>nom du dépôt</todo> sur votre ordinateur.
+                Combien y a-t-il de <em>commits</em> dans ce dépôt ?
+              </li>
+              <li>
+                Chaque publication précédente a été stockée dans le dépôt sous
+                forme d’étiquettes. Combien de publications différentes de ce
+                livre ont déjà été faites ? À quelles dates ont-elles été
+                effectuées ?
+              </li>
+              <li>
+                Quelles sont les derniers <em>commits</em> concernant la
+                recette de crumble au citron ?
+              </li>
+              <li>
+                Vous souhaitez voir le contenu tel qu’il était lors de la
+                première publication. Basculez votre arbre de travail sur cette
+                version.
+              </li>
+              <li>
+                Vous souhaitez maintenant voir le contenu tel qu’il était lors
+                de la seconde publication. Quelles sont les différences entre
+                la première et la seconde publication ? Retournez sur la
+                version principale (la branche « main »).
+              </li>
+            </ol>
+            <h4>Publiez une nouvelle version</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#annexe-2-1">Annexe 1</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Une personne de votre équipe vous demande de changer les
+                fraises en framboises dans la recette de charlotte. Changez le
+                fichier sans faire de nouveau <em>commit</em>.
+              </li>
+              <li>
+                Finalement, vous préférez annuler cette modification. Comment
+                annuler les changements sans faire l’édition à la main ?
+              </li>
+              <li>
+                Entre la première et la seconde version, une modification de la
+                quantité de farine a été faite sur recette du gâteau roulé. Les
+                retours des lecteurs sur cette recette ont indiqué que la
+                quantité de farine était mieux avant. Faites un <em>commit</em>
+                qui annule ce <em>commit</em>.
+              </li>
+              <li>
+                Une pâtissière de votre équipe vous indique qu’il vaut mieux
+                cuire la tarte aux pommes à 200°C. Effectuez le changement et
+                faites un nouveau <em>commit</em>.
+              </li>
+              <li>
+                Il est temps de finaliser votre nouvelle publication ! Ajoutez
+                une étiquette « version-3 » sur le <em>commit</em> actuel.
+              </li>
+            </ol>
+          </section>
+          <section class="annexes">
+            <h4 id="annexe-2-1">Résultat attendu après la publication</h4>
+            <todo></todo>
+          </section>
+        </section>
+
         <section id="branches-et-conflits">
           <h3>Manipuler des branches et gérer les conflits</h3>
           <p class="time">Temps estimé : 2h.</p>
@@ -316,7 +410,7 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
             <h4>Gérez les demandes</h4>
             <aside class="documents">
               <ul>
-                <li><a href="#annexe-2-1">Annexe 1</a></li>
+                <li><a href="#annexe-3-1">Annexe 1</a></li>
               </ul>
             </aside>
             <ol>
@@ -348,8 +442,8 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
             <h4>Réglez les conflits</h4>
             <aside class="documents">
               <ul>
-                <li><a href="#conflits">FR 4</a></li>
-                <li><a href="#annexe-2-2">Annexe 2</a></li>
+                <li><a href="#conflits">FR 5</a></li>
+                <li><a href="#annexe-3-2">Annexe 2</a></li>
               </ul>
             </aside>
             <ol>
@@ -400,7 +494,7 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
             </ol>
           </section>
           <section class="annexes">
-            <h4 id="annexe-2-1">Résultat attendu après intégration de la première demande</h4>
+            <h4 id="annexe-3-1">Résultat attendu après intégration de la première demande</h4>
             <p>
               À la suite de l’intégration de la première demande, vous devez
               avoir 4 fichiers dans votre dépôt :
@@ -450,7 +544,7 @@ songer comment elle en sortirait.</pre>
 * <span class="yellow">a709fb6</span> Ajout des 3 premiers paragraphes</code></pre>
             </figure>
 
-            <h4 id="annexe-2-2">Résultat attendu à la fin</h4>
+            <h4 id="annexe-3-2">Résultat attendu à la fin</h4>
             <p>
               À la fin de votre exercice, vous devez avoir 5 fichiers dans
               votre dépôt :
@@ -520,14 +614,109 @@ avant même d’avoir pensé à se retenir.</pre>
           </section>
         </section>
 
-        <section id="navigation">
-          <h3>Naviguer dans l’historique</h3>
-          <todo></todo>
-        </section>
-
         <section id="partage">
           <h3>Partager son dépôt et travailler à plusieurs</h3>
-          <todo></todo>
+          <p class="time">Temps estimé : 1h.</p>
+          <section class="sujet">
+            <p>
+              Votre entreprise souhaite mettre en ligne la documentation des
+              différentes commandes de Git. Pour cela, elle fait appel à une
+              équipe de deux personnes qui travailleront en parallèle pour
+              intégrer le contenu.
+            </p>
+            <p>
+              Vous allez donc réaliser ce travail à deux, une personne jouant
+              le rôle A et l’autre le rôle B. N’hésitez pas à partager votre
+              écran pour montrer à l’autre ce que vous faites, et
+              potentiellement vous entraider.
+            </p>
+            <p>
+              Le dépôt Git sera stocké sur GitHub, la plateforme de
+              développement la plus utilisée dans le monde.
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Créez le dépôt principal et le <em>fork</em></h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#vocabulaire">FR 4</a></li>
+                <li><a href="#integration">FR 6</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Créez un compte par personne sur GitHub, si vous n’en avez pas
+                déjà un.
+              </li>
+              <li>
+                Pour la personne A : créez un dépôt public nommé « doc-git ».
+                Ce dépôt doit contenir un fichier README automatique. Ce dépôt
+                sera le dépôt principal, sur lequel vous pourrez intégrer les
+                changements venant de <em>forks</em>.
+              </li>
+              <li>
+                Pour la personne B : <em>forkez</em> le dépôt « doc-git » de la
+                personne A. Ce dépôt sera un <em>fork</em>, c’est-à-dire un
+                dépôt secondaire sur lequel vous pourrez développer des
+                fonctionnalités qui seront ensuite intégrées dans le dépôt
+                principal.
+              </li>
+              <li>
+                Pour les deux personnes : clonez votre dépôt personnel sur
+                votre ordinateur. Vous devez avoir tous les deux les même
+                fichier « README ».
+              </li>
+            </ol>
+
+            <h4>Ouvrez une <em>pull request</em></h4>
+            <ol>
+              <li>
+                Pour la personne A : créez un fichier « add » qui contient la
+                documentation de la commande <code>add</code>
+                de <a href="#commandes">la fiche ressource 3</a>. Faites
+                un <em>commit</em> avec ce nouveau fichier.
+              </li>
+              <li>
+                Pour la personne B : créez un fichier « commit » qui contient
+                la documentation de la commande <code>commit</code>
+                de <a href="#commandes">la fiche ressource 3</a>. Faites
+                un <em>commit</em> avec ce nouveau fichier.
+              </li>
+              <li>
+                Pour les deux personnes : <em>pushez</em> votre commit sur
+                votre dépôt. Vérifiez sur l’interface de GitHub que les
+                changements sont bien visibles sur votre dépôt, et que vous
+                avez chacun le fichier « README » et le fichier de votre
+                commande respective.
+              </li>
+              <li>
+                Pour la personne B : Vous souhaitez faire intégrer votre
+                commande dans le dépôt principal. Ouvrez une <em>pull
+                request</em> demandant l’intégration de votre travail.
+              </li>
+            </ol>
+
+            <h4><em>Mergez</em> une <em>pull request</em></h4>
+            <ol>
+              <li>
+                Pour la personne A : <em>mergez</em> la <em>pull request</em>
+                ouverte par la personne B. Vérifiez sur GitHub que vous avez
+                désormais les fichiers « README », « add » et « commit » dans
+                votre dépôt.
+              </li>
+              <li>
+                Pour la personne B : sur GitHub, synchronisez
+                votre <em>fork</em> avec le dépôt principal. Vérifiez que vous
+                avez également les fichiers « README », « add » et « commit »
+                dans votre dépôt.
+              </li>
+              <li>
+                Pour les deux personnes : <em>pullez</em> les nouveaux commits
+                de votre dépôt distant sur votre ordinateur. Vérifiez que vous
+                avez bien les mêmes fichiers et le même historique.
+              </li>
+            </ol>
+          </section>
         </section>
       </section>
 
@@ -824,6 +1013,20 @@ Date:   Tue Dec 19 14:24:53 2023 +0100
 
     Merge branch 'caroll-leia'
 
+[…]
+
+<span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git log paragraphe1.txt
+<span class="yellow">commit 971188eefebec4caf12c3efb383fb675c30e2f8a</span>
+Author: Alice Liddell &lt;alice@wonderland.org>
+Date:   Tue Dec 19 14:24:22 2023 +0100
+
+    Changement de la sœur en chien
+
+<span class="yellow">commit ddd4ab7dd9935f84e12b06cff4c9ea7cd1d5ca25</span>
+Author: Alice Liddell &lt;alice@wonderland.org>
+Date:   Tue Dec 19 14:21:37 2023 +0100
+
+    Changement du nom d’Alice en Leia
 […]</code></pre>
             </dd>
             <dt><code>status</code></dt>
@@ -1027,13 +1230,13 @@ M	paragraphe2.txt</code></pre>
           </dl>
         </section>
 
-        <section id="conflits">
-          <h3>Résolution des conflits</h3>
+        <section id="vocabulaire">
+          <h3>Vocabulaire et anatomie d’un dépôt Git</h3>
           <todo></todo>
         </section>
 
-        <section id="vocabulaire">
-          <h3>Vocabulaire et anatomie d’un dépôt Git</h3>
+        <section id="conflits">
+          <h3>Résolution des conflits</h3>
           <todo></todo>
         </section>
 
