@@ -3,7 +3,7 @@
 :root {
   font-family: Times New Roman;
   font-size: 12pt;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 @media screen {
@@ -51,6 +51,7 @@ h3 {
 
 h4 {
   border-bottom: 0.15em solid;
+  font-family: Arial;
   font-size: 12pt;
   margin: 1rem 0;
 }
@@ -75,6 +76,7 @@ dt {
 }
 
 dd {
+  break-before: avoid;
   margin-top: 0.5em;
 }
 
@@ -103,7 +105,7 @@ pre {
   background: #111;
   border-radius: 0.2em;
   box-shadow: 0 0 0.5em #39323288;
-  font-size: 10pt;
+  font-size: 0.8em;
   overflow-x: scroll;
   padding: 1em;
 }
@@ -217,6 +219,10 @@ main {
   counter-reset: partie;
 }
 
+main > section {
+  break-before: page;
+}
+
 section:is(#decouverte, #atelier) h2::before {
   content: "Partie " counter(partie) " : ";
   counter-increment: partie;
@@ -233,6 +239,10 @@ section:is(#decouverte, #atelier) h2::before {
 
 #fiches-ressources {
   counter-reset: ressource;
+}
+
+#fiches-ressources > section:not(:first-of-type) {
+  break-inside: avoid;
 }
 
 #fiches-ressources h3::before {
@@ -291,15 +301,19 @@ section:is(#decouverte, #atelier) h2::before {
   counter-increment: annexe;
 }
 
+figure {
+  break-inside: avoid;
+}
+
 figure.console figcaption,
 figure.fichier figcaption {
   background: #efecec;
   border-radius: 0.2em 0.2em 0 0;
   box-shadow: 0 -0.5em 0.5em -0.5em #39323244 inset;
+  display: inline-block;
   font-family: Arial;
   font-size: 0.8em;
   padding: 0.5em 1em;
-  width: max-content;
 }
 
 figure.console pre,
@@ -317,4 +331,12 @@ figure.fichier pre {
   background: #efecec88;
   box-shadow: none;
   color: inherit;
+}
+
+/* Print */
+
+@media print {
+  figure {
+    font-size: 0.9em;
+  }
 }

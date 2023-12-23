@@ -130,13 +130,14 @@
           <p class="time">Temps estimé : 1h.</p>
           <section class="sujet">
             <p>
-              Vous souhaitez créer une application pour apprendre à parler des
-              langues étrangères. Pour créer votre premier prototype, vous
-              commencez par créer des fichiers texte qui stockent la traduction
-              du texte « Bonjour le monde ! » dans différentes langues. Comme
-              vous travaillez en collaboration avec des équipes de traduction
-              réparties dans plusieurs pays, vous décidez d’utiliser le
-              gestionnaire de versions le plus courant : Git.
+              Votre entreprise souhaite créer une application pour apprendre à
+              parler des langues étrangères, et la mission qui vous est confiée
+              est de créer le premier prototype ! Vous commencez par créer des
+              fichiers texte qui stockent la traduction du texte « Bonjour le
+              monde ! » dans différentes langues. Comme vous travaillerez en
+              collaboration avec des équipes de traduction réparties dans
+              plusieurs pays, vous décidez d’utiliser le gestionnaire de
+              versions le plus courant : Git.
             </p>
             <p>
               Votre but est de créer un fichier par langue, avec le texte à
@@ -162,14 +163,14 @@
             </aside>
             <ol>
               <li>
-                Installez Git et vérifiez que la commande fonctionne correctement
-                dans un terminal. Quelle commande pouvez-vous lancer dans le
-                terminal pour voir quelle version de Git vous avez installée ?
+                Installez Git et vérifiez que la commande fonctionne
+                correctement dans un terminal. Quelle version de Git est
+                installée sur votre ordinateur ?
               </li>
               <li>
                 Configurez Git pour qu’il connaisse votre nom et votre adresse
-                mail. Quelles commandes utilisez-vous pour cela ? Avec quelle
-                commande pouvez-vous afficher ces informations ?
+                mail. Après avoir enregistré ces informations, pouvez-vous
+                vérifier qu’elles sont bien correctes ?
               </li>
             </ol>
             <h4>Créez votre dépôt et enregistrez votre première version</h4>
@@ -182,26 +183,26 @@
               <li>
                 Dans votre terminal, allez dans le dossier où vous voulez créer
                 votre dépôt, puis créez ce dépôt en le nommant « traductions ».
-                Quelle commande utilisez-vous ?
               </li>
               <li>
                 Avec votre éditeur de texte, créez votre premier fichier
-                « bonjour.txt » dans le dossier dépôt, contenant le texte
-                « Bonjour monde ! ». Dans votre terminal, allez dans le dossier
-                du dépôt. Quelle commande pouvez-vous utiliser pour afficher
-                l’état du dépôt ?
+                « bonjour.txt » dans le dossier « traductions », contenant le
+                texte « Bonjour monde ! ». Dans votre terminal, allez dans le
+                dossier « traductions », et vérifiez le statut de votre arbre
+                de travail.
               </li>
               <li>
-                Votre fichier n’est pas encore suivi par votre dépôt, parce qu’il
-                n’a pas encore été enregistré dans une version. Il est temps de
-                remédier à cela ! Comment faites-vous pour ajouter votre fichier
-                à la liste des fichiers à sauvegarder dans votre prochaine
-                version ?
+                Votre fichier n’est pas encore suivi par votre dépôt, parce
+                qu’il n’a pas encore été enregistré dans une version. Il est
+                temps de remédier à cela ! Ajoutez votre fichier à la liste des
+                fichiers à sauvegarder dans votre prochaine version (cette
+                liste s’appelle l’« index »).
               </li>
               <li>
-                Il est l’heure de sauvegarder votre première version. Choisissez
-                un beau message pour indiquer que vous avez ajouté le texte en
-                français, et trouvez la commande pour créer votre version.
+                Il est l’heure de sauvegarder votre première version.
+                Choisissez un beau message pour indiquer que vous avez ajouté
+                le texte en français, et trouvez la commande pour créer votre
+                version (que l’on appelle « <em>commit</em> »).
               </li>
             </ol>
             <h4>Modifiez vos fichiers et enregistrez de nouvelles versions</h4>
@@ -214,13 +215,13 @@
               <li>
                 Recommencez ces étapes avec un fichier « hello.txt » contenant le
                 texte « Hello world! ». Vous avez désormais deux versions dans
-                votre dépôt. Comment afficher dans le terminal le message et la
-                date associés à ces deux versions ?
+                votre dépôt. Affichez dans le terminal le message et la
+                date associés à ces deux versions.
               </li>
               <li>
                 Changez le texte de « bonjour.txt » pour qu’il contienne
-                « Bonjour tout le monde ! ». Quelles commandes utilisez-vous pour
-                créer une nouvelle version avec ces changements ?
+                « Bonjour tout le monde ! ». Créez un nouveau <em>commit</em>
+                avec cette modification.
               </li>
             </ol>
           </section>
@@ -372,15 +373,17 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
             <p>
               La première histoire que vous allez mettre en ligne est inspirée
               d’<em>Alice au pays des merveilles</em>. Pour des raisons
-              techniques imposées par votre direction, vous devez avoir chaque
+              techniques imposées par votre direction, vous devez mettre chaque
               paragraphe dans un fichier séparé.
             </p>
             <p>
-              Dans cette entreprise, vos différents supérieurs ont beaucoup
-              d’idées qu’il faut souvent développer rapidement et en parallèle.
-              Vous vous dites que c’est une excellente raison d’utiliser les
-              branches de Git, afin que vous puissiez vous retrouver dans les
-              nombreuses demandes qui vous sont adressées.
+              Dans cette entreprise, votre équipe a beaucoup d’idées qu’il faut
+              souvent développer rapidement et en parallèle. Vous vous dites
+              que c’est une excellente raison d’utiliser les branches de Git,
+              afin que vous puissiez vous retrouver dans les nombreuses
+              demandes qui vous sont adressées. Vous travaillerez sur la
+              branche principale, et vous développerez les modifications
+              demandées par vos collègues sur des branches spécifiques.
             </p>
           </section>
           <section class="questions">
@@ -395,7 +398,7 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
               <li>
                 Dans votre terminal, allez dans le dossier où vous voulez créer
                 votre dépôt, puis créez un dépôt nommé « contes ». Dans votre
-                dépôt, créez des fichiers « paragraphe1.txt »,
+                arbre de travail, créez des fichiers « paragraphe1.txt »,
                 « paragraphe2.txt » et « paragraphe3.txt », qui contiennent
                 <a href="https://www.gutenberg.org/cache/epub/55456/pg55456-images.html#ch_1">les 3 premiers paragraphes d’<em>Alice au pays des merveilles</em></a>.
                 Vous pouvez copier-coller le contenu, mais conservez bien les
@@ -404,7 +407,7 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
               <li>
                 Ce premier « commit » est automatiquement créé sur la branche
                 par défaut. Comment s’appelle cette branche ? Quelles commandes
-                vous permettent de connaître cette information ?
+                différentes vous permettent de connaître cette information ?
               </li>
             </ol>
             <h4>Gérez les demandes</h4>
@@ -415,14 +418,13 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
             </aside>
             <ol>
               <li>
-                L’un de vos supérieurs, M. Lewis, n’aime pas les lapins aux
-                yeux roses et souhaiterait plutôt que les yeux soient bleus.
-                Pour accéder à sa demande, vous créez une branche
-                « lewis-bleu » à partir de votre branche principale. Quelle
-                commande utilisez-vous ? Vous changez la couleur des yeux dans
-                « paragraphe2.txt », puis vous <em>commitez</em> ce changement.
-                Vérifiez bien que vous êtes sur la bonne branche avant de créer
-                ce <em>commit</em> !
+                L’un de vos collègues, M. Lewis, n’aime pas les lapins aux yeux
+                roses et souhaiterait plutôt que les yeux soient bleus. Pour
+                accéder à sa demande, créez une branche « lewis-bleu » à partir
+                de votre branche principale, puis mettez vous sur cette
+                branche. Changez la couleur des yeux dans « paragraphe2.txt »,
+                puis <em>commitez</em> ce changement. Vérifiez bien que vous
+                êtes sur la bonne branche avant de créer ce <em>commit</em> !
               </li>
               <li>
                 En attendant que M. Lewis vous donne son feu vert pour intégrer
@@ -470,16 +472,16 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
               </li>
               <li>
                 Mme Caroll vous rappelle : il est temps d’utiliser la force
-                dans pour intégrer sa demande dans la branche principale ! Vous
-                vous rendez sur la branche principale et <em>mergez</em> la
+                dans pour intégrer sa demande dans la branche principale !
+                Rendez-vous sur la branche principale et <em>mergez</em> la
                 branche « caroll-leia ». Le « merge » doit se dérouler sans
                 encombres, mais en vérifiant le contenu, vous devez vous rendre
-                compte que quelque chose cloche dans le dernier paragraphe. Que
+                compte que quelque chose cloche dans le paragraphe 5. Que
                 faut-il changer ? Faites un nouveau commit pour corriger cela.
               </li>
               <li>
                 M. Lewis souhaite lui-aussi intégrer sa modification au plus
-                vite. Vous <em>mergez</em> donc la branche « lewis-chien » dans
+                vite. <em>Mergez</em> donc la branche « lewis-chien » dans
                 la branche principale. Vous devez alors avoir un conflit dans
                 le premier paragraphe… Pas de panique ! Résolvez ce conflit en
                 veillant bien à ce que les demandes de Mme Caroll et de M.
@@ -488,7 +490,7 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
               <li>
                 Vérifiez que le contenu des 5 paragraphes est conforme à toutes
                 les attentes. Maintenant que tout est dans la branche
-                principale, vous pouvez supprimer les branches « lewis-bleu »,
+                principale, supprimez les branches « lewis-bleu »,
                 « caroll-leia » et « lewis-chien ».
               </li>
             </ol>
@@ -628,7 +630,7 @@ avant même d’avoir pensé à se retenir.</pre>
               Vous allez donc réaliser ce travail à deux, une personne jouant
               le rôle A et l’autre le rôle B. N’hésitez pas à partager votre
               écran pour montrer à l’autre ce que vous faites, et
-              potentiellement vous entraider.
+              bien sûr à vous entraider.
             </p>
             <p>
               Le dépôt Git sera stocké sur GitHub, la plateforme de
@@ -876,14 +878,16 @@ Administratif  Cours  Secrets
           <h3>Commandes principales</h3>
           <p>
             Les commandes principales de Git sont présentées ici de manière
-            succinctes, pour les cas d’usage les plus courants. Certaines
+            succincte, pour les cas d’usage les plus courants. Certaines
             explications sont parfois simplifiées. Il existe beaucoup d’autres
             commandes et beaucoup d’autres options pour ces commandes.
           </p>
           <p>
             Il est possible de lancer la commande <code>git help</code> dans un
             terminal pour en savoir plus sur les commandes communes, ou pour
-            connaître de manière exhaustive les options d’une commande.
+            connaître de manière exhaustive les options d’une commande. Toutes
+            les informations sont également disponibles dans
+            <a href="https://git-scm.com/docs">la documentation de Git en ligne</a>.
           </p>
 
           <h4>Créer et partager des dépôts</h4>
