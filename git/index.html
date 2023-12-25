@@ -871,7 +871,41 @@ Administratif  Cours  Secrets
 
         <section id="configuration">
           <h3>Configuration générale, configuration de dépôts</h3>
-          <todo></todo>
+          <p>
+            Avec Git, il est possible de configurer certaines options de vos
+            dépôts. Il est également possible de définir une configuration
+            globale qui sera prise en compte avec tous les dépôts, si ces
+            options ne sont pas définies dans le dépôt.
+          </p>
+          <p>
+            Deux options doivent être configurées avant votre première
+            utilisation de Git : votre nom et votre adresse email. Pour cela,
+            vous pouvez utiliser la commande <code>git config</code> :
+          </p>
+          <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git config user.email "alice@wonderland.org"
+<span class="green">alice@laptop</span>:<span class="blue">~</span>$ git config user.name "Alice Liddell"</code></pre>
+          <p>
+            Lorsque ces commandes sont effectuées en dehors d’un dépôt, elles
+            configurent Git au niveau de votre système : tous les dépôts que
+            vous créerez utiliseront ces valeurs par défaut.
+          </p>
+          <p>
+            Si vous souhaitez configurer un dépôt en particulier, vous pouvez
+            vous rendre dans l’arbre de travail de votre dépôt et effectuer les
+            mêmes commandes. Si vous travaillez par exemple sur un dépôt
+            « star-wars » où vous souhaitez faire vos <em>commits</em> sous le
+            nom de « Princesse Leia », vous pouvez modifier votre configuration
+            uniquement pour ce dépôt :
+          </p>
+          <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ cd star-wars
+<span class="green">alice@laptop</span>:<span class="blue">~/star-wars</span>$ git config user.email "leia@republique.org"
+<span class="green">alice@laptop</span>:<span class="blue">~/star-wars</span>$ git config user.name "Princesse Leia"</code></pre>
+          <p>
+            De nombreuses options peuvent être configurées dans vos dépôts Git.
+            Vous trouverez une liste exhaustive dans
+            <a href="https://git-scm.com/docs/git-config">la documentation en ligne de Git</a>
+            ou en tapant <code>git help config</code> dans le terminal.
+          </p>
         </section>
 
         <section id="commandes">
