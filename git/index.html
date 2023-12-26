@@ -1173,7 +1173,9 @@ Basculement sur la branche 'lewis-bleu'</code></pre>
             <dt><code>merge</code></dt>
             <dd>
               <p>
-                Fusionne deux branches.
+                Fusionne deux branches. Cela revient généralement à créer
+                un <em>commit</em> qui a deux parents : la branche actuelle et
+                la branche que l’on veut <em>merger</em>.
               </p>
               <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git merge lewis-bleu
 Merge made by the 'ort' strategy.
@@ -1275,7 +1277,178 @@ M	paragraphe2.txt</code></pre>
 
         <section id="conflits">
           <h3>Résolution des conflits</h3>
-          <todo></todo>
+          <p>
+            Lorsque vous <em>mergez</em> (c’est-à-dire « fusionnez ») deux
+            branches, il est possible que des changements incompatibles aient
+            été <em>commités</em> sur les deux branches. Dans ce cas, Git est
+            incapable de prendre tout seul les changements des deux branches et
+            de les réunir dans une branche.
+          </p>
+          <p>
+            Les conflits sont normaux dans la vie d’un projet Git, ils ne
+            doivent pas vous décourager ou vous faire peur ! Leur résolution
+            nécessite souvent de réfléchir calmement, afin de ne pas perdre le
+            travail effectué sur chacune des deux branches.
+          </p>
+          <p>
+            Si le <em>merge</em> d’une branche cause un conflit, un message
+            comme celui-là sera affiché dans le terminal :
+          </p>
+          <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git merge corrections
+Fusion automatique de cigale-fourmi.txt
+CONFLIT (contenu) : Conflit de fusion dans cigale-fourmi.txt
+La fusion automatique a échoué ; réglez les conflits et validez le résultat.</code></pre>
+          <p>
+            Dans cette situation, la première chose est de déterminer quels
+            fichiers contiennent un conflit.
+          </p>
+          <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git status
+Sur la branche main
+Vous avez des chemins non fusionnés.
+  (réglez les conflits puis lancez "git commit")
+  (utilisez "git merge --abort" pour annuler la fusion)
+
+Chemins non fusionnés :
+  (utilisez "git add &lt;fichier>..." pour marquer comme résolu)
+    <span class="red">modifié des deux côtés :  cigale-fourmi.txt</span>
+
+aucune modification n'a été ajoutée à la validation
+(utilisez "git add" ou "git commit -a")</code></pre>
+          <p>
+            Plusieurs informations importantes sont affichées sur cet écran :
+          </p>
+          <ul>
+            <li>
+              Nous sommes sur la branche « main » (où nous souhaitons
+              intégrer la branche « corrections », comme l’indique notre
+              commande <code>git merge corrections</code>).
+            </li>
+            <li>
+              Nous pouvons annuler cette fusion avec
+              <code>git merge --abort</code> : cela remettrait le dépôt et
+              l’arbre de travail à leur état avant la tentative de fusion.
+            </li>
+            <li>
+              Nous avons un fichier non fusionné, c’est-à-dire qui contient
+              un conflit : « cigale-fourmi.txt ».
+            </li>
+            <li>
+              Une fois un conflit résolu, nous pourrons ajouter le fichier
+              correspondant dans l’index avec <code>git add</code>. Pour
+              l’instant, l’index est vide.
+            </li>
+            <li>
+              Une fois tous les conflits résolus et ajoutés dans l’index,
+              nous pourrons terminer la fusion avec <code>git commit</code>.
+            </li>
+          </ul>
+          <p>
+            Regardons ce qui a été fait les deux branches :
+          </p>
+          <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git log --oneline --date-order --graph --all --decorate
+* <span class="yellow">e51aeac (<span class="green">corrections</span>)</span> Utilisation de tirets pour le dialogue
+| * <span class="yellow">df464f0 (<span class="blue">HEAD</span> -> <span class="green">main</span>)</span> Utilisation du français moderne
+|/  
+* <span class="yellow">0dd646e</span> Ajout de la cigale et la fourmi</code></pre>
+          <p>
+            Sur « main », un <em>commit</em> a changé la fable en français
+            moderne. Sur « corrections », on a utilisé des tirets pour le
+            dialogue. Ce sont ces deux commits qui ont causé le problème.
+            Regardons donc le contenu du fichier :
+          </p>
+          <figure class="fichier">
+            <figcaption><code>cigale-fourmi.txt</code></figcaption>
+            <pre>[…]
+La fourmi n’est pas prêteuse;
+C’est là son moindre défaut:
+<span class="purple">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
+Que faisiez-vous au temps chaud?
+Dit-elle à cette emprunteuse.—
+Nuit et jour à tout venant
+Je chantais, ne vous déplaise.—
+Vous chantiez! j’en suis fort aise.
+<span class="purple">||||||| 0dd646e</span>
+Que faisiez-vous au temps chaud?
+Dit-elle à cette emprunteuse.—
+Nuit et jour à tout venant
+Je chantois, ne vous déplaise.—
+Vous chantiez! j’en suis fort aise.
+<span class="purple">=======</span>
+-Que faisiez-vous au temps chaud?
+Dit-elle à cette emprunteuse.
+-Nuit et jour à tout venant
+Je chantois, ne vous déplaise.
+-Vous chantiez! j’en suis fort aise.
+<span class="purple">>>>>>>> corrections</span>
+Hé bien! dansez maintenant.</pre>
+          </figure>
+          <p>
+            On voit que la même partie est présente trois fois :
+          </p>
+          <ul>
+            <li>
+              La première partie correspond à « HEAD », c’est-à-dire à la
+              branche actuelle, c’est-à-dire à « main ». Elle contient
+              l’utilisation du français moderne (« je chantais », et pas « je
+              chantois ».
+            </li>
+            <li>
+              La deuxième partie correspond à « 0dd646e », c’est-à-dire le
+              commit avant que les deux branches ne divergent. On a encore le
+              vieux français et les tirets en fin de ligne.
+            </li>
+            <li>
+              La troisième partie correspond à « corrections ». Elle contient
+              les tirets au début des lignes pour les dialogues.
+            </li>
+          </ul>
+          <p>
+            Notre but va donc être d’intégrer les changements des deux branches
+            en même temps sur ce passage : le français moderne et les tirets au
+            début des lignes. Après réflexion, nous arrivons à la solution
+            suivante :
+          </p>
+          <figure class="fichier">
+            <figcaption><code>cigale-fourmi.txt</code></figcaption>
+            <pre>[…]
+La fourmi n’est pas prêteuse;
+C’est là son moindre défaut:
+-Que faisiez-vous au temps chaud?
+Dit-elle à cette emprunteuse.
+-Nuit et jour à tout venant
+Je chantais, ne vous déplaise.
+-Vous chantiez! j’en suis fort aise.
+Hé bien! dansez maintenant.</pre>
+          </figure>
+          <p>
+            Parfait ! Maintenant que le conflit est résolu, nous allons pouvoir
+            l’ajouter à l’index et effectuer le commit.
+          </p>
+          <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git add cigale-fourmi.txt
+<span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git status
+Sur la branche main
+Tous les conflits sont réglés mais la fusion n'est pas terminée.
+  (utilisez "git commit" pour terminer la fusion)
+
+Modifications qui seront validées :
+    <span class="yellow">modifié :         cigale-fourmi.txt</span>
+<span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git commit
+[main d8e7a67] Merge branch 'corrections'
+<span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git status
+Sur la branche main
+rien à valider, la copie de travail est propre
+<span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git log --oneline --date-order --graph --all --decorate
+*   <span class="yellow">d8e7a67 (<span class="blue">HEAD</span> -> <span class="green">main</span>)</span> Merge branch 'corrections'
+|\  
+| * <span class="yellow">e51aeac (<span class="green">corrections</span>)</span> Utilisation de tirets pour le dialogue
+* | <span class="yellow">df464f0</span> Utilisation du français moderne
+|/  
+* <span class="yellow">0dd646e</span> Ajout de la cigale et la fourmi</code></pre>
+          <p>
+            Notre conflit est résolu ! La branche « main » contient maintenant
+            tous les commits de la branche « corrections », nous pouvons donc
+            supprimer la branche « corrections ».
+          </p>
         </section>
 
         <section id="integration">

@@ -115,27 +115,27 @@ pre code {
   padding: 0;
 }
 
-code .green {
+.green {
   color: #8f8;
 }
 
-code .red {
+.red {
   color: #f44;
 }
 
-code .blue {
+.blue {
   color: #66f;
 }
 
-code .purple {
+.purple {
   color: #a6a;
 }
 
-code .yellow {
+.yellow {
   color: #ff6;
 }
 
-code .gray {
+.gray {
   color: #888;
 }
 
