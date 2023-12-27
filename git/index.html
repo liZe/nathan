@@ -733,18 +733,18 @@ avant même d’avoir pensé à se retenir.</pre>
 
           <h4>Installation</h4>
           <p>
-            Avant une première utilisation de Git, il est nécessaire de
-            l’installer. La procédure d’installation varie selon le système
-            système d’exploitation, toutes les informations nécessaires sont
-            disponibles sur
+            <strong>Avant une première utilisation de Git, il est nécessaire de
+            l’installer.</strong> La procédure d’installation varie selon le
+            système système d’exploitation, toutes les informations nécessaires
+            sont disponibles sur
             <a href="https://git-scm.com/downloads">le site de Git</a>.
           </p>
           <p>
-            Sous Linux ou macOS, Git est peut-être déjà installé. Il est
-            possible de tester en tapant <code>git version</code> dans un
-            terminal, puis en appuyant sur la touche <kbd>Entrée</kbd> : si le
-            numéro de version apparaît, Git est déjà là, il n’y a rien d’autre
-            à faire !
+            <strong>Sous Linux ou macOS, Git est peut-être déjà
+            installé.</strong> Il est possible de tester en tapant
+            <code>git version</code> dans un terminal, puis en appuyant sur la
+            touche <kbd>Entrée</kbd> : si le numéro de version apparaît, Git
+            est déjà là, il n’y a rien d’autre à faire !
           </p>
           <p>
             Dans tous les autres cas, voici les instructions à suivre pour avoir
@@ -780,7 +780,7 @@ avant même d’avoir pensé à se retenir.</pre>
 
           <h4>Utilisation</h4>
           <p>
-            Pour ce module, nous allons utiliser <strong>le terminal</strong>
+            <strong>Pour ce module, nous allons utiliser le terminal</strong>
             pour lancer les commandes Git. Vous pouvez ouvrir un terminal :
           </p>
           <ul>
@@ -806,10 +806,11 @@ avant même d’avoir pensé à se retenir.</pre>
             </li>
           </ul>
           <p>
-            Si vous n’avez jamais utilisé ces commandes, nous vous conseillons
-            de vous familiariser avec elles dans un terminal avant de lancer
-            vos premières commandes Git. De nombreuses ressources sont
-            disponibles sur Internet pour en apprendre plus à leur sujet.
+            <strong>Si vous n’avez jamais utilisé ces commandes, nous vous
+            conseillons de vous familiariser avec elles</strong> dans un
+            terminal avant de lancer vos premières commandes Git. De nombreuses
+            ressources sont disponibles sur Internet pour en apprendre plus à
+            leur sujet.
           </p>
           <p>
             Évidemment, il est possible de vérifier la structure de vos
@@ -831,11 +832,11 @@ Administratif  Cours  Secrets
 <span class="green">alice@laptop</span>:<span class="blue">~/Docs/Info</span>$</code></pre>
           </figure>
           <p>
-            L’autre outil que nous utiliserons pour ce module est
-            <strong>un éditeur de texte</strong>. Avec lui, nous pouvons créer
-            fichiers contenant du texte brut, c’est à dire sans formatage, à
-            l’inverse de ce que proposent des traitements de texte comme
-            Microsoft Word ou LibreOffice.
+            <strong>L’autre outil que nous utiliserons pour ce module est un
+            éditeur de texte.</strong> Avec lui, nous pouvons créer fichiers
+            contenant du texte brut, c’est à dire sans formatage, à l’inverse
+            de ce que proposent des traitements de texte comme Microsoft Word
+            ou LibreOffice.
           </p>
           <p>
             Si vous avez l’habitude d’écrire du code, vous avez sans doute déjà
@@ -844,11 +845,11 @@ Administratif  Cours  Secrets
             brut. Le choix est une histoire de goût personnel !
           </p>
           <p>
-            Si vous n’avez jamais utilisé d’éditeur de texte, nous vous
+            <strong>Si vous n’avez jamais utilisé d’éditeur de texte, nous vous
             conseillons pour ce module d’en utiliser un déjà installé sur votre
-            système. Ces programmes vous paraîtront sans doute trop simples
-            pour écrire du code à l’avenir, mais ils sont largement suffisants
-            pour les exercices de cette formation :
+            système.</strong> Ces programmes vous paraîtront sans doute trop
+            simples pour écrire du code à l’avenir, mais ils sont largement
+            suffisants pour les exercices de cette formation :
           </p>
           <ul>
             <li>
@@ -868,8 +869,8 @@ Administratif  Cours  Secrets
         <section id="configuration">
           <h3>Configuration générale, configuration de dépôts</h3>
           <p>
-            Avec Git, il est possible de configurer certaines options de vos
-            dépôts. Il est également possible de définir une configuration
+            <strong>Avec Git, il est possible de configurer certaines options de vos
+            dépôts.</strong> Il est également possible de définir une configuration
             globale qui sera prise en compte avec tous les dépôts, si ces
             options ne sont pas définies dans le dépôt.
           </p>
@@ -881,17 +882,22 @@ Administratif  Cours  Secrets
           <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git config user.email "alice@wonderland.org"
 <span class="green">alice@laptop</span>:<span class="blue">~</span>$ git config user.name "Alice Liddell"</code></pre>
           <p>
+            <strong>Mettez bien votre nom et votre adresse email !</strong>
+            Vous ne vous appelez sans doute pas « Alice Liddell ».
+          </p>
+          <p>
             Lorsque ces commandes sont effectuées en dehors d’un dépôt, elles
             configurent Git au niveau de votre système : tous les dépôts que
             vous créerez utiliseront ces valeurs par défaut.
           </p>
           <p>
-            Si vous souhaitez configurer un dépôt en particulier, vous pouvez
-            vous rendre dans l’arbre de travail de votre dépôt et effectuer les
-            mêmes commandes. Si vous travaillez par exemple sur un dépôt
-            « star-wars » où vous souhaitez faire vos <em>commits</em> sous le
-            nom de « Princesse Leia », vous pouvez modifier votre configuration
-            uniquement pour ce dépôt :
+            <strong>Si vous souhaitez configurer un dépôt en
+            particulier,</strong> vous pouvez vous rendre dans l’arbre de
+            travail de votre dépôt et effectuer les mêmes commandes. Si vous
+            travaillez par exemple sur un dépôt « star-wars » où vous souhaitez
+            faire vos <em>commits</em> sous le nom de « Princesse Leia » à la
+            place de « Alice Liddell », vous pouvez modifier votre
+            configuration uniquement pour ce dépôt :
           </p>
           <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ cd star-wars
 <span class="green">alice@laptop</span>:<span class="blue">~/star-wars</span>$ git config user.email "leia@republique.org"
@@ -907,17 +913,17 @@ Administratif  Cours  Secrets
         <section id="commandes">
           <h3>Commandes principales</h3>
           <p>
-            Les commandes principales de Git sont présentées ici de manière
-            succincte, pour les cas d’usage les plus courants. Certaines
+            <strong>Les commandes principales de Git sont présentées ici de manière
+            succincte,</strong> pour les cas d’usage les plus courants. Certaines
             explications sont parfois simplifiées. Il existe beaucoup d’autres
             commandes et beaucoup d’autres options pour ces commandes.
           </p>
           <p>
             Il est possible de lancer la commande <code>git help</code> dans un
             terminal pour en savoir plus sur les commandes communes, ou pour
-            connaître de manière exhaustive les options d’une commande. Toutes
+            connaître de manière exhaustive les options d’une commande. <strong>Toutes
             les informations sont également disponibles dans
-            <a href="https://git-scm.com/docs">la documentation de Git en ligne</a>.
+            <a href="https://git-scm.com/docs">la documentation de Git en ligne</a>.</strong>
           </p>
 
           <h4>Créer et partager des dépôts</h4>
@@ -1268,23 +1274,31 @@ M	paragraphe2.txt</code></pre>
 
         <section id="vocabulaire">
           <h3>Vocabulaire et anatomie d’un dépôt Git</h3>
-          <todo></todo>
+          <p>
+            <todo>Présentation d’un dépôt</todo>
+          </p>
+          <todo>Image d’un dépôt</todo>
+          <p>
+            <todo>Présentation de l’arbre de travail et de l’index</todo>
+          </p>
+          <todo>Image d’un dépôt</todo>
         </section>
 
         <section id="conflits">
           <h3>Résolution des conflits</h3>
           <p>
-            Lorsque vous <em>mergez</em> (c’est-à-dire « fusionnez ») deux
-            branches, il est possible que des changements incompatibles aient
-            été <em>commités</em> sur les deux branches. Dans ce cas, Git est
+            Lorsque vous fusionnez (on dit aussi « <em>mergez</em> ») deux
+            branches, <strong>il est possible que des changements incompatibles aient
+            été <em>commités</em></strong> sur les deux branches. Dans ce cas, Git est
             incapable de prendre tout seul les changements des deux branches et
             de les réunir dans une branche.
           </p>
           <p>
-            Les conflits sont normaux dans la vie d’un projet Git, ils ne
-            doivent pas vous décourager ou vous faire peur ! Leur résolution
-            nécessite souvent de réfléchir calmement, afin de ne pas perdre le
-            travail effectué sur chacune des deux branches.
+            <strong>Les conflits sont normaux dans la vie d’un projet
+            Git,</strong> ils ne doivent pas vous décourager ou vous faire
+            peur ! Leur résolution nécessite souvent de réfléchir calmement,
+            afin de ne pas perdre le travail effectué sur chacune des deux
+            branches.
           </p>
           <p>
             Si le <em>merge</em> d’une branche cause un conflit, un message
@@ -1295,8 +1309,8 @@ Fusion automatique de cigale-fourmi.txt
 CONFLIT (contenu) : Conflit de fusion dans cigale-fourmi.txt
 La fusion automatique a échoué ; réglez les conflits et validez le résultat.</code></pre>
           <p>
-            Dans cette situation, la première chose est de déterminer quels
-            fichiers contiennent un conflit.
+            Dans cette situation, la première chose est de <strong>déterminer
+            quels fichiers contiennent un conflit.</strong>
           </p>
           <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git status
 Sur la branche main
@@ -1399,10 +1413,10 @@ Hé bien! dansez maintenant.</pre>
             </li>
           </ul>
           <p>
-            Notre but va donc être d’intégrer les changements des deux branches
-            en même temps sur ce passage : le français moderne et les tirets au
-            début des lignes. Après réflexion, nous arrivons à la solution
-            suivante :
+            <strong>Notre but va donc être d’intégrer les changements des deux
+            branches en même temps sur ce passage :</strong> le français
+            moderne et les tirets au début des lignes. Après réflexion, nous
+            arrivons à la solution suivante :
           </p>
           <figure class="fichier">
             <figcaption><code>cigale-fourmi.txt</code></figcaption>
@@ -1417,8 +1431,8 @@ Je chantais, ne vous déplaise.
 Hé bien! dansez maintenant.</pre>
           </figure>
           <p>
-            Parfait ! Maintenant que le conflit est résolu, nous allons pouvoir
-            l’ajouter à l’index et effectuer le commit.
+            Parfait ! Maintenant que le conflit est résolu, <strong>nous allons
+            pouvoir l’ajouter à l’index et effectuer le commit.</strong>
           </p>
           <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git add cigale-fourmi.txt
 <span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git status
@@ -1450,24 +1464,24 @@ rien à valider, la copie de travail est propre
         <section id="integration">
           <h3>Intégration dans d’autres outils</h3>
           <p>
-            Git est un outil que l’on peut utiliser dans un terminal, mais de
-            nombreux logiciels graphiques et plateformes en ligne permettent
-            également d’interagir avec des dépôts Git.
+            Git est un outil que l’on peut utiliser dans un terminal, mais
+            <strong>de nombreux logiciels graphiques et plateformes en ligne
+            permettent également d’interagir avec des dépôts Git.</strong>
           </p>
 
           <h4>Forges logicielles</h4>
           <p>
-            Les <a href="https://fr.wikipedia.org/wiki/Forge_(informatique)">forges
-            logicielles</a> sont des plateformes en ligne permettant de
-            partager du code et de gérer de nombreux aspects de son
+            <strong>Les <a href="https://fr.wikipedia.org/wiki/Forge_(informatique)">forges
+            logicielles</a> sont des plateformes en ligne</strong> permettant
+            de partager du code et de gérer de nombreux aspects de son
             développement : tickets, demandes de fusion, revues de code,
             documentation, intégration et déploiement continus…
           </p>
           <p>
-            La forge la plus populaire est
-            <a href="https://github.com/">GitHub</a>. GitHub permet de créer
-            gratuitement des dépôts publics ou privés, et de suivre en ligne
-            l’avancement du développement.
+            <strong>La forge la plus populaire est
+            <a href="https://github.com/">GitHub</a>.</strong> GitHub permet de
+            créer gratuitement des dépôts publics ou privés, et de suivre en
+            ligne l’avancement du développement.
           </p>
           <p>
             Une fonctionnalité puissante des forges logiciel est de proposer à
@@ -1493,13 +1507,13 @@ rien à valider, la copie de travail est propre
 
           <h4>Éditeurs de texte</h4>
           <p>
-            La plupart des éditeur de texte avancés proposent une intégration
-            de Git, permettant d’effectuer les commandes courantes de Git
-            directement depuis leur interface.
+            <strong>La plupart des éditeur de texte avancés proposent une
+            intégration de Git,</strong> permettant d’effectuer les commandes
+            courantes de Git directement depuis leur interface.
           </p>
           <p>
-            C’est par exemple le cas de
-            <a href="https://code.visualstudio.com/">Visual Studio Code</a>
+            <strong>C’est par exemple le cas de
+            <a href="https://code.visualstudio.com/">Visual Studio Code</a></strong>
             qui offre
             <a href="https://code.visualstudio.com/docs/sourcecontrol/overview">une
             palette très large de fonctionnalités</a> permettant entre autres
