@@ -6,22 +6,6 @@
   line-height: 1.2;
 }
 
-@media screen {
-  html {
-    background: #eaeaea;
-    padding: 4em;
-  }
-
-  body {
-    background: white;
-    border-radius: 0.2em;
-    box-shadow: 0 0 1em #1d1b1b33;
-    box-sizing: border-box;
-    padding: 2cm 2.5cm;
-    max-width: 21cm;
-    margin: auto;
-  }
-}
 
 /* Titres */
 
@@ -35,6 +19,7 @@ h3 {
 h1 {
   font-size: 20pt;
   margin: 2rem 0;
+  string-set: title contents;
   text-align: center;
 }
 
@@ -60,6 +45,7 @@ h5 {
   font-size: 12pt;
   margin: 1rem 0 0;
 }
+
 
 /* Tags communs */
 
@@ -190,6 +176,7 @@ todo:empty::after {
   content: none;
 }
 
+
 /* Identifiants spécifiques */
 
 #sommaire a {
@@ -250,6 +237,7 @@ section:is(#decouverte, #atelier) h2::before {
   counter-increment: ressource;
   display: block;
 }
+
 
 /* Classes spécifiques */
 
@@ -333,10 +321,44 @@ figure.fichier pre {
   color: inherit;
 }
 
+
 /* Print */
 
 @media print {
+  @page {
+    font-family: Times New Roman;
+    font-size: 10pt;
+
+    @bottom-left {
+      content: string(title);
+    }
+
+    @bottom-right {
+      content: counter(page);
+    }
+  }
+
   figure {
     font-size: 0.9em;
+  }
+}
+
+
+/* Screen */
+
+@media screen {
+  html {
+    background: #eaeaea;
+    padding: 4em;
+  }
+
+  body {
+    background: white;
+    border-radius: 0.2em;
+    box-shadow: 0 0 1em #1d1b1b33;
+    box-sizing: border-box;
+    padding: 2cm 2.5cm;
+    max-width: 21cm;
+    margin: auto;
   }
 }
