@@ -101,35 +101,38 @@ pre code {
   padding: 0;
 }
 
-.green {
-  color: #8f8;
-}
-
-.red {
-  color: #f44;
-}
-
-.blue {
-  color: #66f;
-}
-
-.purple {
-  color: #a6a;
-}
-
-.yellow {
-  color: #ff6;
-}
-
-.gray {
-  color: #888;
-}
-
 figure {
+  break-inside: avoid;
   margin: 1em;
 }
 
-/* Tableaux */
+figure.console figcaption,
+figure.fichier figcaption {
+  background: #efecec;
+  border-radius: 0.2em 0.2em 0 0;
+  box-shadow: 0 -0.5em 0.5em -0.5em #39323244 inset;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 0.8em;
+  padding: 0.5em 1em;
+}
+
+figure.console pre,
+figure.fichier pre {
+  border-top-left-radius: 0;
+  margin: 0;
+}
+
+figure.fichier figcaption code {
+  background: none;
+  color: inherit;
+}
+
+figure.fichier pre {
+  background: #efecec88;
+  box-shadow: none;
+  color: inherit;
+}
 
 table {
   border-collapse: collapse;
@@ -150,6 +153,7 @@ th {
   border: 1px solid;
   padding: 0.2em 0.5em;
 }
+
 
 /* TODO */
 
@@ -239,6 +243,33 @@ section:is(#decouverte, #atelier) h2::before {
 }
 
 
+/* Couleurs */
+
+.green {
+  color: #8f8;
+}
+
+.red {
+  color: #f44;
+}
+
+.blue {
+  color: #66f;
+}
+
+.purple {
+  color: #a6a;
+}
+
+.yellow {
+  color: #ff6;
+}
+
+.gray {
+  color: #888;
+}
+
+
 /* Classes spécifiques */
 
 .time {
@@ -288,38 +319,6 @@ section:is(#decouverte, #atelier) h2::before {
 .annexes h4::before {
   content: "Annexe " counter(annexe) " : ";
   counter-increment: annexe;
-}
-
-figure {
-  break-inside: avoid;
-}
-
-figure.console figcaption,
-figure.fichier figcaption {
-  background: #efecec;
-  border-radius: 0.2em 0.2em 0 0;
-  box-shadow: 0 -0.5em 0.5em -0.5em #39323244 inset;
-  display: inline-block;
-  font-family: Arial;
-  font-size: 0.8em;
-  padding: 0.5em 1em;
-}
-
-figure.console pre,
-figure.fichier pre {
-  border-top-left-radius: 0;
-  margin: 0;
-}
-
-figure.fichier figcaption code {
-  background: none;
-  color: inherit;
-}
-
-figure.fichier pre {
-  background: #efecec88;
-  box-shadow: none;
-  color: inherit;
 }
 
 
