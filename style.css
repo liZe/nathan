@@ -251,6 +251,7 @@ section:is(#decouverte, #atelier) h2::before {
 
 .questions ol {
   font-family: Arial;
+  font-size: 11pt;
   font-weight: bold;
   list-style: none;
 }
