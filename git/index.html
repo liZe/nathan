@@ -1275,13 +1275,52 @@ M	paragraphe2.txt</code></pre>
         <section id="vocabulaire">
           <h3>Vocabulaire et anatomie d’un dépôt Git</h3>
           <p>
-            <todo>Présentation d’un dépôt</todo>
+            Un dépôt Git sert à stocker un historique de versions. Ces
+            différentes versions sont stockées sous forme d’un arbre
+            de <strong><em>commits</em></strong>, qui ont chacun un numéro et
+            un ou plusieurs parents.
+          </p>
+          <p>
+            À partir d’un <em>commit</em>, il est possible de faire partir
+            plusieurs suites de <em>commits</em> grâce aux
+            <strong>branches</strong>. Le nom de branche est attaché au
+            dernier <em>commit</em> de la branche, et est mis à jour à chaque
+            nouveau <em>commit</em> sur cette branche.
+          </p>
+          <p>
+            On peut donner un nom spécifique à un <em>commit</em> grâce
+            aux <strong>étiquettes</strong>. Une étiquette a pour vocation de
+            rester toujours attachée au même <em>commit</em>.
           </p>
           <todo>Image d’un dépôt</todo>
           <p>
-            <todo>Présentation de l’arbre de travail et de l’index</todo>
+            Les commandes de Git permettent d’effectuer différentes opérations
+            à différents niveaux :
           </p>
-          <todo>Image d’un dépôt</todo>
+          <ul>
+            <li>
+              <strong>L’arbre de travail</strong> correspond aux dossiers et
+              aux fichiers que l’on peut éditer sur son ordinateur.
+            </li>
+            <li>
+              <strong>Le dépôt local</strong> est un historique de versions
+              structuré en arbre de <em>commits</em>. Il est stocké dans un
+              dossier caché nommé « .git » dont le contenu ne doit pas être
+              modifié directement.
+            </li>
+            <li>
+              <strong>L’index</strong> est une liste temporaire de
+              modifications que l’on prend de l’arbre de travail pour les
+              mettre dans le dépôt local sous forme de <em>commits</em>.
+            </li>
+            <li>
+              <strong>Le dépôt distant</strong> est un dépôt stocké hors de
+              l’arbre de travail, généralement sur un serveur sur internet pour
+              être partagé.
+            </li>
+          </ul>
+          <todo>Image des commandes — clone, fetch, pull, push, branch, switch,
+          merge, tag, add, commit, checkout, restore</todo>
         </section>
 
         <section id="conflits">
