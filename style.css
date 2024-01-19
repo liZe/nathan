@@ -219,6 +219,24 @@ section:is(#decouverte, #atelier) h2::before {
   counter-increment: partie;
 }
 
+#quiz > ul {
+  counter-reset: question;
+  list-style: none;
+  padding-left: 0;
+}
+
+#quiz > ul > li::before {
+  content: "Question " counter(question);
+  counter-increment: question;
+  display: block;
+  font-weight: bold;
+  margin-top: 2em;
+}
+
+#quiz ul ul {
+  list-style: "☐ ";
+}
+
 #decouverte {
   counter-reset: etape;
 }

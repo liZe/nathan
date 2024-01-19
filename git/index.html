@@ -31,7 +31,7 @@
       <h2>Sommaire du module</h2>
       <ul>
         <li><a href="#video">Vidéo de présentation du module</a></li>
-        <li><a href="#quiz-amont">Quiz de positionnement en amont</a></li>
+        <li><a href="#quiz">Quiz</a></li>
         <li>
           <a href="#decouverte">Découverte (5h)</a>
           <ul>
@@ -55,7 +55,6 @@
             <li><a href="#integration">Intégration dans d’autres outils</a></li>
           </ul>
         </li>
-        <li><a href="#quiz-aval">Quiz de positionnement en aval</a></li>
       </ul>
     </aside>
 
@@ -112,9 +111,139 @@
       </section>
 
 
-      <section id="quiz-amont">
-        <h2>Quiz de positionnement en amont</h2>
-        <todo></todo>
+      <section id="quiz">
+        <h2>Quiz</h2>
+        <ul>
+          <li>
+            <p>
+              Quelle commande effectue-t-on généralement après
+              <code>git add</code> ?
+            </p>
+            <ul>
+              <li><code>git push</code></li>
+              <li><code>git rm</code></li>
+              <li><code>git version</code></li>
+              <li><code>git commit</code></li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quelles sont les principales zones de travail lorsque l’on
+              travaille sur un dépôt Git en local ?
+            </p>
+            <ul>
+              <li>les fichiers, les dossiers et les versions</li>
+              <li>le <em>store</em> et le <em>hub</em></li>
+              <li>l’arbre de travail, l’index et le dépôt</li>
+              <li>les <em>commits</em>, les versions et les dépôts</li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Comment faire un <em>commit</em> qui annule les changements
+              effectués dans un autre <em>commit</em> ?
+            </p>
+            <ul>
+              <li><code>git revert</code></li>
+              <li><code>git reset</code></li>
+              <li><code>git checkout</code></li>
+              <li><code>git cancel</code></li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Que se passe-t-il lorsque l’on fusionne deux branches ?
+            </p>
+            <ul>
+              <li>un <em>commit</em> est créé avec les deux branches comme parents</li>
+              <li>une étiquette rassemble les <em>commits</em> des deux branches</li>
+              <li>tous les <em>commits</em> des deux branches sont fusionnés en un seul</li>
+              <li>un <em>checkout</em> est effectué pour mettre à jour le dépôt</li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Dans un dépôt Git, quel élément utilise-t-on pour stocker un
+              numéro de version d’un logiciel, comme « v1.0 » par exemple ?
+            </p>
+            <ul>
+              <li>une branche</li>
+              <li>une étiquette</li>
+              <li>un <em>commit</em></li>
+              <li>un <em>fork</em></li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Où la commande <code>git push</code> envoie-t-elle les
+              informations du dépôt local ?
+            </p>
+            <ul>
+              <li>sur un espace de travail</li>
+              <li>sur un dépôt distant</li>
+              <li>sur un serveur HTML</li>
+              <li>sur un <em>tag</em> public</li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quand peuvent apparaître des conflits en travaillant avec Git ?
+            </p>
+            <ul>
+              <li>lorsque l’on édite des étiquettes</li>
+              <li>lorsque l’on crée un <em>commit</em> distant</li>
+              <li>lorsque l’on <em>forke</em> un dépôt</li>
+              <li>lorsque l’on fusionne des branches</li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Comment peut-on remettre les fichiers de notre arbre de travail à
+              l’état dans lequel ils étaient dans un <em>commit</em>
+              spécifique ?
+            </p>
+            <ul>
+              <li>on ne peut pas</li>
+              <li>avec <code>git checkout</code></li>
+              <li>avec <code>git read</code> et <code>git apply</code></li>
+              <li>avec <code>git diff</code></li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Comment peut-on modifier les informations d’un <em>commit</em> en
+              gardant son numéro ?
+            </p>
+            <ul>
+              <li>on ne peut pas</li>
+              <li>avec <code>git edit</code></li>
+              <li>avec <code>git change</code></li>
+              <li>avec <code>git reset</code></li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quelle commande peut-on utiliser pour voir l’historique d’un
+              dépôt ?
+            </p>
+            <ul>
+              <li><code>git log</code></li>
+              <li><code>git history</code></li>
+              <li><code>git status</code></li>
+              <li><code>git view</code></li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+        </ul>
       </section>
 
 
@@ -1605,11 +1734,6 @@ rien à valider, la copie de travail est propre
             (avec <a href="https://magit.vc/">Magit</a>).
           </p>
         </section>
-      </section>
-
-      <section>
-        <h2 id="quiz-aval">Quiz de positionnement en aval</h2>
-        <todo></todo>
       </section>
     </main>
   </body>
