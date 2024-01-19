@@ -272,8 +272,9 @@ section:is(#decouverte, #atelier) h2::before {
 
 /* Classes spécifiques */
 
-.time {
-  opacity: 0.5;
+.introduction {
+  font-style: italic;
+  opacity: 0.65;
 }
 
 .questions {
