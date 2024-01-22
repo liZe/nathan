@@ -106,8 +106,13 @@ figure {
   margin: 1em;
 }
 
-figure.console figcaption,
-figure.fichier figcaption {
+figure img {
+  background-color: #00000008;
+  border-radius: 0.2em;
+  display: block;
+}
+
+figure figcaption {
   background: #efecec;
   border-radius: 0.2em 0.2em 0 0;
   box-shadow: 0 -0.5em 0.5em -0.5em #39323244 inset;
@@ -221,6 +226,7 @@ section:is(#decouverte, #atelier) h2::before {
 
 #quiz > ul {
   counter-reset: question;
+  line-height: 1.6;
   list-style: none;
   padding-left: 0;
 }

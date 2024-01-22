@@ -1466,28 +1466,46 @@ M	paragraphe2.txt</code></pre>
 
         <section id="vocabulaire">
           <h3>Vocabulaire et anatomie d’un dépôt Git</h3>
+
+          <h4>Dépôt</h4>
           <p>
             Un dépôt Git sert à stocker un historique de versions. Ces
             différentes versions sont stockées sous forme d’un arbre
             de <strong><em>commits</em></strong>, qui ont chacun un numéro et
-            un ou plusieurs parents. Le numéro d’un <em>commit</em> dépend des
-            fichiers stockés, des métadonnées et des parents : il est donc
-            impossible de changer le contenu d’un <em>commit</em> sans en
-            changer le numéro.
+            un ou plusieurs parents. Le numéro d’un <em>commit</em> est
+            représenté sous forme d’un nombre de 40 chiffres hexadécimaux
+            (chiffres de 0 à 9 et lettres entre a et f), souvent abrégé aux 7
+            premiers chiffres. Il dépend des fichiers stockés, des métadonnées
+            et des parents : il est donc impossible de changer le contenu
+            d’un <em>commit</em> sans en changer le numéro.
           </p>
           <p>
             À partir d’un <em>commit</em>, il est possible de faire partir
             plusieurs suites de <em>commits</em> grâce aux
             <strong>branches</strong>. Le nom de branche est attaché au
             dernier <em>commit</em> de la branche, et est mis à jour à chaque
-            nouveau <em>commit</em> sur cette branche.
+            nouveau <em>commit</em> sur cette branche. Les branches sont
+            souvent utilisées pour développer des fonctionnalités en parallèle.
+            La branche principale s’appelle généralement « main » ou
+            « master ». Lorsque l’on veut intégrer une branche dans une autre,
+            par exemple intégrer une nouvelle fonctionnalité dans la branche
+            principale, <strong>on fusionne (« <em>merge</em> » en anglais) les
+            branches</strong> : un <em>commit</em> est alors créé avec deux
+            parents, permettant de joindre les deux branches.
           </p>
           <p>
             On peut donner un nom spécifique à un <em>commit</em> grâce
             aux <strong>étiquettes</strong>. Une étiquette a pour vocation de
-            rester toujours attachée au même <em>commit</em>.
+            rester toujours attachée au même <em>commit</em>. Elles sont
+            souvent utilisées pour donner des noms aux versions publiques
+            des logiciels (« v1.0 » pour la version 1.0, par exemple).
           </p>
-          <todo>Image d’un dépôt</todo>
+          <figure>
+            <figcaption>Exemple de dépôt</figcaption>
+            <img src="depot.svg" alt="Graphique représentant les commits, branches et étiquettes d’un dépôt Git">
+          </figure>
+
+          <h4>Niveaux et commandes associées</h4>
           <p>
             Les commandes de Git permettent d’effectuer différentes opérations
             à différents niveaux :
@@ -1514,8 +1532,15 @@ M	paragraphe2.txt</code></pre>
               être partagé.
             </li>
           </ul>
-          <todo>Image des commandes — clone, fetch, pull, push, branch, switch,
-          merge, tag, add, commit, checkout, restore</todo>
+          <p>
+            Les différentes commandes de Git effectuent des opérations sur ces
+            différents éléments. Voici un récapitulatif pour certaines
+            commandes, lorsqu’elles sont effectuées sans option particulière :
+          </p>
+          <figure>
+            <figcaption>Niveaux et commandes associées</figcaption>
+            <img src="commandes.svg" alt="Graphique représentant les commandes de Git et les niveaux associés">
+          </figure>
         </section>
 
         <section id="conflits">
