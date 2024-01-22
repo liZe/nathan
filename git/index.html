@@ -445,8 +445,8 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
                 effectuées ?
               </li>
               <li>
-                Quelles sont les derniers <em>commits</em> concernant la
-                recette de crumble au citron ?
+                Quels sont les derniers <em>commits</em> concernant la recette
+                de crumble au citron ?
               </li>
               <li>
                 Vous souhaitez voir le contenu tel qu’il était lors de la
@@ -478,14 +478,14 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
               </li>
               <li>
                 Entre la première et la seconde version, une modification de la
-                quantité de farine a été faite sur recette du gâteau roulé. Les
+                quantité de farine a été faite sur recette du brownie. Les
                 retours des lecteurs sur cette recette ont indiqué que la
                 quantité de farine était mieux avant. Faites un <em>commit</em>
                 qui annule ce <em>commit</em>.
               </li>
               <li>
                 Une pâtissière de votre équipe vous indique qu’il vaut mieux
-                cuire la tarte aux pommes à 200°C. Effectuez le changement et
+                cuire le gâteau basque à 200°C. Effectuez le changement et
                 faites un nouveau <em>commit</em>.
               </li>
               <li>
@@ -496,7 +496,25 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
           </section>
           <section class="annexes">
             <h4 id="annexe-2-1">Résultat attendu après la publication</h4>
-            <todo></todo>
+            <figure class="console">
+              <figcaption>Historique</figcaption>
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/recettes</span>$ git log --oneline
+<span class="jaune">xxxxxxx (<span class="bleu">HEAD</span> -> <span class="vert">main</span>, tag: version-3)</span> Augmentation de la température…
+<span class="jaune">xxxxxxx</span> Revert "Réduction de la quantité de farine pour le brownie"
+<span class="jaune">xxxxxxx (origin/main)</span> Augmentation du nombre d’œufs pour le gâteau basque
+<span class="jaune">xxxxxxx (tag: version-2)</span> Utilisation de citrons jaunes pour le crumble
+<span class="jaune">xxxxxxx</span> Ajout de la recette de tarte Tatin
+<span class="jaune">xxxxxxx</span> Réduction de la quantité de farine pour le brownie
+<span class="jaune">xxxxxxx</span> Réduction de la quantité de sucre pour le crumble
+<span class="jaune">xxxxxxx (tag: version-1)</span> Ajout de la recette de gâteau basque
+<span class="jaune">xxxxxxx</span> Précision sur la taille de l’assiette pour le pain perdu
+<span class="jaune">xxxxxxx</span> Corrections pour les biscuits et la crème de la charlotte
+<span class="jaune">xxxxxxx</span> Ajout de la recette de brownie
+<span class="jaune">xxxxxxx</span> Ajout de la recette de pain perdu
+<span class="jaune">xxxxxxx</span> Ajout de la recette de crumble
+<span class="jaune">xxxxxxx</span> Ajout de la recette de charlotte
+<span class="jaune">xxxxxxx</span> Ajout d’une licence et d’un fichier README</code></pre>
+            </figure>
           </section>
         </section>
 
