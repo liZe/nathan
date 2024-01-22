@@ -981,9 +981,35 @@ avant même d’avoir pensé à se retenir.</pre>
             Évidemment, il est possible de vérifier la structure de vos
             dossiers et fichiers avec votre explorateur de fichiers habituel.
           </p>
-          <figure>
+          <figure class="console">
             <figcaption>Exemple de commandes sous Windows</figcaption>
-            <todo>Terminal sous Windows</todo>
+            <pre><code><span class="bleu">C:\Users\Alice</span><span class="vert">></span>dir  <span class="gris"># (lister les fichiers et dossiers)</span>
+
+22/01/20XX  03:28    &lt;DIR>          .
+30/01/20XX  04:58    &lt;DIR>          ..
+30/01/20XX  04:58    &lt;DIR>          Desktop
+22/01/20XX  02:12    &lt;DIR>          Documents
+30/01/20XX  05:17    &lt;DIR>          Downloads
+30/01/20XX  05:15    &lt;DIR>          Pictures
+               0 fichier(s)                0 octets
+               6 Rép(s)  78 027 288 576 octets libres
+
+<span class="bleu">C:\Users\Alice</span><span class="vert">></span>cd Documents  <span class="gris"># (aller dans le dossier Documents)</span>
+
+<span class="bleu">C:\Users\Alice\Documents</span><span class="vert">></span>dir  <span class="gris"># (lister les fichiers et dossiers)</span>
+
+22/01/20XX  03:37    &lt;DIR>          .
+22/01/20XX  03:28    &lt;DIR>          ..
+               0 fichier(s)                0 octets
+               2 Rép(s)  78 035 505 152 octets libres
+
+<span class="bleu">C:\Users\Alice\Documents</span><span class="vert">></span>mkdir Info  <span class="gris"># (créer un dossier Info)</span>
+
+<span class="bleu">C:\Users\Alice\Documents</span><span class="vert">></span>cd Info  <span class="gris"># (aller dans le dossier Info)</span>
+
+<span class="bleu">C:\Users\Alice\Documents\Info</span><span class="vert">></span>cd..  <span class="gris"># (aller dans le dossier parent)</span>
+
+<span class="bleu">C:\Users\Alice\Documents</span><span class="vert">></span></pre></code>
           </figure>
           <figure class="console">
             <figcaption>Exemple de commandes sous macOS ou Linux</figcaption>
