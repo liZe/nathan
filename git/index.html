@@ -377,20 +377,20 @@
             </p>
             <figure class="console">
               <figcaption>Historique</figcaption>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git log
-<span class="yellow">commit b1619edefaedb0c024efd0678fe763c972184b84 (<span class="blue">HEAD</span> -> <span class="green">master</span>)</span>
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ git log
+<span class="jaune">commit b1619edefaedb0c024efd0678fe763c972184b84 (<span class="bleu">HEAD</span> -> <span class="vert">master</span>)</span>
 Author: Alice Liddell &lt;alice@wonderland.org>
 Date:   Tue Nov 14 14:40:20 2040 +0000
 
     Mise à jour du fichier en français
 
-<span class="yellow">commit 8a7eb387651f7c1fc69cedca5e051fc39a3cf2d9</span>
+<span class="jaune">commit 8a7eb387651f7c1fc69cedca5e051fc39a3cf2d9</span>
 Author: Alice Liddell &lt;alice@wonderland.org>
 Date:   Tue Nov 14 14:40:02 2040 +0000
 
     Ajout du fichier en anglais
 
-<span class="yellow">commit 12891ec485e12796459e11332f93300bc87f1d7e</span>
+<span class="jaune">commit 12891ec485e12796459e11332f93300bc87f1d7e</span>
 Author: Alice Liddell &lt;alice@wonderland.org>
 Date:   Tue Nov 14 14:39:13 2040 +0000
 
@@ -687,13 +687,13 @@ songer comment elle en sortirait.</pre>
             </p>
             <figure class="console">
               <figcaption>Historique</figcaption>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/contes</span>$ git log --oneline --date-order --graph --all --decorate
-*   <span class="yellow">2e7e53f (<span class="blue">HEAD</span> -> <span class="green">main</span>)</span> Merge branch 'lewis-bleu'
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/contes</span>$ git log --oneline --date-order --graph --all --decorate
+*   <span class="jaune">2e7e53f (<span class="bleu">HEAD</span> -> <span class="vert">main</span>)</span> Merge branch 'lewis-bleu'
 |\  
-* | <span class="yellow">a9244b3</span> Ajout du 4e paragraphe
-| * <span class="yellow">d376eb0 (<span class="green">lewis-bleu</span>)</span> Changement de la couleur des yeux du lapin
+* | <span class="jaune">a9244b3</span> Ajout du 4e paragraphe
+| * <span class="jaune">d376eb0 (<span class="vert">lewis-bleu</span>)</span> Changement de la couleur des yeux du lapin
 |/  
-* <span class="yellow">a709fb6</span> Ajout des 3 premiers paragraphes</code></pre>
+* <span class="jaune">a709fb6</span> Ajout des 3 premiers paragraphes</code></pre>
             </figure>
 
             <h4 id="annexe-3-2">Résultat attendu à la fin</h4>
@@ -744,24 +744,24 @@ avant même d’avoir pensé à se retenir.</pre>
             </p>
             <figure class="console">
               <figcaption>Historique</figcaption>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/contes</span>$ git log --oneline --date-order --graph --all --decorate
-*   <span class="yellow">69743d5 (<span class="blue">HEAD</span> -> <span class="green">main</span>)</span> Merge branch 'lewis-chien'
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/contes</span>$ git log --oneline --date-order --graph --all --decorate
+*   <span class="jaune">69743d5 (<span class="bleu">HEAD</span> -> <span class="vert">main</span>)</span> Merge branch 'lewis-chien'
 |\  
-* | <span class="yellow">a75af37</span> Changement du nom Alice en Leia dans le 5e paragraphe
-* |   <span class="yellow">659aad7</span> Merge branch 'caroll-leia'
+* | <span class="jaune">a75af37</span> Changement du nom Alice en Leia dans le 5e paragraphe
+* |   <span class="jaune">659aad7</span> Merge branch 'caroll-leia'
 |\ \  
-| | * <span class="yellow">971188e</span> Changement de la sœur en chien
+| | * <span class="jaune">971188e</span> Changement de la sœur en chien
 | |/  
 |/|   
-* | <span class="yellow">d15cd74</span> Ajout du 5e paragraphe
-| * <span class="yellow">ddd4ab7</span> Changement du nom d’Alice en Leia
+* | <span class="jaune">d15cd74</span> Ajout du 5e paragraphe
+| * <span class="jaune">ddd4ab7</span> Changement du nom d’Alice en Leia
 |/  
-*   <span class="yellow">2e7e53f</span> Merge branch 'lewis-bleu'
+*   <span class="jaune">2e7e53f</span> Merge branch 'lewis-bleu'
 |\  
-* | <span class="yellow">a9244b3</span> Ajout du 4e paragraphe
-| * <span class="yellow">d376eb0</span> Changement de la couleur des yeux du lapin
+* | <span class="jaune">a9244b3</span> Ajout du 4e paragraphe
+| * <span class="jaune">d376eb0</span> Changement de la couleur des yeux du lapin
 |/  
-* <span class="yellow">a709fb6</span> Ajout des 3 premiers paragraphes</code></pre>
+* <span class="jaune">a709fb6</span> Ajout des 3 premiers paragraphes</code></pre>
             </figure>
           </section>
         </section>
@@ -883,7 +883,12 @@ avant même d’avoir pensé à se retenir.</pre>
 
       <section id="atelier">
         <h2>Atelier</h2>
-        <todo></todo>
+        <section class="introduction">
+          <p>Temps estimé : 2h.</p>
+        </section>
+        <section class="sujet">
+          <todo></todo>
+        </section>
       </section>
 
 
@@ -938,8 +943,6 @@ avant même d’avoir pensé à se retenir.</pre>
             Fedora, <code>pacman</code> sous Arch…)
           </p>
 
-          <todo>image d’un terminal</todo>
-
           <h4>Utilisation</h4>
           <p>
             <strong>Pour ce module, nous allons utiliser le terminal</strong>
@@ -971,7 +974,7 @@ avant même d’avoir pensé à se retenir.</pre>
             <strong>Si vous n’avez jamais utilisé ces commandes, nous vous
             conseillons de vous familiariser avec elles</strong> dans un
             terminal avant de lancer vos premières commandes Git. De nombreuses
-            ressources sont disponibles sur Internet pour en apprendre plus à
+            ressources sont disponibles sur internet pour en apprendre plus à
             leur sujet.
           </p>
           <p>
@@ -984,21 +987,22 @@ avant même d’avoir pensé à se retenir.</pre>
           </figure>
           <figure class="console">
             <figcaption>Exemple de commandes sous macOS ou Linux</figcaption>
-            <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ ls  <span class="gray"># (lister les fichiers et dossiers)</span>
+            <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ ls  <span class="gris"># (lister les fichiers et dossiers)</span>
 Docs  Images  Modèles  Musique  Vidéos
-<span class="green">alice@laptop</span>:<span class="blue">~</span>$ cd Docs  <span class="gray"># (aller dans le dossier Docs)</span>
-<span class="green">alice@laptop</span>:<span class="blue">~/Docs</span>$ ls  <span class="gray"># (lister les fichiers et les dossiers)</span>
+<span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ cd Docs  <span class="gris"># (aller dans le dossier Docs)</span>
+<span class="vert">alice@laptop</span>:<span class="bleu">~/Docs</span>$ ls  <span class="gris"># (lister les fichiers et les dossiers)</span>
 Administratif  Cours  Secrets
-<span class="green">alice@laptop</span>:<span class="blue">~/Docs</span>$ mkdir Info  <span class="gray"># (créer un dossier Info)</span>
-<span class="green">alice@laptop</span>:<span class="blue">~/Docs</span>$ cd Info  <span class="gray"># (aller dans le dossier Info)</span>
-<span class="green">alice@laptop</span>:<span class="blue">~/Docs/Info</span>$</code></pre>
+<span class="vert">alice@laptop</span>:<span class="bleu">~/Docs</span>$ mkdir Info  <span class="gris"># (créer un dossier Info)</span>
+<span class="vert">alice@laptop</span>:<span class="bleu">~/Docs</span>$ cd Info  <span class="gris"># (aller dans le dossier Info)</span>
+<span class="vert">alice@laptop</span>:<span class="bleu">~/Docs/Info</span>$ cd ..  <span class="gris"># (aller dans le dossier parent)</span>
+<span class="vert">alice@laptop</span>:<span class="bleu">~/Docs</span>$</code></pre>
           </figure>
           <p>
             <strong>L’autre outil que nous utiliserons pour ce module est un
             éditeur de texte.</strong> Avec lui, nous pouvons créer fichiers
-            contenant du texte brut, c’est à dire sans formatage, à l’inverse
-            de ce que proposent des traitements de texte comme Microsoft Word
-            ou LibreOffice.
+            contenant du texte brut, c’est à dire sans formatage,
+            <strong>à l’inverse de ce que proposent des traitements de texte
+            comme Microsoft Word ou LibreOffice.</strong>
           </p>
           <p>
             Si vous avez l’habitude d’écrire du code, vous avez sans doute déjà
@@ -1041,8 +1045,8 @@ Administratif  Cours  Secrets
             utilisation de Git : votre nom et votre adresse email. Pour cela,
             vous pouvez utiliser la commande <code>git config</code> :
           </p>
-          <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git config user.email "alice@wonderland.org"
-<span class="green">alice@laptop</span>:<span class="blue">~</span>$ git config user.name "Alice Liddell"</code></pre>
+          <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ git config user.email "alice@wonderland.org"
+<span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ git config user.name "Alice Liddell"</code></pre>
           <p>
             <strong>Mettez bien votre nom et votre adresse email !</strong>
             Vous ne vous appelez sans doute pas « Alice Liddell ».
@@ -1061,9 +1065,9 @@ Administratif  Cours  Secrets
             place de « Alice Liddell », vous pouvez modifier votre
             configuration uniquement pour ce dépôt :
           </p>
-          <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ cd star-wars
-<span class="green">alice@laptop</span>:<span class="blue">~/star-wars</span>$ git config user.email "leia@republique.org"
-<span class="green">alice@laptop</span>:<span class="blue">~/star-wars</span>$ git config user.name "Princesse Leia"</code></pre>
+          <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ cd star-wars
+<span class="vert">alice@laptop</span>:<span class="bleu">~/star-wars</span>$ git config user.email "leia@republique.org"
+<span class="vert">alice@laptop</span>:<span class="bleu">~/star-wars</span>$ git config user.name "Princesse Leia"</code></pre>
           <p>
             De nombreuses options peuvent être configurées dans vos dépôts Git.
             Vous trouverez une liste exhaustive dans
@@ -1095,10 +1099,10 @@ Administratif  Cours  Secrets
               <p>
                 Crée un nouveau dépôt vide.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git init depot
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ git init depot
 Dépôt Git vide initialisé dans /home/alice/depot/.git/
-<span class="green">alice@laptop</span>:<span class="blue">~</span>$ cd depot
-<span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git status
+<span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ cd depot
+<span class="vert">alice@laptop</span>:<span class="bleu">~/depot</span>$ git status
 Sur la branche main
 Aucun commit</code></pre>
             </dd>
@@ -1108,11 +1112,11 @@ Aucun commit</code></pre>
               <p>
                 Télécharge un dépôt et le met dans un nouveau dossier.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git clone xxx
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ git clone xxx
 Clonage dans 'xxx'...
 […]
-<span class="green">alice@laptop</span>:<span class="blue">~</span>$ cd xxx
-<span class="green">alice@laptop</span>:<span class="blue">~/xxx</span>$ git log
+<span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ cd xxx
+<span class="vert">alice@laptop</span>:<span class="bleu">~/xxx</span>$ git log
 […]</code></pre>
             </dd>
             <dt><code>fetch</code></dt>
@@ -1125,7 +1129,7 @@ Clonage dans 'xxx'...
                 <em>commits</em>, les nouvelles branches et les nouvelles
                 étiquettes du dépôt distant qui correspond au dépôt local.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git fetch
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot</span>$ git fetch
 […]
 Depuis git://example.com/git/depot
    a04786b93..ee07a8118  main       -> origin/main
@@ -1148,11 +1152,11 @@ Depuis git://example.com/git/depot
                 branche « main », il revient à faire
                 <code>git fetch</code> puis <code>git merge origin/main</code>.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git pull
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot</span>$ git pull
 […]
 Mise à jour a04786b93..ee07a8118
 Fast-forward
-fichier1           |  241 <span class="green">+++++++</span><span class="red">---</span>
+fichier1           |  241 <span class="vert">+++++++</span><span class="rouge">---</span>
 […]</code></pre>
             </dd>
             <dt><code>push</code></dt>
@@ -1165,7 +1169,7 @@ fichier1           |  241 <span class="green">+++++++</span><span class="red">--
                 dépôt distant les <em>commits</em> que l’on a faits sur le
                 dépôt local.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git push
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot</span>$ git push
 Poussée vers git://example.com/git/depot
 […]
 To git://example.com/git/depot
@@ -1181,7 +1185,7 @@ To git://example.com/git/depot
               <p>
                 Affiche l’aide de Git et liste les commandes principales.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git help
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ git help
 usage : git [-v | --version]
 […]
 Ci-dessous les commandes Git habituelles dans diverses situations :
@@ -1192,7 +1196,7 @@ Ci-dessous les commandes Git habituelles dans diverses situations :
               <p>
                 Affiche la version de Git.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git version
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ git version
 git version 2.43.0</code></pre>
             </dd>
             <dt><code>log</code></dt>
@@ -1201,14 +1205,14 @@ git version 2.43.0</code></pre>
                 Affiche un historique des <em>commits</em>, par défaut ceux de la
                 branche actuelle.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git log
-<span class="yellow">commit a75af376edaf0ff80b54d92ed46fba8e997e2ce7 (<span class="blue">HEAD</span> -> <span class="green">master</span>)</span>
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot</span>$ git log
+<span class="jaune">commit a75af376edaf0ff80b54d92ed46fba8e997e2ce7 (<span class="bleu">HEAD</span> -> <span class="vert">master</span>)</span>
 Author: Alice Liddell &lt;alice@wonderland.org>
 Date:   Tue Dec 19 14:25:06 2023 +0100
 
     Changement du nom Alice en Leia dans le 5e paragraphe
 
-<span class="yellow">commit 659aad7b4205b25cadb10785108cc5fe71526c90</span>
+<span class="jaune">commit 659aad7b4205b25cadb10785108cc5fe71526c90</span>
 Merge: d15cd74 ddd4ab7
 Author: Alice Liddell &lt;alice@wonderland.org>
 Date:   Tue Dec 19 14:24:53 2023 +0100
@@ -1217,14 +1221,14 @@ Date:   Tue Dec 19 14:24:53 2023 +0100
 
 […]
 
-<span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git log paragraphe1.txt
-<span class="yellow">commit 971188eefebec4caf12c3efb383fb675c30e2f8a</span>
+<span class="vert">alice@laptop</span>:<span class="bleu">~/depot</span>$ git log paragraphe1.txt
+<span class="jaune">commit 971188eefebec4caf12c3efb383fb675c30e2f8a</span>
 Author: Alice Liddell &lt;alice@wonderland.org>
 Date:   Tue Dec 19 14:24:22 2023 +0100
 
     Changement de la sœur en chien
 
-<span class="yellow">commit ddd4ab7dd9935f84e12b06cff4c9ea7cd1d5ca25</span>
+<span class="jaune">commit ddd4ab7dd9935f84e12b06cff4c9ea7cd1d5ca25</span>
 Author: Alice Liddell &lt;alice@wonderland.org>
 Date:   Tue Dec 19 14:21:37 2023 +0100
 
@@ -1236,7 +1240,7 @@ Date:   Tue Dec 19 14:21:37 2023 +0100
               <p>
                 Affiche le statut actuel de l’arbre de travail.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git status
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot</span>$ git status
 Sur la branche main
 Fichiers non suivis:
   (utilisez "git add &lt;fichier>..." pour inclure dans ce qui sera validé)
@@ -1250,22 +1254,22 @@ Fichiers non suivis:
               <p>
                 Il est généralement utilisé pour afficher les métadonnées d’un <em>commit</em>.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot</span>$ git show 8a7eb387
-<span class="yellow">commit 8a7eb387651f7c1fc69cedca5e051fc39a3cf2d9</span>
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot</span>$ git show 8a7eb387
+<span class="jaune">commit 8a7eb387651f7c1fc69cedca5e051fc39a3cf2d9</span>
 Author: Alice Liddell &lt;alice@wonderland.org>
 Date:   Tue Dec 19 14:25:06 2023 +0100
 
     Changement du nom Alice en Leia dans le 5e paragraphe
 
-<span class="yellow">diff --git a/paragraphe5.txt b/paragraphe5.txt
+<span class="jaune">diff --git a/paragraphe5.txt b/paragraphe5.txt
 index e47c0d7..d61b3b8 100644
 --- a/paragraphe5.txt
 +++ b/paragraphe5.txt</span>
-<span class="purple">@@ -1,4 +1,4 @@</span>
+<span class="violet">@@ -1,4 +1,4 @@</span>
  Pendant un bout de chemin le trou allait tout droit comme un tunnel,
  puis tout à coup il plongeait perpendiculairement d’une façon si brusque
-<span class="red">-qu’Alice se sentit tomber comme dans un puits d’une grande profondeur,</span>
-<span class="green">+que Leia se sentit tomber comme dans un puits d’une grande profondeur,</span>
+<span class="rouge">-qu’Alice se sentit tomber comme dans un puits d’une grande profondeur,</span>
+<span class="vert">+que Leia se sentit tomber comme dans un puits d’une grande profondeur,</span>
  avant même d’avoir pensé à se retenir.
 […]</code></pre></dd>
             <dt><code>diff</code></dt>
@@ -1274,29 +1278,29 @@ index e47c0d7..d61b3b8 100644
                 Affiche les modifications entre deux <em>commits</em>, ou entre
                 un <em>commit</em> et l’arbre de travail.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git diff
-<span class="yellow">diff --git a/paragraphe1.txt b/paragraphe1.txt
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ git diff
+<span class="jaune">diff --git a/paragraphe1.txt b/paragraphe1.txt
 index 65a4c91..c06a09e 100644
 --- a/paragraphe1.txt
 +++ b/paragraphe1.txt</span>
-<span class="purple">@@ -1,4 +1,4 @@</span>
+<span class="violet">@@ -1,4 +1,4 @@</span>
  LEIA, assise auprès de son chien sur le gazon, commençait à s’ennuyer
  de rester là à ne rien faire; une ou deux fois elle avait jeté les yeux sur le livre
-<span class="red">-que lisait son chien; mais quoi! pas d’images, pas de dialogues! “La belle</span>
-<span class="green">+que lisait son chien; mais quoi! pas de photos, pas de dialogues! “La belle</span>
+<span class="rouge">-que lisait son chien; mais quoi! pas d’images, pas de dialogues! “La belle</span>
+<span class="vert">+que lisait son chien; mais quoi! pas de photos, pas de dialogues! “La belle</span>
  avance,” 2 pensait Leia, “qu’un livre sans images, sans causeries!”.
 </code></pre>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git diff a75af37
-<span class="yellow">diff --git a/paragraphe1.txt b/paragraphe1.txt
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ git diff a75af37
+<span class="jaune">diff --git a/paragraphe1.txt b/paragraphe1.txt
 index 45e1f13..65a4c91 100644
 --- a/paragraphe1.txt
 +++ b/paragraphe1.txt</span>
-<span class="purple">@@ -1,4 +1,4 @@</span>
-<span class="red">-LEIA, assise auprès de sa sœur sur le gazon, commençait à s’ennuyer</span>
-<span class="green">+LEIA, assise auprès de son chien sur le gazon, commençait à s’ennuyer</span>
+<span class="violet">@@ -1,4 +1,4 @@</span>
+<span class="rouge">-LEIA, assise auprès de sa sœur sur le gazon, commençait à s’ennuyer</span>
+<span class="vert">+LEIA, assise auprès de son chien sur le gazon, commençait à s’ennuyer</span>
  de rester là à ne rien faire; une ou deux fois elle avait jeté les yeux sur le livre
-<span class="red">-que lisait sa sœur; mais quoi! pas d’images, pas de dialogues! “La belle</span>
-<span class="green">+que lisait son chien; mais quoi! pas d’images, pas de dialogues! “La belle</span>
+<span class="rouge">-que lisait sa sœur; mais quoi! pas d’images, pas de dialogues! “La belle</span>
+<span class="vert">+que lisait son chien; mais quoi! pas d’images, pas de dialogues! “La belle</span>
  avance,” 2 pensait Leia, “qu’un livre sans images, sans causeries!”.
 </code></pre>
             </dd>
@@ -1305,9 +1309,9 @@ index 45e1f13..65a4c91 100644
               <p>
                 Affiche et modifie la configuration de Git et du dépôt.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~</span>$ git config user.email
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ git config user.email
 alice@wonderland.org
-<span class="green">alice@laptop</span>:<span class="blue">~</span>$ git config user.name "Alice Liddell"</code></pre>
+<span class="vert">alice@laptop</span>:<span class="bleu">~</span>$ git config user.name "Alice Liddell"</code></pre>
             </dd>
           </dl>
 
@@ -1318,12 +1322,12 @@ alice@wonderland.org
               <p>
                 Liste, crée ou supprime des branches.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git branch
-  <span class="yellow">caroll-leia</span>
-  <span class="yellow">lewis-bleu</span>
-* <span class="green">main</span>
-<span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git branch lewis-chien
-<span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git branch --delete caroll-leia
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git branch
+  <span class="jaune">caroll-leia</span>
+  <span class="jaune">lewis-bleu</span>
+* <span class="vert">main</span>
+<span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git branch lewis-chien
+<span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git branch --delete caroll-leia
 Branche caroll-leia supprimée (précédemment 69743d5).</code></pre>
             </dd>
             <dt><code>switch</code></dt>
@@ -1331,7 +1335,7 @@ Branche caroll-leia supprimée (précédemment 69743d5).</code></pre>
               <p>
                 Change de branche.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git switch lewis-bleu
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git switch lewis-bleu
 Basculement sur la branche 'lewis-bleu'</code></pre>
             </dd>
             <dt><code>merge</code></dt>
@@ -1341,9 +1345,9 @@ Basculement sur la branche 'lewis-bleu'</code></pre>
                 un <em>commit</em> qui a deux parents : la branche actuelle et
                 la branche que l’on veut <em>merger</em>.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git merge lewis-bleu
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git merge lewis-bleu
 Merge made by the 'ort' strategy.
-paragraphe2.txt | 2 <span class="green">+</span><span class="red">-</span>
+paragraphe2.txt | 2 <span class="vert">+</span><span class="rouge">-</span>
  1 file changed, 1 insertion(+), 1 deletion(-)</code></pre>
             </dd>
             <dt><code>rebase</code></dt>
@@ -1351,7 +1355,7 @@ paragraphe2.txt | 2 <span class="green">+</span><span class="red">-</span>
               <p>
                 Applique des <em>commits</em> au-dessus d’une autre branche.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git rebase lewis-bleu
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git rebase lewis-bleu
 Rebasage et mise à jour de refs/heads/main avec succès.</code></pre>
             </dd>
             <dt><code>tag</code></dt>
@@ -1359,10 +1363,10 @@ Rebasage et mise à jour de refs/heads/main avec succès.</code></pre>
               <p>
                 Crée, liste ou supprime des étiquettes.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git tag
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git tag
 v1.0
 v2.0
-<span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git tag v3.0</code></pre>
+<span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git tag v3.0</code></pre>
             </dd>
           </dl>
 
@@ -1373,14 +1377,14 @@ v2.0
               <p>
                 Ajoute le contenu de fichiers à l’index.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git add paragraphe1.txt</code></pre>
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git add paragraphe1.txt</code></pre>
             </dd>
             <dt><code>commit</code></dt>
             <dd>
               <p>
                 Enregistre les changements de l’index dans le dépôt.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git commit -m "Ajout d’un fichier"
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git commit -m "Ajout d’un fichier"
 [main 2e363ea] Ajout d’un fichier
  1 file changed, 3 insertions(+), 0 deletions(-)
  create mode 100644 paragraphe1.txt
@@ -1392,11 +1396,11 @@ v2.0
                 Bascule sur un <em>commit</em> et met à jour les fichiers de
                 l’arbre de travail.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git checkout d15cd74
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git checkout d15cd74
 Note : basculement sur 'd15cd74'.
 Vous êtes dans l'état « HEAD détachée ». […]
 HEAD est maintenant sur d15cd74 Ajout du 5e paragraphe
-<span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>git checkout main
+<span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>git checkout main
 La position précédente de HEAD était sur d15cd74 Ajout du 5e paragraphe
 Basculement sur la branche 'main'</code></pre>
             </dd>
@@ -1406,7 +1410,7 @@ Basculement sur la branche 'main'</code></pre>
                 Crée un nouveau <em>commit</em> qui annule les changements d’un
                 autre <em>commit</em>.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git revert a2de2c68
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git revert a2de2c68
 [main 106aff9] Revert "Ajout du 6e paragraphe"
  1 file changed, 11 deletions(-)
  delete mode 100644 paragraphe6.txt</code></pre>
@@ -1416,9 +1420,9 @@ Basculement sur la branche 'main'</code></pre>
               <p>
                 Réinitialise la branche sur un <em>commit</em>.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git reset --hard 69743d5
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git reset --hard 69743d5
 HEAD est maintenant à 69743d5 Merge branch 'lewis-chien'
-<span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git reset a9244b3
+<span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git reset a9244b3
 Modifications non indexées après reset :
 M	paragraphe1.txt
 M	paragraphe2.txt</code></pre>
@@ -1429,7 +1433,7 @@ M	paragraphe2.txt</code></pre>
                 Restaure les fichiers de l’arbre de travail dans l’état du
                 <em>commit</em> actuel.
               </p>
-              <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/depot/</span>$ git restore paragraphe1.txt</code></pre>
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git restore paragraphe1.txt</code></pre>
             </dd>
           </dl>
         </section>
@@ -1440,7 +1444,10 @@ M	paragraphe2.txt</code></pre>
             Un dépôt Git sert à stocker un historique de versions. Ces
             différentes versions sont stockées sous forme d’un arbre
             de <strong><em>commits</em></strong>, qui ont chacun un numéro et
-            un ou plusieurs parents.
+            un ou plusieurs parents. Le numéro d’un <em>commit</em> dépend des
+            fichiers stockés, des métadonnées et des parents : il est donc
+            impossible de changer le contenu d’un <em>commit</em> sans en
+            changer le numéro.
           </p>
           <p>
             À partir d’un <em>commit</em>, il est possible de faire partir
@@ -1505,7 +1512,7 @@ M	paragraphe2.txt</code></pre>
             Si le <em>merge</em> d’une branche cause un conflit, un message
             comme celui-là sera affiché dans le terminal :
           </p>
-          <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git merge corrections
+          <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/fables/</span>$ git merge corrections
 Fusion automatique de cigale-fourmi.txt
 CONFLIT (contenu) : Conflit de fusion dans cigale-fourmi.txt
 La fusion automatique a échoué ; réglez les conflits et validez le résultat.</code></pre>
@@ -1513,7 +1520,7 @@ La fusion automatique a échoué ; réglez les conflits et validez le résultat.
             Dans cette situation, la première chose est de <strong>déterminer
             quels fichiers contiennent un conflit.</strong>
           </p>
-          <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git status
+          <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/fables/</span>$ git status
 Sur la branche main
 Vous avez des chemins non fusionnés.
   (réglez les conflits puis lancez "git commit")
@@ -1521,7 +1528,7 @@ Vous avez des chemins non fusionnés.
 
 Chemins non fusionnés :
   (utilisez "git add &lt;fichier>..." pour marquer comme résolu)
-    <span class="red">modifié des deux côtés :  cigale-fourmi.txt</span>
+    <span class="rouge">modifié des deux côtés :  cigale-fourmi.txt</span>
 
 aucune modification n'a été ajoutée à la validation
 (utilisez "git add" ou "git commit -a")</code></pre>
@@ -1556,11 +1563,11 @@ aucune modification n'a été ajoutée à la validation
           <p>
             Regardons ce qui a été fait les deux branches :
           </p>
-          <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git log --oneline --date-order --graph --all --decorate
-* <span class="yellow">e51aeac (<span class="green">corrections</span>)</span> Utilisation de tirets pour le dialogue
-| * <span class="yellow">df464f0 (<span class="blue">HEAD</span> -> <span class="green">main</span>)</span> Utilisation du français moderne
+          <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/fables/</span>$ git log --oneline --date-order --graph --all --decorate
+* <span class="jaune">e51aeac (<span class="vert">corrections</span>)</span> Utilisation de tirets pour le dialogue
+| * <span class="jaune">df464f0 (<span class="bleu">HEAD</span> -> <span class="vert">main</span>)</span> Utilisation du français moderne
 |/  
-* <span class="yellow">0dd646e</span> Ajout de la cigale et la fourmi</code></pre>
+* <span class="jaune">0dd646e</span> Ajout de la cigale et la fourmi</code></pre>
           <p>
             Sur « main », un <em>commit</em> a changé la fable en français
             moderne. Sur « corrections », on a utilisé des tirets pour le
@@ -1572,25 +1579,25 @@ aucune modification n'a été ajoutée à la validation
             <pre>[…]
 La fourmi n’est pas prêteuse;
 C’est là son moindre défaut:
-<span class="purple">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
+<span class="violet">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span>
 Que faisiez-vous au temps chaud?
 Dit-elle à cette emprunteuse.—
 Nuit et jour à tout venant
 Je chantais, ne vous déplaise.—
 Vous chantiez! j’en suis fort aise.
-<span class="purple">||||||| 0dd646e</span>
+<span class="violet">||||||| 0dd646e</span>
 Que faisiez-vous au temps chaud?
 Dit-elle à cette emprunteuse.—
 Nuit et jour à tout venant
 Je chantois, ne vous déplaise.—
 Vous chantiez! j’en suis fort aise.
-<span class="purple">=======</span>
+<span class="violet">=======</span>
 -Que faisiez-vous au temps chaud?
 Dit-elle à cette emprunteuse.
 -Nuit et jour à tout venant
 Je chantois, ne vous déplaise.
 -Vous chantiez! j’en suis fort aise.
-<span class="purple">>>>>>>> corrections</span>
+<span class="violet">>>>>>>> corrections</span>
 Hé bien! dansez maintenant.</pre>
           </figure>
           <p>
@@ -1635,26 +1642,26 @@ Hé bien! dansez maintenant.</pre>
             Parfait ! Maintenant que le conflit est résolu, <strong>nous allons
             pouvoir l’ajouter à l’index et effectuer le commit.</strong>
           </p>
-          <pre><code><span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git add cigale-fourmi.txt
-<span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git status
+          <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/fables/</span>$ git add cigale-fourmi.txt
+<span class="vert">alice@laptop</span>:<span class="bleu">~/fables/</span>$ git status
 Sur la branche main
 Tous les conflits sont réglés mais la fusion n'est pas terminée.
   (utilisez "git commit" pour terminer la fusion)
 
 Modifications qui seront validées :
-    <span class="yellow">modifié :         cigale-fourmi.txt</span>
-<span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git commit
+    <span class="jaune">modifié :         cigale-fourmi.txt</span>
+<span class="vert">alice@laptop</span>:<span class="bleu">~/fables/</span>$ git commit
 [main d8e7a67] Merge branch 'corrections'
-<span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git status
+<span class="vert">alice@laptop</span>:<span class="bleu">~/fables/</span>$ git status
 Sur la branche main
 rien à valider, la copie de travail est propre
-<span class="green">alice@laptop</span>:<span class="blue">~/fables/</span>$ git log --oneline --date-order --graph --all --decorate
-*   <span class="yellow">d8e7a67 (<span class="blue">HEAD</span> -> <span class="green">main</span>)</span> Merge branch 'corrections'
+<span class="vert">alice@laptop</span>:<span class="bleu">~/fables/</span>$ git log --oneline --date-order --graph --all --decorate
+*   <span class="jaune">d8e7a67 (<span class="bleu">HEAD</span> -> <span class="vert">main</span>)</span> Merge branch 'corrections'
 |\  
-| * <span class="yellow">e51aeac (<span class="green">corrections</span>)</span> Utilisation de tirets pour le dialogue
-* | <span class="yellow">df464f0</span> Utilisation du français moderne
+| * <span class="jaune">e51aeac (<span class="vert">corrections</span>)</span> Utilisation de tirets pour le dialogue
+* | <span class="jaune">df464f0</span> Utilisation du français moderne
 |/  
-* <span class="yellow">0dd646e</span> Ajout de la cigale et la fourmi</code></pre>
+* <span class="jaune">0dd646e</span> Ajout de la cigale et la fourmi</code></pre>
           <p>
             Notre conflit est résolu ! La branche « main » contient maintenant
             tous les commits de la branche « corrections », nous pouvons donc

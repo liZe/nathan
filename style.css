@@ -263,27 +263,27 @@ section:is(#decouverte, #atelier) h2::before {
 
 /* Couleurs */
 
-.green {
+.vert {
   color: #8f8;
 }
 
-.red {
+.rouge {
   color: #f44;
 }
 
-.blue {
+.bleu {
   color: #66f;
 }
 
-.purple {
+.violet {
   color: #a6a;
 }
 
-.yellow {
+.jaune {
   color: #ff6;
 }
 
-.gray {
+.gris {
   color: #888;
 }
 
