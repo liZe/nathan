@@ -903,9 +903,168 @@ avant même d’avoir pensé à se retenir.</pre>
         <h2>Atelier</h2>
         <section class="introduction">
           <p>Temps estimé : 2h.</p>
+          <p>
+            Cet atelier vise à vous faire appliquer toutes les techniques que
+            vous avez abordées lors de cette découvert de Git.
+          </p>
+          <p>
+            Pour cet atelier, il est enfin temps de vous confronter à un
+            véritable projet informatique ! Le dépôt sur lequel vous allez
+            travailler contient du code écrit en Python. Vous n’avez cependant
+            pas besoin de connaître ce langage pour réaliser les différentes
+            étapes.
+          </p>
         </section>
         <section class="sujet">
-          <todo></todo>
+          <p>
+            Puisque vous êtes maintenant référent Git dans votre entreprise, la
+            direction fait appel à vous pour publier une nouvelle version de
+            son logiciel MathFacile, une bibliothèque qui effectue des calculs
+            mathématiques simples.
+          </p>
+          <p>
+            Malheureusement pour vous, l’état actuel du projet est quelque peu
+            problématique : de nouvelles fonctionnalités ont été ajoutées dans
+            des branches, mais elles n’ont pas encore été fusionnées. En
+            réalité, personne ne sait plus où en est exactement le projet…
+          </p>
+          <p>
+            Tout le monde compte donc sur vous pour sortir de cette situation
+            inextricable !
+          </p>
+
+          <h3>Récupération d’informations</h3>
+          <p>
+            Dans un premier temps, vous décidez de rédiger une note synthétique
+            permettant d’y voir plus clair dans l’historique et l’état actuel
+            du projet.
+          </p>
+          <p>
+            Pour cela, vous <em>forkez</em> le dépôt <todo>nom du dépôt</todo>
+            sur votre compte GitHub personnel. <strong>Faites bien attention à
+            copier toutes les branches, pas seulement la branche
+            « main »</strong>, décochez bien la case « <em>Copy the main
+            branch only</em> » sur la page de création d’un <em>fork</em>.
+          </p>
+          <p>
+            <strong>Toutes les opérations seront à effectuer sur
+            ce <em>fork</em>, que nous appellerons « dépôt
+            personnel ».</strong>
+          </p>
+          <p>
+            Vous clonez ensuite votre dépôt personnel sur votre ordinateur.
+            Grâce à différentes commandes Git lancées sur votre ordinateur,
+            vous rédigez un note de synthèse indiquant :
+          </p>
+          <ol>
+            <li>le nom des 3 personnes ayant effectué des commits sur le projet ;</li>
+            <li>le nom des branches qui n’ont pas été fusionnées dans la branche principale « main » ;</li>
+            <li>
+              quelles versions ont été déjà effectuées, et pour chacune d’entre elles :
+              <ul>
+                <li>leur nom,</li>
+                <li>leur date de sortie,</li>
+                <li>le nombre de fichiers avec l’extension <code>.py</code> que contient le dossier <code>mathfacile</code> ;</li>
+              </ul>
+            </li>
+            <li>combien de <em>commits</em> ont été effectués sur « main » depuis la dernière version <code>v1.2</code>.
+          </ol>
+
+          <h3>Gestion de branches</h3>
+          <p>
+            Maintenant que vous avez une vision d’ensemble plus complète, vous
+            vous lancez dans la fusion de toutes les branches ouvertes.
+          </p>
+          <p>
+            Avant cela, on vous avertit de deux bugs importants qu’il faudrait
+            corriger assez vite. Vous décidez donc de créer une branche
+            « corrections » qui part de la branche « main », de vous
+            positionner dessus, puis d’effectuer deux <em>commits</em>
+            corrigeant les problèmes suivants :
+          </p>
+          <ul>
+            <li>
+              La fonction <code>additionner</code> effectue en réalité une
+              soustraction. Vous changez le <code>-</code> en <code>+</code>
+              dans la fonction, qui se situe dans le fichier
+              <code>mathfacile/operations.py</code>.
+            </li>
+            <li>
+              La valeur de π n’est pas assez précise. À la place de
+              « 3.14159 », vous mettez « 3.1415926536 » dans le fichier
+              <code>mathfacile/constantes.py</code>.
+            </li>
+          </ul>
+          <p>
+            Vous <em>pushez</em> la branche « corrections » sur votre dépôt
+            distant sur GitHub, et vous souhaitez attendre les retours de vos
+            collègues avant de la <em>merger</em>.
+          </p>
+          <p>
+            Vous décidez enfin de <em>merger</em> les deux branches les plus
+            anciennes. Sur votre ordinateur, vous vous remettez sur la branche
+            « main » puis <em>mergez</em>, l’une après l’autre, les branches
+            « puissance » et « sinus ». Vous pouvez alors <em>pusher</em> votre
+            branche « main ».
+          </p>
+
+          <h3>Sortie de la version 2.0</h3>
+          <p>
+            Tout est validé par vos collègues sur les deux branches qu’il reste
+            à <em>merger</em> avant de publier votre version 2.0 :
+            « corrections » et « trigonometrie ».
+          </p>
+          <p>
+            Pour faire ces fusions, vous décidez de créer sur GitHub une
+            <em>pull request</em> pour chacune de ces branches.
+          </p>
+          <p>
+            Vous commencez par <em>merger</em> la branche « correction ». Si
+            tout va bien, vous pouvez sans problème effectuer cette tâche
+            depuis GitHub et fermer la <em>pull request</em> qui correspond.
+          </p>
+          <p>
+            La situation est plus compliquée avec « trigonometrie » : sur la
+            page de la <em>pull request</em>, vous devez voir que la fusion
+            n’est pas possible parce qu’elle causerait un conflit. Vous décidez
+            donc de résoudre ce conflit sur votre ordinateur en suivant les
+            étapes suivantes :
+          </p>
+          <ul>
+            <li>vous <em>pullez</em> la branche « main »,</li>
+            <li>vous vous mettez sur la branche « trigonometrie »,</li>
+            <li>
+              vous <em>mergez</em> la branche « main » en corrigeant le conflit
+              (il faut garder une fois <code>import math</code> en haut, et
+              garder les 3 fonctions <code>cosinus</code>, <code>sinus</code>
+              et <code>tangente</code>),
+            </li>
+            <li>
+              vous <em>pushez</em> la branche « trigonometrie » avec le conflit
+              résolu,
+            </li>
+            <li>
+              vous <em>mergez</em> la branche « trigonometrie » sur GitHub
+              après avoir rechargé la page de la <em>pull request</em>.
+            </li>
+          </ul>
+          <p>
+            Si tout s’est correctement déroulé, tout devrait se trouver
+            désormais sur la branche « main » ! Vous pouvez alors supprimer
+            toutes les branches <em>mergées</em>, sur GitHub et dans votre
+            dépôt.
+          </p>
+          <p>
+            Tout est prêt pour effectuer votre ultime <em>commit</em> : vous
+            changez la version dans le fichier
+            <code>mathfacile/__init__.py</code> pour passer de
+            <code>1.2</code> à <code>2.0</code>, puis vous mettez une étiquette
+            <code>v2.0</code> sur ce <em>commit</em> et <em>pushez</em>
+            l’ensemble sur votre dépôt GitHub.
+          </p>
+          <p>
+            Félicitations à vous pour cette publication de version !
+          </p>
         </section>
       </section>
 
