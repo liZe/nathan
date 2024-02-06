@@ -889,7 +889,7 @@ avant même d’avoir pensé à se retenir.</pre>
                 dans votre dépôt.
               </li>
               <li>
-                Pour les deux personnes : <em>pullez</em> les nouveaux commits
+                Pour les deux personnes : <em>pullez</em> les nouveaux <em>commits</em>
                 de votre dépôt distant sur votre ordinateur. Vérifiez que vous
                 avez bien les mêmes fichiers et le même historique.
               </li>
@@ -957,10 +957,10 @@ avant même d’avoir pensé à se retenir.</pre>
             vous rédigez un note de synthèse indiquant :
           </p>
           <ol>
-            <li>le nom des 3 personnes ayant effectué des commits sur le projet ;</li>
+            <li>le nom des 3 personnes ayant effectué des <em>commits</em> sur le projet ;</li>
             <li>le nom des branches qui n’ont pas été fusionnées dans la branche principale « main » ;</li>
             <li>
-              quelles versions ont été déjà effectuées, et pour chacune d’entre elles :
+              quelles versions ont été déjà publiées, et pour chacune d’entre elles :
               <ul>
                 <li>leur nom,</li>
                 <li>leur date de sortie,</li>
@@ -998,7 +998,9 @@ avant même d’avoir pensé à se retenir.</pre>
           <p>
             Vous <em>pushez</em> la branche « corrections » sur votre dépôt
             distant sur GitHub, et vous souhaitez attendre les retours de vos
-            collègues avant de la <em>merger</em>.
+            collègues avant de la <em>merger</em>. Votre direction souhaite
+            quant à elle vérifier la branche « trigonometrie », nous
+            la <em>mergerons</em> donc plus tard.
           </p>
           <p>
             Vous décidez enfin de <em>merger</em> les deux branches les plus
@@ -1008,7 +1010,7 @@ avant même d’avoir pensé à se retenir.</pre>
             branche « main ».
           </p>
 
-          <h3>Sortie de la version 2.0</h3>
+          <h3>Publication de la version 2.0</h3>
           <p>
             Tout est validé par vos collègues sur les deux branches qu’il reste
             à <em>merger</em> avant de publier votre version 2.0 :
@@ -1021,7 +1023,8 @@ avant même d’avoir pensé à se retenir.</pre>
           <p>
             Vous commencez par <em>merger</em> la branche « correction ». Si
             tout va bien, vous pouvez sans problème effectuer cette tâche
-            depuis GitHub et fermer la <em>pull request</em> qui correspond.
+            depuis GitHub, et ainsi fermer la <em>pull request</em> qui
+            correspond.
           </p>
           <p>
             La situation est plus compliquée avec « trigonometrie » : sur la
@@ -1031,7 +1034,7 @@ avant même d’avoir pensé à se retenir.</pre>
             étapes suivantes :
           </p>
           <ul>
-            <li>vous <em>pullez</em> la branche « main »,</li>
+            <li>vous vous mettez sur la branche « main » et vous <em>pullez</em> (pour récupérer le <em>merge</em> de la branche « correction »),</li>
             <li>vous vous mettez sur la branche « trigonometrie »,</li>
             <li>
               vous <em>mergez</em> la branche « main » en corrigeant le conflit
@@ -1058,9 +1061,10 @@ avant même d’avoir pensé à se retenir.</pre>
             Tout est prêt pour effectuer votre ultime <em>commit</em> : vous
             changez la version dans le fichier
             <code>mathfacile/__init__.py</code> pour passer de
-            <code>1.2</code> à <code>2.0</code>, puis vous mettez une étiquette
-            <code>v2.0</code> sur ce <em>commit</em> et <em>pushez</em>
-            l’ensemble sur votre dépôt GitHub.
+            <code>1.2</code> à <code>2.0</code>, vous <em>commitez</em> ce
+            changement, vous mettez une étiquette <code>v2.0</code>
+            sur ce <em>commit</em> puis <em>pushez</em> l’ensemble
+            sur votre dépôt GitHub.
           </p>
           <p>
             Félicitations à vous pour cette publication de version !
