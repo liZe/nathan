@@ -63,6 +63,7 @@ dt {
 
 dd {
   break-before: avoid;
+  break-inside: avoid;
   margin-top: 0.5em;
 }
 
@@ -91,6 +92,7 @@ pre {
   background: #111;
   border-radius: 0.2em;
   box-shadow: 0 0 0.5em #39323288;
+  break-inside: avoid;
   font-size: 0.8em;
   overflow-x: scroll;
   padding: 1em;
@@ -231,6 +233,10 @@ section:is(#decouverte, #atelier) h2::before {
   padding-left: 0;
 }
 
+#quiz > ul > li {
+  break-inside: avoid;
+}
+
 #quiz > ul > li::before {
   content: "Question " counter(question);
   counter-increment: question;
@@ -297,6 +303,7 @@ section:is(#decouverte, #atelier) h2::before {
 /* Classes spécifiques */
 
 .introduction {
+  break-inside: avoid;
   font-style: italic;
   opacity: 0.65;
 }
