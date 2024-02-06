@@ -1552,10 +1552,15 @@ Basculement sur la branche 'lewis-bleu'</code></pre>
                 un <em>commit</em> qui a deux parents : la branche actuelle et
                 la branche que l’on veut <em>merger</em>.
               </p>
-              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git merge lewis-bleu
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git merge lewis-bleu -m "Fusion de la branche lewis-bleu"
 Merge made by the 'ort' strategy.
 paragraphe2.txt | 2 <span class="vert">+</span><span class="rouge">-</span>
  1 file changed, 1 insertion(+), 1 deletion(-)</code></pre>
+              <p>
+                L’option <code>-m</code> permet de saisir le message
+                du <em>commit</em> de fusion directement depuis le terminal.
+                Sinon, l’éditeur de texte par défaut est ouvert.
+              </p>
             </dd>
             <dt><code>rebase</code></dt>
             <dd>
@@ -1596,6 +1601,11 @@ v2.0
  1 file changed, 3 insertions(+), 0 deletions(-)
  create mode 100644 paragraphe1.txt
 </code></pre>
+              <p>
+                L’option <code>-m</code> permet de saisir le message
+                du <em>commit</em> directement depuis le terminal. Sinon,
+                l’éditeur de texte par défaut est ouvert.
+              </p>
             </dd>
             <dt><code>checkout</code></dt>
             <dd>
