@@ -249,6 +249,10 @@ section:is(#decouverte, #atelier) h2::before {
   list-style: "☐ ";
 }
 
+#quiz ul ul li.correct {
+  list-style: "☑ ";
+}
+
 #decouverte {
   counter-reset: etape;
 }
