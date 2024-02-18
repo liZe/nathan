@@ -147,6 +147,10 @@ table {
   margin: auto;
 }
 
+table + table {
+  margin-top: 2em;
+}
+
 thead th {
   text-align: center;
 }
@@ -159,6 +163,11 @@ td,
 th {
   border: 1px solid;
   padding: 0.2em 0.5em;
+}
+
+table ul {
+  list-style-position: inside;
+  padding-left: 0;
 }
 
 
