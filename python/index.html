@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../style.css" />
+    <title>Introduction à Python</title>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        Module B3M05 — PYT<br />
+        Introduction à Python
+      </h1>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>I-manuel</th>
+            <td>B3M05 — Développer des applications numériques</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Activité</th>
+            <th>Compétence</th>
+            <th>Évaluation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Activité 3.1 : Définir les spécifications techniques et
+              fonctionnelles de l’application numérique.
+            </td>
+            <td>
+              Utiliser les ressources à sa disposition ou faire appel si besoin
+              à un expert externe pour contrôler l’identification et la teneur
+              du résultat attendu ou approfondir un point technique.
+            </td>
+            <td>
+              <ul>
+                <li>
+                  Les solutions trouvées ont permis de lever les doutes et les
+                  inconnus.
+                </li>
+                <li>
+                  L’objectif final et les moyens d’y parvenir doivent être
+                  clairement identifiés.
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Activité 3.2 : Développer à partir des spécifications
+              fonctionnelles des algorithmes.
+            </td>
+            <td>
+              Décomposer un problème complexe en sous- problèmes en faisant des
+              analogies et des différenciations tout en changeant d’approche,
+              de point de vue, face à un obstacle en vue de résoudre un
+              problème algorithmique.
+            </td>
+            <td>
+              <ul>
+                <li>
+                  Les résultats intermédiaires et leur mode d’obtention sont
+                  définis.
+                </li>
+                <li>
+                  La totalité des spécifications fonctionnelles ont été
+                  transcrits en algorithmes afin de rédiger le code source.
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Activité 3.3 : Transcription des algorithmes en code source.
+            </td>
+            <td>
+              Traduire une solution algorithmique dans un langage de codage
+              informatique avec l’utilitaire approprié.
+            </td>
+            <td>
+              <ul>
+                <li>
+                  La totalité des algorithmes ont été transcrits en code source
+                  afin d’effectuer les tests techniques.
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Activité 3.4 : Modification d’un code existant et de son
+              algorithme.
+            </td>
+            <td>
+              Modifier un algorithme sans générer de dysfonctionnements en
+              comprenant et s’adaptant si besoin au mode de pensée de son
+              auteur.
+            </td>
+            <td>
+              <ul>
+                <li>
+                  Le code source modifié est prêt pour les tests techniques, le
+                  compilateur ou son équivalent ne détecte plus aucune erreur.
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Activité 3.5 : Compilation, déverminage du code source.
+            </td>
+            <td>
+              Remédier aux erreurs de codage ou de logique en comprenant ou
+              interprétant les messages d’erreur du compilateur ou du système
+              d’exploitation pour mettre au point un élément logiciel
+              opérationnel.
+            </td>
+            <td>
+              <ul>
+                <li>
+                  Les tests techniques prouvent que le logiciel produit le
+                  résultat fonctionnel attendu.
+                </li>
+                <li>
+                  Les tests techniques prouvent que la modification n’entraîne
+                  pas de régression fonctionnelle.
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </header>
+
+    <aside id="sommaire">
+      <h2>Sommaire du module</h2>
+      <ul>
+        <li><a href="#video">Vidéo de présentation du module</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li>
+          <a href="#decouverte">Découverte (14h)</a>
+          <ul>
+            <li><a href="#premieres-commandes">Premières commandes</a></li>
+            <li><a href="#types-de-base-conditions-et-boucles">Types de base, conditions et boucles</a></li>
+            <li><a href="#fonctions-et-classes">Fonctions et classes</a></li>
+            <li><a href="#bibliotheque-standard-et-modules-externes">Bibliothèque standard et modules externes</a></li>
+            <li><a href="#programmation-web">Programmation web</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#atelier">Atelier (14h)</a>
+        </li>
+        <li>
+          <a href="#fiches-ressources">Fiches ressources</a>
+          <ul>
+            <li><a href="#installation-et-utilisateur-de-l-interpreteur">Installation et utilisation de l’interpréteur</a></li>
+            <li><a href="#types-et-instructions">Types et instructions</a></li>
+            <li><a href="#fonctions">Fonctions</a></li>
+            <li><a href="#programmation-objet">Programmation objets</a></li>
+            <li><a href="#modules-et-imports">Modules et imports</a></li>
+            <li><a href="#environnements-virtuels">Environnements virtuels</a></li>
+            <li><a href="#flask">Flask</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <main>
+
+      <section id="video">
+        <h2>Vidéo de présentation du module</h2>
+        <p>
+          Python est l’un des langages de programmation les plus populaires
+          actuellement. Sa simplicité d’utilisation lui permet d’être
+          intensivement utilisé dans de nombreux domaines hors du développement
+          informatique, des petits scripts d’administration système aux plus
+          grandes applications de calcul scientifique, en passant par
+          l’intelligence artificielle ou l’embarqué.
+        </p>
+        <p>
+          Cette simplicité n’est pas contradictoire avec une utilisation plus
+          intensive dans le domaine du développement : Python est très
+          largement utilisé pour développer de nombreuses bibliothèques
+          variées, et surtout pour créer des applications Web : Instagram,
+          ChatGPT, Spotify ou Dropbox utilisent par exemple intensivement
+          Python.
+        </p>
+        <p>
+          Alors, qu’est-ce qui fait de Python un langage à la fois simple à
+          prendre en main et puissant ?
+        </p>
+        <p>
+          Cette introduction à Python vous présentera les différents types de
+          base, les structures algorithmiques et les fonctions, avec à chaque
+          fois des exemples de cas d’usage. Nous verrons également comment
+          importer des modules depuis la bibliothèque standard, mais aussi
+          depuis PyPI, le dépôt tiers officiel. Nous découvrirons ensuite la
+          programmation objet avec la définition de classes personnalisées,
+          avant de terminer avec l’un des sujets les plus courants du
+          développement Python : la création d’une application web.
+        </p>
+        <p>
+          Tout au long des activités de découverte proposées ce module, nous en
+          profiterons pour aborder divers aspects autour de la cybersécurité.
+          Quels avantages et inconvénients propose Python par rapport à
+          d’autres langages en terme de sécurité ? Comment prévenir certaines
+          attaques les plus fréquentes avec les <em>frameworks</em> web ?
+          Comment construire une gestion des droits efficace ? Nous verrons
+          autour de cas pratiques comment acquérir de bon réflexes de sécurité
+          lors du développement d’applications.
+        </p>
+        <p>
+          Calcul scientifique, web, IA, devOps, automatisation… Quelle que soit
+          le type d’utilisation qui vous intéresse, faites de Python un atout
+          dans vos possibilités de développement !
+        </p>
+      </section>
+
+      <section id="quiz">
+        <h2>Quiz</h2>
+        <ul>
+          <li><todo></todo></li>
+        </ul>
+      </section>
+
+      <section id="decouverte">
+        <h2>Découverte</h2>
+
+        <section id="premieres-commandes">
+          <h3>Premières commandes</h3>
+          <section class="introduction">
+            <p>Temps estimé : 1h.</p>
+            <p>
+              <todo></todo>
+            </p>
+          </section>
+          <section class="sujet">
+            <todo></todo>
+          </section>
+        </section>
+
+        <section id="types-de-base-conditions-et-boucles">
+          <h3>Types de base, conditions et boucles</h3>
+          <section class="introduction">
+            <p>Temps estimé : 4h.</p>
+            <p>
+              <todo></todo>
+            </p>
+          </section>
+          <section class="sujet">
+            <todo></todo>
+          </section>
+        </section>
+
+        <section id="fonctions-et-classes">
+          <h3>Fonctions et classes</h3>
+          <section class="introduction">
+            <p>Temps estimé : 3h.</p>
+            <p>
+              <todo></todo>
+            </p>
+          </section>
+          <section class="sujet">
+            <todo></todo>
+          </section>
+        </section>
+
+        <section id="bibliotheque-standard-et-modules-externes">
+          <h3>Bibliothèque standard et modules externes</h3>
+          <section class="introduction">
+            <p>Temps estimé : 3h.</p>
+            <p>
+              <todo></todo>
+            </p>
+          </section>
+          <section class="sujet">
+            <todo></todo>
+          </section>
+        </section>
+
+        <section id="programmation-web">
+          <h3>Programmation web</h3>
+          <section class="introduction">
+            <p>Temps estimé : 3h.</p>
+            <p>
+              <todo></todo>
+            </p>
+          </section>
+          <section class="sujet">
+            <todo></todo>
+          </section>
+        </section>
+      </section>
+
+      <section id="fiches-ressources">
+        <h2>Fiches ressources</h2>
+
+        <section id="installation-et-utilisateur-de-l-interpreteur">
+          <h3>Installation et utilisation de l’interpréteur</h3>
+          <todo></todo>
+        </section>
+
+        <section id="types-et-instructions">
+          <h3>Types et instructions</h3>
+          <todo></todo>
+        </section>
+
+        <section id="fonctions">
+          <h3>Fonctions</h3>
+          <todo></todo>
+        </section>
+
+        <section id="programmation-objet">
+          <h3>Programmation objet</h3>
+          <todo></todo>
+        </section>
+
+        <section id="modules-et-imports">
+          <h3>Modules et imports</h3>
+          <todo></todo>
+        </section>
+
+        <section id="environnements-virtuels">
+          <h3>Environnements virtuels</h3>
+          <todo></todo>
+        </section>
+
+        <section id="flask">
+          <h3>Flask</h3>
+          <todo></todo>
+        </section>
+      </section>
+    </main>
+  </body>
