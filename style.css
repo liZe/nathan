@@ -93,6 +93,7 @@ pre {
   border-radius: 0.2em;
   box-shadow: 0 0 0.5em #39323288;
   break-inside: avoid;
+  color: white;
   font-size: 0.8em;
   overflow-x: scroll;
   padding: 1em;
@@ -333,7 +334,7 @@ section:is(#decouverte, #atelier) h2::before {
   list-style: none;
 }
 
-.questions ol li::before {
+.questions ol > li::before {
   content: counter(question-number) ".";
   counter-increment: question-number;
   padding-right: 0.5em;

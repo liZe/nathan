@@ -163,6 +163,7 @@
           <a href="#fiches-ressources">Fiches ressources</a>
           <ul>
             <li><a href="#installation-et-utilisateur-de-l-interpreteur">Installation et utilisation de l’interpréteur</a></li>
+            <li><a href="#choix-et-configuration-d-un-editeur">Choix et configuration d’un éditeur</a></li>
             <li><a href="#types-et-instructions">Types et instructions</a></li>
             <li><a href="#fonctions">Fonctions</a></li>
             <li><a href="#programmation-objet">Programmation objets</a></li>
@@ -240,11 +241,106 @@
           <section class="introduction">
             <p>Temps estimé : 1h.</p>
             <p>
-              <todo></todo>
+              Nous commençons ce module avec l’installation de l’interpréteur
+              Python et la découverte des premières commandes simples, saisies
+              directement dans l’interpréteur interactif.
             </p>
           </section>
           <section class="sujet">
-            <todo></todo>
+            <p>
+              Au cours d’une réunion de travail avec votre équipe, certaines
+              questions se posent concernant le budget à allouer à un projet.
+              Plutôt que d’utiliser une simple calculatrice, vous décidez
+              d’utiliser Python pour effectuer ces calculs et bénéficier des
+              avantages procurées par un langage de programmation.
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Installez Python</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="installation-et-utilisateur-de-l-interpreteur">FR 1</a></li>
+                <li><a href="choix-et-configuration-d-un-editeur">FR 2</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Installez Python et vérifiez que la commande fonctionne
+                correctement dans un terminal. Quelle version de Python est
+                installée sur votre ordinateur ?
+              </li>
+              <li>
+                Comment pouvez-vous quitter l’interpréteur ? Que se passe-t-il
+                alors pour toutes les commandes que vous avez saisies ?
+                Relancez l’interpréteur.
+              </li>
+            </ol>
+            <h4>Effectuez vos premières opérations</h4>
+            <ol>
+              <li>
+                La cheffe de projet indique le coût pour réaliser ce projet est
+                de 1945 € par jour, et elle prévoit environ 12 jours de
+                travail. À combien s’élève le coût total ?
+              </li>
+              <li>
+                Après réflexion, le coût journalier est réévalué à 1965 €. En
+                reprenant (sans tout saisir à nouveau !) et en modifiant le
+                calcul précédent, à combien s’élève le nouveau coût total ?
+              </li>
+              <li>
+                Vous voulez enregistrer ce total pour plus tard. Comment faire
+                pour retrouver le dernier résultat, et comment faire pour
+                l’enregistrer dans une variable appelée <code>total</code> ?
+              </li>
+              <li>
+                Ce total est à répartir à égalité entre 3 différentes entités
+                de votre entreprise, qui prendront chacune un tiers du coût
+                total. Enregistrez la part de chaque entreprise dans la
+                variable <code>part</code>. Combien vaut-elle ?
+              </li>
+            </ol>
+            <h4>Créez un petit compte-rendu</h4>
+            <ol>
+              <li>
+                Pour conclure ce calcul, vous souhaitez afficher sur une ligne
+                la phrase suivante : « Part pour chaque entité : XX € ».
+                Évidemment, vous remplacerez « XX » par le montant de la part,
+                en utilisant la variable <code>part</code>.
+              </li>
+              <li>
+                Votre équipe préférerait une version plus explicite de ce petit
+                compte rendu. Elle souhaiterait que vous affichiez :
+                <pre>Budget prévisionnel
+===================
+- Entité 1 : XX €
+- Entité 2 : XX €
+- Entité 3 : XX €</pre>
+                Affichez ce résultat à l’aide d’une unique commande.
+              </li>
+            </ol>
+            <h4>Créez un petit script</h4>
+            <ol>
+              <li>
+                La réunion est maintenant terminée, mais vous savez que ce
+                genre de calcul est assez classique et risque de se répéter à
+                l’avenir. Vous décidez donc de sauvegarder ce travail dans un
+                script. Choisissez, installez et configurez votre éditeur.
+              </li>
+              <li>
+                Écrivez votre script qui contient cinq commandes :
+                <ul>
+                  <li>la définition de la variable <code>cout_par_jour</code>,</li>
+                  <li>la définition de la variable <code>nombre_de_jours</code>,</li>
+                  <li>la définition de la variable <code>total</code> à partir des deux autres variables,</li>
+                  <li>la définition de la variable <code>part</code> à partir de la variable <code>total</code>,</li>
+                  <li>l’affichage du petit compte-rendu en utilisant la variable <code>part</code>.</li>
+                </ul>
+              </li>
+              <li>
+                Lancez votre script et vérifiez que le résultat correspond à
+                vos attentes !
+              </li>
+            </ol>
           </section>
         </section>
 
