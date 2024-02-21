@@ -112,6 +112,7 @@ figure img {
   background-color: #00000008;
   border-radius: 0.2em;
   display: block;
+  max-width: 100%;
 }
 
 figure figcaption {
