@@ -263,6 +263,7 @@
               Différents problèmes surviennent lors du développement de ce site.
               À vous d’identifier les causes possibles des problèmes et les
               conséquences probables de leur résolution (ou non-résolution).
+            </p>
           </section>
           <section class="questions">
             <h4>Identifiez les problèmes et leurs conséquences</h4>
@@ -307,9 +308,67 @@
           <section class="introduction">
             <p>Temps estimé : 1h.</p>
             <p>
+              Lors de cette étape, nous allons voir un modèle d’organisation
+              de projet dérivé du modèle en cascade : le cycle en V.
+              Nous verrons son fonctionnement et ses limites.
             </p>
           </section>
-          <todo>
+          <section class="sujet">
+            <p>
+              Votre entreprise travaille dans le développement de solutions
+              logicielles dans le domaine de la santé et utilise le modèle
+              du cycle en V pour gérer ses projets.
+            </p>
+            <p>
+              Un client vous missionne pour développer un nouveau produit : une
+              application mobile destinée à la gestion des données de santé.
+            </p>
+            <p>
+              Le projet commence avec une phase de spécifications très détaillées
+              qui est suivi du phase de conception architecturale.
+              Il est prévu que le développement et la mise en service prenne
+              6 mois.
+            </p>
+            <p>
+              Différents problèmes surviennent lors du développement de cette application.
+              À vous d’identifier les causes possibles des problèmes et les
+              conséquences probables de leur résolution (ou non-résolution).
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Identifiez les problèmes et leurs conséquences</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#presentation-cycle-v">FR 2</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Le développement se passe bien et l’équipe est très motivée.
+                Cela fait 3 mois que le développement a commencé.
+                Mais des changements très importants dans la règlementation
+                en matière de confidentialité des données personnelles et des
+                données de santé sont annoncés.
+              </li>
+              <li>
+                L’équipe a réussi à developper l’application, la phase de tests
+                unitaires commence. Des bugs sont trouvés dans du code assez récent
+                et du code qui date du tout début du projet.
+              </li>
+              <li>
+                Les tests unitaires sont tous validés. Les tests d’intégration peuvent
+                commencer. Certains composants de l’application ne fonctionne pas
+                comme prévu une fois mis en lien avec d’autres composants.
+              </li>
+              <li>
+                Les tests d’intégration sont complétés, les tests fonctionnels débutent.
+                Ouf ! Tout semble conforme au cahier des charges !
+                L’application est mise en production et le client la
+                découvre enfin. Le malaise est palpable, le client trouve l’application
+                trop généraliste. Il voulait une application en particulier pour
+                les données liées à l’ophtalmologie « Je vous l’avais pourtant dit… ».
+              </li>
+            </ol>
         </section>
 
         <section id="specifications-artistes">
@@ -422,7 +481,50 @@
 
         <section id="presentation-cycle-v">
           <h3>Comment fonctionne le cycle en V ?</h3>
-          <todo>
+          <p>
+            Le cycle en V est une évolution du modèle en cascade qui a pour but de
+            mettre l’accent sur la validation. C’est un modèle qui peut être plus
+            adapté pour les systèmes avec de nombreux composants.
+          </p>
+          <p>
+            Le cycle en V est composé d’une phase descendante similaire
+            au modèle en cascade, et d’une phase ascendante qui permet de valider
+            chaque étape de la phase descendante.
+          </p>
+          <figure>
+            <figcaption>Cycle en V classique</figcaption>
+            <img src="cycle-v.png" alt="Cycle en V avec une phase descendante composée de : Exigences, Analyse, Conception architecturale, Conception détaillée, Mise en œuvre et une phase ascendante de tests">
+          </figure>
+          <p>
+            Lors de la phase descendante, on retrouve à peu près les mêmes étapes
+            que dans le modèle en cascade :
+          </p>
+          <ul>
+            <li>Exigences : les besoins et exigences du client sont recueillis</li>
+            <li>Analyse : un cahier des charges fonctionnel est rédigé à partir des exigences du client</li>
+            <li>Conception architecturale : l’architecture de la solution qui va être développée est déterminée</li>
+            <li>Conception détaillée : chaque composant nécessaire est défini</li>
+            <li>Mise en œuvre : chaque composant est développé</li>
+          </ul>
+          <p>
+            Cette phase descendante est suivie d’une phase ascendante qui
+            permet de valider chaque étape de la phase descendante :
+          </p>
+          <ul>
+            <li>Tests unitaires : chaque composant est testé et validé par rapport à sa conception détaillé</li>
+            <li>Tests d’intégration : tous les composants sont assemblés et le système est testé et validé par rapport à sa conception architecturale</li>
+            <li>Tests fonctionnels : la solution est testée et validée par rapport au cahier des charges</li>
+            <li>Recette : la solution est mise en production et accessible au client</li>
+          </ul>
+          <p>
+            Étant issu du modèle en cascade, le cycle en V présente les mêmes défauts liés
+            à sa rigidité.
+          </p>
+          <p>
+            Que ce soit le cycle en V ou le modèle en cascade, il n’est pas rare
+            que des étapes supplémentaires en amont soient ajoutées, comme la
+            réalisation d’un prototype.
+          </p>
         </section>
 
         <section id="dessin-1">
