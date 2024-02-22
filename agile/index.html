@@ -244,9 +244,62 @@
           <section class="introduction">
             <p>Temps estimé : 1h.</p>
             <p>
+              Lors de cette première étape, nous allons voir un modèle d’organisation
+              de projet : le modèle en cascade. Nous verrons son fonctionnement et
+              ses limites.
             </p>
           </section>
-          <todo>
+          <section class="sujet">
+            <p>
+              Votre entreprise développe des sites web sur mesure et utilise le modèle
+              en cascade pour gérer les étapes des différents projets.
+            </p>
+            <p>
+              Un nouveau client est signé et le projet débute. La cheffe de projet recueille
+              les besoins et exigences du client. Il est prévu que le développement
+              et la mise en production du site prenne 4 mois.
+            </p>
+            <p>
+              Différents problèmes surviennent lors du développement de ce site.
+              À vous d’identifier les causes possibles des problèmes et les
+              conséquences probables de leur résolution (ou non-résolution).
+          </section>
+          <section class="questions">
+            <h4>Identifiez les problèmes et leurs conséquences</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#presentation-cascade">FR 1</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Le développement a commencé depuis 1 mois et l’équipe est motivée.
+                Lors d’un rendez-vous avec le client pour un tout autre projet, il
+                évoque le projet actuellement en développement en disant qu’il a vraiment
+                hâte que ces futurs utilisateurs et utilisatrices utilisent le chatbot.
+                Mais aucun chatbot n’est prévu dans le développement !
+              </li>
+              <li>
+                La phase de conception est terminée et l’équipe de développement
+                commence à procéder aux tests. Différents bugs dans le code sont
+                constatés, que ce soit dans des parties développées récemment et
+                dans des parties plus anciennes.
+              </li>
+              <li>
+                En plus des divers bugs, tous les membres de l’équipe ne comprennent
+                pas de la même façon certaines exigences décrites dans le cahier
+                des charges. De longues discussions et relecture ont lieu.
+              </li>
+              <li>
+                Tous les bugs sont enfin corrigés et le site est mis en service !
+                Le client découvre alors le résultat et… c’est la déception
+                « Je n’imaginais pas ça comme ça »
+                Il ne comprend pas pourquoi il y a autant de pages, pourquoi
+                il y a un formulaire à tel endroit. Et en plus, il n’aime même pas
+                la charte graphique.
+              </li>
+            </ol>
+          </section>
         </section>
 
         <section id="cycle-en-v">
@@ -330,7 +383,41 @@
 
         <section id="presentation-cascade">
           <h3>Comment fonctionne le modèle en cascade ?</h3>
-          <todo>
+          <p>
+            Le modèle en cascade est une organisation de projet qui consiste en
+            une suite de phases dont chacune va dépendre du résultat de la précedente.
+            On passe d’une phase à une autre uniquement lorsque le résultat de la première
+            est validé.
+          </p>
+          <p>
+            Ce modèle provient surtout du domaine de la construction et fait
+            son apparition dans le domaine de l’informatique dans les
+            années 1950.
+          </p>
+          <p>
+            La première utilisation du terme « cascade » a lieu en 1970.
+          </p>
+          <figure>
+            <figcaption>Modèle en cascade classique</figcaption>
+            <img src="cascade.png" alt="Modèle en cascade où chaque phase dépend de la précedente : Exigences, Analyse, Conception, Mise en œuvre, Validation, Mise en service">
+          </figure>
+          <p>
+            On retrouve 6 phases dans le modèle en cascade :
+          </p>
+          <ul>
+            <li>Exigences : les besoins et exigences du client sont recueillis</li>
+            <li>Analyse : un cahier des charges fonctionnel est rédigé à partir des exigences du client</li>
+            <li>Conception : l’architecture de la solution qui va être développée est déterminée</li>
+            <li>Mise en œuvre : la solution est développée</li>
+            <li>Validation : la solution est testée et le respect du cahier des charges est vérifié</li>
+            <li>Mise en service : la solution est mise en production et accessible au client</li>
+          </ul>
+          <p>
+            Cette méthode permet de mettre l’accent sur l’existance d’une documention structurée.
+          </p>
+          <p>
+            Des évolutions de ce modèle existe, comme par exemple le cycle en V.
+          </p>
         </section>
 
         <section id="presentation-cycle-v">
