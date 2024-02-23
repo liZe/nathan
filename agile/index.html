@@ -583,11 +583,57 @@
         <section id="creer-des-stories">
           <h3>Créer des stories</h3>
           <section class="introduction">
-            <p>Temps estimé : 1h.</p>
+            <p>Temps estimé : 1h30.</p>
             <p>
+              Au début d’un projet, la première chose à faire et de
+              recueillir les besoins du client. Dans les méthodes comme le
+              modèle en cascade ou le cycle, le cahier des charges sert de référentiel.
+            </p>
+            <p>
+              Dans les méthodes dîtes Agile, les besoins du client vont
+              être représentés sous forme de « story ».
+            </p>
+            <p>
+              Cette étape se déroule en groupe de 4 à 6 personnes.
             </p>
           </section>
-          <todo>
+          <section class="sujet">
+            <p>
+              Vous travaillez dans une entreprise qui conçoit et
+              vend des solutions de distribution sur mesure.
+            </p>
+            <p>
+              Un client vient vous voir car il souhaite installer
+              dans son établissement une solution pour permettre à
+              ses propres clients de récupérer des commandes en autonomie.
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Identifiez et formalisez les stories</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#story">FR 6</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Réfléchissez aux fonctionnalités attendues par le client.
+                Attention à bien vous placer du point de vue du client
+                quand vous évaluez l’utilité d’une fonctionnalité.
+                De quoi le client a vraiment besoin pour que le distributeur
+                réponde à son besoin et à celui de ses utilisateurs et
+                utilisatrices ?
+              </li>
+              <li>
+                Une fois que vous avez une liste de fonctionnalité,
+                sélectionnez en 5 ou 6 principales pour la question d’après.
+              </li>
+              <li>
+                Pour chaque fonctionnalité, créez la story associée en
+                respectant les critères de validité d’une story.
+              </li>
+            </ol>
+          </section>
         </section>
 
         <section id="valuer-des-stories">
@@ -613,7 +659,7 @@
         <section id="fin-sprint">
           <h3>Clotûrer un sprint</h3>
           <section class="introduction">
-            <p>Temps estimé : 3h.</p>
+            <p>Temps estimé : 2h30.</p>
             <p>
             </p>
           </section>
@@ -752,7 +798,142 @@
 
         <section id="story">
           <h3>Comment construire une story ?</h3>
-          <todo>
+          <p>
+            Les stories correspondent plus ou moins au découpage d’un projet
+            en fonctionnalités.
+          </p>
+          <p>
+            Ces stories seront par la suite réalisées au cours phases itératives,
+            les itérations (appelées « sprint » dans la méthode Scrum).
+          </p>
+          <p>
+            Afin de pouvoir être utile et utilisable, une story doit
+            suivre les principes de l’<strong>INVEST</strong>.
+          </p>
+
+          <h4>Independant</h4>
+          <p>
+            Il est important que les stories soient indépendantes les unes des autres,
+            au minimum dans l’itération en cours.
+          </p>
+          <p>
+            Une story doit pouvoir être réalisée toute seule sans
+            attendre la fin d’une tierce story.
+          </p>
+          <p>
+            Par exemple, si l’on développe une application où les
+            personnes pourront s’identifier, il y aura une story pour réaliser
+            la connexion au compte et une story pour réaliser la création
+            de compte.
+          </p>
+          <p>
+            On pourrait penser que pour implémenter la fonctionnalité
+            de connexion, il faut forcément que la fonctionnalité
+            de création de compte existe déjà.
+          </p>
+          <p>
+            Cependant, ces deux stories peuvent être
+            réalisées indépendamment l’une de l’autre car il est possible
+            de simuler l’existance d’un compte pour vérifier si la
+            connexion est fonctionnelle.
+          </p>
+
+          <h4>Negociable</h4>
+          <p>
+            Les stories ne doivent pas comporter trop de détails.
+          </p>
+          <p>
+            Pour décrire une story, il est mieux d’utiliser une phrase
+            simple qui décrit la fonctionnalité dans son ensemble.
+            Par exemple : un rapport quotidien est généré.
+          </p>
+          <p>
+            Cela permet de laisser la story évoluer avec les discussions
+            avec le client ou d’autres parties prenantes. Aussi, l’équipe
+            de développement est libre de définir « comment » la story va
+            être réalisée.
+          </p>
+
+          <h4>Valuable</h4>
+          <p>
+            Il est important qu’une story est une valeur commerciale,
+            qu’elle réponde à un besoin du client.
+          </p>
+          <p>
+            Les stories ne sont pas une liste de fonctionnalités d’un point
+            de vue technique, mais bien d’un point de fonctionnel.
+            On sait quelle valeur la story apporte pour les personnes
+            qui vont utiliser le produit.
+          </p>
+          <p>
+            Ainsi une story qui a pour but de réduire la dette technique
+            ou de simplifier le code n’est pas une bonne story.
+            En effet, ces deux buts ont clairement un intérêt pour l’équipe
+            de développement, mais ils n’apportent rien pour le
+            client en terme de fonctionnalité.
+          </p>
+
+          <h4>Estimable</h4>
+          <p>
+            Les stories doivent également être concrètes.
+          </p>
+          <p>
+            L’équipe de développement doit être capable d’estimer le temps
+            de réalisation des différentes stories et de savoir
+            quelles stories sont de même complexité.
+          </p>
+          <p>
+            Dans certaines équipes, les stories ne sont pas réellement estimées.
+            Auquel cas, le critère d’estimable devient synonyme de : toutes
+            questions liées à la story sont résolues, la story est prête
+            à être développée.
+          </p>
+
+          <h4>Small</h4>
+          <p>
+            Chaque story doit pouvoir être réalisée au cours d’une
+            seule itération et par une ou deux personnes.
+          </p>
+          <p>
+            Il est important de faire attention à la taille des stories.
+            En effet, plus une story est grande et complexe, il est
+            plus difficile de la mener à bien. Ce qui peut baisser
+            la motivation de l’équipe de développement.
+          </p>
+
+          <h4>Testable</h4>
+          <p>
+            Enfin, il est nécessaire que l’on puisse définir quand
+            une story est complète.
+          </p>
+          <p>
+            Pour cela, on définit des critères d’acceptation qui sont
+            clairs et validés par le métier.
+          </p>
+          <p>
+            Ces critères d’acceptation permettent de s’assurer que la
+            réalisation de la story correspond bien au besoin.
+          </p>
+          <p>
+            Aussi, les ressources de test doivent être disponibles
+            afin de s’assurer que les tests soient faisables.
+          </p>
+
+          <h4>Rédiger une story</h4>
+          <p>
+            Pour formaliser une story, on cherche à répondre à trois questions :
+          </p>
+          <ul>
+            <li>Qui est la cible de cette story ?</li>
+            <li>Quel est le but de la personne ciblée ?</li>
+            <li>Pourquoi ?</li>
+          </ul>
+          <p>
+            Une story peut alors être :
+            « <em>En tant que</em> comptable, <em>je souhaite</em> générer un
+            rapport mensuel des factures <em>afin de</em> suivre l’évolution
+            des commandes et d’identifier d’éventuels problèmes. »
+          </p>
         </section>
 
         <section id="methodes-valuation">
