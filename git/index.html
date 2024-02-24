@@ -9,7 +9,7 @@
   <body>
     <header>
       <h1>
-        Module B0M2 — MODXXX<br />
+        Module B4M5 — MODXXX<br />
         Git et outils de travail du développeur
       </h1>
 
@@ -17,11 +17,7 @@
         <tbody>
           <tr>
             <th>I-manuel</th>
-            <td>B0M2 — Recenser les outils de travail du développeur</td>
-          </tr>
-          <tr>
-            <th>Séquence</th>
-            <td>S021 — Git et outils de travail du développeur</td>
+            <td>2 — Recenser les outils de travail du développeur</td>
           </tr>
         </tbody>
       </table>
@@ -123,7 +119,7 @@
               <li><code>git push</code></li>
               <li><code>git rm</code></li>
               <li><code>git version</code></li>
-              <li><code>git commit</code></li>
+              <li class="correct"><code>git commit</code></li>
               <li>je ne sais pas</li>
             </ul>
           </li>
@@ -132,8 +128,8 @@
               Comment ajoute-t-on une nouvelle version à un dépôt local ?
             </p>
             <ul>
-              <li>on ajoute les modifications à l’index et on crée un <em>commit</em></li>
-              <li>on enregistre les modifications dans une étiquette locale</li>
+              <li class="correct">on ajoute les modifications à l’index et on crée un <em>commit</em></li>
+              <li>on enregistre les modifications dans une branche locale</li>
               <li>on effectue un <code>git push</code> avec les changements de l’arbre de travail</li>
               <li>on édite le dépôt local avec <code>git edit --local</code></li>
               <li>je ne sais pas</li>
@@ -145,7 +141,7 @@
               effectués dans un autre <em>commit</em> ?
             </p>
             <ul>
-              <li><code>git revert</code></li>
+              <li class="correct"><code>git revert</code></li>
               <li><code>git reset</code></li>
               <li><code>git checkout</code></li>
               <li><code>git cancel</code></li>
@@ -157,7 +153,7 @@
               Que se passe-t-il lorsque l’on fusionne deux branches ?
             </p>
             <ul>
-              <li>un <em>commit</em> est créé avec les deux branches comme parents</li>
+              <li class="correct">un <em>commit</em> est créé avec les deux branches comme parents</li>
               <li>une étiquette rassemble les <em>commits</em> des deux branches</li>
               <li>tous les <em>commits</em> des deux branches sont fusionnés en un seul</li>
               <li>un <em>checkout</em> est effectué pour mettre à jour le dépôt</li>
@@ -171,7 +167,7 @@
             </p>
             <ul>
               <li>une branche</li>
-              <li>une étiquette</li>
+              <li class="correct">une étiquette</li>
               <li>un <em>commit</em></li>
               <li>un <em>fork</em></li>
               <li>je ne sais pas</li>
@@ -184,7 +180,7 @@
             </p>
             <ul>
               <li>sur un arbre de travail</li>
-              <li>sur un dépôt distant</li>
+              <li class="correct">sur un dépôt distant</li>
               <li>sur un serveur HTML</li>
               <li>sur un <em>tag</em> public</li>
               <li>je ne sais pas</li>
@@ -198,7 +194,7 @@
               <li>lorsque l’on édite des étiquettes</li>
               <li>lorsque l’on crée un <em>commit</em> distant</li>
               <li>lorsque l’on <em>forke</em> un dépôt</li>
-              <li>lorsque l’on fusionne des branches</li>
+              <li class="correct">lorsque l’on fusionne des branches</li>
               <li>je ne sais pas</li>
             </ul>
           </li>
@@ -210,7 +206,7 @@
             </p>
             <ul>
               <li>on ne peut pas</li>
-              <li>avec <code>git checkout</code></li>
+              <li class="correct">avec <code>git checkout</code></li>
               <li>avec <code>git read</code> et <code>git apply</code></li>
               <li>avec <code>git diff</code></li>
               <li>je ne sais pas</li>
@@ -222,7 +218,7 @@
               gardant son numéro ?
             </p>
             <ul>
-              <li>on ne peut pas</li>
+              <li class="correct">on ne peut pas</li>
               <li>avec <code>git edit</code></li>
               <li>avec <code>git change</code></li>
               <li>avec <code>git reset</code></li>
@@ -235,7 +231,7 @@
               dépôt ?
             </p>
             <ul>
-              <li><code>git log</code></li>
+              <li class="correct"><code>git log</code></li>
               <li><code>git history</code></li>
               <li><code>git status</code></li>
               <li><code>git view</code></li>
@@ -640,7 +636,7 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
               </li>
               <li>
                 Mme Caroll vous rappelle : il est temps d’utiliser la force
-                dans pour intégrer sa demande dans la branche principale !
+                pour intégrer sa demande dans la branche principale !
                 Rendez-vous sur la branche principale et <em>mergez</em> la
                 branche « caroll-leia ». Le « merge » doit se dérouler sans
                 encombres, mais en vérifiant le contenu, vous devez vous rendre
@@ -1732,6 +1728,64 @@ M	paragraphe2.txt</code></pre>
             <figcaption>Niveaux et commandes associées</figcaption>
             <img src="commandes.svg" alt="Graphique représentant les commandes de Git et les niveaux associés">
           </figure>
+
+          <h4>Stratégies de gestion de branches</h4>
+          <p>
+            Afin de gérer efficacement le travail parallèle et décentralisé,
+            Git propose de nombreux outils et commandes, en particulier les
+            branches.
+          </p>
+          <p>
+            Cependant, rien ne dicte dans Git comment ces branches doivent être
+            gérées globalement dans le développement d’un projet. Si
+            l’utilisation des branches est extrêmement répandue pour l’ajout de
+            fonctionnalités ou la correction de bugs, <strong>il peut être utile au
+            sein d’une équipe de définir des règles strictes permettant
+            d’organiser comment ces branches doivent être créées, fusionnées,
+            testées et mises en production</strong>.
+          </p>
+          <p>
+            <strong>C’est la raison pour laquelle des stratégies (ou <em>workflows</em>)
+            de gestion de branches, ont été pensées et proposées.</strong> Parmi les
+            stratégies les plus utilisées, on citera :
+          </p>
+          <ul>
+            <li>
+              <a href="https://nvie.com/posts/a-successful-git-branching-model/">Git
+              Flow</a> est l’une des premières stratégies largement utilisées.
+              Elle est plutôt lourde, adaptée au projets conséquents,
+              particulièrement aux logiciels dont plusieurs versions sont
+              maintenues en parallèle.
+            </li>
+            <li>
+              <a href="https://docs.github.com/fr/get-started/using-github/github-flow">GitHub Flow</a>
+              est une stratégie plus légère et plus simple, adaptée aux projets
+              déployés en continu.
+            </li>
+            <li>
+              <a href="https://about.gitlab.com/topics/version-control/what-is-gitlab-flow/">GitLab Flow</a>
+              constitue une stratégie intermédiaire, plus complexe mais moins
+              limitée que GitHub Flow.
+            </li>
+            <li>
+              <a href="https://trunkbaseddevelopment.com/">Trunk Based Development</a>
+              propose une approche très légère où la plupart des branches sont
+              rapidement intégrées dans la branche principale. Elle est
+              particulièrement efficace lorsque l’on veut déployer ou livrer son
+              projet en continu, mais requiert une équipe mûre et aguerrie aux
+              bonnes pratiques (tests, intégration et déploiement continus,
+              <em>pair programming</em>, revues de code…) pour exprimer tout son
+              potentiel.
+            </li>
+          </ul>
+          <p>
+            Au sein d’une équipe amenée à travailler sur un même projet, définir
+            et suivre une stratégie de gestion de branches est important pour
+            garder une bonne organisation du dépôt. Une stratégie claire et
+            documentée facilite les opérations de développement et
+            d’administration système, elle entre donc dans une liste bonnes
+            pratiques pour la mise en place d’une culture devops en entreprise.
+          </p>
         </section>
 
         <section id="conflits">

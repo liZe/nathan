@@ -148,6 +148,10 @@ table {
   margin: auto;
 }
 
+table + table {
+  margin-top: 2em;
+}
+
 thead th {
   text-align: center;
 }
@@ -160,6 +164,11 @@ td,
 th {
   border: 1px solid;
   padding: 0.2em 0.5em;
+}
+
+table ul {
+  list-style-position: inside;
+  padding-left: 0;
 }
 
 
@@ -248,6 +257,10 @@ section:is(#decouverte, #atelier) h2::before {
 
 #quiz ul ul {
   list-style: "☐ ";
+}
+
+#quiz ul ul li.correct {
+  list-style: "☑ ";
 }
 
 #decouverte {
