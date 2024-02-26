@@ -76,6 +76,7 @@ kbd {
   border: 1px solid #b3b1b1;
   border-radius: 0.2em;
   box-shadow: 0.1em 0.1em 0 #393232;
+  font-family: Courier New;
   padding: 0.1em;
   white-space: pre;
 }
@@ -84,7 +85,8 @@ code {
   background: #393232;
   border-radius: 0.2em;
   color: white;
-  padding: 0.1em 0.2em;
+  font-family: Courier New;
+  padding: 0 0.2em;
   white-space: pre;
 }
 
@@ -94,6 +96,7 @@ pre {
   box-shadow: 0 0 0.5em #39323288;
   break-inside: avoid;
   color: white;
+  font-family: Courier New;
   font-size: 0.8em;
   overflow-x: scroll;
   padding: 1em;
