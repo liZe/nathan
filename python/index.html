@@ -347,13 +347,243 @@
         <section id="types-de-base-conditions-et-boucles">
           <h3>Types de base, conditions et boucles</h3>
           <section class="introduction">
-            <p>Temps estimé : 4h.</p>
+            <p>Temps estimé : 3h.</p>
             <p>
-              <todo></todo>
+              Maintenant que vous savez lancer l’interpréteur Python en mode
+              interactif ou pour exécuter des scripts, il est temps d’entrer
+              plus en profondeur dans les types et structures de base du
+              langage.
+            </p>
+            <p>
+              Dans ce module, nous verrons les différents types natifs les plus
+              utilisés. Nous utiliserons également les tests de conditions et
+              les boucles pour aborder l’algorithmie et construire nos premiers
+              programmes.
             </p>
           </section>
           <section class="sujet">
-            <todo></todo>
+            <p>
+              En attendant que votre projet en C++ compile, vous aimeriez
+              occuper votre esprit. Vous vous dites que l’idéal serait d’avoir
+              un petit jeu rapide, à portée de main dans le terminal.
+            </p>
+            <p>
+              Cette idée tombe bien ! Pour parfaire vos connaissances en
+              Python, quoi de mieux que de se lancer dans le développement d’un
+              petit projet de jeu dans le terminal ?
+            </p>
+            <p>
+              Le jeu que vous décidez de développer est un jeu de mémoire. Les
+              lettres de A à H sont mises en désordre dans une suite. Le but du
+              jeu est de trouver la position de la prochaine lettre dans la
+              suite de lettres, une par une, jusqu’à afficher « A B C D E F G
+              H » dans l’ordre.
+            </p>
+            <p>
+              Tant que la lettre trouvée est après la lettre précédemment
+              trouvée (dans l’ordre alphabétique), le jeu continue. Il s’arrête
+              dans le cas contraire, et le joueur a perdu.
+            </p>
+            <p>
+              Des exemples de parties gagnées et perdues sont proposées en
+              annexe.
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Conception et première version</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#types-et-instructions">FR 3</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                La première décision à prendre est celle des types à utiliser.
+                Notre programme va traiter deux éléments principaux : les
+                lettres, et une suite pour les regrouper. Quel type
+                utilise-t-on pour stocker chacune des lettres ?
+              </li>
+              <li>
+                Pour la suite de lettres, il faut également choisir le bon
+                type. On veut à chaque tour demander à l’utilisateur une
+                position (entre 0 et 7 au début, par exemple), puis enlever de
+                la suite la lettre à cette position. Quel type est adapté pour
+                cette suite qui sera modifiée au cours de la partie ?
+              </li>
+              <li>
+                Avant de réaliser notre jeu en entier, nous allons commencer
+                par une première version simple. Ouvrez votre éditeur de code
+                et créez un fichier « game.py » comprenant 5 lignes :
+                <ul>
+                  <li>
+                    affectez à une variable <code>numbers</code> la suite des
+                    lettres de A à H, dans l’ordre que vous voulez ;
+                  </li>
+                  <li>
+                    affectez à une variable <code>index</code> un nombre entre
+                    0 et 7, qui sera utilisée pour enlever une lettre de la
+                    suite ;
+                  </li>
+                  <li>
+                    enlevez de <code>numbers</code> la lettre située à la
+                    position <code>index</code>, et mettez cette lettre dans
+                    une variable <code>letter</code> ;
+                  </li>
+                  <li>
+                    affichez <code>letter</code> ;
+                  </li>
+                  <li>
+                    affichez <code>numbers</code>.
+                  </li>
+                </ul>
+                Exécutez votre programme et vérifiez que vous obtenez bien le
+                résultat attendu : d’abord la lettre enlevée, puis la suite des
+                lettres hormis celle enlevée.
+              </li>
+            </ol>
+            <h4>Interactivité</h4>
+            <ol>
+              <li>
+                À la place de mettre un nombre « en dur » dans
+                <code>index</code>, demandez à l’utilisateur le nombre qu’il
+                souhaite en utilisant la fonction
+                <a href="https://docs.python.org/3.12/library/functions.html#input"><code>input</code></a>.
+                Lancez le programme. Quelle erreur obtenez-vous ?
+              </li>
+              <li>
+                <code>input</code> renvoie une chaîne de caractères, alors que
+                la variable <code>index</code> doit être un entier. Comment
+                obtenir l’entier qui correspond à cette chaîne de caractères ?
+              </li>
+              <li>
+                Exécutez votre programme et vérifiez que vous obtenez bien le
+                résultat attendu : on demande à l’utilisateur l’index de la
+                lettre à enlever, puis on affiche la lettre enlevée, puis la
+                suite des lettres hormis celle enlevée. Par exemple :
+                <pre><code>Quelle est la position de la lettre que vous souhaitez enlever ? 3
+C
+['B', 'H', 'A', 'D', 'F', 'E', 'G']</code></pre>
+              </li>
+            </ol>
+            <h4>Boucle complète</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#annexe-1-1">Annexe 1</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Nous allons maintenant répéter la demande et l’affichage tant
+                que la suite de nombre n’est pas vide. Quel type de boucle
+                doit-on utiliser ? Exécutez le programme et vérifier que vous
+                pouvez enlever toutes les lettres de la liste avant que le
+                programme ne s’arrête.
+              </li>
+              <li>
+                Nous voulons maintenant vérifier que le joueur ne saisit pas un
+                nombre trop grand ou inférieur à 0, et lui reposer la question
+                tant que la condition n’est pas vérifiée. Il est possible
+                d’effectuer cela avec une boucle infinie dans laquelle on
+                demande le nombre à l’utilisateur, et on force la sortie de la
+                boucle lorsque la condition est validée. Ajouter cette
+                fonctionnalité.
+              </li>
+              <li>
+                Votre jeu est prêt ! À la place de l’affichage de la liste,
+                affichez le nombre de lettres qu’il reste. Ajoutez également un
+                message lorsque le joueur a perdu, et un autre lorsque le
+                joueur a gagné.
+              </li>
+              <li>
+                Vérifiez que résultat correspond aux exemples donnés en
+                annexe. Corrigez les problèmes éventuellement rencontrés.
+              </li>
+            </ol>
+          </section>
+          <section class="annexes">
+            <h4 id="annexe-1-1">Résultats attendus</h4>
+            <p>
+              Tous les exemples sont donnés avec la suite « B A D E F H G C ».
+            </p>
+            <pre><code>Quelle est la position de la lettre que vous souhaitez enlever ? 2
+D
+Il reste 7 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 3
+F
+Il reste 6 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 3
+H
+Il reste 5 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 2
+E
+Vous avez perdu 😢</code></pre>
+            <pre><code>Quelle est la position de la lettre que vous souhaitez enlever ? 1
+A
+Il reste 7 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 0
+B
+Il reste 6 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 5
+C
+Il reste 5 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 0
+D
+Il reste 4 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 0
+E
+Il reste 3 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 0
+F
+Il reste 2 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 1
+G
+Il reste 1 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 0
+H
+Il reste 0 lettre(s)
+Vous avez gagné 😁</code></pre>
+            <pre><code>Quelle est la position de la lettre que vous souhaitez enlever ? 0
+B
+Il reste 7 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 6
+C
+Il reste 6 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 1
+D
+Il reste 5 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 1
+E
+Il reste 4 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 1
+F
+Il reste 3 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 2
+G
+Il reste 2 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 1
+H
+Il reste 1 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 0
+A
+Vous avez perdu 😢</code></pre>
+            <pre><code>Quelle est la position de la lettre que vous souhaitez enlever ? 1
+A
+Il reste 7 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 1
+D
+Il reste 6 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? 1
+E
+Il reste 5 lettre(s)
+Quelle est la position de la lettre que vous souhaitez enlever ? -1
+Nombre incorrect !
+Quelle est la position de la lettre que vous souhaitez enlever ? 1000
+Nombre incorrect !
+Quelle est la position de la lettre que vous souhaitez enlever ? 5
+Nombre incorrect !
+Quelle est la position de la lettre que vous souhaitez enlever ? 0
+B
+Vous avez perdu 😢</code></pre>
           </section>
         </section>
 
@@ -386,7 +616,7 @@
         <section id="programmation-web">
           <h3>Programmation web</h3>
           <section class="introduction">
-            <p>Temps estimé : 3h.</p>
+            <p>Temps estimé : 4h.</p>
             <p>
               <todo></todo>
             </p>
@@ -437,3 +667,4 @@
       </section>
     </main>
   </body>
+</html>
