@@ -1,0 +1,1922 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../style.css" />
+    <title>Piloter un projet de développement</title>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        Module B2M1 — MODXXX<br />
+        Piloter un projet de développement
+      </h1>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>I-manuel</th>
+            <td>B2M1 — Piloter un projet de développement</td>
+          </tr>
+          <tr>
+            <th>Séquence</th>
+            <td>S211 — Gestion de projet (Agile) et qualité : Planifier, Initier et conduire un projet Scrum</td>
+          </tr>
+        </tbody>
+      </table>
+    </header>
+
+    <aside id="sommaire">
+      <h2>Sommaire du module</h2>
+      <ul>
+        <li><a href="#video">Vidéo de présentation du module</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li>
+          <a href="#decouverte">Découverte (12h)</a>
+          <ul>
+            <li><a href="#cascade">Comprendre les limites du modèle en cascade</a></li>
+            <li><a href="#cycle-en-v">Comprendre les limites du cycle en V</a></li>
+            <li><a href="#specifications-artistes">Découvrir les principes de l’agilité</a></li>
+            <li><a href="#creer-des-stories">Créer des stories</a></li>
+            <li><a href="#valuer-des-stories">Valuer les stories</a></li>
+            <li><a href="#debut-sprint">Commencer un sprint</a></li>
+            <li><a href="#fin-sprint">Clotûrer un sprint</a></li>
+            <li><a href="#xp">Mettre de l’agilité dans ses pratiques de code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#atelier">Atelier (2h)</a>
+        </li>
+        <li>
+          <a href="#fiches-ressources">Fiches ressources</a>
+          <ul>
+            <li><a href="#presentation-cascade">Comment fonctionne le modèle en cascade ?</a></li>
+            <li><a href="#presentation-cycle-v">Comment fonctionne le cycle en V ?</a></li>
+            <li><a href="#dessin-1">Premier dessin</a></li>
+            <li><a href="#dessin-2">Deuxième dessin</a></li>
+            <li><a href="#dessin-3">Troisième dessin</a></li>
+            <li><a href="#story">Comment construire une story ?</a></li>
+            <li><a href="#methodes-valuation">Comment valuer des stories ?</a></li>
+            <li><a href="#gestionnaires">Les outils pour gérer les projets en mode Agile</a></li>
+            <li><a href="#stories">Les stories du site de vente en ligne</a></li>
+            <li><a href="#vocabulaire-scrum">Vocabulaire Scrum</a></li>
+            <li><a href="#principes-xp">Comment fonctionne eXtreme Programming ?</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <main>
+      <section id="video">
+        <h2>Vidéo de présentation du module</h2>
+
+        <p>
+          Réaliser un projet nécessite de travailler en équipe et avec des personnes
+          n’ayant pas les mêmes rôles. Afin de mener à bien cette tâche, il existe
+          différentes méthodes de gestion de projet qui présentent chacune des points
+          forts et des points faibles.
+        </p>
+        <p>
+          Avant de parler de Scrum, nous aborderons rapidement les limites du
+          modèle en cascade et du cycle en V qui sont des approches plutôt traditionnelles
+          et qui imposent des phases rigides.
+        </p>
+        <p>
+          Par la suite, nous verrons la méthode Scrum qui propose une approche itérative
+          et incrémentale. Ce qui permet une meilleure flexibilité, une adaptation continue
+          aux besoins changeants du projet et une meilleure implication des parties
+          prenantes tout au long du processus.
+        </p>
+        <p>
+          Une des clés de Scrum réside dans la construction des « stories » et le découpage
+          en « sprint ». Ces deux élement permettent de représenter les fonctionnalités du
+          produit du point de vue de l'utilisateur et de décomposer le projet en éléments
+          gérables.
+        </p>
+        <p>
+          Une autre partie importante de Scrum réside dans ses cérémonies. Nous découvrirons
+          ensemble les différents rituels tels que la planification de sprint,
+          la revue de sprint et la rétrospective, qui favorisent la communication,
+          la transparence et l’amélioration continue.
+        </p>
+        <p>
+          Enfin, nous aborderons les principes d’eXtreme Programming (XP), une pratique
+          complémentaire à Scrum qui met l’accent sur la partie technique, la qualité de code
+          et la collaboration entre les membres de l’équipe.
+        </p>
+      </section>
+
+      <section id="quiz">
+        <h2>Quiz</h2>
+
+        <ul>
+          <li>
+            <p>
+              Quelle est la différence principale entre la revue de sprint (Sprint Review)
+              et la rétrospective de sprint (Sprint Retrospective) ?
+            </p>
+            <ul>
+              <li>
+                La revue de sprint se concentre sur les résultats, alors que
+                la rétrospective de sprint se concentre sur les processus</li>
+              <li>
+                La revue de sprint se déroule avant le sprint, alors que
+                la rétrospective de sprint se déroule après le sprint</li>
+              <li>
+                La revue de sprint est dirigée par le Scrum Master, alors que
+                la rétrospective de sprint est dirigée par le Product Owner</li>
+              <li>
+                La revue de sprint se concentre sur l’équipe de développement,
+                alors que la rétrospective de sprint se concentre sur le Product Owner
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quel est l’objectif principal de la plannification de sprint dans Scrum ?
+            </p>
+            <ul>
+              <li>Définir les tâches détaillées pour chaque membre de l’équipe</li>
+              <li>Établir les objectifs à court terme pour le prochain sprint</li>
+              <li>Examiner les résultats du sprint précédent</li>
+              <li>Prioriser le Product Backlog</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quelle est la durée recommandée d’un sprint dans Scrum ?
+            </p>
+            <ul>
+              <li>Deux semaines</li>
+              <li>Un mois</li>
+              <li>Six semaines</li>
+              <li>Trois mois</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quel rôle Scrum est responsable de maximiser la valeur du produit et du travail de l’équipe ?
+            </p>
+            <ul>
+              <li>Le Scrum Master</li>
+              <li>Le Product Owner</li>
+              <li>La Scrum Team</li>
+              <li>Les actionnaires</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Qu’est-ce qu’un « Product Backlog » ?
+            </p>
+            <ul>
+              <li>Une liste des tâches à accomplir pendant le sprint</li>
+              <li>Une liste priorisée des fonctionnalités à développer</li>
+              <li>Un résumé des rétrospectives précédentes</li>
+              <li>Une estimation du temps requis pour chaque tâche</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quelle cérémonie Scrum se concentre sur l’inspection et l’adaptation
+              du processus de travail de l’équipe ?
+            </p>
+            <ul>
+              <li>La revue de sprint (Sprint Review)</li>
+              <li>La rétrospective (Sprint Retrospective)</li>
+              <li>La plannification de sprint</li>
+              <li>Le Daily stand-up</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quel principe d’eXtreme Programming met l’accent sur la rédaction
+              de tests automatisés avant l’écriture de code ?
+            </p>
+            <ul>
+              <li>Le Pair Programming</li>
+              <li>Le Test-Driven Development</li>
+              <li>L’intégration continue</li>
+              <li>Le refactoring</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quel artefact Scrum représente la somme de toutes les tâches
+              terminées au cours du sprint ?
+            </p>
+            <ul>
+              <li>L’Increment</li>
+              <li>Le Sprint Backlog</li>
+              <li>Le Burndown Chart</li>
+              <li>Le Product Backlog</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quel aspect de Scrum adresse spécifiquement les limitations du modèle
+              en cascade et du cycle en V, en favorisant une approche itérative et incrémentale ?
+            </p>
+            <ul>
+              <li>La revue de sprint (Sprint Review)</li>
+              <li>Le Product Backlog</li>
+              <li>L’Increment</li>
+              <li>Le principe de Sprint</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quelle est la principale différence entre Scrum et le modèle en cascade ?
+            </p>
+            <ul>
+              <li>Scrum est itératif, alors que le modèle en cascade est linéaire</li>
+              <li>Scrum ne nécessite pas de planification</li>
+              <li>Le modèle en cascade est plus adaptatif que Scrum</li>
+              <li>Scrum ne suit pas de phases distinctes</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <section id="decouverte">
+        <h2>Découverte</h2>
+
+        <section id="cascade">
+          <h3>Comprendre les limites du modèle en cascade</h3>
+          <section class="introduction">
+            <p>Temps estimé : 1h.</p>
+            <p>
+              Lors de cette première étape, nous allons voir un modèle d’organisation
+              de projet : le modèle en cascade. Nous verrons son fonctionnement et
+              ses limites.
+            </p>
+            <p>
+              Cette étape se réalise en petit groupe de 2 ou 3 personnes.
+            </p>
+          </section>
+          <section class="sujet">
+            <p>
+              Votre entreprise développe des sites web sur mesure et utilise le modèle
+              en cascade pour gérer les étapes des différents projets.
+            </p>
+            <p>
+              Un nouveau client est signé et le projet débute. La cheffe de projet recueille
+              les besoins et exigences du client. Il est prévu que le développement
+              et la mise en production du site prenne 4 mois.
+            </p>
+            <p>
+              Différents problèmes surviennent lors du développement de ce site.
+              À vous d’identifier les causes possibles des problèmes et les
+              conséquences probables de leur résolution (ou non-résolution).
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Identifiez les problèmes et leurs conséquences</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#presentation-cascade">FR 1</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Le développement a commencé depuis 1 mois et l’équipe est motivée.
+                Lors d’un rendez-vous avec le client pour un tout autre projet, il
+                évoque le projet actuellement en développement en disant qu’il a vraiment
+                hâte que ces futurs utilisateurs et utilisatrices utilisent le chatbot.
+                Mais aucun chatbot n’est prévu dans le développement !
+              </li>
+              <li>
+                La phase de conception est terminée et l’équipe de développement
+                commence à procéder aux tests. Différents bugs dans le code sont
+                constatés, que ce soit dans des parties développées récemment et
+                dans des parties plus anciennes.
+              </li>
+              <li>
+                En plus des divers bugs, tous les membres de l’équipe ne comprennent
+                pas de la même façon certaines exigences décrites dans le cahier
+                des charges. De longues discussions et relecture ont lieu.
+              </li>
+              <li>
+                Tous les bugs sont enfin corrigés et le site est mis en service !
+                Le client découvre alors le résultat et… c’est la déception
+                « Je n’imaginais pas ça comme ça »
+                Il ne comprend pas pourquoi il y a autant de pages, pourquoi
+                il y a un formulaire à tel endroit. Et en plus, il n’aime même pas
+                la charte graphique.
+              </li>
+            </ol>
+          </section>
+        </section>
+
+        <section id="cycle-en-v">
+          <h3>Comprendre les limites du cycle en V</h3>
+          <section class="introduction">
+            <p>Temps estimé : 1h.</p>
+            <p>
+              Lors de cette étape, nous allons voir un modèle d’organisation
+              de projet dérivé du modèle en cascade : le cycle en V.
+              Nous verrons son fonctionnement et ses limites.
+            </p>
+            <p>
+              Cette étape se réalise en petit groupe de 2 ou 3 personnes.
+            </p>
+          </section>
+          <section class="sujet">
+            <p>
+              Votre entreprise travaille dans le développement de solutions
+              logicielles dans le domaine de la santé et utilise le modèle
+              du cycle en V pour gérer ses projets.
+            </p>
+            <p>
+              Un client vous missionne pour développer un nouveau produit : une
+              application mobile destinée à la gestion des données de santé.
+            </p>
+            <p>
+              Le projet commence avec une phase de spécifications très détaillées
+              qui est suivi du phase de conception architecturale.
+              Il est prévu que le développement et la mise en service prenne
+              6 mois.
+            </p>
+            <p>
+              Différents problèmes surviennent lors du développement de cette application.
+              À vous d’identifier les causes possibles des problèmes et les
+              conséquences probables de leur résolution (ou non-résolution).
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Identifiez les problèmes et leurs conséquences</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#presentation-cycle-v">FR 2</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Le développement se passe bien et l’équipe est très motivée.
+                Cela fait 3 mois que le développement a commencé.
+                Mais des changements très importants dans la règlementation
+                en matière de confidentialité des données personnelles et des
+                données de santé sont annoncés.
+              </li>
+              <li>
+                L’équipe a réussi à developper l’application, la phase de tests
+                unitaires commence. Des bugs sont trouvés dans du code assez récent
+                et du code qui date du tout début du projet.
+              </li>
+              <li>
+                Les tests unitaires sont tous validés. Les tests d’intégration peuvent
+                commencer. Certains composants de l’application ne fonctionne pas
+                comme prévu une fois mis en lien avec d’autres composants.
+              </li>
+              <li>
+                Les tests d’intégration sont complétés, les tests fonctionnels débutent.
+                Ouf ! Tout semble conforme au cahier des charges !
+                L’application est mise en production et le client la
+                découvre enfin. Le malaise est palpable, le client trouve l’application
+                trop généraliste. Il voulait une application en particulier pour
+                les données liées à l’ophtalmologie « Je vous l’avais pourtant dit… ».
+              </li>
+            </ol>
+          </section>
+        </section>
+
+        <section id="specifications-artistes">
+          <h3>Découvrir les principes de l’agilité</h3>
+          <section class="introduction">
+            <p>Temps estimé : 1h30.</p>
+            <p>
+              Cette étape a pour but de découvrir les principes clés de
+              l’agilité en utilisant comme support de compréhension
+              le dessin. Ne vous inquiétez pas, il suffit de savoir dessiner
+              des formes simples !
+            </p>
+            <p>
+              Cette étape se réalise en groupe de 6 à 8 personnes.
+            </p>
+            <p>
+              Vous aurez besoin d’un tableau blanc collaboratif comme
+              <a href="https://wbo.ophir.dev/">WBO</a> ou
+              <a href="https://excalidraw.com/">Excalidraw</a>.
+            </p>
+          </section>
+          <section class="sujet">
+            <p>
+              Cette étape se compose de <strong>trois phases</strong> au cours desquelles
+              vous allez devoir reproduire un dessin en suivant
+              des spécifications.
+            </p>
+            <p>
+              <strong>Chaque phase dure 10 minutes</strong>. Préparez donc un minuteur.
+            </p>
+            <p>
+              De la même manière qu’en entreprise où des personnes
+              écrivent les spécifications d’un projet et d’autres personnes
+              réalisent le développement, <strong>votre groupe va être scindé en
+              deux équipes</strong> : une équipe responsable des spécifications et une
+              équipe responsable de la réalisation du dessin.
+              Vous êtes libres de composer les équipes comme vous le souhaitez.
+            </p>
+            <p>
+              <strong>Uniquement l’équipe des spécifications peut voir le dessin</strong>.
+              Le dessin se trouve dans la fiche ressource associée à chaque phase.
+            </p>
+            <p>
+              Lors du développement d’un projet, une grande partie de la
+              communication se passe par écrit. L’équipe des spécifications doit
+              donc transmettre ses instructions <strong>uniquement par écrit</strong> à
+              l’équipe réalisation.
+            </p>
+            <p>
+              Au sein de l’équipe des spécifications, une personne est chargée
+              de transmettre les spécifications à l’autre équipe.
+              <strong>Cette personne ne peut rien dire ou expliquer</strong>.
+              Elle n’a le droit que de transmettre les spécifications et
+              d’observer ce que l’équipe réalisation en comprend.
+            </p>
+            <p>
+              À la fin de chaque phase, l’équipe des spécifications pourra dévoiler
+              à l’équipe réalisation le dessin qu’ils devaient reproduire.
+              <strong>Vous échangerez alors pendant 10 minutes</strong> sur les problèmes rencontrés
+              et quelles stratégies vous pouvez mettre en place pour la phase
+              suivante.
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Premier dessin, première phase</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#dessin-1">FR 3</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Composez les équipes spécifications et réalisation comme
+                vous le souhaitez. N’oubliez pas de désigner la personne
+                chargée de transmettre les spécifications.
+              </li>
+              <li>
+                Préparez un tableau collaboratif pour l’équipe réalisation.
+              </li>
+              <li>
+                Lancez un minuteur de 10 minutes.
+              </li>
+              <li>
+                L’équipe spécifications, et uniquement elle, découvre le dessin,
+                écrit ses spécifications et les transmet à l’équipe
+                réalisation.
+              </li>
+              <li>
+                À la fin des 10 minutes, comparez le dessin original
+                et le dessin produit par l’équipe réalisation.
+              </li>
+              <li>
+                Lancez à nouveau un minuteur de 10 minutes.
+              </li>
+              <li>
+                Débriefez comment la réalisation c’est passé et identifiez les
+                problèmes rencontrés (clarté des spécifications, temps de
+                transmission…).
+              </li>
+              <li>
+                Pour chaque problème, essayez de trouver une solution que
+                vous pourrez mettre en place lors de la prochaine phase.
+              </li>
+              <li>
+                Le minuteur est fini, le débrief est terminé. Passez à la
+                phase d’après.
+              </li>
+            </ol>
+            <h4>Deuxième dessin, deuxième phase</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#dessin-2">FR 4</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Composez les équipes spécifications et réalisation comme
+                vous le souhaitez. N’oubliez pas de désigner la personne
+                chargée de transmettre les spécifications.
+              </li>
+              <li>
+                Préparez un nouveau tableau collaboratif pour l’équipe réalisation.
+              </li>
+              <li>
+                Lancez un minuteur de 10 minutes.
+              </li>
+              <li>
+                L’équipe spécifications, et uniquement elle, découvre le dessin,
+                écrit ses spécifications et les transmet à l’équipe
+                réalisation.
+              </li>
+              <li>
+                À la fin des 10 minutes, comparez le dessin original
+                et le dessin produit par l’équipe réalisation.
+              </li>
+              <li>
+                Lancez à nouveau un minuteur de 10 minutes.
+              </li>
+              <li>
+                Débriefez comment la réalisation c’est passé et identifiez les
+                problèmes rencontrés (clarté des spécifications, temps de
+                transmission…).
+              </li>
+              <li>
+                Pour chaque problème, essayez de trouver une solution que
+                vous pourrez mettre en place lors de la prochaine phase.
+              </li>
+              <li>
+                Le minuteur est fini, le débrief est terminé. Passez à la
+                phase d’après.
+              </li>
+            </ol>
+            <h4>Troisième dessin, troisième et dernière phase</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#dessin-3">FR 5</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Composez les équipes spécifications et réalisation comme
+                vous le souhaitez. N’oubliez pas de désigner la personne
+                chargée de transmettre les spécifications.
+              </li>
+              <li>
+                Préparez un nouveau tableau collaboratif pour l’équipe réalisation.
+              </li>
+              <li>
+                Lancez un minuteur de 10 minutes.
+              </li>
+              <li>
+                L’équipe spécifications, et uniquement elle, découvre le dessin,
+                écrit ses spécifications et les transmet à l’équipe
+                réalisation.
+              </li>
+              <li>
+                À la fin des 10 minutes, comparez le dessin original
+                et le dessin produit par l’équipe réalisation.
+              </li>
+              <li>
+                Lancez à nouveau un minuteur de 10 minutes.
+              </li>
+              <li>
+                Débriefez comment la réalisation c’est passé et identifiez les
+                problèmes rencontrés (clarté des spécifications, temps de
+                transmission…).
+              </li>
+              <li>
+                Pour chaque problème, essayez de trouver une solution que
+                vous pourrez mettre en place lors de la prochaine phase.
+              </li>
+              <li>
+                Le minuteur est fini, le débrief est terminé. Passez à la
+                phase d’après.
+              </li>
+            </ol>
+            <h4>Débrief général</h4>
+            <ol>
+              <li>Au fil des phases, quels problèmes avez-vous rencontrés ?</li>
+              <li>Quelles étaient les stratégies les plus efficaces ?</li>
+              <li>Quelles étaient les stratégies les moins efficaces ?</li>
+            </ol>
+          </section>
+        </section>
+
+        <section id="creer-des-stories">
+          <h3>Créer des stories</h3>
+          <section class="introduction">
+            <p>Temps estimé : 1h30.</p>
+            <p>
+              Au début d’un projet, la première chose à faire et de
+              recueillir les besoins du client. Dans les méthodes comme le
+              modèle en cascade ou le cycle, le cahier des charges sert de référentiel.
+            </p>
+            <p>
+              Dans les méthodes dîtes Agile, les besoins du client vont
+              être représentés sous forme de « story ».
+            </p>
+            <p>
+              Cette étape se déroule en groupe de 4 à 6 personnes.
+            </p>
+          </section>
+          <section class="sujet">
+            <p>
+              Vous travaillez dans une entreprise qui conçoit et
+              vend des solutions de distribution sur mesure.
+            </p>
+            <p>
+              Un client vient vous voir car il souhaite installer
+              dans son établissement une solution pour permettre à
+              ses propres clients de récupérer des commandes en autonomie.
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Identifiez et formalisez les stories</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#story">FR 6</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Réfléchissez aux fonctionnalités attendues par le client.
+                Attention à bien vous placer du point de vue du client
+                quand vous évaluez l’utilité d’une fonctionnalité.
+                De quoi le client a vraiment besoin pour que le distributeur
+                réponde à son besoin et à celui de ses utilisateurs et
+                utilisatrices ?
+              </li>
+              <li>
+                Une fois que vous avez une liste de fonctionnalité,
+                sélectionnez en 5 ou 6 principales pour la question d’après.
+              </li>
+              <li>
+                Pour chaque fonctionnalité, créez la story associée en
+                respectant les critères de validité d’une story.
+              </li>
+            </ol>
+          </section>
+        </section>
+
+        <section id="valuer-des-stories">
+          <h3>Valuer les stories</h3>
+          <section class="introduction">
+            <p>Temps estimé : 1h30.</p>
+            <p>
+              Une fois les différentes stories créées, il va falloir leur
+              attribuer une valeur.
+            </p>
+            <p>
+              Une story peut avoir différentes valeurs suivant ce que
+              l’on cherche à valuer.
+            </p>
+            <p>
+              On va pouvoir valuer les stories pour obtenir un ordre
+              de priorité et également pour obtenir un niveau de
+              difficulté pour chaque story.
+            </p>
+            <p>
+              Cette étape se déroule en groupe de 4 ou 6 personnes.
+              Si possible le même que pour l’étape précédente.
+            </p>
+          </section>
+          <section class="sujet">
+            <p>
+              Vous travaillez toujours dans l’entreprise de conception de
+              solutions de distribution sur mesure de l’étape précédente et
+              vous êtes toujours sur le même projet.
+            </p>
+            <p>
+              Lors de l’étape précédente vous avez établi différentes stories
+              pour représenter le besoin du client.
+            </p>
+            <p>
+              Les stories étant claires et définies, il est nécessaire de les
+              valuer afin d’établir un ordre de priorité des fonctionnalités
+              à réaliser.
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Valuez chacune des stories</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#methodes-valuation">FR 7</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Reprenez les 5 ou 6 stories finales de l’étape précédente.
+              </li>
+              <li>
+                Au sein du groupe, désignez un facilitateur.
+                Le facilitateur a pour rôle de faciliter les débats en
+                s’assurant que tout le monde puisse exprimer son avis.
+              </li>
+              <li>
+                En choisissant une des méthodes de valuation proposées
+                dans la fiche ressource associée, valuez chacune des stories.
+                Il peut être compliqué de se mettre d’accord. Pour l’exercice,
+                il est conseillé de se limiter à 3 tours de votes / débats.
+              </li>
+              <li>
+                Une fois les stories valuées, débriefez de cette étape.
+                Quelles difficultés avez-vous rencontrées ? Comment mettre en
+                place des discussions où tout le monde peut donner son
+                opinion ?
+              </li>
+            </ol>
+          </section>
+        </section>
+
+        <section id="debut-sprint">
+          <h3>Commencer un sprint</h3>
+          <section class="introduction">
+            <p>Temps estimé : 2h30.</p>
+            <p>
+              La philosophie Agile repose sur le principe d’itérations et
+              de stories. Pour appliquer le principe d’itérations,
+              la méthode Scrum utilise les « sprint ».
+            </p>
+            <p>
+              Le but de cette étape est de se familiariser avec le
+              vocabulaire de la méthode Scrum et d’initialiser
+              un sprint.
+            </p>
+            <p>
+              Cette étape se déroule en groupe de 3.
+            </p>
+          </section>
+          <section class="sujet">
+            <p>
+              Vous travaillez dans une entreprise de développement de
+              site web. Un client a contacté votre entreprise car il
+              souhaite avoir un site de vente en ligne de matériel
+              de cuisine.
+            </p>
+            <p>
+              Les besoins du client ont été identifiés. Les stories
+              relatives au projet ont déjà été rédigées et valuées.
+            </p>
+            <p>
+              Chaque story a deux valeurs : une fonctionnelle et une
+              de complexité. La valeur fonctionnelle est F-1 (importance
+              faible), F-2 (importance moyenne) ou F-3 (importance élevée).
+              La valeur de complexité est C-1 (complexité faible),
+              C-2 (complexité moyenne) ou C-3 (complexité élevée).
+            </p>
+            <p>
+              Votre équipe se compose d’un Product Owner et de deux
+              développeuses ou développeurs.
+            </p>
+            <p>
+              Votre équipe travaille à temps plein sur ce projet. La durée
+              choisie pour le sprint est de deux semaines.
+            </p>
+            <p>
+              Votre objectif va être d’initialiser un premier
+              sprint pour ce projet.
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Utilisez un outil pour gérer les stories</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#gestionnaires">FR 8</a></li>
+                <li><a href="#stories">FR 9</a></li>
+                <li><a href="#vocabulaire-scrum">FR 10</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Choisissez une des personnes du groupe pour jouer le
+                rôle du Product Owner et deux personnes pour
+                jouer l’équipe de développement.
+              </li>
+              <li>
+                Créez le projet dans l’outil de votre choix, ainsi que les
+                différents labels (si nécessaire).
+              </li>
+              <li>
+                Créez les stories dans le logiciel afin de
+                constituer le « Product Backlog » du projet.
+                Vous pouvez trouver les différentes stories dans la fiche
+                de ressources associée.
+              </li>
+              <li>
+                Vérifiez que vous avez bien indiqué également les
+                valuations de chaque story.
+              </li>
+              <li>
+                Initialisez le sprint. Il s’agit de préparer l’endroit
+                qui contiendra le « Sprint Backlog ».
+              </li>
+            </ol>
+
+            <h4>Réalisez un « Sprint Planning »</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#vocabulaire-scrum">FR 10</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Définissez l’objectif de ce premier sprint.
+              </li>
+              <li>
+                Sélectionnez les stories qui doivent être réalisées
+                durant ce premier sprint.
+                N’oubliez pas la durée du sprint et la taille de
+                votre équipe.
+              </li>
+              <li>
+                Constituez le « Sprint Backlog ».
+              </li>
+            </ol>
+          </section>
+        </section>
+
+        <section id="fin-sprint">
+          <h3>Clotûrer un sprint</h3>
+          <section class="introduction">
+            <p>Temps estimé : 2h.</p>
+            <p>
+              À la fin d’un sprint, deux réunions différentes se tiennent
+              afin de le clôturer.
+            </p>
+            <p>
+              Le but de cette étape est de clôturer le sprint de l’étape
+              précédente.
+            </p>
+            <p>
+              Cette étape se déroule en groupe de 3. Si possible le même que
+              pour l’étape précédente.
+            </p>
+          </section>
+          <section class="sujet">
+            <p>
+              Vous travaillez toujours dans l’entreprise de développement de site
+              web de l’étape précédente.
+            </p>
+            <p>
+              Le sprint que vous aviez défini arrive à son terme. C’est le moment
+              de le clôturer.
+            </p>
+            <p>
+              Durant ce sprint, une des personnes de l’équipe de développement
+              a été absente pendant 4 jours. Et certaines stories étaient
+              plus complexes que prévu.
+            </p>
+            <p>
+              Parmi les différentes stories prévues lors du sprint,
+              seulement les deux les plus difficiles ont pu être réalisées.
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Réalisez un Sprint Review</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#vocabulaire-scrum">FR 10</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Choisissez une des personnes du groupe pour jouer le
+                rôle du Product Owner et deux personnes pour
+                jouer l’équipe de développement.
+              </li>
+              <li>
+                Le client n’étant pas disponible pour cette réunion, mais
+                il a fait parvenir au Product Owner sa volonté de rajouter
+                une nouvelle fonctionnalité au site.
+                Il veut que les clients puissent définir des adresses de livraison
+                préférées.
+                Est-il possible de rajouter une fonctionnalité
+                maintenant ? Si oui, que faut-il faire ?
+              </li>
+            </ol>
+            <h4>Réalisez une Sprint Retrospective</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#vocabulaire-scrum">FR 10</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Quels sont les points positifs du sprint ?
+              </li>
+              <li>
+                Quels sont les points négatifs du sprint ?
+              </li>
+              <li>
+                Qu’est ce qui peut être mis en place pour éviter que
+                les points négatifs soulevés se reproduisent ?
+              </li>
+              <li>
+                Rédigez un compte-rendu succint de la réunion résumant
+                les points positifs, les points négatifs et les décisions
+                prises pour la suite.
+              </li>
+              <li>
+                Vous pouvez fermer le sprint sur l’outil de gestion
+                de projet !
+              </li>
+            </ol>
+          </section>
+        </section>
+
+        <section id="xp">
+          <h3>Mettre de l’agilité dans ses pratiques de code</h3>
+          <section class="introduction">
+            <p>Temps estimé : 1h.</p>
+            <p>
+              La méthode Scrum permet de gérer de façon Agile un projet.
+              Mais elle se concentre surtout sur les interactions entre
+              les personnes et délaisse le côté technique du développement.
+            </p>
+            <p>
+              Pour pallier cela, Scrum est souvent utilisé en combinaison
+              avec des méthodes Agile de développement comme eXtreme Programming.
+            </p>
+            <p>
+              Cette étape se déroule en groupe de 2.
+            </p>
+          </section>
+          <section class="sujet">
+            <p>
+              Votre entreprise vous missionne pour amener des nouvelles
+              bonnes pratiques de développement afin d’améliorer la
+              qualité des applications.
+            </p>
+            <p>
+              Vous décidez de faire quelques recherches sur eXtreme
+              Programming et d’appliquer ses principes sur un
+              développement de test relativement simple : le FizzBuzz.
+            </p>
+            <p>
+              Votre programme prend en entrée un nombre. Si ce
+              nombre est un multiple de 3, il doit renvoyer "Fizz".
+              Si le nombre est un mulitple de 5, il doit renvoyer "Buzz".
+              Si le nombre est un multiple de 15, il doit
+              renvoyer "FizzBuzz".
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Appliquez les principes d’eXtreme Programming</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#principes-xp">FR 11</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Choisissez le langage de programmation avec lequel
+                vous souhaitez développer votre programme.
+              </li>
+              <li>
+                Écrivez un premier test qui permet de vérifier que
+                si le nombre saisi est un multiple de 3, votre programme
+                renvoie bien "Fizz".
+                Attention, à ce stade là, vous n’avez rien écrit d’autre
+                que ce test.
+              </li>
+              <li>
+                Écrivez ensuite le code minimal permettant de faire
+                passer ce test.
+              </li>
+              <li>
+                Écrivez d’autres tests, puis le code minimal pour
+                faire passer chacun d’eux.
+              </li>
+              <li>
+                Votre code vous semble-t-il clair ? Les variables ont-elles
+                toutes un nom représentatif ? Les fonctions sont-elles
+                nommées correctement ? Si non, refactorez votre code.
+              </li>
+              <li>
+                Si vous n’aviez pas de tests, seriez-vous à l’aise
+                pour faire des modifications dans votre code ?
+              </li>
+            </ol>
+          </section>
+        </section>
+      </section>
+
+      <section id="atelier">
+        <h2>Atelier</h2>
+        <section class="introduction">
+          <p>Temps estimé : 2h.</p>
+          <p>
+            Cet atelier a pour but de vous faire dérouler les différentes
+            étapes d’un projet qui utilise la méthode Scrum.
+          </p>
+          <p>
+            L’atelier se focalise sur les parties gestion de
+            projet, de la récolte des besoins à la fin d’un premier
+            sprint. Il n’y aura donc pas de code à écrire.
+          </p>
+          <p>
+            L’atelier se déroule en groupe de 4 ou 5.
+          </p>
+        </section>
+        <section class="sujet">
+          <p>
+            L’entreprise dans laquelle vous travaillez développe
+            différents sites web suivant les besoins des clients,
+            en particulier pour les structures dont le numérique
+            n’est pas leur cœur de métier.
+          </p>
+          <p>
+            Une personne du groupe tient le rôle du client,
+            une autre du Product Owner et les autres de l’équipe
+            de développement.
+          </p>
+          <h3>Attribution des rôles et préparation des outils nécessaires</h3>
+          <p>
+            Dans un premier temps, répartissez-vous les rôles.
+            Lorsque le client ne sera pas acteur d’une étape, la personne
+            sera alors garante du bon suivi de la méthode.
+          </p>
+          <p>
+            <strong>Le client prépare la présentation de son projet</strong>. Pour cela,
+            réfléchissez aux fonctionnalités que vous souhaiteriez.
+            Si vous n’avez pas d’idée de projet, vous pouvez choisir
+            une idée parmi les suivantes :
+          </p>
+          <ul>
+            <li>
+              Vous tenez un restaurant, et vous souhaitez avoir un
+              site pour les réservations et les commandes à emporter.
+            </li>
+            <li>
+              Vous tenez un magasin de jeux-vidéos, et pour dynamiser
+              votre commerce vous souhaitez avoir un logiciel
+              pour organiser des tournois dans votre boutique.
+            </li>
+            <li>
+              Vous organisez différentes conférences, et vous souhaitez
+              avoir un service pour gérer les propositions de sujets
+              et le planning.
+            </li>
+          </ul>
+          <p>
+            Pendant que le client réfléchit aux fonctionnalités dont
+            il a aura besoin, <strong>le Product Owner et l’équipe de développement
+            choisissent l’outil</strong> à utiliser pour la gestion
+            des stories et des sprints. N’oubliez pas de préparer les
+            labels si nécessaire.
+          </p>
+
+          <h3>Création du Product Backlog</h3>
+          <p>
+            Le client arrive au rendez-vous et expose son projet
+            et ses besoins.
+          </p>
+          <p>
+            L’équipe de développement et le Product Owner s’assure de
+            bien comprendre ce dont le client à besoin.
+          </p>
+          <p>
+            Au cours de cette réunion, les différentes parties prenantes
+            vont pouvoir <strong>créer les stories</strong> relatives au projet.
+          </p>
+          <p>
+            Une fois les stories définies, il est temps de les
+            valuer !
+          </p>
+          <p>
+            À la fin de cet échange, <strong>vous devez obtenir un
+            Product Backlog</strong> contenant les stories et leur
+            valuation.
+          </p>
+
+          <h3>Création du Sprint Planning</h3>
+          <p>
+            Le Product Backlog est prêt, toute l’équipe dispose d’une
+            vision globale sur le projet et ses objectifs.
+          </p>
+          <p>
+            Il est temps de commencer à réaliser ce projet et d’<strong>initier
+            le tout premier sprint</strong> !
+          </p>
+          <p>
+            Le Product Owner organise un Sprint Planning.
+          </p>
+          <p>
+            Il est d’usage dans cet entreprise de faire des sprints
+            d’une durée de deux semaines.
+          </p>
+          <p>
+            Le Product Owner et l’équipe de développement
+            établissent un objectif de sprint et quelles sont les stories
+            associées.
+          </p>
+          <p>
+            À la fin de cette réunion, <strong>vous devez obtenir
+            un Sprint Backlog</strong>.
+          </p>
+
+          <h3>Réalisation d’un Sprint Review</h3>
+          <p>
+            Le sprint touche à sa fin. Toutes les stories prévues ont pu
+            être réalisées.
+          </p>
+          <p>
+            Le Product Owner organise un Sprint Review.
+          </p>
+          <p>
+            Au cours de cette réunion, <strong>le Product Owner et
+            l’équipe de développement présentent leur avancée</strong> au client.
+          </p>
+          <p>
+            Le client annonce qu’il a pensé à une nouvelle fonctionnalité
+            pour le projet. Il faut donc faire le nécessaire pour
+            <strong>intégrer cette nouvelle fonctionnalité au Product Backlog</strong>.
+          </p>
+          <p>
+            À la fin de cette réunion, vous devez produire une
+            note de compte-rendu composée de :
+          </p>
+          <ul>
+            <li>la liste des participantes et participants,</li>
+            <li>l’état du projet à l’issu du sprint,</li>
+            <li>la liste des nouvelles fonctionnalités demandées par le client.</li>
+          </ul>
+
+          <h3>Réalisation d’une Sprint Retrospective</h3>
+          <p>
+            Afin de clôturer définitivement le sprint, le Product
+            Owner organise une Sprint Retrospective.
+          </p>
+          <p>
+            <strong>L’équipe de développement fait part de certaines frustrations</strong> :
+            des fonctionnalités sont développées sans tests automatiques,
+            l’équipe ne nomme pas les variables / fonctions / objets de la
+            même façon.
+          </p>
+          <p>
+            Les participantes et participants à la réunion réfléchissent
+            à des <strong>actions à mettre en place pour réduire ces frustrations</strong>.
+          </p>
+          <p>
+            À la fin de cette réunion, vous devez produire une note de
+            compte-rendu composée de :
+          </p>
+          <ul>
+            <li>la liste des personnes présentes,</li>
+            <li>les points positifs et négatifs relevés,</li>
+            <li>la liste des actions qui vont être mises en place.</li>
+          </ul>
+        </section>
+      </section>
+
+      <section id="fiches-ressources">
+        <h2>Fiches ressources</h2>
+
+        <section id="presentation-cascade">
+          <h3>Comment fonctionne le modèle en cascade ?</h3>
+          <p>
+            Le modèle en cascade est une organisation de projet qui consiste en
+            <strong>une suite de phases dont chacune va dépendre du résultat de la précedente</strong>.
+            On passe d’une phase à une autre uniquement lorsque le résultat de la première
+            est validé.
+          </p>
+          <p>
+            Ce modèle provient surtout du domaine de la construction et fait
+            son apparition dans le domaine de l’informatique dans les
+            années 1950.
+          </p>
+          <p>
+            La première utilisation du terme « cascade » a lieu en 1970.
+          </p>
+          <figure>
+            <figcaption>Modèle en cascade classique</figcaption>
+            <img src="cascade.png" alt="Modèle en cascade où chaque phase dépend de la précedente : Exigences, Analyse, Conception, Mise en œuvre, Validation, Mise en service">
+          </figure>
+          <p>
+            On retrouve 6 phases dans le modèle en cascade :
+          </p>
+          <ul>
+            <li><strong>Exigences</strong> : les besoins et exigences du client sont recueillis</li>
+            <li><strong>Analyse</strong> : un cahier des charges fonctionnel est rédigé à partir des exigences du client</li>
+            <li><strong>Conception</strong> : l’architecture de la solution qui va être développée est déterminée</li>
+            <li><strong>Mise en œuvre</strong> : la solution est développée</li>
+            <li><strong>Validation</strong> : la solution est testée et le respect du cahier des charges est vérifié</li>
+            <li><strong>Mise en service</strong> : la solution est mise en production et accessible au client</li>
+          </ul>
+          <p>
+            Cette méthode permet de mettre l’accent sur l’existance d’une documention structurée.
+            Mais elle présente une certaine rigidité face aux changements
+            qui peuvent survenir lors d’un projet.
+          </p>
+          <p>
+            Des évolutions de ce modèle existe, comme par exemple le cycle en V.
+          </p>
+        </section>
+
+        <section id="presentation-cycle-v">
+          <h3>Comment fonctionne le cycle en V ?</h3>
+          <p>
+            Le cycle en V est une <strong>évolution du modèle en cascade qui a pour but de
+            mettre l’accent sur la validation</strong>. C’est un modèle qui peut être plus
+            adapté pour les systèmes avec de nombreux composants.
+          </p>
+          <p>
+            Le cycle en V est composé d’une phase descendante similaire
+            au modèle en cascade, et d’une phase ascendante qui permet de valider
+            chaque étape de la phase descendante.
+          </p>
+          <figure>
+            <figcaption>Cycle en V classique</figcaption>
+            <img src="cycle-v.png" alt="Cycle en V avec une phase descendante composée de : Exigences, Analyse, Conception architecturale, Conception détaillée, Mise en œuvre et une phase ascendante de tests">
+          </figure>
+          <p>
+            Lors de la phase descendante, on retrouve à peu près les mêmes étapes
+            que dans le modèle en cascade :
+          </p>
+          <ul>
+            <li><strong>Exigences</strong> : les besoins et exigences du client sont recueillis</li>
+            <li><strong>Analyse</strong> : un cahier des charges fonctionnel est rédigé à partir des exigences du client</li>
+            <li><strong>Conception architecturale</strong> : l’architecture de la solution qui va être développée est déterminée</li>
+            <li><strong>Conception détaillée</strong> : chaque composant nécessaire est défini</li>
+            <li><strong>Mise en œuvre</strong> : chaque composant est développé</li>
+          </ul>
+          <p>
+            Cette phase descendante est suivie d’une phase ascendante qui
+            permet de valider chaque étape de la phase descendante :
+          </p>
+          <ul>
+            <li><strong>Tests unitaires</strong> : chaque composant est testé et validé par rapport à sa conception détaillé</li>
+            <li><strong>Tests d’intégration</strong> : tous les composants sont assemblés et le système est testé et validé par rapport à sa conception architecturale</li>
+            <li><strong>Tests fonctionnels</strong> : la solution est testée et validée par rapport au cahier des charges</li>
+            <li><strong>Recette</strong> : la solution est mise en production et accessible au client</li>
+          </ul>
+          <p>
+            Étant issu du modèle en cascade, <strong>le cycle en V présente les mêmes défauts liés
+            à sa rigidité</strong>.
+          </p>
+          <p>
+            Que ce soit le cycle en V ou le modèle en cascade, il n’est pas rare
+            que des étapes supplémentaires en amont soient ajoutées, comme la
+            réalisation d’un prototype.
+          </p>
+        </section>
+
+        <section id="dessin-1">
+          <h3>Premier dessin</h3>
+          <figure>
+            <figcaption>Dessin à spécifier</figcaption>
+            <img src="dessin-1.png">
+          </figure>
+        </section>
+
+        <section id="dessin-2">
+          <h3>Deuxième dessin</h3>
+          <figure>
+            <figcaption>Dessin à spécifier</figcaption>
+            <img src="dessin-2.png">
+          </figure>
+        </section>
+
+        <section id="dessin-3">
+          <h3>Troisième dessin</h3>
+          <figure>
+            <figcaption>Dessin à spécifier</figcaption>
+            <img src="dessin-3.png">
+          </figure>
+        </section>
+
+        <section id="story">
+          <h3>Comment construire une story ?</h3>
+          <p>
+            Les stories correspondent plus ou moins au découpage d’un projet
+            en fonctionnalités.
+          </p>
+          <p>
+            Ces stories seront par la suite réalisées au cours phases itératives,
+            les itérations (appelées « sprint » dans la méthode Scrum).
+          </p>
+          <p>
+            Afin de pouvoir être utile et utilisable, une story doit
+            suivre les principes de l’<strong>INVEST</strong>.
+          </p>
+
+          <h4>Independant</h4>
+          <p>
+            Il est important que les stories soient indépendantes les unes des autres,
+            au minimum dans l’itération en cours.
+          </p>
+          <p>
+            <strong>Une story doit pouvoir être réalisée toute seule sans
+              attendre la fin d’une tierce story</strong>.
+          </p>
+          <p>
+            Par exemple, si l’on développe une application où les
+            personnes pourront s’identifier, il y aura une story pour réaliser
+            la connexion au compte et une story pour réaliser la création
+            de compte.
+          </p>
+          <p>
+            On pourrait penser que pour implémenter la fonctionnalité
+            de connexion, il faut forcément que la fonctionnalité
+            de création de compte existe déjà.
+          </p>
+          <p>
+            Cependant, ces deux stories peuvent être
+            réalisées indépendamment l’une de l’autre car il est possible
+            de simuler l’existance d’un compte pour vérifier si la
+            connexion est fonctionnelle.
+          </p>
+
+          <h4>Negociable</h4>
+          <p>
+            Les stories ne doivent pas comporter trop de détails.
+          </p>
+          <p>
+            Pour décrire une story, il est mieux d’<strong>utiliser une phrase
+            simple qui décrit la fonctionnalité</strong> dans son ensemble.
+            Par exemple : un rapport quotidien est généré.
+          </p>
+          <p>
+            Cela permet de laisser la story évoluer avec les discussions
+            avec le client ou d’autres parties prenantes. Aussi, l’équipe
+            de développement est libre de définir « comment » la story va
+            être réalisée.
+          </p>
+
+          <h4>Valuable</h4>
+          <p>
+            Il est important qu’<strong>une story ait une valeur commerciale</strong>,
+            qu’<strong>elle réponde à un besoin du client</strong>.
+          </p>
+          <p>
+            Les stories ne sont pas une liste de fonctionnalités d’un point
+            de vue technique, mais bien d’un point de fonctionnel.
+            <strong>On sait quelle valeur la story apporte pour les personnes
+              qui vont utiliser le produit</strong>.
+          </p>
+          <p>
+            Ainsi une story qui a pour but de réduire la dette technique
+            ou de simplifier le code n’est pas une bonne story.
+            En effet, ces deux buts ont clairement un intérêt pour l’équipe
+            de développement, mais ils n’apportent rien pour le
+            client en terme de fonctionnalité.
+          </p>
+
+          <h4>Estimable</h4>
+          <p>
+            Les stories doivent également être concrètes.
+          </p>
+          <p>
+            <strong>L’équipe de développement doit être capable d’estimer le temps
+              de réalisation</strong> des différentes stories et de savoir
+            quelles stories sont de même complexité.
+          </p>
+          <p>
+            Dans certaines équipes, les stories ne sont pas réellement estimées.
+            Auquel cas, le critère d’estimable devient synonyme de : toutes
+            questions liées à la story sont résolues, la story est prête
+            à être développée.
+          </p>
+
+          <h4>Small</h4>
+          <p>
+            Chaque story doit pouvoir être réalisée au cours d’une
+            seule itération et par une ou deux personnes.
+          </p>
+          <p>
+            Il est important de <strong>faire attention à la taille des stories</strong>.
+            En effet, plus une story est grande et complexe, il est
+            plus difficile de la mener à bien. Ce qui peut baisser
+            la motivation de l’équipe de développement.
+          </p>
+
+          <h4>Testable</h4>
+          <p>
+            Enfin, il est nécessaire que l’on puisse <strong>définir quand
+            une story est complète</strong>.
+          </p>
+          <p>
+            Pour cela, on définit <strong>des critères d’acceptation qui sont
+            clairs et validés par le métier</strong>.
+          </p>
+          <p>
+            Ces critères d’acceptation permettent de s’assurer que la
+            réalisation de la story correspond bien au besoin.
+          </p>
+          <p>
+            Aussi, les ressources de test doivent être disponibles
+            afin de s’assurer que les tests soient faisables.
+          </p>
+
+          <h4>Rédiger une story</h4>
+          <p>
+            Pour formaliser une story, on cherche à répondre à trois questions :
+          </p>
+          <ul>
+            <li><strong>Qui</strong> est la cible de cette story ?</li>
+            <li><strong>Quel</strong> est le but de la personne ciblée ?</li>
+            <li><strong>Pourquoi</strong> ?</li>
+          </ul>
+          <p>
+            Une story peut alors être :
+            « <em>En tant que</em> comptable, <em>je souhaite</em> générer un
+            rapport mensuel des factures <em>afin de</em> suivre l’évolution
+            des commandes et d’identifier d’éventuels problèmes. »
+          </p>
+        </section>
+
+        <section id="methodes-valuation">
+          <h3>Comment valuer des stories ?</h3>
+          <p>
+            Afin de valuer des stories, une réunion est prévue entre
+            les différentes parties prenantes. Si l’on value l’importance
+            fonctionnelles des stories, le client (ou son représentant)
+            est présent. Si l’on value la complexité technique,
+            seule l’équipe de développement est généralement présente.
+          </p>
+          <p>
+            Peu importe le critère valué, la valuation va se passer
+            suivant le même schéma.
+          </p>
+          <p>
+            Une méthode de valuation est choisie par la personne facilitatrice,
+            et s’en suit <strong>une suite de votes et de débats</strong>.
+          </p>
+          <p>
+            Il existe différentes méthodes pour valuer les stories
+            qui sont toutes dérivées du Wideband Delphi.
+          </p>
+          <p>
+            L’idée est d’<strong>avoir une liste de valeurs qui représentent
+            une importance ou une complexité croissante</strong>.
+          </p>
+          <p>
+            Ça peut être les valeurs de cartes de jeu, auquel cas la
+            méthode va s’appeler « Planning Poker » (le terme peut se
+            trouver même quand ce ne sont pas des valeurs de cartes).
+            Ça peut être les valeurs de tailles de t-shirt, d’un
+            nombre de doigts (la méthode s’appelle alors « Flying Finger »)…
+          </p>
+          <p>
+            Pour chaque story :
+          </p>
+          <ul>
+            <li>
+              La personne qui facilite présente la story.
+            </li>
+            <li>
+              Toutes les personnes (à l’exception du facilitateur)
+              indiquent en même temps la valeur qu’elles estiment.
+            </li>
+            <li>
+              Si tout le monde est d’accord, la valeur est attribuée
+              à la story. Sinon, les personnes expliquent qu’est
+              ce qui a motivé leur choix.
+            </li>
+            <li>
+              Lors des échanges, la personne qui facilite s’assure
+              que les discussions restent cordiales, que <strong>le
+              temps d’échange ne dure pas trop longtemps</strong> et que
+              <strong>tout le monde puisse s’exprimer</strong>.
+            </li>
+            <li>
+              Lorsque tout le monde a expliqué son choix, un nouveau
+              vote est fait. Un nouvel échange a lieu si tout le
+              monde n’est pas d’accord.
+            </li>
+            <li>
+              Et ainsi de suite jusqu’à ce que toutes les stories
+              soient valuées.
+            </li>
+          </ul>
+        </section>
+
+        <section id="gestionnaires">
+          <h3>Les outils pour gérer les projets en mode Agile</h3>
+          <p>
+            De nombreux outils permettant de gérer les projets
+            en mode Agile existent.
+          </p>
+          <p>
+            Ils permettent de gérer les stories, en général sous forme
+            de tickets, de leur attribuer des labels ou des tags, de
+            les affecter à une personne, de les associer à un sprint,
+            de les visualiser sous forme de tableau…
+          </p>
+          <p>
+            Parmi ces outils, on retrouve :
+          </p>
+          <ul>
+            <li><a href="https://trello.com/">Trello</a></li>
+            <li><a href="https://gitlab.com/">GitLab</a> et la fonctionnalité de Board</li>
+            <li><a href="https://github.com/">GitHub</a> et la fonctionnalité de Project</li>
+            <li><a href="https://www.atlassian.com/fr/software/jira">Jira</a></li>
+            <li><a href="https://www.notion.so/">Notion</a>.</li>
+          </ul>
+          <p>
+            Tous ces outils disposent d’une version gratuite avec certaines
+            limites (mais suffisante pour ce cours) et de version
+            payantes avec plus de fonctionnalités.
+          </p>
+          <p>
+            D’autres outils plus "rudimentaires" peuvent être aussi utilisés,
+            comme par exemple un tableau de Post-its ou un tableur.
+          </p>
+
+          <h4>Utiliser GitLab et GitLab Board</h4>
+          <p>
+            Les étapes et vocabulaire sont similaires peu importe l’outil choisi.
+          </p>
+          <p>
+            Après vous être créé un compte sur GitLab (si besoin), vous pouvez
+            créer un nouveau projet vierge.
+          </p>
+          <p>
+            Afin de pouvoir labéliser les stories, il faut que des labels
+            existent. Pour cela, allez dans <code>Manage / Labels</code> et
+            créez les différents labels nécessaires.
+          </p>
+          <figure>
+            <figcaption>Création d’un label dans un projet GitLab</figcaption>
+            <img src="label.png" alt="Formulaire de création d’un label C-1 représentant une complexité faible dans GitLab">
+          </figure>
+          <p>
+            GitLab fonctionne avec le principe de tickets. Pour créer les
+            stories, rendez-vous sur l’onglet <code>Issues</code>. pour
+            chaque story, vous pouvez créer le ticket correspondant et
+            lui attribuer les différents labels pour représenter les
+            valuations.
+          </p>
+          <figure>
+            <figcaption>Création d’un ticket dans un projet GitLab</figcaption>
+            <img src="ticket.png" alt="Formulaire de création d’un ticket dans GitLab">
+          </figure>
+          <p>
+            Vous pourrez ensuite créer une milestone correspondant à un sprint,
+            ce qui permet de regrouper les stories du sprint ensemble.
+            Pour créer une milestone, allez dans <code>Plan / Milestones</code>.
+          </p>
+          <p>
+            Au fur et à mesure du « Sprint Planning », vous pouvez lier
+            les stories à la milestone en allant sur le ticket concerné
+            et en lui atttribuant la milestone.
+          </p>
+          <figure>
+            <figcaption>Assignation d’un ticket à une milestone</figcaption>
+            <img src="assignation.png" alt="Assignation d’un ticket à la milestone Sprint 1">
+          </figure>
+          <p>
+            Au cours du sprint, les différents tickets seront assignés
+            à des personnes et passés en statut « En cours ».
+            L’avancée du sprint est alors visible depuis la page de la
+            milestone : <code>Plan / Milestones / Nom du sprint</code>.
+          </p>
+          <p>
+            Une vision globale sur tous les tickets du projet et aussi
+            accessible dans <code>Issue boards</code>.
+          </p>
+        </section>
+
+        <section id="stories">
+          <h3>Les stories du site de vente en ligne</h3>
+          <ol>
+            <li>
+              <strong>En tant que visiteur, je veux pouvoir voir les différents produits</strong>,
+              C-2, F-3:
+              En tant que visiteur, je veux pouvoir accéder facilement aux différentes catégories
+              de produits depuis la page d'accueil.
+            </li>
+            <li>
+              <strong>En tant que client, je veux pouvoir créer un compte utilisateur</strong>,
+              C-1, F-3:
+              En tant que client, je veux pouvoir m'inscrire sur le site en fournissant
+              mon nom, mon adresse e-mail, et un mot de passe.
+            </li>
+            <li>
+              <strong>En tant que client, je veux pouvoir ajouter des produits à mon panier d'achat </strong>,
+              C-2, F-3:
+              En tant que client, je veux pouvoir ajouter des produits à mon panier
+              depuis la page de détail du produit.
+            </li>
+            <li>
+              <strong>En tant que client, je veux pouvoir passer une commande</strong>,
+              C-3, F-3:
+              En tant que client, je veux pouvoir finaliser ma commande en fournissant
+              les détails d'expédition et en choisissant une méthode de paiement.
+            </li>
+            <li>
+              <strong>En tant que client, je veux pouvoir suivre l'état de ma commande</strong>,
+              C-1, F-2:
+              En tant que client, je veux pouvoir consulter l'état de ma commande
+              à tout moment après l'achat.
+            </li>
+            <li>
+              <strong>En tant qu'administrateur, je veux pouvoir gérer les produits</strong>,
+              C-2, F-3:
+              En tant qu'administrateur, je veux pouvoir ajouter, modifier, ou
+              supprimer des produits depuis le panneau d'administration.
+            </li>
+            <li>
+              <strong>En tant que client, je veux pouvoir laisser des avis sur les produits</strong>,
+              C-1, F-1:
+              En tant que client, je veux pouvoir laisser des avis et évaluations
+              sur les produits que j'ai achetés.
+            </li>
+            <li>
+              <strong>En tant qu'administrateur, je veux pouvoir gérer les commandes</strong>,
+              C-2, F-2:
+              En tant qu'administrateur, je veux pouvoir consulter toutes les
+              commandes, les marquer comme expédiées, ou annuler des commandes si nécessaire.
+            </li>
+            <li>
+              <strong>En tant que client, je veux pouvoir utiliser un code de réduction</strong>,
+              C-1, F-1:
+              En tant que client, je veux pouvoir appliquer un code de réduction
+              lors de la validation de ma commande.
+            </li>
+            <li>
+              <strong>En tant que client, je veux recevoir des notifications par e-mail</strong>,
+              C-1, F-1:
+              En tant que client, je veux recevoir des e-mails de confirmation de
+              commande, de suivi d'expédition, et d'offres spéciales.
+            </li>
+            <li>
+              <strong>En tant que client, je veux pouvoir sauvegarder des produits dans ma liste de souhaits</strong>,
+              C-2, F-1:
+              En tant que client, je veux pouvoir ajouter des produits à ma liste
+              de souhaits pour un achat ultérieur.
+            </li>
+            <li>
+              <strong>En tant que client, je veux pouvoir filtrer les produits par critères (prix, marque, etc.) </strong>,
+              C-3, F-2:
+              En tant que client, je veux pouvoir utiliser des filtres pour affiner
+              ma recherche et trouver rapidement les produits qui correspondent à mes critères.
+            </li>
+          </ol>
+        </section>
+
+        <section id="vocabulaire-scrum">
+          <h3>Vocabulaire Scrum</h3>
+          <p>
+            Scrum est un framework, ou méthode, dît Agile. C’est à dire
+            qu’<strong>il suit et implémente les principes et valeurs définis
+            dans le <a href="http://agilemanifesto.org/">Manifeste Agile</a></strong>.
+          </p>
+          <p>
+            La méthode Scrum est définie par le <a href="https://scrumguides.org/">Scrum Guide</a> et utilise
+            une terminologie propre pour
+            désigner les différentes parties prenantes d’un projet,
+            les différents évènements ainsi que les différents artéfacts.
+          </p>
+
+          <h4>L’équipe Scrum</h4>
+          <p>
+            L’équipe Scrum est composée de trois rôles distincts : le Scrum Master,
+            le Product Owner, les développeuses et développeurs.
+          </p>
+          <p>
+            La personne <strong>Scrum Master</strong> a pour missions de :
+          </p>
+          <ul>
+            <li>aide l’entreprise à mettre en place Scrum</li>
+            <li>aide la personne Product Owner dans ses tâches</li>
+            <li>accompagne l’équipe Scrum dans la gestion des évènements Scrum</li>
+            <li>ne prend aucune décision sur le projet.</li>
+          </ul>
+          <p>
+            La personne <strong>Product Owner</strong> a pour missions de :
+          </p>
+          <ul>
+            <li>maximiser le travail de l’équipe Scrum</li>
+            <li>de gérer le Product Backlog.</li>
+          </ul>
+          <p>
+            Le Product Owner peut déléguer ses tâches, mais <strong>il en reste responsable</strong>.
+          </p>
+          <p>
+            Les <strong>développeuses et développeurs</strong> ont pour missions de :
+          </p>
+          <ul>
+            <li>accomplissent les tâches nécessaires au sprint</li>
+            <li>créer un plan de sprint et le Sprint Backlog</li>
+            <li>promouvoir la qualité</li>
+            <li>définir et veiller au respect de la Definition of Done</li>
+          </ul>
+
+          <h4>Les évènements Scrum</h4>
+          <p>
+            La méthode Scrum met en place cinq évènements différents :
+            le sprint, le sprint planning, le daily Scrum, le sprint review
+            et la sprint retrospective.
+          </p>
+          <p>
+            Le <strong>sprint</strong> correspond à une itération d’une durée fixe
+            et a un objectif bien précis qui ne peut changer (c’est l’objectif
+            de sprint). Il est possible d’affiner le Product Backlog durant
+            un sprint.
+          </p>
+          <p>
+            Un sprint dure généralement entre 2 et 4 semaines.
+          </p>
+          <p>
+            Le premier évènement qui débute un sprint est le <strong>Sprint Plannig</strong>.
+            Le Sprint Planning permet de :
+          </p>
+          <ul>
+            <li>plannifier le prochain sprint</li>
+            <li>définir le pourquoi, le quoi et le comment du sprint</li>
+            <li>définir le Sprint Backlog.</li>
+          </ul>
+          <p>
+            Toute l’équipe Scrum prend par à cet évènement. Il peut durer
+            au maximun 8 heures.
+          </p>
+          <p>
+            Au cours d’un sprint, un évènement régulier a lieu : le
+            <strong>Daily Scrum</strong>.
+          </p>
+          <p>
+            C’est un évènement quotidien qui ne concerne que les développeuses
+            et développeurs et qui permet aux personnes de dire ce qu’elles
+            ont fait, ce qu’elles vont faire et ce qui les bloque.
+          </p>
+          <p>
+            C’est un évènement court qui ne dure que 15 minutes.
+          </p>
+          <p>
+            À la fin d’un sprint, une <strong>Sprint Review</strong> va se tenir.
+          </p>
+          <p>
+            Toute l’équipe Scrum est présente et montre le travail effectué
+            au cours du sprint aux différentes parties prenantes (dont le
+            client). Des décisions peuvent être prises au cours de cette
+            réunion pour modifier le Product Backlog.
+          </p>
+          <p>
+            Cet évènement dure au maximum 4 heures.
+          </p>
+          <p>
+            Enfin, pour clôture le sprint, une <strong>Sprint Retrospective</strong>
+            a lieu.
+          </p>
+          <p>
+            Cet évènement ne concerne que l’équipe Scrum. Durant cette réunion,
+            les membres de l’équipe regarde ce qui a bien fonctionné et
+            ce qui a mal fonctionné durant le sprint.
+          </p>
+          <p>
+            Cette réunion pemet de chercher des axes d’améliorations et
+            certains peuvent être mis dans le Sprint Backlog du
+            prochain sprint.
+          </p>
+          <p>
+            Cet évènement dure au maximum 3 heures.
+          </p>
+
+          <h4>Les artéfacts Scrum</h4>
+          <p>
+            Différents artéfacts sont utilisés dans la méthode Scrum
+            pour suivre l’avancée d’un projet : le product backlog,
+            le sprint backlog et l’increment.
+          </p>
+          <p>
+            Le <strong>Product Backlog</strong> est une liste ordonnée
+            des choses à faire pour améliorer le produit. Il contient tout
+            ce qu’il est nécessaire de faire pour atteindre l’objectif
+            de produit.
+          </p>
+          <p>
+            C’est grosso-modo la liste de toutes les stories, ordonnées
+            par importance fonctionnelle.
+          </p>
+          <p>
+            Le Product Backlog est sous la responsabilité du Product Owner.
+          </p>
+          <p>
+            Le <strong>Sprint Backlog</strong> est quant à lui la liste
+            de toutes les choses à réaliser pour un sprint.
+          </p>
+          <p>
+            Il contient la définition de l’objectif de sprint, ainsi que
+            le pourquoi, quoi et comment du sprint.
+          </p>
+          <p>
+            Enfin, on a l’<strong>Increment</strong>. Il représente une
+            étape vers l’objectif de produit.
+          </p>
+          <p>
+            L’Increment est le résultat d’un sprint et est composé de la
+            somme des Increments de chaque sprint passé.
+          </p>
+
+          <figure>
+            <figcaption>Un résumé de Scrum en schéma</figcaption>
+            <img src="scrum.png" alt="Les différents évènements et artefacts de Scrum au cours du temps">
+          </figure>
+        </section>
+
+        <section id="principes-xp">
+          <h3>Comment fonctionne eXtreme Programming ?</h3>
+          <p>
+            eXtreme Programming est une méthode dîte Agile de développement.
+            Elle suit donc également les principes et valeurs du Manifeste Agile.
+          </p>
+          <p>
+            Elle met l’accent sur l’excellence et la qualité technique et
+            définit aussi des concepts permettant amener de la qualité
+            dans le projet aussi d’un point de vue humain.
+          </p>
+
+          <h4>Le cercle de la vie d’eXtreme Programming</h4>
+          <p>
+            Le cercle de la vie permet de représenter les différentes
+            parties prenantes d’un projet et leurs interactions.
+          </p>
+          <figure>
+            <figcaption>Le cercle de la vie</figcaption>
+            <img src="xp.png" alt="Le cercle de la vie d’XP constitué de trois cercles, représentant le fonctionnement et pratiques à différentes échelles d’une équipe">
+          </figure>
+          <p>
+            Le cercle extérieur représente comment le prestataire communique avec le client.
+            On retrouve les concepts de :
+          </p>
+          <ul>
+            <li>
+              <strong>Planning Game</strong> : découpage du projet en fonctionnalité, priorisation,
+              plannification…
+            </li>
+            <li>
+              <strong>Small Releases</strong> : le projet avance petit à petit
+            </li>
+            <li>
+              <strong>Customer Tests</strong> : chaque feature peut être concrêtement finie
+            </li>
+            <li>
+              <strong>Whole Team</strong> : tout le monde participe.
+            </li>
+          </ul>
+          <p>
+            Le cercle du milieu représente le fonctionnement à l’échelle d’une équipe.
+            On retrouve les concepts de :
+          </p>
+          <ul>
+            <li>
+              <strong>Coding Standard</strong> : l’équipe partage des conventions de code
+            </li>
+            <li>
+              <strong>Sustainable Pace</strong> : l’équipe est maintenue dans un bon état
+            </li>
+            <li>
+              <strong>Collective Ownership</strong> : la connaissance sur le projet est partagée
+            </li>
+            <li>
+              <strong>Continuous Integration</strong> : l’équipe peut avoir des retours rapides
+            </li>
+            <li>
+              <strong>Metaphor</strong> : un vocabulaire est mis en place pour communiquer avec le client
+            </li>
+          </ul>
+          <p>
+            Le cercle interne représente les pratiques à l’échelle des développeuses
+            et développeurs.
+          </p>
+
+          <h4>Les pratiques de développement</h4>
+          <p>
+            eXtreme Programming amène 4 pratiques pour <strong>améliorer la
+            qualité de développement et amener une certaine agilité d’un
+            point de vue technique</strong> : le TDD, le refactoring, le Simple Design et
+            le Pair Programming.
+          </p>
+          <p>
+            Le <strong>TDD</strong> (Test Driven Development) peut être décrit en
+            suivant ces trois règles :
+          </p>
+          <ul>
+            <li>Ne pas écrire de code tant qu’un test correspondant n’a pas été écrit</li>
+            <li>Ne pas écrire plus qu’il n’en faut pour avoir un test qui échoue</li>
+            <li>Ne pas écrire plus de code que nécessaire pour faire passer le test correspondant</li>
+          </ul>
+          <p>
+            Écrivant des tests avant d’écrire le code d’une fonctionnalité permet
+            de définir clairement le fonctionnement attendu.
+          </p>
+          <p>
+            Aussi, cela permet d’être plus serein au moment de faire des
+            modifications dans le code car en exécutant les tests, on pourra
+            immédiatement se rendre compte si quelque chose qui fonctionnait
+            est cassé.
+          </p>
+          <p>
+            Le <strong>Refactoring</strong> consiste à améliorer le
+            code, le rendre plus clair et plus facilement
+            maintenable, sans casser son fonctionnement.
+          </p>
+          <p>
+            Cette pratique s’applique bien lorsque du TDD est en place !
+          </p>
+          <p>
+            Le <strong>Simple Design</strong> est quant à lui un des buts
+            du refactoring.
+          </p>
+          <p>
+            En effet, le Simple Design cherche à simplifier le code afin
+            d’obtenir une structure plus simple, plus petite et
+            plus compréhensible.
+          </p>
+          <p>
+            Enfin, le <strong>Pair Programming</strong> est le fait de travailler
+            à deux sur un même code.
+          </p>
+          <p>
+            Le Pair Programming permet de partager facilement la
+            connaissance technique sur un projet mais aussi d’amener
+            différents points de vue sur un même problème.
+            Ainsi, <strong>le code produit est de meilleure qualité</strong>.
+          </p>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
