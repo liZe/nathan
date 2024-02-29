@@ -1166,11 +1166,251 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
           <section class="introduction">
             <p>Temps estimé : 4h.</p>
             <p>
-              <todo></todo>
+              Python est un langage utilisé dans un très large champ
+              d’applications. Le développement web est l’un des axes sur
+              lesquels il excelle, du tout petit site personnel aux énormes
+              plateformes en ligne comme Instagram ou Spotify.
+            </p>
+            <p>
+              Dans ce module, nous aborderons le web avec Python, grâce à
+              l’utilisation du framework Flask. Nous étudierons la structure
+              d’applications web simples, avec un accent particulier mis sur
+              certains vecteurs d’attaque et quelques bonnes pratiques de
+              sécurité.
             </p>
           </section>
           <section class="sujet">
-            <todo></todo>
+            <p>
+              Avec votre grande expérience en Python, vous êtes chargé de
+              construire le blog de votre entreprise.
+            </p>
+            <p>
+              Vous encadrez un stagiaire qui a travaillé sur une ébauche de
+              site. Il vous présente cette première version afin que vous
+              puissiez faire des retours sur son travail. L’architecture
+              globale et la documentation sont très bonnes, mais quelques
+              problèmes importants nécessitent d’être corrigés.
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Récupérez et lancez l’application du stagiaire</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#environnements-virtuels">FR 8</a></li>
+                <li><a href="#flask">FR 9</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Vous téléchargez et décompressez l’archive contenant le travail
+                de votre stagiaire. Vérifiez que vous avez, dans votre dossier
+                de travail, un fichier « README.md », un fichier
+                « requirements.txt » et un dossier « blog ».
+              </li>
+              <li>
+                Dans votre dossier de travail, vous créez un environnement
+                virtuel. Vous avez donc un dossier « venv » au même niveau que
+                « README.md » et « blog ».
+              </li>
+              <li>
+                Vous lancez votre application en suivant les instructions du
+                fichier « README.md ». Vous devez voir l’URL
+                <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>
+                s’afficher dans le terminal. Vous allez sur cette adresse avec
+                votre navigateur pour vérifier que la page d’accueil s’affiche.
+              </li>
+              <li>
+                Un message de <em>warning</em> s’affiche en rouge. Que vous
+                dit-il ? Vous trouvez dans
+                <a href="https://flask.palletsprojects.com/">la documentation
+                de Flask</a> quelques informations supplémentaires, en
+                recherchant « run the development server » dans la
+                documentation. Le serveur de développement pourrait-il poser un
+                problème de sécurité s’il était utilisé en production ?
+              </li>
+              <li>
+                Vous commencer à tester le blog dans votre navigateur. Vous
+                vous connectez en utilisant l’identifiant « login » et le mot
+                de passe « password », puis créez un nouvel article. Quel
+                problème gênant apparaît lorsque l’on crée plusieurs articles ?
+              </li>
+            </ol>
+            <h4>Découvrez le fonctionnement de Flask</h4>
+            <ol>
+              <li>
+                Trouvez dans quels fichiers se situent différents éléments de
+                votre application web :
+                <ul>
+                  <li>le HTML,</li>
+                  <li>le CSS,</li>
+                  <li>la liste des URL de l’application et le code qui leur est associé,</li>
+                  <li>le code permettant d’accéder à base de données.</li>
+                </ul>
+              </li>
+              <li>
+                Dans quel fichier est stocké la base de données SQLite
+                automatiquement créée au premier affichage du site ? Où le nom
+                de ce fichier est-il configuré ? Que se passe-t-il si vous
+                supprimez le fichier contenant la base de données ?
+              </li>
+              <li>
+                Comment l’application sait-elle quel fichier HTML elle doit
+                afficher pour une URL donnée ?
+              </li>
+              <li>
+                Ces fichiers ne sont pas du HTML pur, mais des
+                <em>templates</em> écrits dans un langage proche de HTML,
+                permettant entre autres de faire des conditions, des boucles et
+                d’afficher des variables. D’après la documentation de Flask,
+                comment s’appelle se langage ?
+              </li>
+              <li>
+                Comment le HTML sait-il quel fichier CSS utiliser ? Quelle
+                fonction est utilisée dans le <em>template</em>
+                « _layout.jinja2 » pour déterminer l’URL vers le fichier CSS ?
+              </li>
+              <li>
+                Certaines pages utilisent des formulaires. Quel type de requête
+                HTTP est effectué lorsque le formulaire est envoyé par le
+                navigateur ? Comment l’application Flask différencie-t-elle les
+                requêtes POST des requêtes GET pour ses routes ? Comment
+                peut-on récupérer les informations du formulaire ?
+              </li>
+              <li>
+                Pour la connexion, on utilise le concept de « session » proposé
+                par Flask (et la grande majorité des <em>frameworks</em> web).
+                Quelle information est enregistrée dans la session lors de la
+                connexion et enlevée lors de la déconnexion ?
+              </li>
+              <li>
+                La session est également utilisée dans « _layout.jinja2 » pour
+                afficher des liens différents selon si l’on est connecté ou
+                non. Trouvez dans la <em>Template Designer Documentation</em>
+                de Jinja pourquoi on peut utiliser indifféremment
+                <code>session.person_id</code>
+                et <code>session['person_id']</code> dans Jinja, alors qu’on
+                utilise forcément <code>session['person_id']</code> en Python.
+              </li>
+              <li>
+                La variable <code>session</code> est automatiquement passée
+                dans tous les <em>templates</em>. Quelles autres variables et
+                fonctions sont également passées automatiquement ? Comment
+                passer d’autres variables dans un <em>template</em>, comme par
+                exemple <code>articles</code> pour afficher la liste des
+                articles sur la page d’accueil ?
+              </li>
+            </ol>
+            <h4>Corrigez les problèmes de sécurité</h4>
+            <ol>
+              <li>
+                Lors de l’ajout d’un article, on ne peut pas définir le titre.
+                Nous allons remédier à cela !
+                <ul>
+                  <li>
+                    Dans « blog/templates/add_article.html_», vous ajoutez un
+                    label « Titre » contenant un <code>&lt;input name="title" /></code>.
+                  </li>
+                  <li>
+                    Dans la fonction <code>add_article_post</code> du fichier
+                    « blog/__init__.py », vous récupérez le titre du formulaire
+                    et vous le mettez dans la requête SQL à la place de
+                    « Titre ».
+                  </li>
+                </ul>
+                Vous vérifiez que tout fonctionne correctement. C’est mieux
+                comme ça !
+              </li>
+              <li>
+                Après réflexion, vous vous rendez compte d’un problème de
+                sécurité grave. Vous créez un nouvel article en mettant comme
+                contenu <code>contenu'), ('hacker', 'hacker</code>. Que se
+                passe-t-il alors ? Comment cela est-il possible ?
+              </li>
+              <li>
+                Ce problème de sécurité est une injection SQL ! Elle peut
+                permettre à un utilisateur malintentionné d’exécuter n’importe
+                quel SQL dans la base de données, et donc potentiellement de
+                récupérer ou d’effacer l’intégralité des données de la base.
+                Vous lisez plus d’informations sur ce sujet dans la
+                documentation du module <code>sqlite3</code> de la
+                documentation Python, ainsi que sur Wikipédia.
+              </li>
+              <li>
+                Grâce aux <em>placeholders</em>, il n’y a pas d’injection SQL
+                possible avec la route <code>article</code> par exemple.
+                Utilisez des <em>placeholders</em> dans la route
+                <code>add_article_post</code> à la place de
+                la <em>f-string</em>, et vérifiez qu’il n’est plus possible
+                d’effectuer une injection SQL.
+              </li>
+              <li>
+                Vous vous rendez-compte d’une fonctionnalité très pratique :
+                vous pouvez mettre du HTML dans vos articles ! Créez un article
+                avec <code>&lt;span style="color: blue">Coucou&lt;/span></code>
+                comme contenu. Affichez l’article, et découvrez votre œuvre
+                d’art !
+              </li>
+              <li>
+                Cette fonctionnalité est pratique, mais très dangereuse… Créez
+                un article avec comme contenu
+                <code>&lt;script>alert('hacker')&lt;/script></code>, puis
+                affichez cet article. Que se passe-t-il alors ? Comment cela
+                est-il possible ?
+              </li>
+              <li>
+                Ce problème s’appelle du <em>cross-site scripting</em>, souvent
+                abrégé <abbr>XSS</abbr> ! Il permet à un utilisateur
+                malintentionné de mettre du HTML arbitraire dans une page du
+                site, et donc potentiellement du JavaScript malveillant. Vous
+                lisez plus d’informations sur ce sujet dans la documentation de
+                Flask, ainsi que sur Wikipédia.
+              </li>
+              <li>
+                Par défaut, Flask et Jinja vous protègent des XSS lorsque vous
+                rendez des fichiers HTML. Vous vérifiez cela en créant un
+                nouvel article avec
+                <code>&lt;span style="color: blue">Coucou&lt;/span></code>
+                comme titre : le HTML est échappé, on obtient du texte normal
+                et pas des balises. Vous trouvez alors dans
+                « blog/templates/article.html » pourquoi le contenu n’est pas
+                échappé, et vous enlevez cette « fonctionnalité » bien trop
+                dangereuse.
+              </li>
+              <li>
+                Le lien pour créer un article n’est affiché que lorsque l’on
+                est connecté. On ne peut donc pas aller sur la page de création
+                d’un article lorsque l’on n’est pas connecté ! À moins que…
+                Vous essayez d’aller sur la page
+                <a href="http://localhost:5000/article/add">http://localhost:5000/article/add</a>
+                alors que vous êtes déconnecté·e. Que se passe-t-il ? Comment
+                cela est-il possible ?
+              </li>
+              <li>
+                La gestion des droits d’une application web doit se faire côté
+                serveur, route par route. Il n’est pas suffisant de simplement
+                cacher les URL aux personnes déconnectées pour leur interdire
+                d’y accéder ! Dans <code>add_article</code>, vos décidez donc
+                de renvoyer une erreur HTTP 403 (<em>Forbidden</em>) lorsque
+                l’utilisateur n’est pas connecté. Vous pouvez vous inspirer de
+                <code>article</code> pour savoir comment renvoyer une erreur
+                HTTP, et de <code>logout</code> pour vérifier si l’utilisateur
+                est connecté. Vous allez sur
+                <a href="http://localhost:5000/article/add">http://localhost:5000/article/add</a>
+                et l’erreur apparaît !
+              </li>
+              <li>
+                Mais… ce n’est pas suffisant. Vous vous reconnectez, affichez
+                <a href="http://localhost:5000/article/add">http://localhost:5000/article/add</a>,
+                puis vous vous déconnectez dans un autre onglet. Sur l’onglet affichant
+                <a href="http://localhost:5000/article/add">http://localhost:5000/article/add</a>,
+                vous créez un nouvel article. Pourquoi cela fonctionne-t-il ?
+                Quelqu’un qui ne s’est jamais connecté pourrait-il faire cela ?
+              </li>
+              <li>
+                Vous pouvez corriger ce problème de la même manière que pour
+                <code>add_article</code>. Quelle fonction doit être corrigée ?
+              </li>
+            </ol>
           </section>
         </section>
       </section>
