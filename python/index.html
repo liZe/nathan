@@ -166,8 +166,9 @@
             <li><a href="#choix-et-configuration-d-un-editeur">Choix et configuration d’un éditeur</a></li>
             <li><a href="#types-et-instructions">Types et instructions</a></li>
             <li><a href="#fonctions">Fonctions</a></li>
-            <li><a href="#programmation-objet">Programmation objets</a></li>
+            <li><a href="#programmation-objet">Programmation objet</a></li>
             <li><a href="#modules-et-imports">Modules et imports</a></li>
+            <li><a href="#bibliotheque-standard">Bibliothèque standard</a></li>
             <li><a href="#environnements-virtuels">Environnements virtuels</a></li>
             <li><a href="#flask">Flask</a></li>
           </ul>
@@ -260,7 +261,6 @@
             <aside class="documents">
               <ul>
                 <li><a href="installation-et-utilisateur-de-l-interpreteur">FR 1</a></li>
-                <li><a href="choix-et-configuration-d-un-editeur">FR 2</a></li>
               </ul>
             </aside>
             <ol>
@@ -312,13 +312,18 @@
                 compte rendu. Elle souhaiterait que vous affichiez :
                 <pre>Budget prévisionnel
 ===================
-- Entité 1 : XX €
-- Entité 2 : XX €
-- Entité 3 : XX €</pre>
+- Entité 1 : XX €
+- Entité 2 : XX €
+- Entité 3 : XX €</pre>
                 Affichez ce résultat à l’aide d’une unique commande.
               </li>
             </ol>
             <h4>Créez un petit script</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="choix-et-configuration-d-un-editeur">FR 2</a></li>
+              </ul>
+            </aside>
             <ol>
               <li>
                 La réunion est maintenant terminée, mais vous savez que ce
@@ -501,7 +506,7 @@ C
             </ol>
           </section>
           <section class="annexes">
-            <h4 id="annexe-1-1">Résultats attendus</h4>
+            <h4 id="annexe-2-1">Résultats attendus</h4>
             <p>
               Tous les exemples sont donnés avec la suite « B A D E F H G C ».
             </p>
@@ -592,11 +597,310 @@ Vous avez perdu 😢</code></pre>
           <section class="introduction">
             <p>Temps estimé : 3h.</p>
             <p>
-              <todo></todo>
+              Pour une tâche simple, un petit script est souvent suffisant,
+              avec quelques conditions et boucles si nécessaire. Mais
+              rapidement, il devient utile de regrouper des fonctionnalités
+              génériques dans des fonctions, afin de garder un fil d’exécution
+              principal plus lisible en appelant des fonctions de haut niveau.
+            </p>
+            <p>
+              Lorsque l’on veut représenter des entités ou des concepts du
+              monde physique, une autre abstraction est également utilisée : la
+              programmation orientée objet. Ce paradigme très répandu, que
+              Python implémente, permet de regrouper les informations et les
+              comportements d’une entité au même endroit du code.
+            </p>
+            <p>
+              Dans ce module, nous apprendrons à structurer notre code en
+              utilisant des fonctions, puis des classes, afin de mieux
+              comprendre l’utilité de ces abstractions et de voir leurs
+              spécificités en Python.
             </p>
           </section>
           <section class="sujet">
-            <todo></todo>
+            <p>
+              La mission que votre entreprise vous a assignée consiste à
+              accompagner une petite ferme dans la mise en place d’un système
+              d’information. La première information que vous devez gérer est
+              la liste des animaux.
+            </p>
+            <p>
+              Dans ce but, vous développez un prototype d’application simple
+              permettant d’accéder aux informations des animaux. Ce prototype
+              est développé au fur et à mesure des demandes du client, avec des
+              besoins et une complexité croissante.
+            </p>
+            <p>
+              Ce prototype est l’occasion rêvée pour construire une architecture
+              solide pour l’application qui sera développée dans le futur !
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Structures de données</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#types-et-instructions">FR 3</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Dans votre éditeur de code, vous créez un fichier « ferme.py »,
+                qui contiendra votre prototype. La première demande de votre
+                client et de créer une liste d’animaux. Vous créez donc une
+                liste <code>animaux</code> vide au début de votre fichier.
+              </li>
+              <li>
+                D’après la demande du fermier, chaque animal doit avoir
+                plusieurs informations : l’espèce de l’animal, l’âge et le nom.
+                Quelle structure de donnée simple vous permet d’associer des
+                clés (<code>"espèce"</code>, <code>"âge"</code>,
+                <code>"nom"</code> avec les valeurs correspondantes
+                (<code>"vache"</code>, <code>6</code>, <code>"Marguerite"</code>
+                par exemple) ?
+              </li>
+              <li>
+                Dans la liste, le fermier vous demande d’inclure pour l’instant 5 animaux :
+                <ul>
+                  <li>Marguerite, une vache de 5 ans,</li>
+                  <li>Hortense, une vache de 7 ans,</li>
+                  <li>Caramel, un veau de 1 an,</li>
+                  <li>Coco, une poule de 3 ans,</li>
+                  <li>Blanche, une poule de 2 ans.</li>
+                </ul>
+                Vous insérez donc chacun de ces animaux dans votre liste, en
+                utilisant la structure déterminée auparavant. Le nom et l’espèce
+                sont des chaînes de caractères, l’âge est un entier qui
+                représente le nombre d’années.
+              </li>
+              <li>
+                Dans votre prototype, faites une boucle pour parcourir vos
+                animaux. Pour chaque animal, affichez les informations comme suit :
+                <pre><code>Nom : Marguerite
+Espèce : vache
+Âge : 5 an(s)</code></pre>
+              </li>
+            </ol>
+            <h4>Fonctions</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#fonctions">FR 4</a></li>
+                <li><a href="#annexe-1-1">Annexe 1</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Le fermier est content de cette première liste. Il aimerait
+                dans le futur pouvoir afficher le nombre total d’animaux,
+                lister d’abord les vaches (y compris le veau), puis les poules,
+                dans deux parties différentes. Quels problèmes cela pose-t-il ?
+              </li>
+              <li>
+                Il existe différentes solutions pour atteindre cet objectif. La
+                première possibilité que vous testez est de changer l’espèce
+                de Caramel en « vache », afin que l’on ait bien la
+                même valeur pour les vaches et les veaux (qui sont en réalité
+                des jeunes vaches, bien sûr !) Relancez votre programme, qui
+                doit maintenant dire que Caramel est une vache.
+              </li>
+              <li>
+                Vous pouvez désormais afficher les vaches et les poules
+                séparément. Imbriquez votre boucle for dans une autre
+                boucle for, qui met <code>"vache"</code>
+                puis <code>"poule"</code> dans une variable <code>espèce</code>,
+                qui affiche cette variable, avant d’afficher les informations
+                des animaux correspondant à cette
+                <code>espèce</code>. Vous devez obtenir quelque chose comme :
+                <pre><code>Espèce : vache
+- Marguerite, 5 an(s)
+- Hortense, 7 an(s)
+- Caramel, 1 an(s)
+
+Espèce : poule
+- Coco, 3 an(s)
+- Blanche, 3 an(s)</code></pre>
+              </li>
+              <li>
+                Pour gagner en lisibilité, vous décidez de créer une
+                fonction <code>afficher_animaux(animaux, espece)</code> qui
+                affiche la liste des animaux d’une espèce donnée. À la place de la
+                boucle imbriquée, vous appelez donc cette nouvelle fonction. Le
+                résultat doit être le même.
+              </li>
+              <li>
+                Vous décidez enfin d’accéder à la dernière demande faite par le
+                fermier : afficher le nombre total d’animaux avant la boucle.
+              </li>
+              <li>
+                Le fermier est ravi ! Un dernier problème persiste cependant :
+                il est difficile de discerner les jeunes animaux des adultes.
+                Vous décidez donc d’afficher la mention « jeune animal » pour
+                les animaux de 2 ans ou moins, à la place de leur âge.
+              </li>
+              <li>
+                L’affichage d’un animal est maintenant plus complexe, avec une
+                condition. Vous décidez donc de sortir ce code dans une
+                fonction <code>afficher_animal(animal)</code>. Le résultat
+                final est le suivant :
+                <pre>Nombre d’animaux : 5
+
+Espèce : vache
+- Marguerite, 5 an(s)
+- Hortense, 7 an(s)
+- Caramel, jeune animal
+
+Espèce : poule
+- Coco, 3 an(s)
+- Blanche, 3 an(s)</pre>
+              </li>
+            </ol>
+            <h4>Classes</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#programmation-objet">FR 5</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Le fermier est presque convaincu par votre prototype ! Il
+                souhaiterait que vous finalisiez sa structure pour qu’il puisse
+                à terme stocker plus d’animaux et ajouter de nouvelles
+                fonctionnalités. Pour assurer la pérennité du projet, vous
+                décidez donc de remplacer votre structure simple par une
+                classe <code>Animal</code>. Créez donc cette classe, qui
+                contient pour l’instant les trois
+                attributs <code>espece</code>, <code>age</code>
+                et <code>nom</code> enregistrés à l’instanciation. Modifiez
+                votre code pour qu’il utilise des instances
+                de <code>Animal</code>.
+              </li>
+              <li>
+                Il va désormais être plus simple de structurer votre code.
+                Transformez la fonction <code>afficher_animal(animal)</code> en
+                méthode <code>afficher(self)</code> de la
+                classe <code>Animal</code>. Modifiez votre code pour qu’il
+                utilise cette méthode.
+              </li>
+              <li>
+                Nous allons ajouter les dernières finitions à notre prototype.
+                Afin de pouvoir différencier plus facilement les espèces, nous
+                allons créer les classes <code>Poule</code> et
+                <code>Vache</code> qui héritent de <code>Animal</code>. Ces
+                classes ne contiendront pour l’instant qu’un attribut de
+                classe : <code>espèce</code>, qui est donc obsolète dans la
+                classe <code>Animal</code>. Modifiez votre code pour qu’il
+                utilise ces classes.
+              </li>
+              <li>
+                Nous pouvons maintenant gérer l’affichage des animaux plus
+                finement.
+                <ul>
+                  <li>
+                    Changez <code>Animal.afficher</code> pour qu’il
+                    affiche simplement le nom et l’âge, sans gérer les jeunes
+                    animaux.
+                  </li>
+                  <li>
+                    Créez une méthode <code>Poule.afficher</code> qui affiche
+                    le nom de l’animal et « poussin » si l’animal a 1 an au
+                    plus, ou qui appelle <code>Animal.afficher</code> sinon.
+                  </li>
+                  <li>
+                    Créez une méthode <code>Vache.afficher</code> qui affiche
+                    le nom de l’animal et « veau » si l’animal a 2 ans au plus,
+                    ou qui appelle <code>Animal.afficher</code> sinon.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Un nouveau poussin appelé « Pioupiou » vient de naître !
+                Ajoutez-le à la liste des <code>animaux</code>, et vérifiez que
+                l’affichage correspond à ceci :
+                <pre>Nombre d’animaux : 6
+
+Espèce : vache
+- Marguerite, 5 an(s)
+- Hortense, 7 an(s)
+- Caramel, veau
+
+Espèce : poule
+- Coco, 3 an(s)
+- Blanche, 2 an(s)
+- Pioupiou, poussin</pre>
+              </li>
+            </ol>
+          </section>
+          <section class="annexes">
+            <h4 id="annexe-3-1">Structure du code avec fonctions</h4>
+            <pre><code>animaux = [
+    {'espèce': 'vache', 'âge': 5, 'nom': 'Marguerite'},
+    …
+]
+
+def afficher_animal(animal):
+    if …:
+        print(…)
+    else:
+        print(…)
+
+
+def afficher_animaux(animaux, espece):
+    for …:
+        if …:
+            afficher_animal(animal)
+
+
+print(f'Nombre…')
+for …:
+    print(f'Espèce…')
+    afficher_animaux(animaux, espece)
+    print()</code></pre>
+
+            <h4 id="annexe-3-2">Structure du code avec classes</h4>
+            <pre><code>class Animal:
+    def __init__(self, age, nom):
+        …
+
+    def afficher(self):
+        …
+
+
+class Poule(Animal):
+    espece = 'poule'
+
+    def afficher(self):
+        if …:
+            …
+        else:
+            super()…
+
+
+class Vache(Animal):
+    espece = 'vache'
+
+    def afficher(self):
+        if …:
+            …
+        else:
+            super()…
+
+
+animaux = [
+    Vache(5, 'Marguerite'),
+    …,
+    Poule(0, 'Pioupiou'),
+]
+
+def afficher_animaux(animaux, espece):
+    for …:
+        if …:
+            animal.afficher()
+
+
+print(f'Nombre…')
+for …:
+    print(f'Espèce…')
+    afficher_animaux(animaux, espece)
+    print()</code></pre>
           </section>
         </section>
 
@@ -605,11 +909,255 @@ Vous avez perdu 😢</code></pre>
           <section class="introduction">
             <p>Temps estimé : 3h.</p>
             <p>
-              <todo></todo>
+              Python propose un grand nombre de fonctionnalités grâce à des
+              modules directement fournis avec l’interpréteur. Sans rien avoir
+              à installer, grâce aux modules de la bibliothèque standard, il
+              vous est possible de manipuler des dates, de faire de la
+              trigonométrie, d’accéder aux informations de votre système, ou
+              d’utiliser les protocoles réseaux les plus courants.
+            </p>
+            <p>
+              D’autres modules sont fournis en dehors de la bibliothèque
+              standard. Après installation, ils vous offriront un éventail très
+              large de possibilités dans des domaines extrêmement variés… à
+              condition de bien gérer vos dépendances.
+            </p>
+            <p>
+              Cette étape a pour but de vous familiariser avec les imports de
+              modules. Que ce soit au sein de vos programmes séparés en
+              différents fichiers, pour utiliser la bibliothèque standard ou
+              pour utiliser des bibliothèques tierces, vous apprendrez à
+              importer des modules et à utiliser les fonctionnalités qu’ils
+              pourront vous apporter.
             </p>
           </section>
           <section class="sujet">
-            <todo></todo>
+            <p>
+              Votre entreprise a été missionnée pour créer un logiciel éducatif
+              pour les enfants, intitulé « FunMath ». Avant de commencer le
+              développement de ce logiciel, elle aimerait étudier la
+              possibilité de l’écrire en Python.
+            </p>
+            <p>
+              Votre cheffe de projet vous propose de réaliser une bibliothèque
+              qui permet d’effectuer des opérations mathématiques simples, afin
+              d’avoir une meilleure idée de ce qui est réalisable. À terme, si
+              tout fonctionne correctement, votre bibliothèque sera utilisée
+              dans l’application finale.
+            </p>
+            <p>
+              Vous vous lancez donc dans l’écriture de cette bibliothèque. Vous
+              créez également un petit script qui servira de démonstration à
+              votre cheffe, en espérant que vous saurez la convaincre !
+            </p>
+          </section>
+          <section class="questions">
+            <h4>Créez votre première bibliothèque</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#modules-et-imports">FR 6</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Pour commencer votre projet, vous créez un fichier
+                « funmath.py » dans lequel vous créez deux
+                fonctions : <code>somme(nombre_1, nombre_2)</code> qui renvoie
+                « nombre_1 + nombre_2 », et <code>produit(nombre_1, nombre_2)</code>
+                qui renvoie « nombre_1 × nombre_2 ».
+              </li>
+              <li>
+                Vous souhaitez tester votre module, pour vérifier que tout
+                fonctionne correctement. Vous créez un fichier « script.py »,
+                dans lequel vous importez le module « funmath » et vous
+                affichez le résultat de <code>funmath.somme(2, 3)</code>
+                et <code>funmath.produit(2, 3)</code>. Combien font la somme et
+                le produit de 2 et 3 (c’est une question à votre portée) ?
+              </li>
+              <li>
+                Outre les opérations de bases, vous aimeriez avoir les calculs
+                d’aires pour les carrés et les cercles. Dans « funmath.py »,
+                vous créez donc deux fonctions <code>aire_carre(longueur)</code>
+                et <code>aire_cercle(rayon)</code> qui renvoient la valeur de
+                ces aires. Pour le cercle, vous aurez besoin d’une variable
+                <code>pi</code>, que vous pouvez définir au début de votre
+                fichier approximée à <code>3.14</code>. Dans « script.py »,
+                après la somme et le produit, vous décidez d’afficher pi,
+                l’aire d’un carré de longueur 3 et l’aire d’un cercle de rayon
+                3. Quelles valeurs obtenez-vous ?
+              </li>
+              <li>
+                Vous avez conscience qu’à terme, beaucoup de fonctions seront
+                disponibles dans votre application. Il est temps de mieux
+                structurer votre bibliothèque ! Vous décidez donc de remplacer
+                votre fichier « funmath.py » par un dossier « funmath » qui
+                contient 3 fichiers :
+                <ul>
+                  <li>
+                    « funmath/algebre.py » contenant <code>somme</code>
+                    et <code>produit</code>,
+                  </li>
+                  <li>
+                    « funmath/geometrie.py » contenant <code>pi</code>, <code>aire_carre</code>
+                    et <code>aire_cercle</code>,
+                  </li>
+                  <li>
+                    « funmath/__init__.py » contenant les imports relatifs de <code>somme</code>,
+                    <code>produit</code>, <code>pi</code>, <code>aire_carre</code>
+                    et <code>aire_cercle</code> (pour qu’on puisse par exemple utiliser
+                    <code>funmath.somme</code>, comme auparavant).
+                  </li>
+                </ul>
+                Vérifiez que « script.py » fonctionne toujours, sans la moindre
+                modification !
+              </li>
+            </ol>
+            <h4>Utilisez la bibliothèque standard</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#bibliotheque-standard">FR 7</a></li>
+                <li><a href="#annexe-4-1">Annexe 1</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Votre première version est concluante, mais il reste beaucoup
+                de travail ! Vous décidez en particulier d’utiliser la
+                bibliothèque standard pour améliorer et développer de nouvelles
+                fonctionnalités. Votre première amélioration est d’utiliser la
+                valeur de <code>pi</code> venant du module <code>math</code>, à
+                la place de notre approximation. Importez <code>pi</code> dans
+                « funmath/geometrie.py », à la place de la variable
+                <code>pi</code>. Vérifiez que le script fonctionne, avec des
+                valeurs désormais plus précises !
+              </li>
+              <li>
+                Une nouvelle fonctionnalité à ajouter concerne des opérations
+                avec les dates. Vous décidez de créer un nouveau fichier
+                « funmath/temps.py » qui contient une fonction
+                <code>nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2)</code>.
+                Cette fonction renvoie un entier correspondant au nombre de
+                jours entre deux dates. Pour cela, vous utilisez le module
+                <code>datetime</code>, et en particulier la possibilité de
+                faire une différence (avec <code>-</code>) entre deux objets
+                <code>datetime.date</code>.
+              </li>
+              <li>
+                Dans votre script, vous décidez d’afficher le nombre de jours
+                entre votre date de naissance et aujourd’hui. Vous souhaitez utiliser
+                <code>funmath.nombre_jours</code>, vous ajoutez donc un import
+                dans « funmath/__init__.py ». Combien de jours a duré votre vie ?
+              </li>
+            </ol>
+            <h4>Utilisez des modules externes</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#environnements-virtuels">FR 8</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                La qualité et la quantité de fonctionnalités de votre module
+                sont désormais suffisantes pour une petite démonstration. Vous
+                souhaitez améliorer votre script pour qu’il soit un peu plus
+                attractif. Mettons quelques couleurs dans ce terminal ! Pour
+                cela, rien n’est disponible dans la bibliothèque standard, mais
+                nous trouverons bien une bibliothèque tierce. Vous commencez
+                par créer un environnement virtuel. Après activation, vous
+                affichez le chemin complet vers <code>python3</code>. Est-il
+                bien dans votre environnement virutel ?
+              </li>
+              <li>
+                Après quelques recherches, vous décidez d’utiliser la bibliothèque
+                <a href="https://rich.readthedocs.io/">Rich</a> pour mettre
+                de la couleur dans votre script. Après avoir vérifié que votre
+                environnement virtuel est activé, vous
+                installez <code>rich</code>. Pour vérifier que tout va bien,
+                vous lancez l’interpréteur, importez <code>rich</code>, et
+                vérifiez que vous pouvez afficher la largeur de votre terminal
+                avec <code>rich.get_console().width</code>.
+              </li>
+              <li>
+                Il est temps de mettre des couleurs dans votre script ! Grâce à
+                la documentation de la fonction <code>rich.print</code> et
+                du module <code>rich.panel</code>, vous arrivez à ce résultat :
+                <pre><span class="rouge">╭─────────╮
+│ Algèbre │
+╰─────────╯</span>
+<span class="vert">2+3</span> = <span class="bleu">5</span>
+<span class="vert">2×3</span> = <span class="bleu">6</span>
+
+<span class="rouge">╭───────────╮
+│ Géométrie │
+╰───────────╯</span>
+<span class="vert">π</span> = <span class="bleu">3.141592653589793</span>
+<span class="vert">Aire d’un carré de côté 3</span> = <span class="bleu">9</span>
+<span class="vert">Aire d’un cercle de rayon 3</span> = <span class="bleu">28.274333882308138</span>
+
+<span class="rouge">╭───────╮
+│ Temps │
+╰───────╯</span>
+<span class="vert">Nombre de jours que j’ai vécus</span> = <span class="bleu">9999</span></pre>
+              </li>
+            </ol>
+          </section>
+          <section class="annexes">
+            <h4 id="annexe-4-1">Exemple de structure du code</h4>
+            <figure class="fichier">
+              <figcaption><code>script.py</code></figcaption>
+              <pre>from rich import print
+from rich.panel import Panel
+
+import funmath
+
+print(…)  # Titre algèbre
+print(…)  # 2+3
+print(…)  # 2×3
+
+print()
+print(…)  # Titre géométrie
+print(…)  # Pi
+print(…)  # Carré
+print(…)  # Cercle
+
+print()
+print(…)  # Titre temps
+print(…)  # Jours</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>funmath/__init__.py</code></figcaption>
+              <pre>from .algebre import …
+from .geometrie import …
+from .temps import …</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>funmath/algebre.py</code></figcaption>
+              <pre>def somme(nombre_1, nombre_2):
+    …
+
+def produit(nombre_1, nombre_2):
+    …</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>funmath/geometrie.py</code></figcaption>
+              <pre>from math import …
+
+def aire_carre(longueur):
+    …
+
+def aire_cercle(rayon):
+    …</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>funmath/temps.py</code></figcaption>
+              <pre>from datetime import date
+
+def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
+    date_1 = …
+    date_2 = …
+    delta = …
+    return …</pre>
+            </figure>
           </section>
         </section>
 
@@ -627,11 +1175,27 @@ Vous avez perdu 😢</code></pre>
         </section>
       </section>
 
+      <section id="atelier">
+        <h2>Atelier</h2>
+        <section class="introduction">
+          <p>Temps estimé : 14h.</p>
+          <p><todo></todo></p>
+        </section>
+        <section class="sujet">
+          <p><todo></todo></p>
+        </section>
+      </section>
+
       <section id="fiches-ressources">
         <h2>Fiches ressources</h2>
 
         <section id="installation-et-utilisateur-de-l-interpreteur">
           <h3>Installation et utilisation de l’interpréteur</h3>
+          <todo></todo>
+        </section>
+
+        <section id="#choix-et-configuration-d-un-editeur">
+          <h3>Choix et configuration d’un éditeur</h3>
           <todo></todo>
         </section>
 
@@ -652,6 +1216,11 @@ Vous avez perdu 😢</code></pre>
 
         <section id="modules-et-imports">
           <h3>Modules et imports</h3>
+          <todo></todo>
+        </section>
+
+        <section id="bibliothèque standard">
+          <h3>Bibliothèque standard</h3>
           <todo></todo>
         </section>
 
