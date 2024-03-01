@@ -97,6 +97,7 @@ pre {
   break-inside: avoid;
   color: white;
   font-family: Courier New;
+  font-weight: normal;
   font-size: 0.8em;
   overflow-x: scroll;
   padding: 1em;
@@ -162,6 +163,10 @@ thead th {
 
 tbody th {
   text-align: left;
+}
+
+tr {
+  break-inside: avoid;
 }
 
 td,
@@ -343,6 +348,10 @@ section:is(#decouverte, #atelier) h2::before {
   padding-right: 0.5em;
   position: absolute;
   transform: translate(-100%, 0);
+}
+
+.questions ol ul {
+  padding-left: 1.5em;
 }
 
 .documents {
