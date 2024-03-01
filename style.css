@@ -357,12 +357,15 @@ section:is(#decouverte, #atelier) h2::before {
 .correction {
   background: #efecec;
   margin: 0.5em 0;
+  font-weight: normal;
   padding: 0.5em;
 }
 
 .correction::before {
   content: "Correction";
   display: block;
+  margin-bottom: 0.5em;
+  text-decoration: underline;
 }
 
 .documents {
