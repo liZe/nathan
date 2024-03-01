@@ -295,11 +295,18 @@
                 Installez Git et vérifiez que la commande fonctionne
                 correctement dans un terminal. Quelle version de Git est
                 installée sur votre ordinateur ?
+                <aside class="correction">
+                  <code>git --version</code>
+                </aside>
               </li>
               <li>
                 Configurez Git pour qu’il connaisse votre nom et votre adresse
                 mail. Après avoir enregistré ces informations, pouvez-vous
                 vérifier qu’elles sont bien correctes ?
+                <aside class="correction">
+                  <pre>git config --get user.name
+git config --get user.email</pre>
+                </aside>
               </li>
             </ol>
             <h4>Créez votre dépôt et enregistrez votre première version</h4>
@@ -312,6 +319,10 @@
               <li>
                 Dans votre terminal, allez dans le dossier où vous voulez créer
                 votre dépôt, puis créez ce dépôt en le nommant « traductions ».
+                <aside class="correction">
+                  <pre>cd path/to/folder
+git --init traductions</pre>
+                </aside>
               </li>
               <li>
                 Avec votre éditeur de texte, créez votre premier fichier
@@ -319,6 +330,10 @@
                 texte « Bonjour monde ! ». Dans votre terminal, allez dans le
                 dossier « traductions », et vérifiez le statut de votre arbre
                 de travail.
+                <aside class="correction">
+                  <pre>cd traductions
+git status</pre>
+                </aside>
               </li>
               <li>
                 Votre fichier n’est pas encore suivi par votre dépôt, parce
@@ -326,12 +341,18 @@
                 temps de remédier à cela ! Ajoutez votre fichier à la liste des
                 fichiers à sauvegarder dans votre prochaine version (cette
                 liste s’appelle l’« index »).
+                <aside class="correction">
+                  Créer « bonjour.txt », puis <code>git add bonjour.txt</code>
+                </aside>
               </li>
               <li>
                 Il est l’heure de sauvegarder votre première version.
                 Choisissez un beau message pour indiquer que vous avez ajouté
                 le texte en français, et trouvez la commande pour créer votre
                 version (que l’on appelle « <em>commit</em> »).
+                <aside class="correction">
+                  <code>git commit -m "Création du fichier en français"</code>
+                </aside>
               </li>
             </ol>
             <h4>Modifiez vos fichiers et enregistrez de nouvelles versions</h4>
@@ -346,11 +367,22 @@
                 texte « Hello world! ». Vous avez désormais deux versions dans
                 votre dépôt. Affichez dans le terminal le message et la
                 date associés à ces deux versions.
+                <aside class="correction">
+                  Créer « hello.txt », puis
+                  <pre>git add hello.txt
+git commit -m "Ajout du fichier en anglais"
+git log</pre>
+                </aside>
               </li>
               <li>
                 Changez le texte de « bonjour.txt » pour qu’il contienne
                 « Bonjour tout le monde ! ». Créez un nouveau <em>commit</em>
                 avec cette modification.
+                <aside class="correction">
+                  Modifier « bonjour.txt », puis
+                  <pre>git add bonjour.txt
+git commit -m "Mise à jour du fichier en français"</pre>
+                </aside>
               </li>
             </ol>
           </section>
@@ -433,27 +465,50 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
               <li>
                 Clonez le dépôt <todo>nom du dépôt</todo> sur votre ordinateur.
                 Combien y a-t-il de <em>commits</em> dans ce dépôt ?
+                <aside class="correction">
+                  <pre>git clone https://<todo></todo>
+git log</pre>
+                  Il y a 13 commits.
+                </aside>
               </li>
               <li>
                 Chaque publication précédente a été stockée dans le dépôt sous
                 forme d’étiquette. Combien de publications différentes de ce
                 livre ont déjà été faites ? À quelles dates ont-elles été
                 effectuées ?
+                <aside class="correction">
+                  <pre>git tag</pre>
+                  Il y a 2 publications, <code>version-1</code> et
+                  <code>version-2</code>.
+                  <pre>git show version-1
+git show version-2</pre>
+                </aside>
               </li>
               <li>
                 Quels sont les derniers <em>commits</em> concernant la recette
                 de crumble au citron ?
+                <aside class="correction">
+                  <code>git log -- crumble-au-citron.md</code>
+                </aside>
               </li>
               <li>
                 Vous souhaitez voir le contenu tel qu’il était lors de la
                 première publication. Basculez votre arbre de travail sur cette
                 version.
+                <aside class="correction">
+                  <code>git checkout version-1</code>
+                </aside>
               </li>
               <li>
                 Vous souhaitez maintenant voir le contenu tel qu’il était lors
                 de la seconde publication. Quelles sont les différences entre
                 la première et la seconde publication ? Retournez sur la
                 version principale (la branche « main »).
+                <aside class="correction">
+                  <pre>git checkout version-2
+git diff version-1
+git checkout main</pre>
+                </aside>
               </li>
             </ol>
             <h4>Publiez une nouvelle version</h4>
@@ -467,10 +522,16 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
                 Une personne de votre équipe vous demande de changer les
                 fraises en framboises dans la recette de charlotte. Changez le
                 fichier sans faire de nouveau <em>commit</em>.
+                <aside class="correction">
+                  Modifier « charlotte.md »
+                </aside>
               </li>
               <li>
                 Finalement, vous préférez annuler cette modification. Comment
                 annuler les changements sans faire l’édition à la main ?
+                <aside class="correction">
+                  <code>git restore charlotte.md</code>
+                </aside>
               </li>
               <li>
                 Entre la première et la seconde version, une modification de la
@@ -478,15 +539,26 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
                 retours des lecteurs sur cette recette ont indiqué que la
                 quantité de farine était mieux avant. Faites un <em>commit</em>
                 qui annule ce <em>commit</em>.
+                <aside class="correction">
+                  <code>git revert a718e3b --no-edit</code>
+                </aside>
               </li>
               <li>
                 Une pâtissière de votre équipe vous indique qu’il vaut mieux
                 cuire le gâteau basque à 200°C. Effectuez le changement et
                 faites un nouveau <em>commit</em>.
+                <aside class="correction">
+                  Modifier « gateau-basque.md » puis
+                  <pre>git add gateau-basque.md
+git commit -m "Augmentation de la température du gâteau basque"</pre>
+                </aside>
               </li>
               <li>
                 Il est temps de finaliser votre nouvelle publication ! Ajoutez
                 une étiquette « version-3 » sur le <em>commit</em> actuel.
+                <aside class="correction">
+                  <code>git tag version-3</code>
+                </aside>
               </li>
             </ol>
           </section>
@@ -567,11 +639,24 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
                 <a href="https://www.gutenberg.org/cache/epub/55456/pg55456-images.html#ch_1">les 3 premiers paragraphes d’<em>Alice au pays des merveilles</em></a>.
                 Vous pouvez copier-coller le contenu, mais conservez bien les
                 mêmes sauts de ligne. Faites votre premier <em>commit</em>.
+                <aside class="correction">
+                  <pre>cd path/to/folder
+git init contes</pre>
+                  Créer les fichiers, puis
+                  <pre>git add paragraphe1.txt paragraphe2.txt paragraphe3.txt
+git commit -m "Ajout des 3 premiers paragraphes"</pre>
+                </aside>
               </li>
               <li>
                 Ce premier « commit » est automatiquement créé sur la branche
                 par défaut. Comment s’appelle cette branche ? Quelles commandes
                 différentes vous permettent de connaître cette information ?
+                <aside class="correction">
+                  La branche s’appelle « main » ou « master », on peut trouver
+                  cette information avec <code>git status</code>,
+                  <code>git log</code>, <code>git show</code> ou
+                  <code>git branch</code>
+                </aside>
               </li>
             </ol>
             <h4>Gérez les demandes</h4>
@@ -589,6 +674,14 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
                 branche. Changez la couleur des yeux dans « paragraphe2.txt »,
                 puis <em>commitez</em> ce changement. Vérifiez bien que vous
                 êtes sur la bonne branche avant de créer ce <em>commit</em> !
+                <aside class="correction">
+                  <pre>git branch lewis-bleu
+git switch lewis-bleu</pre>
+                  Modifier « paragraphe2.txt » puis
+                  <pre>git status
+git add paragraphe2.txt
+git commit -m "Changement de la couleur des yeux du lapin"</pre>
+                </aside>
               </li>
               <li>
                 En attendant que M. Lewis vous donne son feu vert pour intégrer
@@ -597,12 +690,20 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
                 retourner sur la branche principale ? Une fois sur la branche
                 principale, créez « paragraphe4.txt » et faites un
                 nouveau <em>commit</em>.
+                <aside class="correction">
+                  <code>git switch main</code>, créer le fichier « paragraphe4.txt » puis
+                  <pre>git add paragraphe4.txt
+git commit -m "Ajout du 4e paragraphe"</pre>
+                </aside>
               </li>
               <li>
                 M. Lewis est ravi de la modification qu’il a demandée et
                 souhaite l’intégrer dans la branche principale. Quelle commande
                 utilisez-vous pour fusionner la branche « lewis-bleu » dans la
                 branche principale ?
+                <aside class="correction">
+                  <code>git merge lewis-bleu</code>
+                </aside>
               </li>
             </ol>
             <h4>Réglez les conflits</h4>
@@ -619,12 +720,22 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
                 paragraphes. Vous créez une branche « caroll-leia » à partir de
                 la branche principale, puis vous y intégrez la modification
                 avec un <em>commit</em> unique pour les 4 fichiers modifiés.
+                <aside class="correction">
+                  <code>git branch caroll-leia</code>, modifier les 4 fichiers puis
+                  <pre>git add paragraphe1.txt paragraphe2.txt paragraphe3.txt paragraphe4.txt
+git commit -m "Changement du nom d’Alice en Leia"</pre>
+                </aside>
               </li>
               <li>
                 Le temps que Mme Caroll valide ses demandes, vous retournez sur
                 la branche principale et y ajoutez « paragraphe5.txt » avec
                 un <em>commit</em>. Bien sûr, dans votre branche principale,
                 l’héroïne s’appelle toujours Alice.
+                <aside class="correction">
+                  <code>git switch main</code>, créer le fichier « paragraphe5.txt » puis
+                  <pre>git add paragraphe5.txt
+git commit -m "Ajout du 5e paragraphe"</pre>
+                </aside>
               </li>
               <li>
                 M. Lewis a une nouvelle idée ! Alice n’est pas avec sa sœur,
@@ -633,6 +744,13 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
                 cette branche, vous changez les phrases du premier paragraphe
                 pour que le chien remplace la sœur (oui, le chien d’Alice sait
                 lire). Faites un <em>commit</em> avec ces changements.
+                <aside class="correction">
+                  <pre>git branch lewis-chien
+git switch lewis-chien</pre>
+                  modifier « paragraphe1.txt », puis
+                  <pre>git add paragraphe1.txt
+git commit -m "Changement de la sœur en chien"</pre>
+                </aside>
               </li>
               <li>
                 Mme Caroll vous rappelle : il est temps d’utiliser la force
@@ -642,6 +760,13 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
                 encombres, mais en vérifiant le contenu, vous devez vous rendre
                 compte que quelque chose cloche dans le paragraphe 5. Que
                 faut-il changer ? Faites un nouveau commit pour corriger cela.
+                <aside class="correction">
+                  <pre>git switch main
+git merge caroll-leia</pre>
+                  changer Alice en Leia dans le paragraphe 5, puis
+                  <pre>git add paragraphe5.txt
+git commit -m "Changement du nom Alice en Leia dans le 5e paragraphe"</pre>
+                </aside>
               </li>
               <li>
                 M. Lewis souhaite lui-aussi intégrer sa modification au plus
@@ -650,12 +775,21 @@ Date:   Tue Nov 14 14:39:13 2040 +0000
                 le premier paragraphe… Pas de panique ! Résolvez ce conflit en
                 veillant bien à ce que les demandes de Mme Caroll et de M.
                 Lewis soient toutes respectées.
+                <aside class="correction">
+                  <code>git merge lewis-chien</code>,
+                  résoudre le conflit, puis
+                  <pre>git add paragraphe1.txt
+git commit --no-edit</pre>
+                </aside>
               </li>
               <li>
                 Vérifiez que le contenu des 5 paragraphes est conforme à toutes
                 les attentes. Maintenant que tout est dans la branche
                 principale, supprimez les branches « lewis-bleu »,
                 « caroll-leia » et « lewis-chien ».
+                <aside class="correction">
+                  <code>git branch -d lewis-bleu caroll-leia lewis-chien</code>
+                </aside>
               </li>
             </ol>
           </section>
@@ -809,7 +943,7 @@ avant même d’avoir pensé à se retenir.</pre>
               développement la plus utilisée dans le monde.
             </p>
           </section>
-          <section class="questions">
+          <section class="questions" style="break-before: page">
             <h4>Créez le dépôt principal et le <em>fork</em></h4>
             <aside class="documents">
               <ul>
@@ -953,8 +1087,19 @@ avant même d’avoir pensé à se retenir.</pre>
             vous rédigez un note de synthèse indiquant :
           </p>
           <ol>
-            <li>le nom des 3 personnes ayant effectué des <em>commits</em> sur le projet ;</li>
-            <li>le nom des branches qui n’ont pas été fusionnées dans la branche principale « main » ;</li>
+            <li>
+              le nom des 3 personnes ayant effectué des <em>commits</em> sur le projet ;
+              <aside class="correction">
+                <code>git branch</code> pour voir les branches, puis
+                <code>git log sinus</code> par exemple
+              </aside>
+            </li>
+            <li>
+              le nom des branches qui n’ont pas été fusionnées dans la branche principale « main » ;
+              <aside class="correction">
+                <code>git branch</code>
+              </aside>
+            </li>
             <li>
               quelles versions ont été déjà publiées, et pour chacune d’entre elles :
               <ul>
@@ -962,8 +1107,17 @@ avant même d’avoir pensé à se retenir.</pre>
                 <li>leur date de sortie,</li>
                 <li>le nombre de fichiers avec l’extension <code>.py</code> que contient le dossier <code>mathfacile</code> ;</li>
               </ul>
+              <aside class="correction">
+                <code>git tag</code>, puis <code>git checkout v1.x</code> et <code>git show</code>
+                sur chaque version
+              </aside>
             </li>
-            <li>combien de <em>commits</em> ont été effectués sur « main » depuis la dernière version <code>v1.2</code>.
+            <li>
+              combien de <em>commits</em> ont été effectués sur « main » depuis la dernière version <code>v1.2</code>.
+              <aside class="correction">
+                <code>git log</code>
+              </aside>
+            </li>
           </ol>
 
           <h3>Gestion de branches</h3>
@@ -1005,6 +1159,19 @@ avant même d’avoir pensé à se retenir.</pre>
             « puissance » et « sinus ». Vous pouvez alors <em>pusher</em> votre
             branche « main ».
           </p>
+          <aside class="correction">
+            <pre>git checkout main
+git branch corrections
+git checkout corrections</pre>
+            modifier les fichiers, puis
+            <pre>git add mathfacile/operations.py mathfacile/constantes.py
+git commit
+git push
+git checkout main
+git merge puissance
+git merge sinus
+git push</pre>
+          </aside>
 
           <h3>Publication de la version 2.0</h3>
           <p>
@@ -1065,6 +1232,23 @@ avant même d’avoir pensé à se retenir.</pre>
           <p>
             Félicitations à vous pour cette publication de version !
           </p>
+          <aside class="correction">
+            Merger la pull request sur GitHub, puis
+            <pre>git checkout main
+git pull
+git checkout trigonometrie
+git merge main
+git add mathfacile/trigonometrie.py
+git commit
+git push</pre>
+            Merger la branche « trigonometrie » sur GitHub, puis supprimer
+            toutes les branches. Ensuite, changer la version dans le code, puis
+            <pre>git add mathfacile/__init__.py
+git commit
+git push
+git tag v2.0
+git push --tags</pre>
+          </aside>
         </section>
       </section>
 
@@ -1623,7 +1807,7 @@ Basculement sur la branche 'main'</code></pre>
                 Crée un nouveau <em>commit</em> qui annule les changements d’un
                 autre <em>commit</em>.
               </p>
-              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git revert a2de2c68
+              <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/depot/</span>$ git revert a2de2c68 --no-edit
 [main 106aff9] Revert "Ajout du 6e paragraphe"
  1 file changed, 11 deletions(-)
  delete mode 100644 paragraphe6.txt</code></pre>

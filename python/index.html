@@ -268,11 +268,17 @@
                 Installez Python et vérifiez que la commande fonctionne
                 correctement dans un terminal. Quelle version de Python est
                 installée sur votre ordinateur ?
+                <aside class="correction">
+                  <code>python3 --version</code>
+                </aside>
               </li>
               <li>
                 Comment pouvez-vous quitter l’interpréteur ? Que se passe-t-il
                 alors pour toutes les commandes que vous avez saisies ?
                 Relancez l’interpréteur.
+                <aside class="correction">
+                  <code>exit()</code> ou <kbd>Ctrl+D</kbd> sous macOS/Linux
+                </aside>
               </li>
             </ol>
             <h4>Effectuez vos premières opérations</h4>
@@ -281,31 +287,46 @@
                 La cheffe de projet indique le coût pour réaliser ce projet est
                 de 1945 € par jour, et elle prévoit environ 12 jours de
                 travail. À combien s’élève le coût total ?
+                <aside class="correction">
+                  <code>1945 * 12</code>
+                </aside>
               </li>
               <li>
                 Après réflexion, le coût journalier est réévalué à 1965 €. En
                 reprenant (sans tout saisir à nouveau !) et en modifiant le
                 calcul précédent, à combien s’élève le nouveau coût total ?
+                <aside class="correction">
+                  <kbd>↑</kbd> puis remplacer <code>4</code> par <code>6</code>
+                </aside>
               </li>
               <li>
                 Vous voulez enregistrer ce total pour plus tard. Comment faire
                 pour retrouver le dernier résultat, et comment faire pour
                 l’enregistrer dans une variable appelée <code>total</code> ?
+                <aside class="correction">
+                  <code>total = _</code>
+                </aside>
               </li>
               <li>
                 Ce total est à répartir à égalité entre 3 différentes entités
                 de votre entreprise, qui prendront chacune un tiers du coût
                 total. Enregistrez la part de chaque entreprise dans la
                 variable <code>part</code>. Combien vaut-elle ?
+                <aside class="correction">
+                  <code>part = total / 3</code>
+                </aside>
               </li>
             </ol>
             <h4>Créez un petit compte-rendu</h4>
             <ol>
               <li>
                 Pour conclure ce calcul, vous souhaitez afficher sur une ligne
-                la phrase suivante : « Part pour chaque entité : XX € ».
+                la phrase suivante : « Part pour chaque entité : XX € ».
                 Évidemment, vous remplacerez « XX » par le montant de la part,
                 en utilisant la variable <code>part</code>.
+                <aside class="correction">
+                  <code>print(f"Part pour chaque entité : {part} €")</code>
+                </aside>
               </li>
               <li>
                 Votre équipe préférerait une version plus explicite de ce petit
@@ -316,6 +337,14 @@
 - Entité 2 : XX €
 - Entité 3 : XX €</pre>
                 Affichez ce résultat à l’aide d’une unique commande.
+                <aside class="correction">
+                  <pre>print(f"""Budget prévisionnel
+===================
+- Entité 1 : {part} €
+- Entité 2 : {part} €
+- Entité 3 : {part} €""")
+                  </pre>
+                </aside>
               </li>
             </ol>
             <h4>Créez un petit script</h4>
@@ -340,6 +369,17 @@
                   <li>la définition de la variable <code>part</code> à partir de la variable <code>total</code>,</li>
                   <li>l’affichage du petit compte-rendu en utilisant la variable <code>part</code>.</li>
                 </ul>
+                <aside class="correction">
+                  <pre>cout_par_jour = 1965
+nombre_de_jours = 12
+total = cout_par_jour * nombre_de_jours
+part = total / 3
+print(f"""Budget prévisionnel
+===================
+- Entité 1 : {part} €
+- Entité 2 : {part} €
+- Entité 3 : {part} €""")</pre>
+                </aside>
               </li>
               <li>
                 Lancez votre script et vérifiez que le résultat correspond à
@@ -407,6 +447,9 @@
                 Notre programme va traiter deux éléments principaux : les
                 lettres, et une suite pour les regrouper. Quel type
                 utilise-t-on pour stocker chacune des lettres ?
+                <aside class="correction">
+                  Une chaîne de caractères
+                </aside>
               </li>
               <li>
                 Pour la suite de lettres, il faut également choisir le bon
@@ -414,6 +457,9 @@
                 position (entre 0 et 7 au début, par exemple), puis enlever de
                 la suite la lettre à cette position. Quel type est adapté pour
                 cette suite qui sera modifiée au cours de la partie ?
+                <aside class="correction">
+                  Une liste
+                </aside>
               </li>
               <li>
                 Avant de réaliser notre jeu en entier, nous allons commencer
@@ -444,6 +490,13 @@
                 Exécutez votre programme et vérifiez que vous obtenez bien le
                 résultat attendu : d’abord la lettre enlevée, puis la suite des
                 lettres hormis celle enlevée.
+                <aside class="correction">
+                  <pre>letters = ['B', 'A', 'D', 'E', 'F', 'H', 'G', 'C']
+index = 3
+letter = letters.pop(index)
+print(letter)
+print(numbers)</pre>
+                </aside>
               </li>
             </ol>
             <h4>Interactivité</h4>
@@ -454,11 +507,22 @@
                 souhaite en utilisant la fonction
                 <a href="https://docs.python.org/3.12/library/functions.html#input"><code>input</code></a>.
                 Lancez le programme. Quelle erreur obtenez-vous ?
+                <aside class="correction">
+                  <pre>letters = ['B', 'A', 'D', 'E', 'F', 'H', 'G', 'C']
+index = input("Quelle est la position de la lettre que vous souhaitez enlever ? ")
+letter = letters.pop(index)
+print(letter)
+print(numbers)</pre>
+                  On obtient une <code>TypeError</code>
+                </aside>
               </li>
               <li>
                 <code>input</code> renvoie une chaîne de caractères, alors que
                 la variable <code>index</code> doit être un entier. Comment
                 obtenir l’entier qui correspond à cette chaîne de caractères ?
+                <aside class="correction">
+                  En castant avec <code>str(…)</code>
+                </aside>
               </li>
               <li>
                 Exécutez votre programme et vérifiez que vous obtenez bien le
@@ -483,6 +547,9 @@ C
                 doit-on utiliser ? Exécutez le programme et vérifier que vous
                 pouvez enlever toutes les lettres de la liste avant que le
                 programme ne s’arrête.
+                <aside class="correction">
+                  On utilise une boucle <code>while</code>
+                </aside>
               </li>
               <li>
                 Nous voulons maintenant vérifier que le joueur ne saisit pas un
@@ -492,12 +559,38 @@ C
                 demande le nombre à l’utilisateur, et on force la sortie de la
                 boucle lorsque la condition est validée. Ajouter cette
                 fonctionnalité.
+                <aside class="correction">
+                  <pre>while True:
+    index = int(input('Quelle est la position … ? '))
+    if 0 <= index < len(letters):
+        break
+    print('Nombre incorrect !')</pre>
+                </aside>
               </li>
               <li>
                 Votre jeu est prêt ! À la place de l’affichage de la liste,
                 affichez le nombre de lettres qu’il reste. Ajoutez également un
                 message lorsque le joueur a perdu, et un autre lorsque le
                 joueur a gagné.
+                <aside class="correction">
+                  <pre>letters = ['B', 'A', 'D', 'E', 'F', 'H', 'G', 'C']
+previous_letter = None
+while letters:
+    while True:
+        index = int(input('Quelle est la position … ? '))
+        if 0 <= index < len(letters):
+            break
+        print('Nombre incorrect !')
+    letter = letters.pop(index)
+    print(letter)
+    if previous_letter and previous_letter > letter:
+        print('Vous avez perdu 😢')
+        break
+    print(f'Il reste {len(letters)} lettre(s)')
+    previous_letter = letter
+else:
+    print('Vous avez gagné 😁')</pre>
+                </aside>
               </li>
               <li>
                 Vérifiez que résultat correspond aux exemples donnés en
@@ -648,6 +741,9 @@ Vous avez perdu 😢</code></pre>
                 qui contiendra votre prototype. La première demande de votre
                 client et de créer une liste d’animaux. Vous créez donc une
                 liste <code>animaux</code> vide au début de votre fichier.
+                <aside class="correction">
+                  <pre>animaux = []</pre>
+                </aside>
               </li>
               <li>
                 D’après la demande du fermier, chaque animal doit avoir
@@ -657,6 +753,9 @@ Vous avez perdu 😢</code></pre>
                 <code>"nom"</code> avec les valeurs correspondantes
                 (<code>"vache"</code>, <code>6</code>, <code>"Marguerite"</code>
                 par exemple) ?
+                <aside class="correction">
+                  Un dictionnaire
+                </aside>
               </li>
               <li>
                 Dans la liste, le fermier vous demande d’inclure pour l’instant 5 animaux :
@@ -671,6 +770,15 @@ Vous avez perdu 😢</code></pre>
                 utilisant la structure déterminée auparavant. Le nom et l’espèce
                 sont des chaînes de caractères, l’âge est un entier qui
                 représente le nombre d’années.
+                <aside class="correction">
+                  <pre>animaux = [
+    {"espèce": "vache", "âge": 6, "nom": "Marguerite"},
+    {"espèce": "vache", "âge": 7, "nom": "Hortense"},
+    {"espèce": "veau", "âge": 1, "nom": "Caramel"},
+    {"espèce": "poule", "âge": 3, "nom": "Coco"},
+    {"espèce": "poule", "âge": 2, "nom": "Blanche"},
+]</pre>
+                </aside>
               </li>
               <li>
                 Dans votre prototype, faites une boucle pour parcourir vos
@@ -678,6 +786,12 @@ Vous avez perdu 😢</code></pre>
                 <pre><code>Nom : Marguerite
 Espèce : vache
 Âge : 5 an(s)</code></pre>
+                <aside class="correction">
+                  <pre>for animal in animaux:
+    print(f"Nom : {animal['nom']}")
+    print(f"Espèce : {animal['espèce']}")
+    print(f"Âge : {animal['âge']} an(s)")
+                  </pre>
               </li>
             </ol>
             <h4>Fonctions</h4>
@@ -693,6 +807,11 @@ Espèce : vache
                 dans le futur pouvoir afficher le nombre total d’animaux,
                 lister d’abord les vaches (y compris le veau), puis les poules,
                 dans deux parties différentes. Quels problèmes cela pose-t-il ?
+                <aside class="correction">
+                  Il faut réussir à grouper les animaux par espèce, et il faut
+                  que l’on arrive à stocker l’information que les veaux sont
+                  un type de vache
+                </aside>
               </li>
               <li>
                 Il existe différentes solutions pour atteindre cet objectif. La
@@ -701,15 +820,18 @@ Espèce : vache
                 même valeur pour les vaches et les veaux (qui sont en réalité
                 des jeunes vaches, bien sûr !) Relancez votre programme, qui
                 doit maintenant dire que Caramel est une vache.
+                <aside class="correction">
+                  <code>{"espèce": "vache", "âge": 1, "nom": "Caramel"},</code>
+                </aside>
               </li>
               <li>
                 Vous pouvez désormais afficher les vaches et les poules
                 séparément. Imbriquez votre boucle for dans une autre
                 boucle for, qui met <code>"vache"</code>
-                puis <code>"poule"</code> dans une variable <code>espèce</code>,
+                puis <code>"poule"</code> dans une variable <code>espece</code>,
                 qui affiche cette variable, avant d’afficher les informations
                 des animaux correspondant à cette
-                <code>espèce</code>. Vous devez obtenir quelque chose comme :
+                <code>espece</code>. Vous devez obtenir quelque chose comme :
                 <pre><code>Espèce : vache
 - Marguerite, 5 an(s)
 - Hortense, 7 an(s)
@@ -718,6 +840,14 @@ Espèce : vache
 Espèce : poule
 - Coco, 3 an(s)
 - Blanche, 3 an(s)</code></pre>
+                <aside class="correction">
+                  <pre>for espece in ("vache", "poule"):
+    print(f"Espèce : {espece}")
+    for animal in animaux:
+        if animal['espèce'] == espece:
+            print(f"- {animal['nom']}, {animal['âge']} an(s)")
+    print()</pre>
+                </aside>
               </li>
               <li>
                 Pour gagner en lisibilité, vous décidez de créer une
@@ -725,16 +855,37 @@ Espèce : poule
                 affiche la liste des animaux d’une espèce donnée. À la place de la
                 boucle imbriquée, vous appelez donc cette nouvelle fonction. Le
                 résultat doit être le même.
+                <aside class="correction">
+                  <pre>def afficher_animaux(animaux, espece):
+    for animal in animaux:
+        if animal['espèce'] == espece:
+            print(f"- {animal['nom']}, {animal['âge']} an(s)")
+
+for espèce in ("vache", "poule"):
+    print(f"Espèce : {espèce}")
+    afficher_animaux(animaux, espèce)
+    print()</pre>
+                  </pre>
+                </aside>
               </li>
               <li>
                 Vous décidez enfin d’accéder à la dernière demande faite par le
                 fermier : afficher le nombre total d’animaux avant la boucle.
+                <aside class="correction">
+                  <pre>print(f"Nombre d’animaux : {len(animaux)}")</pre>
+                </aside>
               </li>
               <li>
                 Le fermier est ravi ! Un dernier problème persiste cependant :
                 il est difficile de discerner les jeunes animaux des adultes.
                 Vous décidez donc d’afficher la mention « jeune animal » pour
                 les animaux de 2 ans ou moins, à la place de leur âge.
+                <aside class="correction">
+                  <pre>if animal['âge'] <= 2:
+    print(f"- {animal['nom']}, {animal['âge']} an(s)")
+else:
+    print(f"- {animal['nom']}, jeune animal")</pre>
+                </aside>
               </li>
               <li>
                 L’affichage d’un animal est maintenant plus complexe, avec une
@@ -751,6 +902,31 @@ Espèce : vache
 Espèce : poule
 - Coco, 3 an(s)
 - Blanche, 3 an(s)</pre>
+                <aside class="correction">
+                  <pre>animaux = [
+    {"espèce": "vache", "âge": 6, "nom": "Marguerite"},
+    {"espèce": "vache", "âge": 7, "nom": "Hortense"},
+    {"espèce": "vache", "âge": 1, "nom": "Caramel"},
+    {"espèce": "poule", "âge": 3, "nom": "Coco"},
+    {"espèce": "poule", "âge": 2, "nom": "Blanche"},
+]
+
+def afficher_animal(animal):
+    if animal['âge'] <= 2:
+        print(f"- {animal['nom']}, {animal['âge']} an(s)")
+    else:
+	print(f"- {animal['nom']}, jeune animal")
+
+def afficher_animaux(animaux, espece):
+    for animal in animaux:
+        if animal['espèce'] == espece:
+            afficher_animal(animal)
+
+print(f"Nombre d’animaux : {len(animaux)}\n")
+for espece in ("vache", "poule"):
+    print(f"Espèce : {espece}")
+    afficher_animaux(animaux, espece)
+    print()</pre>
               </li>
             </ol>
             <h4>Classes</h4>
@@ -772,6 +948,38 @@ Espèce : poule
                 et <code>nom</code> enregistrés à l’instanciation. Modifiez
                 votre code pour qu’il utilise des instances
                 de <code>Animal</code>.
+                <aside class="correction">
+                  <pre>class Animal:
+    def __init__(self, espece, age, nom):
+        self.espece = espece
+        self.age = age
+        self.nom = nom
+
+animaux = [
+    Animal("vache", 5, 'Marguerite'),
+    Animal("vache", 7, 'Hortense'),
+    Animal("vache", 1, 'Caramel'),
+    Animal("poule", 3, 'Coco'),
+    Animal("poule", 2, 'Blanche'),
+]
+
+def afficher_animal(animal):
+    if animal.age <= 2:
+        print(f"- {animal.nom}, {animal.age} an(s)")
+    else:
+	print(f"- {animal.nom}, jeune animal")
+
+def afficher_animaux(animaux, espece):
+    for animal in animaux:
+        if animal.espece == espece:
+            afficher_animal(animal)
+
+print(f"Nombre d’animaux : {len(animaux)}\n")
+for espece in ("vache", "poule"):
+    print(f"Espèce : {espece}")
+    afficher_animaux(animaux, espece)
+    print()</pre>
+                </aside>
               </li>
               <li>
                 Il va désormais être plus simple de structurer votre code.
@@ -779,6 +987,13 @@ Espèce : poule
                 méthode <code>afficher(self)</code> de la
                 classe <code>Animal</code>. Modifiez votre code pour qu’il
                 utilise cette méthode.
+                <aside class="correction">
+                  <pre>def afficher(self):
+    if self.age <= 2:
+        print(f"- {self.nom}, {self.age} an(s)")
+    else:
+        print(f"- {self.nom}, jeune animal")</pre>
+                </aside>
               </li>
               <li>
                 Nous allons ajouter les dernières finitions à notre prototype.
@@ -786,9 +1001,35 @@ Espèce : poule
                 allons créer les classes <code>Poule</code> et
                 <code>Vache</code> qui héritent de <code>Animal</code>. Ces
                 classes ne contiendront pour l’instant qu’un attribut de
-                classe : <code>espèce</code>, qui est donc obsolète dans la
+                classe : <code>espece</code>, qui est donc obsolète dans la
                 classe <code>Animal</code>. Modifiez votre code pour qu’il
                 utilise ces classes.
+                <aside class="correction">
+                  <pre>class Animal:
+    def __init__(self, age, nom):
+        self.age = age
+        self.nom = nom
+
+    def afficher(self):
+        if self.age <= 2:
+            print(f"- {self.nom}, {self.age} an(s)")
+        else:
+            print(f"- {self.nom}, jeune animal")
+
+class Poule(Animal):
+    type = 'poule'
+
+class Vache(Animal):
+    type = 'vache'
+
+animaux = [
+    Vache(5, 'Marguerite'),
+    Vache(7, 'Hortense'),
+    Vache(1, 'Caramel'),
+    Poule(3, 'Coco'),
+    Poule(2, 'Blanche'),
+]</pre>
+                </aside>
               </li>
               <li>
                 Nous pouvons maintenant gérer l’affichage des animaux plus
@@ -810,6 +1051,35 @@ Espèce : poule
                     ou qui appelle <code>Animal.afficher</code> sinon.
                   </li>
                 </ul>
+                <aside class="correction">
+                  <pre>class Animal:
+    def __init__(self, age, nom):
+        self.age = age
+        self.nom = nom
+
+    def afficher(self):
+        print(f'- {self.nom}, {self.age} an(s)')
+
+
+class Poule(Animal):
+    type = 'poule'
+
+    def afficher(self):
+        if self.age <= 1:
+            print(f'- {self.nom}, poussin')
+        else:
+            super().afficher()
+
+
+class Vache(Animal):
+    type = 'vache'
+
+    def afficher(self):
+        if self.age <= 2:
+            print(f'- {self.nom}, veau')
+        else:
+            super().afficher()</pre>
+                </aside>
               </li>
               <li>
                 Un nouveau poussin appelé « Pioupiou » vient de naître !
@@ -826,6 +1096,53 @@ Espèce : poule
 - Coco, 3 an(s)
 - Blanche, 2 an(s)
 - Pioupiou, poussin</pre>
+                <aside class="correction">
+                  <pre>class Animal:
+    def __init__(self, age, nom):
+        self.age = age
+        self.nom = nom
+
+    def afficher(self):
+        print(f'- {self.nom}, {self.age} an(s)')
+
+class Poule(Animal):
+    type = 'poule'
+
+    def afficher(self):
+        if self.age <= 1:
+            print(f'- {self.nom}, poussin')
+        else:
+            super().afficher()
+
+class Vache(Animal):
+    type = 'vache'
+
+    def afficher(self):
+        if self.age <= 2:
+            print(f'- {self.nom}, veau')
+        else:
+            super().afficher()
+
+animaux = [
+    Vache(5, 'Marguerite'),
+    Vache(7, 'Hortense'),
+    Vache(1, 'Caramel'),
+    Poule(3, 'Coco'),
+    Poule(2, 'Blanche'),
+    Poule(0, 'Pioupiou'),
+]
+
+def afficher_animaux(animaux, type):
+    for animal in animaux:
+        if type == animal.type:
+            animal.afficher()
+
+print(f'Nombre d’animaux : {len(animaux)}\n')
+for type in ('vache', 'poule'):
+    print(f'Type d’animal : {type}')
+    afficher_animaux(animaux, type)
+    print()</pre>
+                </aside>
               </li>
             </ol>
           </section>
@@ -1159,6 +1476,67 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
     return …</pre>
             </figure>
           </section>
+          <section>
+            <h4>Correction totale</h4>
+            <figure class="fichier">
+              <figcaption><code>script.py</code></figcaption>
+              <pre>from rich import print
+from rich.panel import Panel
+
+import funmath
+
+print(Panel.fit('Algèbre', style='red'))
+print(f'[green]2+3[/green] = {funmath.somme(2, 3)}')
+print(f'[green]2×3[/green] = {funmath.produit(2, 3)}')
+
+print()
+print(Panel.fit('Géométrie', style='red'))
+print(f'[green]π[/green] = {funmath.pi}')
+print(f'[green]Carré[/green] = {funmath.aire_carre(3)}')
+print(f'[green]Cercle[/green] = {funmath.aire_cercle(3)}')
+
+print()
+print(Panel.fit('Temps', style='red'))
+print(
+    '[green]Jours[/green] = '
+    f'{funmath.nombre_jours(1994, 12, 24, 2024, 2, 29)}'
+)</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>funmath/__init__.py</code></figcaption>
+              <pre>from .algebre import produit, somme
+from .geometrie import aire_carre, aire_cercle, pi
+from .temps import nombre_jours</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>funmath/algebre.py</code></figcaption>
+              <pre>def somme(nombre_1, nombre_2):
+    return nombre_1 + nombre_2
+
+def produit(nombre_1, nombre_2):
+    return nombre_1 * nombre_2</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>funmath/geometrie.py</code></figcaption>
+              <pre>from math import pi
+
+def aire_carre(longueur):
+    return longueur * longueur
+
+def aire_cercle(rayon):
+    return rayon * rayon * pi</pre>
+            </figure>
+            <figure class="fichier">
+              <figcaption><code>funmath/temps.py</code></figcaption>
+              <pre>from datetime import date
+
+def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
+    date_1 = date(annee_1, mois_1, jour_1)
+    date_2 = date(annee_2, mois_2, jour_2)
+    delta = date_2 - date_1
+    return delta.days</pre>
+            </figure>
+          </section>
         </section>
 
         <section id="programmation-web">
@@ -1202,15 +1580,18 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
             </aside>
             <ol>
               <li>
-                Vous téléchargez et décompressez l’archive contenant le travail
-                de votre stagiaire. Vérifiez que vous avez, dans votre dossier
-                de travail, un fichier « README.md », un fichier
-                « requirements.txt » et un dossier « blog ».
+                Vous téléchargez et décompressez l’archive <todo>lien</todo>
+                contenant le travail de votre stagiaire. Vérifiez que vous
+                avez, dans votre dossier de travail, un fichier « README.md »,
+                un fichier « requirements.txt » et un dossier « blog ».
               </li>
               <li>
                 Dans votre dossier de travail, vous créez un environnement
                 virtuel. Vous avez donc un dossier « venv » au même niveau que
                 « README.md » et « blog ».
+                <aside class="correction">
+                  <pre>python3 -m venv venv</pre>
+                </aside>
               </li>
               <li>
                 Vous lancez votre application en suivant les instructions du
@@ -1218,6 +1599,12 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
                 <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>
                 s’afficher dans le terminal. Vous allez sur cette adresse avec
                 votre navigateur pour vérifier que la page d’accueil s’affiche.
+                <aside class="correction">
+                  <pre>source venv/bin/activate # Sous macOS ou Linux
+venv\Scripts\activate.bat # Sous Windows
+(venv) pip install -r requirements.txt
+(venv) flask --app blog run --debug</pre>
+                </aside>
               </li>
               <li>
                 Un message de <em>warning</em> s’affiche en rouge. Que vous
@@ -1227,12 +1614,22 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
                 recherchant « run the development server » dans la
                 documentation. Le serveur de développement pourrait-il poser un
                 problème de sécurité s’il était utilisé en production ?
+                <aside class="correction">
+                  <pre>WARNING: This is a development server.
+Do not use it in a production deployment.
+Use a production WSGI server instead.</pre>
+                </aside>
+                Oui, le serveur de développement peut poser un
+                <a href="https://flask.palletsprojects.com/en/3.0.x/cli/#run-the-development-server">problème de sécurité</a>
               </li>
               <li>
                 Vous commencer à tester le blog dans votre navigateur. Vous
                 vous connectez en utilisant l’identifiant « login » et le mot
                 de passe « password », puis créez un nouvel article. Quel
                 problème gênant apparaît lorsque l’on crée plusieurs articles ?
+                <aside class="correction">
+                  Le titre des articles créés est toujours « Titre »
+                </aside>
               </li>
             </ol>
             <h4>Découvrez le fonctionnement de Flask</h4>
@@ -1246,16 +1643,32 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
                   <li>la liste des URL de l’application et le code qui leur est associé,</li>
                   <li>le code permettant d’accéder à base de données.</li>
                 </ul>
+                <aside class="correction">
+                  Le HTML est dans « blog/templates », le CSS est dans
+                  « blog/static », la liste des URL est dans
+                  « blog/__init__.py », le code de la base de données est dans
+                  « blog/db.py ».
+                </aside>
               </li>
               <li>
                 Dans quel fichier est stocké la base de données SQLite
                 automatiquement créée au premier affichage du site ? Où le nom
                 de ce fichier est-il configuré ? Que se passe-t-il si vous
                 supprimez le fichier contenant la base de données ?
+                <aside class="correction">
+                  La base est dans « database.db », configuré dans
+                  « blog/__init__.py ». Si le fichier contenant la base de
+                  données est supprimé, il est automatiquement recréé à chaque
+                  requête.
+                </aside>
               </li>
               <li>
                 Comment l’application sait-elle quel fichier HTML elle doit
                 afficher pour une URL donnée ?
+                <aside class="correction">
+                  L’URL est dans <code>@app.get()</code>, le nom du template
+                  est dans <code>render_template()</code>
+                </aside>
               </li>
               <li>
                 Ces fichiers ne sont pas du HTML pur, mais des
@@ -1263,24 +1676,42 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
                 permettant entre autres de faire des conditions, des boucles et
                 d’afficher des variables. D’après la documentation de Flask,
                 comment s’appelle se langage ?
+                <aside class="correction">
+                  Jinja
+                </aside>
               </li>
               <li>
                 Comment le HTML sait-il quel fichier CSS utiliser ? Quelle
                 fonction est utilisée dans le <em>template</em>
                 « _layout.jinja2 » pour déterminer l’URL vers le fichier CSS ?
+                <aside class="correction">
+                  Le CSS est défini dans
+                  <code>blog/templates/_layout.jinja2</code> et son URL est
+                  déterminée par <code>url_for()</code>
+                </aside>
               </li>
               <li>
                 Certaines pages utilisent des formulaires. Quel type de requête
                 HTTP est effectué lorsque le formulaire est envoyé par le
                 navigateur ? Comment l’application Flask différencie-t-elle les
                 requêtes POST des requêtes GET pour ses routes ? Comment
-                peut-on récupérer les informations du formulaire ?
+                peut-on récupérer les informations du formulaire dans le code
+                Python ?
+                <aside class="correction">
+                  Les formulaires sont envoyés avec des requêtes POST, on
+                  utilise <code>@app.get()</code> et <code>@app.post()</code>
+                  pour différencier les GET et POST, et les informations du
+                  formulaires sont dans <code>request.form</code>
+                </aside>
               </li>
               <li>
                 Pour la connexion, on utilise le concept de « session » proposé
                 par Flask (et la grande majorité des <em>frameworks</em> web).
                 Quelle information est enregistrée dans la session lors de la
                 connexion et enlevée lors de la déconnexion ?
+                <aside class="correction">
+                  On stocke l’ID de la personne connectée
+                </aside>
               </li>
               <li>
                 La session est également utilisée dans « _layout.jinja2 » pour
@@ -1290,6 +1721,11 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
                 <code>session.person_id</code>
                 et <code>session['person_id']</code> dans Jinja, alors qu’on
                 utilise forcément <code>session['person_id']</code> en Python.
+                <aside class="correction">
+                  D’après la documentation de Jinja : "You can use a dot (.) to
+                  access attributes of a variable in addition to the standard
+                  Python __getitem__ “subscript” syntax ([])."
+                </aside>
               </li>
               <li>
                 La variable <code>session</code> est automatiquement passée
@@ -1298,6 +1734,12 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
                 passer d’autres variables dans un <em>template</em>, comme par
                 exemple <code>articles</code> pour afficher la liste des
                 articles sur la page d’accueil ?
+                <aside class="correction">
+                  D’après la documentation de Flask : "Inside templates you
+                  also have access to the config, request, session and g
+                  objects as well as the url_for() and get_flashed_messages()
+                  functions."
+                </aside>
               </li>
             </ol>
             <h4>Corrigez les problèmes de sécurité</h4>
@@ -1308,7 +1750,7 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
                 <ul>
                   <li>
                     Dans « blog/templates/add_article.html_», vous ajoutez un
-                    label « Titre » contenant un <code>&lt;input name="title" /></code>.
+                    label « Titre » contenant un <code>&lt;input name="title" /&gt;</code>.
                   </li>
                   <li>
                     Dans la fonction <code>add_article_post</code> du fichier
@@ -1319,12 +1761,43 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
                 </ul>
                 Vous vérifiez que tout fonctionne correctement. C’est mieux
                 comme ça !
+                <aside class="correction">
+                  <pre>&lt;form method="post"&gt;
+  &lt;label&gt;
+    Titre
+    &lt;input name="title" /&gt;
+  &lt;/label&gt;
+  &lt;label&gt;
+    Contenu de l’article
+    &lt;textarea name="content"&gt;&lt;/textarea&gt;
+  &lt;/label&gt;
+  &lt;input type="submit" /&gt;
+&lt;/form&gt;</pre>
+                  <pre># Get new article title and content from form
+content = request.form["content"]
+title = request.form["title"]
+
+# Add article into database
+connection = get_connection()
+cursor = connection.cursor()
+cursor.execute(
+    f"INSERT INTO article (title, content) VALUES ('{title}', '{content}')"
+)
+connection.commit()</pre>
+                </aside>
               </li>
               <li>
                 Après réflexion, vous vous rendez compte d’un problème de
                 sécurité grave. Vous créez un nouvel article en mettant comme
                 contenu <code>contenu'), ('hacker', 'hacker</code>. Que se
                 passe-t-il alors ? Comment cela est-il possible ?
+                <aside class="correction">
+                  Deux articles sont créés à la place d’un, parce que la
+                  requête SQL devient
+                  <pre>INSERT INTO article (title, content) VALUES
+('titre', 'contenu'),
+('hacker', 'hacker')</pre>
+                </aside>
               </li>
               <li>
                 Ce problème de sécurité est une injection SQL ! Elle peut
@@ -1342,6 +1815,12 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
                 <code>add_article_post</code> à la place de
                 la <em>f-string</em>, et vérifiez qu’il n’est plus possible
                 d’effectuer une injection SQL.
+                <aside class="correction">
+                  <pre>cursor.execute(
+    "INSERT INTO article (title, content) VALUES (:title, :content)",
+    {'title': request.form["title"], 'content': request.form["content"]}
+)</pre>
+                </aside>
               </li>
               <li>
                 Vous vous rendez-compte d’une fonctionnalité très pratique :
@@ -1353,9 +1832,13 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
               <li>
                 Cette fonctionnalité est pratique, mais très dangereuse… Créez
                 un article avec comme contenu
-                <code>&lt;script>alert('hacker')&lt;/script></code>, puis
+                <code>&lt;script&gt;alert('hacker')&lt;/script&gt;</code>, puis
                 affichez cet article. Que se passe-t-il alors ? Comment cela
                 est-il possible ?
+                <aside class="correction">
+                  Du JavaScript a été injecté dans le HTML, on a donc une boîte
+                  de dialogue qui s’ouvre dans le navigateur
+                </aside>
               </li>
               <li>
                 Ce problème s’appelle du <em>cross-site scripting</em>, souvent
@@ -1369,12 +1852,15 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
                 Par défaut, Flask et Jinja vous protègent des XSS lorsque vous
                 rendez des fichiers HTML. Vous vérifiez cela en créant un
                 nouvel article avec
-                <code>&lt;span style="color: blue">Coucou&lt;/span></code>
+                <code>&lt;span style="color: blue"&gt;Coucou&lt;/span&gt;</code>
                 comme titre : le HTML est échappé, on obtient du texte normal
                 et pas des balises. Vous trouvez alors dans
                 « blog/templates/article.html » pourquoi le contenu n’est pas
                 échappé, et vous enlevez cette « fonctionnalité » bien trop
                 dangereuse.
+                <aside class="correction">
+                  On enlève <code>| safe</code> qui n’échappe pas le HTML
+                </aside>
               </li>
               <li>
                 Le lien pour créer un article n’est affiché que lorsque l’on
@@ -1384,6 +1870,10 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
                 <a href="http://localhost:5000/article/add">http://localhost:5000/article/add</a>
                 alors que vous êtes déconnecté·e. Que se passe-t-il ? Comment
                 cela est-il possible ?
+                <aside class="correction">
+                  Les liens ne sont pas affichés, mais rien dans le code Python
+                  n’empêche une personne déconnectée d’accéder à cette URL
+                </aside>
               </li>
               <li>
                 La gestion des droits d’une application web doit se faire côté
@@ -1397,6 +1887,11 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
                 est connecté. Vous allez sur
                 <a href="http://localhost:5000/article/add">http://localhost:5000/article/add</a>
                 et l’erreur apparaît !
+                <aside class="correction">
+                  <pre># Return 403 error if user is not connected
+if "person_id" not in session:
+    abort(403)</pre>
+                </aside>
               </li>
               <li>
                 Mais… ce n’est pas suffisant. Vous vous reconnectez, affichez
@@ -1405,10 +1900,19 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
                 <a href="http://localhost:5000/article/add">http://localhost:5000/article/add</a>,
                 vous créez un nouvel article. Pourquoi cela fonctionne-t-il ?
                 Quelqu’un qui ne s’est jamais connecté pourrait-il faire cela ?
+                <aside class="correction">
+                  Rien dans le code Python n’empêche une personne déconnectée
+                  d’envoyer une requête POST, il est possible d’écrire en local
+                  une page HTML qui envoie un formulaire sur cette adresse, ou
+                  d’utiliser un client HTTP pour envoyer une requête
+                </aside>
               </li>
               <li>
                 Vous pouvez corriger ce problème de la même manière que pour
                 <code>add_article</code>. Quelle fonction doit être corrigée ?
+                <aside class="correction">
+                  La fonction <code>add_article_post()</code>
+                </aside>
               </li>
             </ol>
           </section>
