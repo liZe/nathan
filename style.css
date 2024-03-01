@@ -356,6 +356,7 @@ section:is(#decouverte, #atelier) h2::before {
 
 .correction {
   background: #efecec;
+  break-inside: avoid;
   margin: 0.5em 0;
   font-weight: normal;
   padding: 0.5em;
