@@ -245,18 +245,18 @@ section:is(#decouverte, #atelier) h2::before {
   counter-increment: partie;
 }
 
-#quiz > ul {
+[id^=quiz] > ul {
   counter-reset: question;
   line-height: 1.6;
   list-style: none;
   padding-left: 0;
 }
 
-#quiz > ul > li {
+[id^=quiz] > ul > li {
   break-inside: avoid;
 }
 
-#quiz > ul > li::before {
+[id^=quiz] > ul > li::before {
   content: "Question " counter(question);
   counter-increment: question;
   display: block;
@@ -264,11 +264,11 @@ section:is(#decouverte, #atelier) h2::before {
   margin-top: 2em;
 }
 
-#quiz ul ul {
+[id^=quiz] ul ul {
   list-style: "☐ ";
 }
 
-#quiz ul ul li.correct {
+[id^=quiz] ul ul li.correct {
   list-style: "☑ ";
 }
 
