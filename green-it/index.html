@@ -45,6 +45,7 @@
           <ul>
             <li><a href="#indice-reparabilite">Qu’est ce que l’indice de réparabilité ?</a></li>
             <li><a href="#labels">Comprendre les différents labels</a></li>
+            <li><a href="#indicateurs-dc">Les différents indicateurs pour les data-centers</a></li>
           </ul>
         </li>
         <li><a href="#quiz-evaluation">Quiz évaluation</a></li>
@@ -381,11 +382,80 @@ TechnoSolutions
           </section>
 
           <section class="sujet">
-            <todo></todo>
+            <p>
+              L’entreprise dans laquelle vous travaillez souhaite
+              changer de prestataire d’hébergement.
+            </p>
+            <p>
+              L’entreprise a à cœur de réduire son impact sur l’environnement
+              et veut un prestataire responsable.
+            </p>
+            <p>
+              Vous êtes alors chargé de comparer les hébergeurs
+              disponibles.
+            </p>
           </section>
 
           <section class="questions">
-            <todo></todo>
+            <h4>Choisissez un hébergeur</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#indicateurs-dc">FR X</a></li>
+                <li><a href="#annexe-3-1">Annexe 1</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Choisissez des hébergeurs à analyser.
+              </li>
+              <li>
+                Pour chaque hébergeur, trouvez le PUE de leurs
+                différents data-centers.
+              </li>
+              <li>
+                Pour chaque hébergeur, trouvez le WUE de leurs
+                différents data-centers.
+              </li>
+              <li>
+                Pour chaque hébergeur, trouvez la source d’énergie
+                utilisée pour leurs différents data-centers.
+              </li>
+              <li>
+                Pour chaque hébergeur, trouvez le système de
+                refroidissement utilisé pour leurs différents data-centers.
+              </li>
+              <li>
+                Quels hébergeurs / data-centers recommendez-vous ?
+              </li>
+            </ol>
+          </section>
+
+          <section class="annexes">
+            <h4 id="annexe-3-1">Mail de l’entreprise</h4>
+            <pre style="background: white; color: inherit">
+Objet : Analyse des Indicateurs Environnementaux des
+Prestataires d'Hébergement
+
+Nous cherchons à évaluer les prestataires d'hébergement en se concentrant
+sur des indicateurs clés liés à la durabilité environnementale.
+
+Veuillez vous pencher au minimum sur les points suivants :
+- Provenance de l'énergie : Analysez la source d'énergie utilisée
+par chaque prestataire.
+- PUE (Power Usage Effectiveness) : Évaluez le PUE de chaque
+prestataire pour comprendre leur efficacité énergétique dans les
+centres de données.
+- WUE (Water Usage Effectiveness) : Examinez la consommation d'eau
+des prestataires, en particulier dans les régions où l'eau est une
+ressource critique.
+
+Merci pour votre implication dans cette évaluation cruciale.
+
+Cordialement,
+
+Alexandra Dubois
+Directrice des Opérations Durables
+            </pre>
           </section>
         </section>
       </section>
@@ -539,6 +609,117 @@ TechnoSolutions
           </p>
         </section>
 
+        <section id="indicateurs-dc">
+          <h3>Les différents indicateurs pour les data-centers</h3>
+          <p>
+            Il existe différents indicateurs qui permettent
+            d’évaluer l’impact GES (Gaz à Effet de Serre) des fournisseurs
+            de services cloud.
+          </p>
+          <p>
+            Il n’est pas obligatoire pour les fournisseurs de communiquer
+            tous les indicateurs. En règle générale, plus un fournisseur
+            est transparent, plus il est impliqué dans la réduction
+            de son impact environnemental.
+          </p>
+          <h4>Le PUE</h4>
+          <p>
+            Le PUE (Power Usage Effectiveness) est un indicateur développé par
+            The Green Grid et qui permet de mesurer l’<strong>efficacité énergétique</strong>
+            d’un data-center.
+          </p>
+          <p>
+            Il indique le ratio entre l’énergie totale consommée par l’ensemble du
+            centre et l’énergie consommée par les systèmes informatiques.
+            <strong>Plus un site est performant, plus ce ratio tend vers 1</strong>.
+          </p>
+          <p>
+            Les fournisseurs de services de communication sont obligés
+            de publier cet indicateur.
+          </p>
+
+          <h4>Le WUE</h4>
+          <p>
+            Le WUE (Water Usage Effectiveness) est un indicateur qui
+            aussi développé par The Green Grid.
+            Cet indicateur permet de mesure la <strong>quantité d’eau utilisée</strong>
+            par un data-center par rapport à sa consommation énergétique.
+          </p>
+          <p>
+            Il n’est pas obligatoire pour les fournisseurs de services
+            de communication de publier cet indicateur.
+          </p>
+          <p>
+            Un fournisseurs de service peut utiliser de grandes quantités
+            d’eau afin de réduire son PUE et décider de ne pas
+            publier son WUE.
+          </p>
+          <p>
+            En effet, pour refroidir un data-center, la méthode la plus
+            répandue est la climatisation. Ce qui consomme énormément
+            d’énergie (jusqu’à 40% de la consommation totale).
+            D’autres méthodes existent, comme les tours de refroidissement,
+            mais peuvent consommer beaucoup d’eau.
+          </p>
+
+          <h4>Le mix énergétique</h4>
+          <p>
+            Le mix énergétique est la <strong>répartition des différentes sources
+            d’énergies</strong> utilisées par un data-center.
+          </p>
+          <p>
+            Un fournisseur peut choisir d’utiliser des énergies renouvelables
+            (hydroélectricité, énergie éolienne, énergie solaire…)
+            et des énergies dîtes propres (c’est à dire avec une
+            empreinte carbone faible).
+          </p>
+          <p>
+            Les fournisseurs ne sont pas obligés de communiquer cette
+            information.
+          </p>
+
+          <h4>Le CUE</h4>
+          <p>
+            Le CUE (Carbon Usage Effectiveness) est un indicateur qui
+            indique le ration entre la quantité de GES (Gaz à Effet de Serre)
+            émise par un data-center divisée par la quantité d’énergie
+            consommée par les équipement du data-center.
+          </p>
+          <p>
+            Les fournisseurs ne sont pas obligés de communiquer cette
+            information.
+          </p>
+
+          <h4>Le GEC</h4>
+          <p>
+            Le GEC (Green Energy Coefficient) est un indicateur aussi créé par
+            The Green Grid qui permet de mesurer <strong>la part d’énergie
+            renouvelable consommée</strong> par un data-center.
+          </p>
+          <p>
+            Il indique le ratio entre la quantité d’électricité consommée issue
+            de sources renouvelables et la consommation totale du data-center.
+          </p>
+          <p>
+            Les fournisseurs ne sont pas obligés de communiquer cette
+            information.
+          </p>
+
+          <h4>L’ERF</h4>
+          <p>
+            L’ERF (Energy Reuse Factor) est aussi développé par The Green Grid.
+            Cet indicateur permet de mesurer <strong>la quantité d’énergie utilisée en
+            dehors</strong> du data-center.
+          </p>
+          <p>
+            Il indique le ration entre la quantité d’énergie réutilisée et
+            la quantité totale d’énergie consommée par le data-center.
+          </p>
+          <p>
+            Les fournisseurs ne sont pas obligés de communiquer cette
+            information.
+          </p>
+        </section>
       </section>
 
       <section id="quiz-evaluation">
