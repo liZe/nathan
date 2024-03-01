@@ -354,6 +354,17 @@ section:is(#decouverte, #atelier) h2::before {
   padding-left: 1.5em;
 }
 
+.questions .correction {
+  background: #efecec;
+  margin: 0.5em 0;
+  padding: 0.5em;
+}
+
+.questions .correction::before {
+  content: "Correction";
+  display: block;
+}
+
 .documents {
   background: #efecec;
   border-radius: 3px;
