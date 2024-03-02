@@ -1,0 +1,1157 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../style.css" />
+    <title>Concevoir des applications numériques</title>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        Module B1M1 — MODXXX<br />
+        Concevoir des applications numériques
+      </h1>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>I-manuel</th>
+            <td>B1M1 — Concevoir des applications numériques</td>
+          </tr>
+          <tr>
+            <th>Séquence</th>
+            <td>S115 — Éco-conception Green IT</td>
+          </tr>
+        </tbody>
+      </table>
+    </header>
+
+    <aside id="sommaire">
+      <h2>Sommaire du module</h2>
+      <ul>
+        <li><a href="#video">Vidéo de présentation du module</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li>
+          <a href="#decouverte">Découverte (7h)</a>
+          <ul>
+            <li><a href="#cycle-vie">Analyser le cycle de vie d’un produit et d’un logiciel</a></li>
+            <li><a href="#materiel">Gérer un parc utilisateurs avec une démarche Green IT</a></li>
+            <li><a href="#data-center">Choisir une infrastructure avec une démarche Green IT</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#fiches-ressources">Fiches ressources</a>
+          <ul>
+            <li><a href="#acv">L’analyse de cycle de vie d’un produit</a></li>
+            <li><a href="#cv-logiciel">Le cycle de vie d’un logiciel</a></li>
+            <li><a href="#indice-reparabilite">Qu’est ce que l’indice de réparabilité ?</a></li>
+            <li><a href="#labels">Comprendre les différents labels</a></li>
+            <li><a href="#indicateurs-dc">Les différents indicateurs pour les data-centers</a></li>
+          </ul>
+        </li>
+        <li><a href="#quiz-evaluation">Quiz évaluation</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <section id="video">
+        <h2>Vidéo de présentation du module</h2>
+
+        <p>
+          Dans ce cours dédié à l’écoconception et au Green IT, nous explorerons les
+          fondements de la durabilité dans le domaine de la technologie. Notre attention
+          sera portée sur deux aspects essentiels : le cycle de vie des produits et les
+          pratiques écoresponsables dans la construction et la gestion des infrastructures informatiques.
+        </p>
+        <p>
+          Nous débuterons par le cycle de vie des produits,
+          examinant chaque étape, de la conception à l’élimination, en passant par la
+          fabrication, l’utilisation et la fin de vie. Comprendre ce cycle est
+          crucial pour minimiser l’empreinte environnementale des technologies que
+          nous développons et utilisons au quotidien.
+        </p>
+        <p>
+          Ensuite, nous explorerons les bonnes pratiques et examinerons les différents
+          labels et normes. Du label ENERGY STAR aux normes ISO environnementales,
+          nous analyserons comment ces informations peuvent guider les choix de
+          conception et d’achat vers des solutions plus respectueuses de l’environnement.
+        </p>
+        <p>
+          Enfin, nous verrons également divers indicateurs qui permettent d’aider
+          à choisir du matériel et à optimiser la gestion d’un data center.
+          Nous aborderons des critères tels que l’efficacité énergétique, la consommation d’eau
+          et l’utilisation de matériaux recyclables.
+        </p>
+      </section>
+
+      <section id="quiz">
+        <h2>Quiz</h2>
+
+        <ul>
+          <li>
+            <p>
+              Qu’est-ce que l’écoconception ?
+            </p>
+            <ul>
+              <li>Un programme de télévision sur l’environnement</li>
+              <li class="correct">Une approche visant à minimiser l’impact environnemental des produits</li>
+              <li>Un nouveau type de voiture électrique</li>
+              <li>Un concept de jardinage biologique</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quel terme désigne l’effort visant à rendre les technologies
+              de l’information plus respectueuses de l’environnement ?
+            </p>
+            <ul>
+              <li>Éco-amélioration</li>
+              <li class="correct">Green IT</li>
+              <li>Technologie verte</li>
+              <li>Éco-tech</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quel est l’objectif principal de l’écoconception des produits électroniques ?
+            </p>
+            <ul>
+              <li>Maximiser la durée de vie des produits</li>
+              <li class="correct">Minimiser leur impact sur l’environnement</li>
+              <li>Maximiser la vitesse de traitement</li>
+              <li>Réduire la taille des produits</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quelle pratique consiste à prolonger la durée de vie d’un produit
+              électronique en le réparant plutôt qu’en le remplaçant ?
+            </p>
+            <ul>
+              <li>Obsolescence planifiée</li>
+              <li>Recyclage</li>
+              <li class="correct">Réparation</li>
+              <li>Renouvellement</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Qu’est-ce que l’énergie verte ?
+            </p>
+            <ul>
+              <li>Une énergie qui rend les appareils plus rapides</li>
+              <li class="correct">Une énergie provenant de sources renouvelables</li>
+              <li>Une énergie émise par les appareils électroniques</li>
+              <li>Une énergie sans aucun impact sur l’environnement</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Comment peut-on réduire la consommation d’énergie d’un ordinateur ?
+            </p>
+            <ul>
+              <li>Laisser l’ordinateur allumé en permanence</li>
+              <li>Utiliser un écran de veille animé</li>
+              <li class="correct">Éteindre l’ordinateur lorsqu’il n’est pas utilisé</li>
+              <li>Connecter plusieurs appareils à l’ordinateur</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quelle est l’une des principales raisons d’adopter des pratiques
+              de Green IT dans les entreprises ?
+            </p>
+            <ul>
+              <li>Augmenter les coûts opérationnels</li>
+              <li class="correct">Réduire l’empreinte carbone</li>
+              <li>Accélérer la consommation d’énergie</li>
+              <li>Ignorer les problèmes environnementaux</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quelle est l’objectif de l’évaluation du cycle de vie d’un
+              produit dans l’écoconception ?
+            </p>
+            <ul>
+              <li>Mesurer la vitesse de fonctionnement du produit</li>
+              <li class="correct">Évaluer l’impact environnemental de toutes les phases
+                du produit, de la fabrication à l’élimination</li>
+              <li>Calculer la durée de vie prévue du produit</li>
+              <li>Comparer la taille du produit avec d’autres sur le marché</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Qu’est-ce que le PUE (Power Usage Effectiveness) dans le contexte du Green IT ?
+            </p>
+            <ul>
+              <li class="correct">Une mesure de l’efficacité énergétique des centres de données</li>
+              <li>Un indicateur du nombre de produits électroniques utilisés par personne</li>
+              <li>La quantité d’énergie utilisée par un ordinateur personnel</li>
+              <li>Un standard pour la fabrication de panneaux solaires</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Comment les entreprises peuvent-elles encourager l’écoconception et le Green IT ?
+            </p>
+            <ul>
+              <li>Ignorer les questions environnementales</li>
+              <li class="correct">Sensibiliser les employés aux problématiques environnementales</li>
+              <li>Encourager l’obsolescence planifiée</li>
+              <li>Augmenter la production de déchets électroniques</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section id="decouverte">
+        <h2>Découverte</h2>
+
+        <section id="cycle-vie">
+          <h3>Analyser le cycle de vie d’un produit et d’un logiciel</h3>
+          <!--
+               https://www.eco-conception.fr/static/analyse-du-cycle-de-vie-acv.html
+               https://www.eco-conception.fr/static/fonction-unite-fonctionnelle-acv.html
+               https://greenspector.com/fr/ecoconception-des-logiciels-quel-est-le-cycle-de-vie-dun-logiciel/
+               https://greenspector.com/wp-content/uploads/2020/01/GREENSPECTOR_Guide_Methodologique_ACV_des_Logiciels.pdf
+               https://cpl.thalesgroup.com/fr/software-monetization/application-lifecycle-management
+               https://hal.science/hal-03009741/document
+               https://fr.wikipedia.org/wiki/Analyse_du_cycle_de_vie
+               https://multimedia.ademe.fr/infographies/smartphone-version-ademe/
+               https://multimedia.ademe.fr/infographies/infographie-terres-rares-ademe/
+          -->
+          <section class="introduction">
+            <p>
+              Temps estimé : 3h.
+            </p>
+            <p>
+              L’analyse du cycle de vie de produit est un outil qui permet de réaliser un
+              bilan environnemental dudit produit et est adapté pour les produits
+              matériel.
+            </p>
+            <p>
+              Au cours de cette étape, nous allons voir l’analyse du cycle de
+              vie axée sur les produits logiciels.
+            </p>
+          </section>
+
+          <section class="sujet">
+            <p>
+              L’entreprise dans laquelle vous travaillez fournit du
+              matériel électronique et des logiciels aux entreprises
+              du secteur du BTP.
+            </p>
+            <p>
+              Le produit principal fabriqué et commercialisé est un
+              smartphone pouvant résister aux chocs et intempéries sur
+              les chantiers. Le smartphone utilise comme système d’exploitation
+              Android.
+            </p>
+            <p>
+              L’entreprise développe également diverses applications,
+              spécifiquement compatibles avec leurs smartphones,
+              permettant de gérer la logistique des chantiers (inventaires,
+              plannings…).
+            </p>
+            <p>
+              Votre entreprise fait appel à un prestataire afin de
+              réaliser une analyse du cycle de vie des téléphones
+              et des applications.
+            </p>
+            <p>
+              Vous êtes missionné pour aider le prestataire à
+              recueillir des informations.
+            </p>
+          </section>
+
+          <section class="questions">
+            <h4>Trouvez les matériaux nécessaires à la production d’un smartphone</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#acv">FR 1</a></li>
+                <li><a href="#annexe-1-1">Annexe 1</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Quelles sont les parts de métaux, plastiques, verre et céramique
+                présents dans un smartphone ?
+                <aside class="correction">
+                  55% de métaux, 35% de plastiques et 10% de verre/céramique.
+                </aside>
+              <li>
+                Combien de métaux sont présents dans un smartphone ?
+                <aside class="correction">
+                  Un smartphone compte en moyenne 50 métaux.
+                </aside>
+              </li>
+              <li>
+                Quelle quantité d’eau est nécessaire pour nettoyer et
+                purifier les roches extraites ?
+                <aside class="correction">
+                  Il faut environ 200m³ d’eau pour nettoyer 1 tonne de roches.
+                </aside>
+              </li>
+              <li>
+                Quelles sont les conséquences de l’extraction des matières
+                premières sur l’environnement ?
+                <aside class="correction">
+                  Acidification des eaux et des sols, production de déchets radioactifs,
+                  dégradation de la croûte terrestre.
+                </aside>
+              </li>
+              <li>
+                Combien de matériaux présents dans un smartphone sont
+                recyclables ?
+                <aside class="correction">
+                  Environ une vingtaine.
+                </aside>
+              </li>
+              <li>
+                Qu’est-ce que l’entreprise pourrait mettre en place
+                pour réduire son extraction de métaux ?
+                <aside class="correction">
+                  L’entreprise peut mettre en place un moyen de collecte
+                  des appareils en fin de vie afin de recycler les parties
+                  qui le sont. Elle peut aussi produire des smartphones
+                  plus résistants et éviter l’obsolescence.
+                </aside>
+              </li>
+            </ol>
+
+            <h4>Améliorez la durée de vie d’une application</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#cv-logiciel">FR 2</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Qu’est-ce qui peut faire qu’une application ne
+                fonctionne plus sur un smartphone ?
+                <aside class="correction">
+                  Sur un smartphone, une application n’est plus
+                  fonctionnelle car elle n’est plus compatible avec
+                  le système d’exploitation.
+                </aside>
+              </li>
+              <li>
+                Que va probablement faire une personne si une application
+                indispensable n’est plus compatible avec son
+                appareil ? Que peut faire l’entreprise pour l’éviter ?
+                <aside class="correction">
+                  La personne va changer de téléphone alors que celui-ci est
+                  encore fonctionnel. Pour éviter ça, l’entreprise
+                  qui développe les applications doit faire en sorte
+                  de maintenir une rétrocompatibilité avec les appareils
+                  et systèmes d’exploitations vieillissants.
+                </aside>
+              </li>
+              <li>
+                Qu’est-ce que l’entreprise peut mettre en place afin
+                d’éco-concevoir des applications qui répondent aux besoins
+                de ses clients ?
+                <aside class="correction">
+                  L’entreprise peut mettre en place des actions afin
+                  d’améliorer la qualité de son code afin d’assurer qu’il
+                  soit compréhensible (facilite la maitenabilité), limiter
+                  les fonctionnalités aux seules fonctions nécessaires,
+                  utiliser des briques réutilisables et open-source.
+                </aside>
+              </li>
+            </ol>
+          </section>
+
+          <section class="annexes">
+            <h4 id="annexe-1-1">Mail de l’entreprise</h4>
+            <pre style="background: white; color: inherit">
+Objet : Collaboration pour l’Analyse du Cycle de Vie des Produits
+
+Bonjour,
+
+En tant que membre de notre équipe, nous sollicitons votre expertise
+pour collaborer avec le prestataire externe qui effectuera une analyse
+approfondie du cycle de vie de nos produits.
+
+Cette analyse revêt une importance stratégique pour notre entreprise,
+nous permettant de mieux comprendre les implications environnementales
+de nos produits à chaque étape de leur existence. Nous sommes convaincus
+que votre expérience et vos connaissances seront des atouts précieux
+dans la réussite de cette démarche.
+
+Pour faciliter votre implication, nous vous prions de bien vouloir
+consulter les deux ressources suivantes qui contiennent des informations
+pertinentes sur les objectifs de cette analyse et les méthodologies
+utilisées par le prestataire :
+
+- <a href="https://multimedia.ademe.fr/infographies/infographie-terres-rares-ademe/">Les métaux : des ressources qui pourraient manquer ?</a>
+- <a href="https://multimedia.ademe.fr/infographies/smartphone-version-ademe/">Le smartphone</a>
+
+N’hésitez pas à me faire part de toute question ou préoccupation que
+vous pourriez avoir à ce sujet.
+
+Cordialement,
+
+Antoine Dubois
+            </pre>
+          </section>
+        </section>
+
+        <section id="materiel">
+          <h3>Gérer un parc utilisateurs avec une démarche Green IT</h3>
+          <!--
+               https://epargnonsnosressources.gouv.fr/indice-de-reparabilite/
+               https://epargnonsnosressources.gouv.fr/labels-environnementaux/multimedia/
+          -->
+          <section class="introduction">
+            <p>
+              Temps estimé : 1h30.
+            </p>
+            <p>
+              Une très grande partie de l’empreinte carbone du numérique est
+              directement causée par le matériel, et en particulier sa production.
+            </p>
+            <p>
+              Durant cette étape, nous verrons les différentes informations et
+              indicateurs qui peuvent nous permettre de faire des choix
+              plus responsables d’un point de vue environnemental.
+            </p>
+          </section>
+
+          <section class="sujet">
+            <p>
+              Vous venez de signer un contrat avec une entreprise et
+              vous commencez à travailler dans deux semaines.
+            </p>
+            <p>
+              L’entreprise vous informe que vous pouvez choisir votre
+              matériel de travail et vous devez leur fournir la
+              liste.
+            </p>
+            <p>
+              L’entreprise vous informe qu’ils sont très attentifs
+              à leur impact environnemental et vous demande de faire
+              attention à divers critères lors de votre sélection.
+            </p>
+          </section>
+
+          <section class="questions" style="break-before: always">
+            <h4>Choisissez le matériel informatique</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#indice-reparabilite">FR 3</a></li>
+                <li><a href="#labels">FR 4</a></li>
+                <li><a href="#annexe-2-1">Annexe 1</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Allez sur le <a href="https://leclaireur.fnac.com/barometre-sav/">
+                Baromètre SAV de la FNAC</a> et trouvez les
+                marques ayant le meilleur score pour le matériel
+                qui vous est demandé.
+              </li>
+              <li>
+                Allez sur le <a href="https://www.ldlc.pro/">
+                site du fournisseur de l’entreprise</a>
+                et sélectionnez les produits que vous souhaitez en
+                prenant en compte l’indice de réparabilité de chaque
+                produit.
+              </li>
+              <li>
+                Faites des recherches sur les différents produits.
+                Quels labels ont-ils ? Qu’attestent les labels que vous
+                avez rencontrés ?
+              </li>
+            </ol>
+          </section>
+
+          <section class="annexes">
+            <h4 id="annexe-2-1">Mail de l’entreprise</h4>
+            <pre style="background: white; color: inherit">
+Objet : Choix du matériel informatique pour votre arrivée
+
+Madame,
+
+Nous sommes ravis de vous accueillir au sein de notre équipe en tant
+que prochaine salariée de TechnoSolutions. Nous sommes convaincus
+que votre expertise et votre enthousiasme seront des atouts précieux
+pour notre entreprise.
+
+Afin de garantir votre confort de travail, nous vous offrons la
+possibilité de choisir le matériel informatique (ordinateur portable,
+téléphone portable, casque son) qui répond le mieux à vos besoins.
+Nous comprenons l'importance d'avoir un environnement de travail
+optimal, et c'est pourquoi nous tenons à vous offrir cette flexibilité.
+
+Nous sommes également soucieux de notre impact sur l'environnement,
+c'est pourquoi nous encourageons des choix responsables. Dans le cadre
+de cette démarche, nous vous octroyons un budget maximum de 2000€
+pour l'achat de votre matériel informatique. Nous vous prions de prendre
+en considération cet aspect lors de la sélection de vos équipements.
+
+Pour faciliter le processus, veuillez nous faire parvenir une liste
+détaillée du matériel informatique (disponible chez notre fournisseur
+LDLC) que vous souhaitez acquérir, en respectant le budget alloué.
+Nous sommes là pour vous assister dans ce processus, n'hésitez
+pas à solliciter notre équipe informatique si vous avez des questions
+ou besoin de recommandations.
+
+Nous apprécions votre engagement envers la durabilité et sommes
+convaincus que, ensemble, nous pouvons contribuer à minimiser notre
+impact sur l'environnement.
+
+Nous sommes impatients de vous accueillir au sein de notre équipe et
+de travailler ensemble pour atteindre nos objectifs communs.
+
+Cordialement,
+
+Julie Martin
+Responsable des Ressources Humaines
+TechnoSolutions
+            </pre>
+          </section>
+        </section>
+
+        <section id="data-center">
+          <h3>Choisir une infrastructure avec une démarche Green IT</h3>
+          <!--
+               Livre Blanc Scaleway
+               https://hal.science/hal-03009741/document
+          -->
+          <section class="introduction">
+            <p>
+              Temps estimé : 2h30.
+            </p>
+            <p>
+              Comme vu dans l’étape précédente, l’empreinte carbone du
+              numérique est directement liée au matériel et à sa production.
+            </p>
+            <p>
+              Dans cette partie, nous aborderons aussi la question du matériel,
+              mais d’un point de vue serveurs, data-centers et cloud.
+            </p>
+          </section>
+
+          <section class="sujet">
+            <p>
+              L’entreprise dans laquelle vous travaillez souhaite
+              changer de prestataire d’hébergement.
+            </p>
+            <p>
+              L’entreprise a à cœur de réduire son impact sur l’environnement
+              et veut un prestataire responsable.
+            </p>
+            <p>
+              Vous êtes alors chargé de comparer les hébergeurs
+              disponibles.
+            </p>
+          </section>
+
+          <section class="questions">
+            <h4>Choisissez un hébergeur</h4>
+            <aside class="documents">
+              <ul>
+                <li><a href="#indicateurs-dc">FR 5</a></li>
+                <li><a href="#annexe-3-1">Annexe 1</a></li>
+              </ul>
+            </aside>
+            <ol>
+              <li>
+                Choisissez des hébergeurs à analyser.
+              </li>
+              <li>
+                Pour chaque hébergeur, trouvez le PUE de leurs
+                différents data-centers.
+              </li>
+              <li>
+                Pour chaque hébergeur, trouvez le WUE de leurs
+                différents data-centers.
+              </li>
+              <li>
+                Pour chaque hébergeur, trouvez la source d’énergie
+                utilisée pour leurs différents data-centers.
+              </li>
+              <li>
+                Pour chaque hébergeur, trouvez le système de
+                refroidissement utilisé pour leurs différents data-centers.
+              </li>
+              <li>
+                Quels hébergeurs / data-centers recommendez-vous ?
+              </li>
+            </ol>
+          </section>
+
+          <section class="annexes">
+            <h4 id="annexe-3-1">Mail de l’entreprise</h4>
+            <pre style="background: white; color: inherit">
+Objet : Analyse des Indicateurs Environnementaux des
+Prestataires d'Hébergement
+
+Nous cherchons à évaluer les prestataires d'hébergement en se concentrant
+sur des indicateurs clés liés à la durabilité environnementale.
+
+Veuillez vous pencher au minimum sur les points suivants :
+- Provenance de l'énergie : Analysez la source d'énergie utilisée
+par chaque prestataire.
+- PUE (Power Usage Effectiveness) : Évaluez le PUE de chaque
+prestataire pour comprendre leur efficacité énergétique dans les
+centres de données.
+- WUE (Water Usage Effectiveness) : Examinez la consommation d'eau
+des prestataires, en particulier dans les régions où l'eau est une
+ressource critique.
+
+Merci pour votre implication dans cette évaluation cruciale.
+
+Cordialement,
+
+Alexandra Dubois
+Directrice des Opérations Durables
+            </pre>
+          </section>
+        </section>
+      </section>
+
+      <section id="fiches-ressources">
+        <h2>Fiches ressources</h2>
+
+        <section id="acv">
+          <h3>L’analyse de cycle de vie d’un produit</h3>
+          <p>
+            L’analyse de cycle de vie (ACV) est une méthode d’évaluation qui
+            permet de réaliser des bilans environnementaux.
+          </p>
+          <p>
+            Cette méthode est <strong>normalisée par les normes ISO 14040 et 14044</strong>.
+          </p>
+          <figure>
+            <figcaption>Étapes d’une analyse de cycle de vie</figcaption>
+            <img src="acv-iso.png">
+          </figure>
+          <p>
+            Une ACV est constituée de quatres phases principales :
+          </p>
+          <ul>
+            <li>
+              <strong>Définition des objectifs et du champ d’étude</strong> :
+              on définit le contexte, le scope, la fonction du produit et
+              les valeurs de référence.
+            </li>
+            <li>
+              <strong>Inventaire et analyse de l’inventaire</strong> :
+              on liste tous les flux entrants et sortants à chaque étape de
+              la vie du produit ainsi que leur quantité. Parmi ces flux,
+              on trouve par exemple, les flux de matière, d’énergie, de déchets,
+              d’émission… Les quantités reportées sont ensuite mise sur
+              une même échelle en fonction des valeurs de référence
+              définies précédemment.
+            </li>
+            <li>
+              <strong>Évaluation de l’impact</strong> : on transforme l’inventaire
+              des flux en liste d’impacts. Les impacts sont rangés par
+              catégorie (réchauffement climatique, acidification des océans et des
+              sols, utilisation des terres…).
+            </li>
+            <li>
+              <strong>Interprétation des résultats</strong> : on tire des
+              conclusion de l’analyse et on explique ses limites.
+            </li>
+          </ul>
+          <p>
+            <strong>L’objectif de ACV est de connaître les impacts environnementaux
+              d’un produit tout au long de son cycle de vie</strong>, de l’extraction
+            des matières premières à sa fin de vie.
+          </p>
+
+          <figure>
+            <figcaption>Diagrame d’une analyse de cycle de vie</figcaption>
+            <img src="acv-diagram.png">
+          </figure>
+          <p>
+            Une ACV complète se fait de la phase d’extraction des
+            matières premières (le berceau) jusqu’à la fin de vie du produit.
+          </p>
+          <p>
+            Des ACV partielles peuvent être faites suivant ce sur quoi
+            l’on veut se concentrer, comme par exemple des ACV de l’extraction
+            des matières premières jusqu’à la sortie d’usine.
+          </p>
+
+          <p>
+            <strong>Les ACV ont certaines limites</strong>.
+          </p>
+          <p>
+            En effet, il peut être complexe de connaître avec précision tous
+            les flux entrants et sortants.
+          </p>
+          <p>
+            De plus, une ACV n’étudie pas tous les impacts environnementaux.
+            La pollution lumineuse, l’influence sur le paysage et beaucoup
+            d’aspects sociaux (travail des enfants, maladies, conflits…) sont ignorés.
+          </p>
+        </section>
+
+        <section id="cv-logiciel">
+          <h3>Le cycle de vie d’un logiciel</h3>
+          <p>
+            Le cycle de vie définit par l’ACV n’est pas forcément pertinent
+            pour un logiciel / une application. Créer un logiciel ne
+            nécessite pas directement d’extraire des matières premières
+            et la fabrication n’est faite qu’une seule fois (un logiciel
+            est développé une seule fois alors qu’un produit est fabriqué
+            autant de fois que l’on veut en vendre).
+          </p>
+          <p>
+            Un cycle de vie d’un logiciel peut se représenter suivant
+            les étapes suivantes :
+          </p>
+          <ul>
+            <li>
+              <strong>Idée</strong> : on définit les besoins et caractéristiques du logiciel.
+            </li>
+            <li>
+              <strong>Développement et tests</strong> : le logiciel est développé en s’assurant
+              qu’il respecte les besoins définis.
+            </li>
+            <li>
+              <strong>Déploiement</strong> : le logiciel est rendu accessible.
+            </li>
+            <li>
+              <strong>Maintenance et fin de vie</strong> : les problèmes rencontrés sur le logiciel
+              sont corrigés. Lorsque le logiciel atteint sa fin de vie, il
+              est retiré.
+            </li>
+          </ul>
+
+          <p>
+            Afin d’éco-développer un logiciel / une application, différentes
+            actions peuvent être mises en place tout au long du cycle de vie
+            du service :
+          </p>
+          <ul>
+            <li>
+              <strong>Idée</strong> : on se limite aux besoins nécessaires
+              afin d’éviter d’avoir des fonctionnalités inutiles (moins de code,
+              moins de bugs, une maintenance plus facile). <strong>On choisit les
+              langages de programmation et les infrastructures en fonction
+                du besoin</strong>.
+            </li>
+            <li>
+              <strong>Développement et tests</strong> : on priviligie
+              l’utilisation de briques réutilisables (au sein de l’entreprise
+              et <strong>en utilisant des bibliothèques open-source</strong>).
+              On optimise et améliore le code, mais en faisant attention
+              à ce que le code reste compréhensible pour faciliter sa maintenance.
+              On ne laisse pas de code mort dans l’application.
+            </li>
+            <li>
+              <strong>Déploiement</strong> : on préfère utiliser des
+              hébergements mutualisés et apportant des garanties en
+              terme d’impacts environnementaux.
+            </li>
+            <li>
+              <strong>Maintenance et fin de vie</strong> : on peut
+              monitorer l’utilisation de l’hébergement dans le cas d’un service
+              en ligne afin de mieux dimensionner les ressources.
+              Lors des nouvelles versions et corrections de bugs, on
+              s’assure de garder une certaine rétrocompatibilité.
+              Une fois la fin de vie atteinte, on supprime le maximum
+              de données.
+            </li>
+          </ul>
+
+          <p>
+            Afin de réduire l’impact écologique du logiciel, il est
+            important d’éviter l’obsolescence ; ce qui passe par <strong>s’assurer
+            de sa rétrocompatibilité</strong>.
+          </p>
+          <p>
+            Il est aussi important d’<strong>avoir du code maintenable et
+            compréhensible</strong>. Si un code n’est que peu compréhensible,
+            la correction de bugs devient complexe et le logiciel
+            va être laisser à l’abandon au fur et à mesure.
+            Des outils, comme <a href="https://www.sonarsource.com/products/sonarqube/">SonarQube</a>,
+            peuvent aider à mesure la qualité du code.
+          </p>
+        </section>
+
+        <section id="indice-reparabilite">
+          <h3>Qu’est ce que l’indice de réparabilité ?</h3>
+          <p>
+            L’indice de réparabilité est une note sur 10 qui a pour objectif
+            de permettre aux consommateurs d’évaluer la possibilité de
+            réparer un appareil.
+          </p>
+          <p>
+            Cet indice a été créé par la
+            <a href="https://www.ecologie.gouv.fr/loi-anti-gaspillage-economie-circulaire">« loi
+              anti-gaspillage pour une économie circulaire »</a>
+            et est obligatoire pour les produits de types :
+            lave-linge à hublot, smartphone, ordinateur portable, téléviseurs
+            et tondeuse à gazon.
+          </p>
+          <p>
+            L’indice de réparabilité est calcalé par le fabricant et
+            <strong>doit obligatoirement être affiché</strong> au moment de l’achat
+            d’un produit.
+          </p>
+          <p>
+            Le calcul de cet indice prend en compte plusieurs critères :
+          </p>
+          <ul>
+            <li>la documentation technique,</li>
+            <li>la facilité de démontage et l’accès aux outils,</li>
+            <li>la disponibilité des pièces détachées,</li>
+            <li>le prix des pièces détachées,</li>
+            <li>et d’autres critères dépendants du type de produit.</li>
+          </ul>
+          <p>
+            Le détail du calcul et la liste des critères spécifiques peuvent être
+            disponibles sur le site du constructeur, comme par exemple
+            chez <a href="https://regulatoryinfo.apple.com/repairability">Apple</a>.
+          </p>
+          <figure>
+            <figcaption>Les différents niveaux de l’indice de réparabilité</figcaption>
+            <img src="indice_reparabilite.jpg">
+          </figure>
+          <p>
+            Plusieurs sites permettent de comparer les indices de
+            réparabilité, comme par exemple le
+            <a href="https://www.indicereparabilite.fr/">comparateur de
+              Spareka</a> ou le
+            <a href="https://monindicedereparabilite.fr/home">comparateur d’Agora</a>.
+          </p>
+        </section>
+
+        <section id="labels">
+          <h3>Comprendre les différents labels</h3>
+          <p>
+            Différents labels existent afin d’informer les consommateurs
+            et consommatrices des garanties fournis par les
+            fabricants.
+          </p>
+          <p>
+            Attention, <strong>un même label n’a pas la même signification suivant
+            la catégorie de produit</strong>.
+          </p>
+          <h4>Écolabel européen</h4>
+          <figure>
+            <figcaption>Écolabel européen</figcaption>
+            <img src="ecolabel-europeen.png">
+          </figure>
+          <p>
+            Pour les ordinateurs, ce label indique que des tests ont été effectués
+            sur la durabilité, la qualité et la durabilité de la batterie… Mais
+            aussi que de la documentation est fournie pour le démontage.
+          </p>
+          <p>
+            Ce label n’a pas la même signification pour les téléviseurs.
+            Dans ce cadre là, il indique que les pièces de réparation sont
+            disponibles pendant 7 ans.
+          </p>
+
+          <h4>EPEAT</h4>
+          <figure>
+            <figcaption>EPEAT</figcaption>
+            <img src="epeat.jpg">
+          </figure>
+          <p>
+            Pour les ordinateurs, ce label indique une durabilité, une résistance aux
+            chocs et qu’au moins 65% des composants du produit
+            sont recyclables ou réutilisables.
+          </p>
+
+          <h4>Écolabel nordique</h4>
+          <figure>
+            <figcaption>Écolabel nordique</figcaption>
+            <img src="nordicecolabel.jpg">
+          </figure>
+          <p>
+            Pour les ordinateurs, ce label indique que certaines pièces
+            du produit sont facilement remplaçables.
+          </p>
+
+          <h4>Ange Bleu</h4>
+          <figure>
+            <figcaption>Ange Bleu</figcaption>
+            <img src="blauer.jpg">
+          </figure>
+          <p>
+            Ce label indique pour les ordinateurs et les téléphones que
+            la batterie est facilement changeable.
+          </p>
+
+          <h4>TCO</h4>
+          <figure>
+            <figcaption>TCO</figcaption>
+            <img src="tco.jpg">
+          </figure>
+          <p>
+            Pour les ordinateurs, tablettes et écrans d’ordinateur, ce label
+            indique que les pièces détachées
+            sont disponibles pendant au moins 3 ans.
+          </p>
+          <p>
+            Pour les téléphones, ce label garantit aussi que la
+            batterie est facilement changeable.
+          </p>
+
+          <h4>Energy Star</h4>
+          <figure>
+            <figcaption>Energy Star</figcaption>
+            <img src="energystar.png">
+          </figure>
+          <p>
+            Energy Star est un programme gouvernemental américain qui
+            a pour but de pousser à l’économie d’énergie.
+            Les produits suivant différentes normes environnementales
+            peuvent alors utiliser ce label.
+          </p>
+          <p>
+            Ce label s’applique dans divers domaines comme
+            les ordinateurs, l’éclairage, les appareils
+            électroménagers…
+          </p>
+
+          <p>
+            Les éco-labels n’existent pas que pour les produits de type
+            multimédia. Il en <a href="https://epargnonsnosressources.gouv.fr/labels-environnementaux/">
+            existe de nombreux, indiquant différentes
+            garanties, suivant le domaine</a>.
+          </p>
+        </section>
+
+        <section id="indicateurs-dc">
+          <h3>Les différents indicateurs pour les data-centers</h3>
+          <p>
+            Il existe différents indicateurs qui permettent
+            d’évaluer l’impact GES (Gaz à Effet de Serre) des fournisseurs
+            de services cloud.
+          </p>
+          <p>
+            Il n’est pas obligatoire pour les fournisseurs de communiquer
+            tous les indicateurs. En règle générale, plus un fournisseur
+            est transparent, plus il est impliqué dans la réduction
+            de son impact environnemental.
+          </p>
+          <h4>Le PUE</h4>
+          <p>
+            Le PUE (Power Usage Effectiveness) est un indicateur développé par
+            The Green Grid et qui permet de mesurer l’<strong>efficacité énergétique</strong>
+            d’un data-center.
+          </p>
+          <p>
+            Il indique le ratio entre l’énergie totale consommée par l’ensemble du
+            centre et l’énergie consommée par les systèmes informatiques.
+            <strong>Plus un site est performant, plus ce ratio tend vers 1</strong>.
+          </p>
+          <p>
+            Les fournisseurs de services de communication sont obligés
+            de publier cet indicateur.
+          </p>
+
+          <h4>Le WUE</h4>
+          <p>
+            Le WUE (Water Usage Effectiveness) est un indicateur qui
+            aussi développé par The Green Grid.
+            Cet indicateur permet de mesure la <strong>quantité d’eau utilisée</strong>
+            par un data-center par rapport à sa consommation énergétique.
+          </p>
+          <p>
+            Il n’est pas obligatoire pour les fournisseurs de services
+            de communication de publier cet indicateur.
+          </p>
+          <p>
+            Un fournisseurs de service peut utiliser de grandes quantités
+            d’eau afin de réduire son PUE et décider de ne pas
+            publier son WUE.
+          </p>
+          <p>
+            En effet, pour refroidir un data-center, la méthode la plus
+            répandue est la climatisation. Ce qui consomme énormément
+            d’énergie (jusqu’à 40% de la consommation totale).
+            D’autres méthodes existent, comme les tours de refroidissement,
+            mais peuvent consommer beaucoup d’eau.
+          </p>
+
+          <h4>Le mix énergétique</h4>
+          <p>
+            Le mix énergétique est la <strong>répartition des différentes sources
+            d’énergies</strong> utilisées par un data-center.
+          </p>
+          <p>
+            Un fournisseur peut choisir d’utiliser des énergies renouvelables
+            (hydroélectricité, énergie éolienne, énergie solaire…)
+            et des énergies dîtes propres (c’est à dire avec une
+            empreinte carbone faible).
+          </p>
+          <p>
+            Les fournisseurs ne sont pas obligés de communiquer cette
+            information.
+          </p>
+
+          <h4>Le CUE</h4>
+          <p>
+            Le CUE (Carbon Usage Effectiveness) est un indicateur qui
+            indique le ration entre la quantité de GES (Gaz à Effet de Serre)
+            émise par un data-center divisée par la quantité d’énergie
+            consommée par les équipement du data-center.
+          </p>
+          <p>
+            Les fournisseurs ne sont pas obligés de communiquer cette
+            information.
+          </p>
+
+          <h4>Le GEC</h4>
+          <p>
+            Le GEC (Green Energy Coefficient) est un indicateur aussi créé par
+            The Green Grid qui permet de mesurer <strong>la part d’énergie
+            renouvelable consommée</strong> par un data-center.
+          </p>
+          <p>
+            Il indique le ratio entre la quantité d’électricité consommée issue
+            de sources renouvelables et la consommation totale du data-center.
+          </p>
+          <p>
+            Les fournisseurs ne sont pas obligés de communiquer cette
+            information.
+          </p>
+
+          <h4>L’ERF</h4>
+          <p>
+            L’ERF (Energy Reuse Factor) est aussi développé par The Green Grid.
+            Cet indicateur permet de mesurer <strong>la quantité d’énergie utilisée en
+            dehors</strong> du data-center.
+          </p>
+          <p>
+            Il indique le ration entre la quantité d’énergie réutilisée et
+            la quantité totale d’énergie consommée par le data-center.
+          </p>
+          <p>
+            Les fournisseurs ne sont pas obligés de communiquer cette
+            information.
+          </p>
+        </section>
+      </section>
+
+      <section id="quiz-evaluation">
+        <h2>Quiz d’évaluation</h2>
+        <ul>
+          <li>
+            <p>
+              Quel est l’objectif principal du Green IT ?
+            </p>
+            <ul>
+              <li>Maximiser la consommation d’énergie</li>
+              <li class="correct">Minimiser l’impact environnemental des technologies de l’information</li>
+              <li>Ignorer les normes éthiques</li>
+              <li>Augmenter la production de déchets électroniques</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Qu’est-ce que le cycle de vie d’un produit en éco-conception ?
+            </p>
+            <ul>
+              <li>La durée de vie d’un produit électronique</li>
+              <li class="correct">L’ensemble des phases de fabrication, d’utilisation, de transport, et de fin de vie d’un produit</li>
+              <li>Le temps qu’un produit met pour être recyclé</li>
+              <li>La période pendant laquelle un produit est en phase de production</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Que mesure le PUE (Power Usage Effectiveness) dans un centre de données ?
+            </p>
+            <ul>
+              <li class="correct">L’efficacité énergétique du centre de données</li>
+              <li>Le coût total de l’énergie utilisée</li>
+              <li>La puissance maximale que peut supporter le centre de données</li>
+              <li>La durée de vie des serveurs</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Qu’est-ce que le mix énergétique ?
+            </p>
+            <ul>
+              <li class="correct">La combinaison des différentes sources d’énergie utilisées pour alimenter un centre de données</li>
+              <li>La diversité des produits électroniques sur le marché</li>
+              <li>La variété des matériaux utilisés dans la fabrication d’un produit</li>
+              <li>L’ensemble des étapes du cycle de vie d’un produit</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Qu’est-ce que l’écolabel ?
+            </p>
+            <ul>
+              <li>Un label indiquant la durée de vie d’un produit</li>
+              <li>Un certificat décerné aux entreprises respectant les normes environnementales</li>
+              <li class="correct">Un logo apposé sur les produits respectueux de l’environnement</li>
+              <li>Un indicateur de consommation d’énergie des appareils électroniques</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quels avantages peut apporter la certification Energy Star à un produit électronique ?
+            </p>
+            <ul>
+              <li>Réduction des coûts de fabrication</li>
+              <li>Augmentation de la consommation d’énergie</li>
+              <li>Amélioration de la performance</li>
+              <li class="correct">Reconnaissance en tant que produit respectueux de l’environnement</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Comment le "code propre" contribue-t-il à l’écoconception ?
+            </p>
+            <ul>
+              <li class="correct">En rendant le code plus lisible et compréhensible</li>
+              <li>En utilisant uniquement des couleurs vertes dans le code source</li>
+              <li>En ajoutant des commentaires détaillés</li>
+              <li>En augmentant la complexité du code pour le rendre plus robuste</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quel principe de programmation contribue le plus à l’efficacité énergétique des logiciels ?
+            </p>
+            <ul>
+              <li class="correct">Réutilisation de code</li>
+              <li>Inclusion de commentaires exhaustifs</li>
+              <li>Multiplication des fonctions</li>
+              <li>Utilisation intensive des boucles infinies</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              En quoi la conception modulaire des logiciels peut-elle contribuer à l’écoconception ?
+            </p>
+            <ul>
+              <li>En favorisant l’ajout de fonctionnalités complexes</li>
+              <li>En rendant le logiciel plus lourd</li>
+              <li>En rendant le code source moins accessible</li>
+              <li class="correct">En facilitant la maintenance du code</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quel rôle jouent les centres de données alimentés par des énergies renouvelables dans le contexte du Green IT ?
+            </p>
+            <ul>
+              <li>Ils augmentent la dépendance aux énergies fossiles</li>
+              <li>Ils ne font aucune différence en termes d’impact environnemental</li>
+              <li class="correct">Ils contribuent à la réduction des émissions de gaz à effet de serre</li>
+              <li>Ils accélèrent la production de déchets électroniques</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
