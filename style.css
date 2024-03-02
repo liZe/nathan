@@ -108,6 +108,10 @@ pre code {
   padding: 0;
 }
 
+li > pre {
+  margin-left: -40px;
+}
+
 figure {
   break-inside: avoid;
   margin: 1em;
