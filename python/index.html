@@ -771,27 +771,26 @@ Vous avez perdu 😢</code></pre>
                 sont des chaînes de caractères, l’âge est un entier qui
                 représente le nombre d’années.
                 <aside class="correction">
-                  <pre>animaux = [
+                  <pre><code>animaux = [
     {"espèce": "vache", "âge": 6, "nom": "Marguerite"},
     {"espèce": "vache", "âge": 7, "nom": "Hortense"},
     {"espèce": "veau", "âge": 1, "nom": "Caramel"},
     {"espèce": "poule", "âge": 3, "nom": "Coco"},
     {"espèce": "poule", "âge": 2, "nom": "Blanche"},
-]</pre>
+]</code></pre>
                 </aside>
               </li>
               <li>
                 Dans votre prototype, faites une boucle pour parcourir vos
                 animaux. Pour chaque animal, affichez les informations comme suit :
-                <pre><code>Nom : Marguerite
+                <pre>Nom : Marguerite
 Espèce : vache
-Âge : 5 an(s)</code></pre>
+Âge : 5 an(s)</pre>
                 <aside class="correction">
-                  <pre>for animal in animaux:
+                  <pre><code>for animal in animaux:
     print(f"Nom : {animal['nom']}")
     print(f"Espèce : {animal['espèce']}")
-    print(f"Âge : {animal['âge']} an(s)")
-                  </pre>
+    print(f"Âge : {animal['âge']} an(s)")</code></pre>
               </li>
             </ol>
             <h4>Fonctions</h4>
@@ -1052,7 +1051,7 @@ animaux = [
                   </li>
                 </ul>
                 <aside class="correction">
-                  <pre>class Animal:
+                  <pre><code>class Animal:
     def __init__(self, age, nom):
         self.age = age
         self.nom = nom
@@ -1078,7 +1077,7 @@ class Vache(Animal):
         if self.age <= 2:
             print(f'- {self.nom}, veau')
         else:
-            super().afficher()</pre>
+            super().afficher()</code></pre>
                 </aside>
               </li>
               <li>
@@ -1097,7 +1096,7 @@ Espèce : poule
 - Blanche, 2 an(s)
 - Pioupiou, poussin</pre>
                 <aside class="correction">
-                  <pre>class Animal:
+                  <pre><code>class Animal:
     def __init__(self, age, nom):
         self.age = age
         self.nom = nom
@@ -1141,7 +1140,7 @@ print(f'Nombre d’animaux : {len(animaux)}\n')
 for type in ('vache', 'poule'):
     print(f'Type d’animal : {type}')
     afficher_animaux(animaux, type)
-    print()</pre>
+    print()</code></pre>
                 </aside>
               </li>
             </ol>
@@ -1923,10 +1922,259 @@ if "person_id" not in session:
         <h2>Atelier</h2>
         <section class="introduction">
           <p>Temps estimé : 14h.</p>
-          <p><todo></todo></p>
+          <p>
+            Cet atelier vise à vous faire développer un jeu de taquin dans le
+            terminal en Python. Vous ne connaissez pas ce jeu ? Vous allez vite
+            comprendre son fonctionnement en lisant
+            <a href="https://fr.wikipedia.org/wiki/Taquin">sa page Wikipédia</a> !
+          </p>
+          <p>
+            Le développement sera à réaliser en 2 étapes distinctes, avec un
+            rendu pour chacune de ces 2 versions.
+          </p>
         </section>
         <section class="sujet">
-          <p><todo></todo></p>
+          <h3>Premier rendu : fonctions</h3>
+          <p>
+            La première étape consiste à créer le jeu à l’aide de fonctions.
+            Vous avez deux contraintes principales pour cette première étape :
+          </p>
+          <ul>
+            <li>
+              L’interface de votre jeu doit <strong>exactement</strong> être celle-ci :
+              <pre>09 02 05 03
+13 01 10   
+14 08 06 04
+12 11 07 15
+
+Move: u
+
+09 02 05   
+13 01 10 03
+14 08 06 04
+12 11 07 15
+
+Move: l
+
+09 02    05
+13 01 10 03
+14 08 06 04
+12 11 07 15</pre>
+
+              À chaque tour, on affiche le plateau et on pose la question de la
+              prochaine direction. L’utilisateur peut appuyer sur <kbd>u</kbd>
+              pour déplacer la case vide en haut, <kbd>d</kbd> pour le
+              bas, <kbd>l</kbd> pour la gauche et <kbd>r</kbd> pour la droite.
+              On peut utiliser <kbd>q</kbd> pour quitter. Une autre valeur
+              saisie ne change rien sur le plateau, tout comme un déplacement
+              impossible.
+
+              (Vous pouvez utiliser d’autres lettres que celles proposées pour
+              les directions si vous le souhaitez.)
+
+              <pre>06 03 05 04
+09 02 11 08
+10 01    12
+13 07 14 15
+
+Move: test
+
+06 03 05 04
+09 02 11 08
+10 01    12
+13 07 14 15
+
+Move: z
+
+06 03 05 04
+09 02 11 08
+10 01    12
+13 07 14 15
+
+Move: r
+
+06 03 05 04
+09 02 11 08
+10 01 12   
+13 07 14 15
+
+Move: r
+
+06 03 05 04
+09 02 11 08
+10 01 12   
+13 07 14 15</pre>
+            </li>
+            <li>
+              La structure de votre code doit être <strong>exactement</strong> celle-ci :
+
+              <pre><code>from random import choice
+
+
+def create_board(rows, cols):
+    """Create a board with original position of numbers.
+
+    `rows` and `cols` are integers defining the number of rows and columns.
+
+    Return `(board, blank)`.
+
+    The returned `board` variable is a list of rows, and a row is a list of
+    numbers. The numbers are integers, and the blank position is `None`.
+
+    The returned `blank` variable is the `(x, y)` coordinates of the blank
+    position, which is `(cols - 1, rows - 1)`.
+
+    """
+    pass
+
+
+def shuffle_board(board, blank):
+    """Shuffle numbers of the board.
+
+    `board` and `blank` are the returned values of `create_board`.
+
+    Return the updated `blank` position.
+
+    """
+    pass
+
+
+def draw_board(board):
+    """Draw the board."""
+    pass
+
+
+def move(board, blank, position):
+    """Swap the content of blank and position coordinates.
+
+    This function doesn’t check that `blank` and `position` are next to each
+    other.
+
+    The board is modified in-place.
+
+    Return the new `blank` position, which is `position`.
+
+    """
+    pass
+
+
+def is_solved(board):
+    """Return `True` if the board is solved, else `False`."""
+    pass
+
+
+# Create, shuffle and draw board
+rows = 4
+cols = 4
+board, blank = create_board(rows, cols)
+blank = shuffle_board(board, blank)
+draw_board(board)
+
+# Play while the board is not solved
+while not is_solved(board):
+    # Ask for move direction
+    direction = input("Move: ")
+
+    # Quit game if direction is "q"
+    pass
+
+    # Depending on the asked direction, define the new position
+    pass
+
+    # Move number at found position
+    if position:
+        blank = move(board, blank, position)
+
+    # Draw board
+    draw_board(board)
+else:
+    # Board is solved, victory!
+    print("!!! Victory !!!")</code></pre>
+
+              Vous devez écrire du code à chaque endroit où la
+              commande <code>pass</code>. Vous devez bien sûr respecter la
+              documentation et les commentaires.
+            </li>
+          </ul>
+          <p>
+            Voici quelques informations qui vous aideront dans votre projet :
+          </p>
+          <ul>
+            <li>
+              Il est possible d’écrire chacune des fonctions avec moins de 15
+              lignes. Si l’une de vos fonctions devient trop grandes, votre
+              algorithme n’est peut-être pas optimal.
+            </li>
+            <li>
+              Le plateau est une liste de lignes, et une ligne est une liste de
+              nombres. Par exemple, pour un plateau de 3 cases par 3 cases,
+              votre plateau original est donc
+              <pre><code>board = [ [1, 2, 3], [4, 5, 6], [7, 8, None] ]</code></pre>
+              autrement écrit
+              <pre><code>board = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, None],
+]</code></pre>
+              On accède à un nombre positionné en <code>(x, y)</code> avec
+              <code>board[y][x]</code>. Par exemple, sur notre plateau précédent,
+              <code>board[1][2] == 6</code>.
+            </li>
+            <li>
+              La taille du plateau par défaut est de 4 × 4, mais vous pouvez
+              utiliser une taille de 2 × 2 ou 3 × 3 lors de votre développement !
+            </li>
+            <li>
+              L’affichage des nombres est fait sur 2 chiffres, avec un 0 devant
+              si besoin. Il est possible de faire cela avec les f-strings de
+              Python:
+              <pre><code>number = 2
+print(f'{number}')  # 2
+print(f'{number:02n}')  # 02</code></pre>
+            </li>
+            <li>
+              Mélanger les nombres du plateau ne consiste pas à mettre les
+              nombres dans un ordre aléatoire : certaines combinaisons sont en
+              effet impossibles à résoudre ! La solution la plus simple est
+              sans doute de faire comme avec un vrai jeu, c’est-à-dire de faire
+              beaucoup de permutations au hasard.
+            </li>
+          </ul>
+          <h3>Deuxième rendu : classes</h3>
+          <p>
+            Lors de cette étape, vous décidez de remplacer les fonctions de
+            votre premier rendu par une classe <code>Board</code> comprenant les
+            méthodes <code>__init__</code> (à la place de <code>create_board</code>),
+            <code>shuffle</code>, <code>draw</code>, <code>move</code> et
+            <code>is_solved</code>.
+          </p>
+          <p>
+            L’interface doit rester la même !
+          </p>
+          <p>
+            Voici quelques informations qui vous aideront dans votre projet, et
+            quelques idées d’améliorations facultatives à intégrer :
+          </p>
+          <ul>
+            <li>
+              Votre classe intègre évidemment les données qui étaient dans
+              <code>board</code>, mais elle peut également comporter un
+              attribut <code>blank</code>. Une autre possibilité est de ne plus
+              avoir à garder l’information de <code>blank</code> et à la
+              recalculer au besoin, uniquement dans <code>move</code> !
+            </li>
+            <li>
+              Vous pouvez trouver une solution pour afficher les nombres selon
+              le nombre maximal à afficher. Par exemple, pour une grille 3 × 3
+              (le maximum est 8), on peut afficher les nombres sur un chiffre,
+              et pour une grille 11 × 11 (le maximum est 120), on peut les
+              afficher sur 3 chiffres.
+            </li>
+            <li>
+              Vous pouvez utiliser Rich pour mettre des couleurs dans votre
+              interface !
+            </li>
+          </ul>
         </section>
       </section>
 
