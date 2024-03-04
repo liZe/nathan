@@ -269,7 +269,7 @@
                 correctement dans un terminal. Quelle version de Python est
                 installée sur votre ordinateur ?
                 <aside class="correction">
-                  <code>python3 --version</code>
+                  <code>python3</code>
                 </aside>
               </li>
               <li>
@@ -2183,7 +2183,167 @@ print(f'{number:02n}')  # 02</code></pre>
 
         <section id="installation-et-utilisateur-de-l-interpreteur">
           <h3>Installation et utilisation de l’interpréteur</h3>
-          <todo></todo>
+
+          <h4>Installation</h4>
+          <p>
+            Python est un langage interprété, c’est-à-dire qu’il a besoin d’un
+            logiciel pour lire le code et l’exécuter. Ce logiciel
+            s’appelle <strong>un intérpréteur</strong>.
+          </p>
+          <p>
+            Pour exécuter du code Python, la première étape est donc
+            d’installer l’interpréteur Python. Il existe plusieurs manières
+            pour ce faire, mais la manière recommandée pour ce cours est
+            d’installer la version proposée par votre OS. Il existe même une
+            chance pour que CPython soit déjà installé sur votre système.
+          </p>
+          <p>
+            Que vous soyez sous Linux, macOS ou Windows, la façon est la même :
+            ouvrez un terminal et tapez dedans <code>python3</code>.
+          </p>
+          <ul>
+            <li>
+              Si l’interpréteur est déjà installé, vous devez obtenir quelque
+              chose comme :
+              <pre>Python 3.12.2 […] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+<span class="rouge">&gt;&gt;&gt;</span></pre>
+
+              Dans ce cas, tout est bon ! Vous devez avoir au moins la version
+              3.7 de Python, dans le cas contraire mettez à jour votre
+              installation.
+            </li>
+            <li>
+              Si l’interpréteur n’est pas installé, une solution doit vous être
+              proposée : un message dans le terminal sous macOS ou Linux, ou
+              une fenêtre du Microsoft Store sous Windows. Dans tous les cas,
+              suivez les étapes de la solution proposée, et l’interpréteur sera
+              installé ! Vous pourrez alors le lancer
+              avec <code>python3</code>, et vous obtiendrez le texte indiqué
+              ci-dessus.
+            </li>
+          </ul>
+          <p>
+            Si vous avez le moindre problème pour installer Python, vous pouvez
+            trouver des méthodes alternatives d’installation et de la
+            documentation sur
+            <a href="https://www.python.org/">le site officiel de Python</a>.
+          </p>
+
+          <h4>Mode interactif</h4>
+          <p>
+            En tapant <code>python3</code> dans votre terminal, vous avez lancé
+            Python dans un <strong>mode interactif</strong> qui vous permet de
+            taper des commandes et de voir directement le résultat.
+          </p>
+          <p>
+            Ce mode d’utilisation est très pratique lorsque l’on veut exécuter
+            quelques commandes manuelles simples. Le résultat des commandes
+            saisies est affiché automatiquement, ce qui est particulièrement
+            pratique pour effectuer des calculs simples. Essayez par vous-même :
+            <pre><span class="rouge">&gt;&gt;&gt;</span> 1 + 1
+2</pre>
+          </p>
+          <p>
+            Bien sûr, Python n’est pas uniquement capable d’effectuer des
+            calculs simples ! Comme dans tout langage, vous pouvez stocker les
+            valeurs dans des variables.
+            <pre><span class="rouge">&gt;&gt;&gt;</span> number = 1 + 1
+<span class="rouge">&gt;&gt;&gt;</span> number
+2
+<span class="rouge">&gt;&gt;&gt;</span> number * 2
+4</pre>
+          </p>
+          <p>
+            Si vous voulez récupérer le résultat de la dernière commande, une variable <code>_</code> (<em>underscore</em>) est automatiquement disponible pour cela.
+            <pre><span class="rouge">&gt;&gt;&gt;</span> 1 + 1
+2
+<span class="rouge">&gt;&gt;&gt;</span> _
+2
+<span class="rouge">&gt;&gt;&gt;</span> number = _
+<span class="rouge">&gt;&gt;&gt;</span> number
+2</pre>
+          </p>
+          <p>
+            Outre les nombres entiers, vous pouvez également manipuler des
+            nombres à virgule et des chaînes de caractères. Il est également
+            possible de mettre des commentaires.
+            <pre><span class="rouge">&gt;&gt;&gt;</span> 1 + 1.5  <span class="gris"># integer + float</span>
+2.5
+<span class="rouge">&gt;&gt;&gt;</span> 'Text'  <span class="gris"># string</span>
+'Text'
+<span class="rouge">&gt;&gt;&gt;</span> _ + _  <span class="gris"># concatenate 'Text' and 'Text'</span>
+'TextText'</pre>
+          </p>
+          <p>
+            Il n’est pas besoin de déclarer ses variables, ni de gérer la
+            mémoire : Python s’occupe de tout. Les variables peuvent contenir
+            n’importe quel type de données, on dit donc que
+            <strong>Python est un langage typé dynamiquement</strong> (et pas
+            un langage typé statiquement, comme C ou Java par exemple). Cela
+            dit, le contenu des variables ne peut pas changer de type. Par
+            exemple, on ne peut pas additionner un nombre et une chaîne de
+            caractères. On dit donc que <strong>Python est un langage fortement
+            typé</strong> (et pas faiblement typé, comme JavaScript par
+            exemple).
+          </p>
+          <p>
+            Si l’on veut afficher une variable dans une chaîne de caractères,
+            une méthode possible est d’utiliser les <em>f-strings</em> :
+            <pre><span class="rouge">&gt;&gt;&gt;</span> result = 1 + 1
+<span class="rouge">&gt;&gt;&gt;</span> f'The number {result} is the result of 1 + 1'
+The number 2 is the result of 1 + 1</pre>
+          </p>
+          <p>
+            Les chaînes de caractères sont par défaut sur une ligne, mais il
+            est possible de définir des blocs de texte sur plusieurs lignes en
+            utilisant <code>&#39&#39&#39</code> (Trois guillemets à la suite) :
+            <pre><span class="rouge">&gt;&gt;&gt;</span> &#39&#39&#39This is
+<span class="rouge">...</span> a long text&#39&#39&#39
+'This is<span class="bleu">\n</span>a long text'</pre>
+          </p>
+          <p>
+            Les guillemets simples ou double peuvent être utilisés pour les
+            chaînes de caractères, sans aucune différence entre les deux.
+            Le <code>f</code> devant les guillemets fonctionne aussi pour les
+            blocs de texte.
+            <pre><span class="rouge">&gt;&gt;&gt;</span> f&quot;&quot;&quot;This is
+<span class="rouge">...</span> a long text with number {result} in it&quot;&quot;&quot;
+'This is<span class="bleu">\n</span>a long text with number 2 in it'</pre>
+          </p>
+          <p>
+            <strong>Pour quitter l’interpréteur interactif</strong>,
+            tapez la commande <code>quit()</code>.
+          </p>
+          <p>
+            Pour en apprendre plus sur l’interpréteur interactif et les types
+            simples, vous pouvez suivre
+            <a href="https://docs.python.org/3/tutorial/introduction.html">la partie 3 du tutoriel de la documentation officielle de Python</a>.
+
+          <h4>Exécution de scripts</h4>
+          <p>
+            Si le mode interactif est pratique pour les commandes simples, il
+            n’est bien sûr pas adapté lorsque l’on a plus de code à saisir.
+            Dans ces cas-là, <strong>on préfère utiliser l’interpréteur pour
+            exécuter des scripts écrits dans des fichiers</strong> avec un
+            éditeur de code.
+          </p>
+          <figure class="fichier">
+            <figcaption><code>script.py</code></figcaption>
+            <pre>number = 2
+print(number * 2)</pre>
+          </figure>
+          <p>
+            Vous pouvez exécuter le code en passant le nom de fichier à
+            l’interpréteur, dans votre terminal :
+            <pre>python3 script.py
+4</pre>
+          <p>
+            En mode interactif, Python affiche le résultat de la commande
+            effectuée. Ce n’est pas le cas lorsque l’on exécute un script. On
+            doit alors utiliser la fonction <code>print()</code> qui affiche
+            sur l’écran le résultat du code entre parenthèses.
+          </p>
         </section>
 
         <section id="#choix-et-configuration-d-un-editeur">
