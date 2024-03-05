@@ -164,7 +164,7 @@
           <ul>
             <li><a href="#installation-et-utilisateur-de-l-interpreteur">Installation et utilisation de l’interpréteur</a></li>
             <li><a href="#choix-et-configuration-d-un-editeur">Choix et configuration d’un éditeur</a></li>
-            <li><a href="#types-et-instructions">Types et instructions</a></li>
+            <li><a href="#syntaxe-types-et-instructions">Syntaxe, types et instructions</a></li>
             <li><a href="#fonctions">Fonctions</a></li>
             <li><a href="#programmation-objet">Programmation objet</a></li>
             <li><a href="#modules-et-imports">Modules et imports</a></li>
@@ -2319,7 +2319,7 @@ The number 2 is the result of 1 + 1</pre>
             Pour en apprendre plus sur l’interpréteur interactif et les types
             simples, vous pouvez suivre
             <a href="https://docs.python.org/3/tutorial/introduction.html">la partie 3 du tutoriel de la documentation officielle de Python</a>.
-
+          </p>
           <h4>Exécution de scripts</h4>
           <p>
             Si le mode interactif est pratique pour les commandes simples, il
@@ -2338,6 +2338,7 @@ print(number * 2)</pre>
             l’interpréteur, dans votre terminal :
             <pre>python3 script.py
 4</pre>
+          </p>
           <p>
             En mode interactif, Python affiche le résultat de la commande
             effectuée. Ce n’est pas le cas lorsque l’on exécute un script. On
@@ -2348,12 +2349,365 @@ print(number * 2)</pre>
 
         <section id="#choix-et-configuration-d-un-editeur">
           <h3>Choix et configuration d’un éditeur</h3>
-          <todo></todo>
+          <p>
+            Le choix d’un éditeur de code est important pour le développement
+            de scripts et d’applications. Un éditeur est un outil puissant
+            lorsqu’il est bien utilisé : il peut vous apporter coloration
+            syntaxique, détection d’erreurs, interface de débogage, et bien
+            d’autres choses encore.
+          </p>
+          <p>
+            Si vous avez déjà l’habitude d’un éditeur de code généraliste, il y
+            a de grandes chances pour que vous puissiez l’utiliser pour écrire
+            du Python. N’hésitez pas à consulter la documentation de votre
+            éditeur pour en apprendre plus sur la manière de l’utiliser pour
+            écrire du code Python.
+          </p>
+          <p>
+            Si vous n’avez pas d’éditeur préféré, nous vous conseillons
+            d’utiliser <a href="https://code.visualstudio.com/">Visual Studio Code</a> pour
+            cette introduction à Python. VS Code est un éditeur généraliste qui
+            propose un bon support de Python.
+          </p>
+          <p>
+            Pour commencez, vous pouvez simplement installer VS Code et
+            <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">l’extension Python</a>,
+            la configuration par défaut devrait vous permettre d’avoir entre
+            autres la coloration syntaxique, la vérification des erreurs et la
+            possibilité de lancer un script Python.
+          </p>
+          <p>
+            Si vous souhaitez en apprendre plus pour avoir une utilisation plus
+            poussé de l’éditeur, vous pouvez suivre
+            <a href="https://code.visualstudio.com/docs/python/python-quick-start">le tutoriel Python</a>
+            sur le site de VS Code.
+          </p>
+          <p>
+            D’autres éditeurs sont bien sûr disponibles. Parmi les plus
+            utilisés, nous noterons par exemple
+            <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>,
+            <a href="https://www.sublimetext.com/">Sublime Text</a>,
+            <a href="https://notepad-plus-plus.org/">Notepad++</a>,
+            <a href="https://www.vim.org/">Vim</a> ou
+            <a href="https://www.gnu.org/software/emacs/">Emacs</a>.
+          </p>
         </section>
 
-        <section id="types-et-instructions">
-          <h3>Types et instructions</h3>
-          <todo></todo>
+        <section id="syntaxe-types-et-instructions">
+          <h3>Syntaxe, types et instructions</h3>
+
+          <p>
+            Voici un exemple de code Python :
+          </p>
+          <pre><code>numbers = (1, 2, 3)
+
+<span class="vert">def</span> <span class="jaune">double</span>(number):
+    <span class="vert">return</span> number * 2
+
+<span class="vert">for</span> i <span class="vert">in</span> numbers:
+    print(double(i))</code></pre>
+          <p>
+            Avec quelques bases de programmation, et sans entrer dans le
+            détail, il est possible de deviner ce que fait ce programme :
+          </p>
+          <ul>
+            <li>On définit une suite de nombres comprenant les nombres 1, 2, 3.</li>
+            <li>On définit une fonction qui prend en paramètre un nombre et renvoie ce nombre multiplié par 2.</li>
+            <li>Pour chacun des nombres dans la liste de nombres, affiche le double de ce nombre.</li>
+          </ul>
+
+          <h4>Syntaxe de base</h4>
+          <p>
+            Python est un langage dont les blocs sont déterminés par
+            l’indentation, c’est-à-dire les espaces en début de ligne.
+            L’ouverture de blocs se fait par un deux-points. On n’utilise donc
+            pas d’accolades pour délimiter les blocs, contrairement à la
+            plupart des langages.
+          </p>
+          <p>
+            Pour l’indentation, on utilise généralement 4 espaces. Par défaut,
+            votre éditeur doit faire cela lorsque vous appuyez sur la touche <kbd>Tab</kbd>,
+            mais vérifiez bien avant de l’utiliser. Faites surtout attention à
+            ne pas mélanger les espaces et les tabulations, qui sont des
+            caractères différents !
+          </p>
+          <p>
+            Les lignes de Python ne se terminent pas par un point-virgule. Il
+            est possible d’en mettre un, mais il est inutile, le saut de ligne
+            indiquant que c’est la fin d’une commande. Ne mettez-pas de
+            points-virgules, personne ne fait cela !
+          </p>
+          <p>
+            Il est possible d’ajouter des commentaires avec le croisillon
+            <kbd>#</kbd>, le caractère du clavier qui ressemble à un dièse (♯).
+            Tout ce qui est derrière un croisillon est un commentaire, jusqu’au
+            bout de la ligne. Pour faire des commentaires sur plusieurs lignes,
+            il est donc nécessaire de mettre un croisillon au début de chaque
+            ligne.
+          </p>
+          <pre><code><span class="gris"># This is a comment</span>
+a = 1 + 2  <span class="gris"># This is a comment too</span>
+<span class="gris"># This is</span>
+<span class="gris"># a comment on 2 lines</span></code></pre>
+
+          <h4>Nombres</h4>
+          <p>
+            En Python, des types de base sont disponibles pour représenter les
+            données et structures de données communes.
+          </p>
+          <p>
+            <strong>Pour stocker les nombres</strong>, on peut utiliser deux
+            types principaux : les nombres entiers (<code>int</code>) et les nombres à virgule
+            flottante (<code>float</code>).
+          </p>
+          <pre><code>a = 12
+b = 1.2345
+c = a * 3</code></pre>
+          <p>
+            Les opérations de base utilisent les opérateurs classiques en
+            programmation (<code>+</code>, <code>-</code>, <code>*</code>,
+            <code>/</code>…).
+          </p>
+          <p>
+            Il n’est pas besoin de définir la taille maximale d’un nombre, ni
+            de définir s’il peut être négatif : Python gère automatiquement les
+            nombres très grands et les nombres négatifs, sans que l’on ait à
+            utiliser des types spécifiques.
+          </p>
+          <p>
+            D’autres types de nombres et d’autres opérateurs moins utilisés
+            sont également disponibles.
+          </p>
+
+          <h4>Chaînes de caractères</h4>
+          <p>
+            Les chaînes de caractères (<code>str</code>) représentent des
+            suites de caractères. Le texte est encadré par les guillemets
+            simples ou des guillemets doubles.
+            <a href="https://fr.wikipedia.org/wiki/Unicode">Unicode</a>
+            est supporté, ce qui veut dire que vous pouvez mettre n’importe
+            quel caractère dans votre chaîne, y compris des émojis.
+          </p>
+          <pre><code>message = <span class="rouge">"Salut !"</span>
+answer = <span class="rouge">'Coucou 😄 ça va ?'</span></code></pre>
+          <p>
+            Les <em>f-strings</em> sont des chaînes de caractères avec la
+            lettre <code>f</code> devant les guillemets. Elles permettent de
+            pouvoir insérer des variables de n’importe quel type (et même du
+            code plus complexe !) directement dans des chaînes de caractères.
+          </p>
+          <pre><code>name = <span class="rouge">"Victor"</span>
+question = <span class="rouge">f"Comment ça va <span class="bleu">{name}</span> ?"</span>
+print(<span class="rouge">f"1 + 1 = <span class="bleu">{1 + 1}</span>"</span>)</code></pre>
+
+          <h4>Conditions et booléens</h4>
+          <p>
+            Il est possible d’effectuer des tests de conditions grâce aux
+            mots-clés
+            <code>if</code>, <code>elif</code> et <code>else</code>.
+          </p>
+          <pre><code>a = 2
+
+<span class="vert">if</span> a == 0:
+    print(<span class="rouge">"zero"</span>)
+<span class="vert">elif</span> a == 1:
+    print(<span class="rouge">"one"</span>)
+<span class="vert">else</span>:
+    print(<span class="rouge">"two or more"</span>)</code></pre>
+          <p>
+            <code>if</code> permet de tester une condition, son bloc est
+            exécuté si la condition est vraie. <code>elif</code> permet
+            également de tester une condition, son bloc est exécuté si toutes
+            les conditions précédentes étaient fausses et que sa condition
+            est vraie. Le bloc <code>else</code> est effectué si toutes les
+            conditions précédentes étaient fausses.
+          </p>
+          <p>
+            L’opérateur <code>==</code> permet de tester une égalité. Il est
+            également possible de tester une inégalité (avec
+            <code>>=</code> ou <code>&lt;</code> par exemple) ou une différence
+            (avec <code>!=</code>). On peut enchaîner plusieurs de ces
+            opérateurs à la suite pour effectuer plusieurs tests en même
+            temps.
+          </p>
+          <p>
+            Tous ces opérateurs renvoient vrai ou faux. Ce sont les booléens
+            (<code>bool</code>), que l’on note <code>True</code> et
+            <code>False</code> en Python. Les opérateurs booléens sont notés
+            <code>and</code>, <code>or</code> et <code>not</code>, en toutes
+            lettres.
+          </p>
+          <pre><code><span class="vert">if</span> a == 0 <span class="vert">or</span> a == 1:
+    print(<span class="rouge">"zero or one"</span>)
+<span class="vert">elif</span> 2 &lt;= a &lt;= 10:
+    print(<span class="rouge">"between two and ten"</span>)
+<span class="vert">else</span>:
+    print(<span class="rouge">"eleven or more"</span>)</code></pre>
+
+          <h4>Boucles</h4>
+          <p>
+            Les mots réservés <code>for</code> et <code>while</code>
+            permettent de construire des boucles.
+          </p>
+          <p>
+            La boucle <code>for</code> prend les éléments d’une suite
+            d’éléments un par un, les met dans une variable, et exécute son
+            bloc avec cette variable. Elle s’arrête lorsqu’il n’y a plu
+            d’éléments dans la suite.
+          </p>
+          <pre><code><span class="vert">for</span> a <span class="vert">in</span> (1, 2, 3):
+    <span class="gris"># Print 1, then 2, then 3</span>
+    print(a)</code></pre>
+          <p>
+            Dans d’autres langages, cette boucle s’appelle plutôt une boucle
+            <code>foreach</code>. Si l’on veut itérer sur une suite d’indices
+            plutôt que d’éléments dans une suite, on peut utiliser la fonction
+            >range(x)</code> qui renvoie une suite de nombres entre 0
+            inclus et <code>x</code> exclu.
+          </p>
+          <pre><code><span class="vert">for</span> a <span class="vert">in</span> range(3):
+    <span class="gris"># Print 0, then 1, then 2</span>
+    print(a)</code></pre>
+          <p>
+            La boucle <code>while</code> exécute son bloc tant que sa
+            condition est vraie.
+          </p>
+          <pre><code>a = 3
+<span class="vert">while</span> a <span class="vert">&gt;</span> 0:
+    <span class="gris"># Print 3, then 2, then 1</span>
+    print(a)
+    a = a - 1  <span class="gris"># Decrement a</span></code></pre>
+          <p>
+            Les variables définies dans une boucle sont accessibles après
+            cette boucle.
+          </p>
+          <pre><code><span class="vert">for</span> a <span class="vert">in</span> (1, 2, 3):
+    <span class="gris"># Print 1, then 2, then 3</span>
+    print(a)
+
+<span class="gris"># a == 3 at the end of the loop</span>
+
+<span class="vert">while</span> a > 0:
+    <span class="gris"># Print 3, then 2, then 1</span>
+    print(a)
+    a = a - 1</code></pre>
+          <p>
+            On peut interrompre une boucle sans aller jusqu’au bout de son
+            exécution grâce à la commande <code>break</code>. Il est
+            également possible de passer à l’itération suivante sans aller
+            jusqu’au bout du bloc de la boucle grâce à
+            <code>continue</code>.
+          </p>
+          <p>
+            Il est possible d’ajouter un bloc <code>else</code> à la fin
+            d’une boucle. Elle sera exécutée si la boucle est allée jusqu’au
+            bout, sans <code>break</code>.
+          </p>
+          <pre><code><span class="gris"># Find a positive number divisible by 4</span>
+numbers = (10, 13, -4, 7, 12, 14)
+<span class="vert">for</span> number <span class="vert">in</span> numbers:
+    <span class="vert">if</span> number < 0:
+        print(<span class="rouge">f"<span class="bleu">{number}</span> est un nombre négatif"</span>)
+        <span class="vert">continue</span>  <span class="gris"># Go no next number</span>
+
+    <span class="vert">if</span> number % 4 == 0:
+        print(<span class="rouge">f"<span class="bleu">{number}</span> est divisible par 4 !"</span>)
+        <span class="vert">break</span>  <span class="gris"># Stop the loop</span>
+    <span class="vert">else:</span>
+        print(<span class="rouge">f"<span class="bleu">{number}</span> n’est pas divisible par 4"</span>)
+<span class="vert">else</span>:
+    print(<span class="rouge">"Aucun nombre n’est divisible par 4"</span>)</code></pre>
+
+          <h4>Séquences</h4>
+          <p>
+            En Python, le terme de « séquence » regroupe tous les types qui
+            permettent de stocker et accéder à des éléments par rapport à leur
+            indice. Par exemple, les chaînes de caractères sont des séquences.
+          </p>
+          <pre><code>name = <span class="rouge">"Victor"</span>
+print(name[2])  <span class="gris"># Print "c", letter at index 2 (starting from 0)</span></code></pre>
+          <p>
+            Les séquences ont également une longueur.
+          </p>
+          <pre><code>name = <span class="rouge">"Victor"</span>
+print(len(name))  <span class="gris"># Print "6" because there are 6 letters</span></code></pre>
+          <p>
+            Toutes les séquences sont itérables, c’est-à-dire qu’on peut
+            prendre leurs éléments un à un, par exemple dans une boucle
+            <code>for</code>.
+          </p>
+          <pre><code><span class="vert">for</span> letter <span class="vert">in</span> <span class="rouge">"abc"</span>:
+    <span class="gris"># Print "a", then "b", then "c"</span>
+    print(letter)</code></pre>
+          <p>
+            (L’inverse n’est pas vrai, certains itérables ne sont pas des
+            séquences).
+          </p>
+          <p>
+            Deux types très répandus sont également des séquences : les listes
+            (<code>list</code>) et les n-uplets (<code>tuple</code>). Ces deux
+            types permettent de stocker une suite d’éléments arbitraire :
+          </p>
+          <pre><code>a_list = [1, 2, 4]
+a_tuple = (1, 2, 4)
+print(a_list[2])  <span class="gris"># Print 4</span>
+print(len(a_tuple))  <span class="gris"># Print 3</span></code></pre>
+          <p>
+            Il existe une différence entre ces deux types : les listes sont
+            modifiables, alors que les n-uplets ne le sont pas.
+          </p>
+          <pre><code>a_list = [<span class="rouge">"a"</span>, <span class="rouge">"b"</span>, <span class="rouge">"e"</span>]
+a_list[2] = <span class="rouge">"c"</span>  <span class="gris"># Replace "e" by "c"</span>
+print(a_list)  <span class="gris"># Print ["a", "b", "c"]</span>
+
+a_tuple = (<span class="rouge">"a"</span>, <span class="rouge">"b"</span>, <span class="rouge">"e"</span>)
+a_tuple[2] = <span class="rouge">"c"</span>  <span class="gris"># Error!</span></code></pre>
+          <p>
+            On dit que <strong>les listes sont mutables</strong>, et
+            <strong>les n-uplets immuables</strong>. Les chaînes de caractères
+            sont également immuables
+          </p>
+          <p>
+            Comme les listes sont mutables, il existe plusieurs façons communes
+            de les modifier. On peut par exemple ajouter un élément, enlever un
+            élément, ranger et vider une liste.
+          </p>
+          <pre><code>a_list = [10, 8, 2, 38]
+a_list.append(33)  <span class="gris"># a_list == [10, 8, 2, 38, 33]</span>
+a_list.pop(1)  <span class="gris"># a_list == [10, 2, 38, 33]</span>
+a_list.sort()  <span class="gris"># a_list == [2, 10, 33, 38]</span>
+a_list.clear()  <span class="gris"># a_list == []</code></pre></span>
+          <p>
+            De nombreuses autres fonctionnalités sont disponibles sur
+            <a href="https://docs.python.org/3/library/stdtypes.html#typesseq-common">toutes les séquences</a>
+            ainsi que sur
+            <a href="https://docs.python.org/3/library/stdtypes.html#typesseq-mutable">les séquences mutables</a>.
+          </p>
+
+          <h4>Dictionnaires</h4>
+          <p>
+            Les dictionnaires (<code>dict</code>) permettent d’associer des
+            valeurs à des clés.
+          </p>
+          <p>
+            Les dictionnaires sont les objets les plus utilisés dans le
+            fonctionnement interne de Python. Ils sont très compacts et très
+            rapides. Ils sont également mutables.
+          </p>
+          <pre><code>fruit_color = {<span class="rouge">"banana"</span>: <span class="rouge">"yellow"</span>, <span class="rouge">"kiwi"</span>: <span class="rouge">"green"</span>}
+fruit_color[<span class="rouge">"mango"</span>] = <span class="rouge">"orange"</span>  <span class="gris"># Add key "mango" with value "orange"</span>
+print(fruit_color[<span class="rouge">"mango"</span>])  <span class="gris"># Print "orange"</span>
+print(fruit_color)  <span class="gris"># Print the whole dictionary</span></code></pre>
+          <p>
+            Les dictionnaires sont des itérables : itérer sur un dictionnaire
+            retourne les clés, qui sont ordonnées. Par contre, les
+            dictionnaires ne sont pas des séquences : on accède aux valeur par
+            une clé, non par un indice.
+          </p>
+          <p>
+            De nombreuses autres fonctionnalités sont disponibles sur
+            <a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">les dictionnaires</a>.
+          </p>
         </section>
 
         <section id="fonctions">
