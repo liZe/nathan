@@ -2712,12 +2712,184 @@ print(fruit_color)  <span class="gris"># Print the whole dictionary</span></code
 
         <section id="fonctions">
           <h3>Fonctions</h3>
-          <todo></todo>
+          <p>
+            En Python, il est possible de définir des fonctions qui prennent
+            en paramètres des valeurs, qui exécutent du code et qui renvoient
+            potentiellement une nouvelle valeur.
+          </p>
+          <pre><code><span class="vert">def</span> divide(numerator, denominator):
+    <span class="rouge">"""Return numerator divided by denominator."""</span>
+    <span class="vert">return</span> numerator / denominator
+
+print(divide(10, 5))  <span class="gris"># Print "2.0"</span></code></pre>
+          <p>
+            La chaîne de caractères au tout début de la fonction s’appelle une
+            <em>docstring</em>. C’est de la documentation à destination des
+            personnes qui utilisent votre code, sans forcément lire votre code.
+            On utilise toujours trois paires de guillemets pour cette
+            documentation, même lorsqu’elle ne fait qu’une ligne. Vous pouvez
+            par exemple voir la documentation avec <code>help</code>.
+          </p>
+          <pre><code>help(divide)
+help(list)
+help(3.14)</code></pre>
+          <p>
+            Lorsque l’on appelle une fonction, il est possible de nommer les
+            paramètres afin de pouvoir les passer dans n’importe quel ordre.
+          </p>
+          <pre><code>print(divide(denominator=3, numerator=6))  <span class="gris"># Print "2.0"</span></code></pre>
+          <p>
+            Il est également possible de définir des valeurs par défaut qui
+            seront utilisées si aucun argument n’est passé pour ces paramètres.
+          </p>
+          <pre><code><span class="vert">def</span> divide(numerator, denominator=2):
+    <span class="rouge">"""Return numerator divided by denominator (2 by default)."""</span>
+    <span class="vert">return</span> numerator / denominator
+
+print(divide(10))  <span class="gris"># Print "5.0"</span></code></pre>
+          <p>
+            Les fonctions en Python proposent
+            <a href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions">un grand nombre de fonctionnalités additionnelles</a>.
+          </p>
         </section>
 
         <section id="programmation-objet">
-          <h3>Programmation objet</h3>
-          <todo></todo>
+          <h3>Programmation orientée objet</h3>
+          <p>
+            Python est un langage particulièrement adapté à la programmation
+            orientée objet. <strong>Tout ce que l’on manipule (ou presque) est
+            un objet</strong> : les entiers, les listes, les dictionnaires, les
+            fonctions, etc.
+          </p>
+          <p>
+            Au-delà des types proposés par défaut, <strong>il est possible de
+            créer ses propres types grâce aux classes</strong>.
+          </p>
+          <pre><code><span class="vert">class</span> <span class="jaune">Animal</span>:
+    <span class="rouge">"""Representation of an animal."""</span>
+
+    <span class="vert">def</span> <span class="jaune">__init__</span>(self, name):
+        <span class="rouge">"""Initialize a new animal."""</span>
+        self.name = name
+
+    <span class="vert">def</span> <span class="jaune">say_hello</span>(self):
+        <span class="rouge">"""Print a little presentation of the animal."""</span>
+        print(<span class="rouge">f"Hello! My name is <span class="bleu">{self.name}</span>."</span>)
+
+tweety = Animal(<span class="rouge">"Tweety"</span>)  <span class="gris"># Create "tweety", an instance of "Animal"</span>
+tweety.say_hello()  <span class="gris"># Print "Hello! My name is Tweety"</span>
+print(tweety.name)  <span class="gris"># Print "Tweety"</span></code></pre>
+          <p>
+            Une classe représente un type standard d’objet. À partir de ce
+            type, on peut créer différents objets, qui auront généralement la
+            même structure et le même fonctionnement (les animaux ont un nom et
+            peuvent se présenter), mais pas forcément les mêmes informations
+            (chaque animal aura un nom différent). <strong>Les objets créés à
+            partir d’un type sont appelés des instances</strong>, ils sont
+            créés en « appelant » la classe, en mettant des parenthèses
+            derrière (<code>Animal("Tweety")</code>).
+          </p>
+          <p>
+            Les classes possèdent deux types d’informations qui
+            leur sont propres : les attributs et les méthodes.
+            <ul>
+              <li>
+                Les attributs sont comme des variables rattachées à une
+                instance. Ici, <code>name</code> est un attribut de chaque
+                animal.
+              </li>
+              <li>
+                Les méthodes sont comme des fonctions rattachées à une
+                instance. Ici, <code>say_hello</code> est une méthode.
+              </li>
+            </ul>
+          </p>
+          <p>
+            Les méthodes prennent un paramètre par défaut, que l’on
+            nomme toujours <code>self</code>. Ce paramètre correspond à
+            l’instance que l’on est en train de manipuler. Par exemple, lorsque
+            l’on appelle <code>tweety.say_hello()</code>, on appelle la méthode
+            <code>say_hello</code> avec comme premier paramètre
+            <code>self</code> qui vaut <code>tweety</code>.
+            (<code>self</code> correspond à <code>this</code> dans d’autres
+            langages.)
+          </p>
+          <p>
+            La méthode <code>__init__</code> est appelée juste après la
+            création d’une instance. Les paramètres passés à
+            <code>__init__</code> sont l’instance, puis tous les paramètres
+            passés entre les parenthèses. Ainsi,
+            <code>tweety = Animal("Tweety")</code> crée une instance d’animal,
+            et appelle <code>__init__</code> avec comme arguments l’instance
+            créée (<code>self</code>) et la chaîne de caractères Tweety
+            (<code>name</code>).
+          </p>
+          <p>
+            Dans notre cas, <code>__init__</code> enregistre le nom passé en
+            paramètre comme attribut de l’instance : <code>self.name = name</code>.
+            Cela permettra d’accéder au nom d’un animal en ajoutant
+            <code>.name</code> derrière notre instance.
+          </p>
+          <p>
+            Comme dans beaucoup de langages orientés objet, <strong>il est
+            possible de faire de l’héritage de classes</strong>.
+          </p>
+          <pre><code><span class="vert">class</span> <span class="jaune">Dog(Animal)</span>:
+    <span class="rouge">"""Representation of an dog."""</span>
+    kind = <span class="rouge">"canine"</span>
+
+    <span class="vert">def</span> <span class="jaune">say_hello</span>(self):
+    <span class="rouge">"""Print a little presentation of the dog."""</span>
+        super().say_hello()  # Call Animal.say_hello
+        print(<span class="rouge">"I can bark: woof woof"</span>)
+
+pluto = Dog(<span class="rouge">"Pluto"</span>)  <span class="gris"># Create "pluto", an instance of "Dog"</span>
+pluto.say_hello()  <span class="gris"># Print "Hello! …" then "I can bark…"</span>
+print(pluto.kind)  <span class="gris"># Print "canine"</span></code></pre>
+          <p>
+            Ici, <code>Dog</code> est une classe qui hérite de <code>Animal</code>.
+            Cela signifie que toute instance de <code>Dog</code> sera également
+            une instance de <code>Animal</code>, et se comportera donc par
+            défaut comme un <code>Animal</code>. Ici, Pluto est un chien, et
+            c’est aussi un animal (ce qui semble plutôt normal).
+          </p>
+          <p>
+            Généralement, lorsque l’on crée une classe enfant d’une autre
+            classe, on veut réutiliser une partie de ce que la classe parente
+            fait. Par exemple, <code>__init__</code> n’est pas redéfini. C’est
+            à dire que lorsque l’on appelle <code>Dog("Pluto")</code>, on
+            crée une instance de <code>Dog</code>, puis on passe cette instance
+            à <code>Animal.__init__</code>. Ce n’est pas la peine de récrire ce
+            code, il sera appelé tout seul !
+          </p>
+          <p>
+            Dans des cas plus compliqués, on veut appeler la méthode parente,
+            mais on veut faire d’autres choses légèrement différentes. Dans
+            notre cas, les chiens disent la même phrase que tous les animaux
+            (<em>Hello! My name is…</em>), mais ils doivent également dire
+            qu’ils aboient (<em>I can bark…</em>).
+          </p>
+          <p>
+            Pour faire cela, on surcharge la méthode <code>say_hello</code> :
+            on redéfinit cette méthode dans <code>Dog</code>. Mais à la place
+            de recopier <code>print("Hello!…")</code>, on utilise
+            <code>super</code> pour appeler la méthode de la classe parente.
+            Ainsi, on peut avoir un fonctionnement légèrement différent sans
+            tout avoir à récrire.
+          </p>
+          <p>
+            Cet exemple propose également une fonctionnalité souvent utilisée
+            sur les classes : les attributs de classes. Ici, <code>kind</code>
+            est défini au niveau de la classe, pas dans <code>__init__</code>
+            lors de l’instanciation. C’est normal : tous les chiens sont de la
+            même espèce (<code>kind</code> est un attribut de classe), mais
+            chacun à son nom propre (<code>name</code> est un attribut
+            d’instance).
+          </p>
+          <p>
+            Beaucoup d’autres choses peuvent être faites
+            <a href="https://docs.python.org/3/tutorial/classes.html">avec les classes en Python</a>.
+          </p>
         </section>
 
         <section id="modules-et-imports">
