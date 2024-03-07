@@ -2899,17 +2899,248 @@ print(pluto.kind)  <span class="gris"># Print "canine"</span></code></pre>
 
         <section id="bibliothèque standard">
           <h3>Bibliothèque standard</h3>
-          <todo></todo>
+          <p>
+            La bibliothèque standard de Python est un ensemble de modules
+            fournis avec l’interpréteur.
+          </p>
+          <p>
+            Python est connu pour être fourni « piles incluses », c’est-à-dire
+            avec une bibliothèque standard très importante qui apporte de
+            nombreuses fonctionnalités sans avoir besoin de modules externes.
+          </p>
+          <p>
+            Python intègre des modules très variés, dont les fonctions
+            mathématiques avancées 📐, un support des protocoles réseaux les
+            plus répandus 📶, les dates 📅, la lecture et l’écriture de
+            fichiers 📁…
+          </p>
+          <p>
+            L’ensemble de la bibliothèque standard est disponible dans
+            <a href="https://docs.python.org/3/library/index.html">la documentation</a>.
+            Nous ne pouvons bien sûr pas couvrir l’intégralité de ces modules,
+            mais nous en détaillerons 3 spécifiques pour comprendre l’intérêt
+            de cette large gamme d’outils. À chaque fois, nous donnerons un
+            petit script pour comprendre les fonctionnalités principales.
+            Toutes les fonctionnalités supplémentaires sont bien sûr à
+            découvrir dans la documentation.
+          </p>
+
+          <h4>Chemins de système de fichiers orientés objet — <code>pathlib</code></h4>
+          <p>
+            <strong>La lecture et l’écriture de fichiers textes sont des
+            fonctionnalités classiques des langages de programmation.</strong> Python
+            fournit une interface bas-niveau pour cela (avec <code>open()</code>), mais ce
+            fonctionnement n’est pas très pratique ni très moderne.
+          </p>
+          <p>
+            C’est pourquoi Python propose le module
+            <a href="https://docs.python.org/3/library/pathlib.html"><code>pathlib</code></a>.
+            <code>pathlib</code> offre une interface puissante, orientée objet,
+            permettant de réaliser les opérations de base sur un système de
+            fichiers : création et suppression de dossiers et de fichiers,
+            écriture de texte et de binaire dans les fichiers, listes de
+            contenus de dossiers, etc.
+          </p>
+          <pre><code><span class="vert">from</span> pathlib <span class="vert">import</span> Path
+
+<span class="gris"># Create folder and file</span>
+current_folder = Path()  <span class="gris"># Path object to current folder (called ".")</span>
+new_folder = current_folder / <span class="rouge">"test"</span>  <span class="gris"># Folder called "test" in "."</span>
+new_folder.mkdir()  <span class="gris"># Create "./test" folder</span>
+new_file = new_folder / <span class="rouge">"texte.txt"</span>  <span class="gris"># File called "texte.py" in "./test"</span>
+new_file.write_text(<span class="rouge">"Salut"</span>)  <span class="gris"># Write "Salut" in "./test/texte.txt"</span>
+print(new_file.read_text())  <span class="gris"># Print "Salut"</span>
+
+<span class="gris"># List content of "./test" (only "./test/texte.txt")</span>
+<span class="vert">for</span> file <span class="vert">in</span> new_folder.iterdir():
+    print(file)
+
+<span class="gris"># Clean everything</span>
+new_file.unlink()  <span class="gris"># Delete "./test/texte.txt" file</span>
+new_folder.rmdir()  <span class="gris"># Delete empty "./test" folder</span></code></pre>
+
+          <h4>Génération de nombres pseudo-aléatoires — <code>random</code></h4>
+          <p>
+            <strong>Dans de nombreux programmes, il est nécessaire de générer
+            des nombres aléatoires.</strong> Que l’on veuille simuler le
+            lancement d’un dé à six faces, choisir au hasard une personne dans
+            une liste d’utilisateurs ou mélanger une pile de cartes,
+            <code>random</code> est le module adapté pour cela.
+          </p>
+          <pre><code><span class="vert">import</span> random
+
+<span class="gris"># Print a number between 1 and 6 (like a dice)</span>
+print(random.randint(1, 6))
+
+<span class="gris"># Print a random card suit</span>
+suits = (<span class="rouge">"♠"</span>, <span class="rouge">"♥"</span>, <span class="rouge">"♦"</span>, <span class="rouge">"♣"</span>)
+print(random.choice(suits))
+
+<span class="gris"><span class="gris"># Shuffle a list of numbers</span></span>
+numbers = list(range(10))
+random.shuffle(numbers)
+print(numbers)</code></pre>
+
+          <h4>Fonctions mathématiques — <code>math</code></h4>
+          <p>
+            <strong>S’il est possible d’utiliser les opérateurs de base sans
+            avoir recours à un module, Python est cependant vite limité dès que
+            l’on veut faire des opérations mathématiques plus complexes.</strong>
+            Heureusement, le module <code>math</code> contient de quoi aller un
+            peu plus loin que de simples additions et multiplications :
+            trigonométrie, valeurs absolues, factorielles, PGCD et racines
+            carrées sont à votre disposition !
+          </p>
+          <p>
+            Le module <code>math</code> est adapté pour des mathématiques de
+            niveau collège, mais ce n’est bien sûr pas ce qui est utilisé pour
+            des utilisations universitaires ou de recherche ! Pour cela, des
+            modules tiers comme <code>numpy</code> ou <code>pandas</code> sauront
+            répondre aux utilisations les plus avancées.
+          </p>
+          <pre><code><span class="vert">import</span> math
+
+<span class="gris"># A little bit of trigonometry</span>
+angle = math.radians(60)  <span class="gris"># Convert 60 degrees in radians</span>
+print(math.cos(angle))  <span class="gris"># That’s 0.5!</span>
+
+<span class="gris"># A little bit of geometry</span>
+radius = 3
+circle_area = math.pi * math.pow(radius, 2)
+print(circle_area)
+
+<span class="gris"># A little bit of arithmetic</span>
+greatest_common_divisor = math.gcd(20, 30, 100)
+print(greatest_common_divisor)  <span class="gris"># That’s 10!</span></code></pre>
         </section>
 
         <section id="environnements-virtuels">
           <h3>Environnements virtuels</h3>
-          <todo></todo>
+          <p>
+            Lorsque l’on veut développer et utiliser des applications ou des
+            bibliothèques, on veut pouvoir installer des programmes utilisant
+            des versions précises de Python et des modules externes.
+          </p>
+          <p>
+            Par défaut, l’installation de ces paquets se fait au niveau du
+            système. Python permet également à chaque personne d’installer des
+            modules uniquement pour elle. Cependant, ces solutions ne
+            permettent pas d’avoir des versions concurrentes d’un même module,
+            et elles mettent au même endroit des paquets utilisés par
+            différents projets.
+          </p>
+          <p>
+            <strong>Les environnements virtuels permettent de créer des
+            sous-systèmes indépendants, avec leur interpréteur et leurs modules
+            accessibles uniquement depuis l’environnement.</strong> C’est une
+            solution pratique pour regrouper dans un dossier tous les modules
+            installés spécifiquement pour un projet.
+          </p>
+          <ul>
+            <li>
+              Toutes les informations concernant l’environnement virtuel sont
+              dans le dossier.
+            </li>
+            <li>
+              Les modules installés dans l’environnement ne sont pas
+              accessibles de l’extérieur.
+            </li>
+            <li>
+              Les environnements virtuels sont dépendants du système. On ne les
+              versionne pas, on ne les partage pas.
+            </li>
+          </ul>
+          <p>
+            Python propose le module <code>venv</code> pour créer des
+            environnements virtuels. Ce module est dans la bibliothèque
+            standard.
+          </p>
+          <p>
+            Il existe également de nombreux outils externes permettant
+            d’utiliser les environnements virtuels, comme Pipenv ou Poetry.
+          </p>
+          <figure class="console">
+            <figcaption>Exemple sous macOS/Linux</figcaption>
+            <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ python3 -m venv .venv
+<span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ source .venv/bin/activate
+(.venv) <span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ which python3
+…/.venv/bin/python3
+(.venv) <span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ pip install …
+(.venv) <span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ deactivate
+<span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ </code></pre>
+          </figure>
+          <figure class="console">
+            <figcaption>Exemple sous Windows</figcaption>
+            <pre><code><span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span>python3 -m venv .venv
+<span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span>.venv\Scripts\activate
+(.venv) <span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span>where python3
+…\.venv\bin\python3
+(.venv) <span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span>python3 -m pip install …
+(.venv) <span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span>deactivate
+<span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span></code></pre>
+          </figure>
+          <p>
+            Un <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment">guide de création et d’utilisation d’environnements virtuels</a>
+            est également à votre disposition si vous souhaitez en apprendre
+            plus sur l’utilisation des environnements virtuels.
+          </p>
         </section>
 
         <section id="flask">
           <h3>Flask</h3>
-          <todo></todo>
+          <p>
+            <strong>Flask est, avec Django, l’un des deux <em>frameworks</em> web
+            les plus populaires de l’écosystème Python.</strong>
+          </p>
+          <p>
+            Flask offre principalement :
+          </p>
+          <ul>
+            <li>
+              un serveur HTTP en Python (appelé Werkzeug), comprenant tout ce
+              qu’il faut pour développer et déboguer son application web, mais
+              aussi le nécessaire pour s’interfacer en production avec des
+              serveurs HTTP plus performants ;
+            </li>
+            <li>
+              un moteur de <em>templating</em> (appelé Jinja) permettant de
+              générer des pages HTML en intégrant les données de manière
+              dynamique côté serveur ;
+            </li>
+            <li>
+              un système de gestions de routes, permettant d’associer
+              facilement des URL (comprenant parfois des variables) à des
+              fonctions Python.
+            </li>
+          </ul>
+          <p>
+            <strong>Contrairement à des <em>frameworks</em> plus complets,
+            Flask se veut léger et peu intrusif.</strong> En particulier, il
+            n’impose pas de gestionnaire de bases de données, de système de
+            gestion de droits ou d’interface d’administration. Il laisse au
+            contraire le soin à des modules tiers d’effectuer ces tâches,
+            seulement si nécessaire.
+          </p>
+          <p>
+            Après avoir
+            <a href="https://flask.palletsprojects.com/en/3.0.x/installation/">installé Flask</a>,
+            la meilleure manière d’apprendre à s’en servir est de suivre la section
+            <a href="https://flask.palletsprojects.com/en/3.0.x/quickstart/">Quickstart</a>.
+            La très grande majorité des informations nécessaires à cette
+            formation sont disponibles dans cette page de documentation.
+          </p>
+          <p>
+            Le <a href="https://flask.palletsprojects.com/en/3.0.x/tutorial/">tutoriel</a>
+            propose une présentation très complète du <em>framework</em>,
+            uniquement utile si vous souhaitez construire une application plus
+            conséquente que celle que nous abordons dans cette formation.
+          </p>
+          <p>
+            L’utilisation de Flask avec la base de données SQLite, comme c’est
+            le cas dans l’application du module de programmation web, est
+            décrite plus en détail dans
+            <a href="https://flask.palletsprojects.com/en/3.0.x/patterns/sqlite3/">une page dédiée</a>.
+          </p>
         </section>
       </section>
     </main>
