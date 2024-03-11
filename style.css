@@ -151,6 +151,10 @@ figure.fichier pre {
   color: inherit;
 }
 
+figure.fichier pre:has(code) {
+  background: #111;
+}
+
 table {
   border-collapse: collapse;
   box-shadow: 0 0 0.5em #39323244;
@@ -181,6 +185,7 @@ th {
 
 table ul {
   list-style-position: inside;
+  margin: 0;
   padding-left: 0;
 }
 
