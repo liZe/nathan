@@ -221,7 +221,7 @@
           lors du développement d’applications.
         </p>
         <p>
-          Calcul scientifique, web, IA, devOps, automatisation… Quelle que soit
+          Calcul scientifique, web, IA, devOps, automatisation… Quel que soit
           le type d’utilisation qui vous intéresse, faites de Python un atout
           dans vos possibilités de développement !
         </p>
@@ -230,8 +230,131 @@
       <section id="quiz">
         <h2>Quiz</h2>
         <ul>
-          <li><todo></todo></li>
-        </ul>
+          <li>
+            <p>
+              Quel mot-clé est utilisé pour définir une fonction ?
+            </p>
+            <ul>
+              <li class="correct"><code>def</code></li>
+              <li><code>func</code></li>
+              <li><code>fun</code></li>
+              <li><code>let</code></li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Que contient la variable <code>_</code> dans l’interpréteur
+              interactif ?
+            </p>
+            <ul>
+              <li>la valeur du premier argument</li>
+              <li>le nombre de commandes effectuées</li>
+              <li>le numéro de version de l’interpréteur</li>
+              <li class="correct">la valeur retournée par la dernière commande</li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Qu’affiche le script suivant lorsqu’il est exécuté ?
+              <pre><code><span class="vert">for</span> i <span class="vert">in</span> range(3):
+    print(i)
+<span class="vert">else</span>:
+    print("partez")</code></pre>
+            </p>
+            <ul>
+              <li><code>1</code>, <code>2</code>, <code>3</code>, <code>partez</code></li>
+              <li class="correct"><code>0</code>, <code>1</code>, <code>2</code>, <code>partez</code></li>
+              <li><code>0</code>, <code>1</code>, <code>2</code>, <code>3</code></li>
+              <li><code>1</code>, <code>2</code>, <code>3</code></li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quelle est la principale différence entre une <code>list</code> et un <code>tuple</code> ?
+            </p>
+            <ul>
+              <li>le <code>tuple</code> est ordonné</li>
+              <li class="correct">la <code>list</code> est modifiable</li>
+              <li>le <code>tuple</code> peut contenir des types différents</li>
+              <li>la <code>list</code> est indexable</li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Qu’affiche <code>print((1, 2, 3)[3])</code> ?
+            </p>
+            <ul>
+              <li><code>3</code></li>
+              <li><code>(3)</code></li>
+              <li><code>[3]</code></li>
+              <li class="correct">une erreur</li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Que fait le code <code>from random import randint</code> ?
+            </p>
+            <ul>
+              <li class="correct">il importe la fonction <code>randint</code> depuis le module <code>random</code></li>
+              <li>il déclare la variable <code>random</code> depuis l’import <code>randint</code></li>
+              <li>il importe un nombre aléatoire depuis le paquet <code>random</code></li>
+              <li>une erreur</li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              À quoi sert un environnement virtuel Python ?
+            </p>
+            <ul>
+              <li class="correct">à éviter l’installation de paquets au niveau du système</li>
+              <li>à émuler un système d’exploitation</li>
+              <li>à lancer le compilateur dans un espace virtualisé</li>
+              <li>à rendre plus rapide l’exécution de code</li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Quel type d’objet permet de stocker des couples clé/valeur ?
+            </p>
+            <ul>
+              <li><code>array</code></li>
+              <li><code>map</code></li>
+              <li class="correct"><code>dict</code></li>
+              <li><code>tuple</code></li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Comment créer une instance d’une classe <code>Animal</code> ?
+            </p>
+            <ul>
+              <li><code>Animal.__init__(self)</code></li>
+              <li><code>new Animal</code></li>
+              <li><code>new(Animal)</code></li>
+              <li class="correct"><code>Animal()</code></li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Comment ajouter un élément à une liste <code>numbers</code> qui contient <code>[1, 2, 3]</code> ?
+            </p>
+            <ul>
+              <li><code>add(numbers, 4)</code></li>
+              <li><code>numbers += 4</code></li>
+              <li><code>numbers(4) = 4</code></li>
+              <li class="correct"><code>numbers.append(4)</code></li>
+              <li>je ne sais pas</li>
+            </ul>
+          </li>
       </section>
 
       <section id="decouverte">
@@ -269,24 +392,25 @@
                 correctement dans un terminal. Quelle version de Python est
                 installée sur votre ordinateur ?
                 <aside class="correction">
-                  <code>python3</code>
+                  3.x.y, visible lorsque l’on lance <code>python3</code>
                 </aside>
               </li>
               <li>
                 Comment pouvez-vous quitter l’interpréteur ? Que se passe-t-il
-                alors pour toutes les commandes que vous avez saisies ?
+                alors pour toutes les variables que vous avez définies ?
                 Relancez l’interpréteur.
                 <aside class="correction">
-                  <code>exit()</code> ou <kbd>Ctrl+D</kbd> sous macOS/Linux
+                  <code>exit()</code>, les variables définies sont alors
+                  perdues
                 </aside>
               </li>
             </ol>
             <h4>Effectuez vos premières opérations</h4>
             <ol>
               <li>
-                La cheffe de projet indique le coût pour réaliser ce projet est
-                de 1945 € par jour, et elle prévoit environ 12 jours de
-                travail. À combien s’élève le coût total ?
+                Votre directrice financière indique le coût pour réaliser ce
+                projet est de 1945 € par jour, et elle prévoit environ 12 jours
+                de travail. À combien s’élève le coût total ?
                 <aside class="correction">
                   <code>1945 * 12</code>
                 </aside>
@@ -419,10 +543,10 @@ print(f"""Budget prévisionnel
             </p>
             <p>
               Le jeu que vous décidez de développer est un jeu de mémoire. Les
-              lettres de A à H sont mises en désordre dans une suite. Le but du
-              jeu est de trouver la position de la prochaine lettre dans la
-              suite de lettres, une par une, jusqu’à afficher « A B C D E F G
-              H » dans l’ordre.
+              lettres de A à H sont mises en désordre. Le but du jeu est de
+              trouver la position de la prochaine lettre dans la suite de
+              lettres, une par une, jusqu’à afficher « A B C D E F G H » dans
+              l’ordre.
             </p>
             <p>
               Tant que la lettre trouvée est après la lettre précédemment
@@ -438,7 +562,7 @@ print(f"""Budget prévisionnel
             <h4>Conception et première version</h4>
             <aside class="documents">
               <ul>
-                <li><a href="#types-et-instructions">FR 3</a></li>
+                <li><a href="#syntaxe-types-et-instructions">FR 3</a></li>
               </ul>
             </aside>
             <ol>
@@ -505,11 +629,12 @@ print(numbers)</pre>
                 À la place de mettre un nombre « en dur » dans
                 <code>index</code>, demandez à l’utilisateur le nombre qu’il
                 souhaite en utilisant la fonction
-                <a href="https://docs.python.org/3.12/library/functions.html#input"><code>input</code></a>.
-                Lancez le programme. Quelle erreur obtenez-vous ?
+                <a href="https://docs.python.org/3.12/library/functions.html#input"><code>input</code>
+                décrite dans la documentation</a>. Lancez le programme.
+                Quelle erreur obtenez-vous ?
                 <aside class="correction">
                   <pre>letters = ['B', 'A', 'D', 'E', 'F', 'H', 'G', 'C']
-index = input("Quelle est la position de la lettre que vous souhaitez enlever ? ")
+index = input("Quelle est la position … ? ")
 letter = letters.pop(index)
 print(letter)
 print(numbers)</pre>
@@ -518,17 +643,21 @@ print(numbers)</pre>
               </li>
               <li>
                 <code>input</code> renvoie une chaîne de caractères, alors que
-                la variable <code>index</code> doit être un entier. Comment
-                obtenir l’entier qui correspond à cette chaîne de caractères ?
+                la variable <code>index</code> doit être un entier.
+                Heureusement, il est possible de créer un entier qui correspond
+                à une chaîne de caractères, par exemple comme ceci :
+                <code>int("3")</code>. Utiliser cette méthode pour que
+                <code>index</code> soit un entier.
                 <aside class="correction">
-                  En castant avec <code>str(…)</code>
+                  <code>int(input("…"))</code>
                 </aside>
               </li>
               <li>
                 Exécutez votre programme et vérifiez que vous obtenez bien le
                 résultat attendu : on demande à l’utilisateur l’index de la
-                lettre à enlever, puis on affiche la lettre enlevée, puis la
-                suite des lettres hormis celle enlevée. Par exemple :
+                lettre à enlever, puis on affiche la lettre enlevée, puis on
+                affiche la suite des lettres hormis celle enlevée. Par
+                exemple :
                 <pre><code>Quelle est la position de la lettre que vous souhaitez enlever ? 3
 C
 ['B', 'H', 'A', 'D', 'F', 'E', 'G']</code></pre>
@@ -537,14 +666,14 @@ C
             <h4>Boucle complète</h4>
             <aside class="documents">
               <ul>
-                <li><a href="#annexe-1-1">Annexe 1</a></li>
+                <li><a href="#annexe-2-1">Annexe 1</a></li>
               </ul>
             </aside>
             <ol>
               <li>
                 Nous allons maintenant répéter la demande et l’affichage tant
                 que la suite de nombre n’est pas vide. Quel type de boucle
-                doit-on utiliser ? Exécutez le programme et vérifier que vous
+                doit-on utiliser ? Exécutez le programme et vérifiez que vous
                 pouvez enlever toutes les lettres de la liste avant que le
                 programme ne s’arrête.
                 <aside class="correction">
@@ -602,6 +731,7 @@ else:
             <h4 id="annexe-2-1">Résultats attendus</h4>
             <p>
               Tous les exemples sont donnés avec la suite « B A D E F H G C ».
+              Les indices commencent à 0 (la lettre B est à la position 0).
             </p>
             <pre><code>Quelle est la position de la lettre que vous souhaitez enlever ? 2
 D
@@ -714,8 +844,8 @@ Vous avez perdu 😢</code></pre>
             <p>
               La mission que votre entreprise vous a assignée consiste à
               accompagner une petite ferme dans la mise en place d’un système
-              d’information. La première information que vous devez gérer est
-              la liste des animaux.
+              d’information. Et la première information que vous devez gérer
+              est la liste des animaux.
             </p>
             <p>
               Dans ce but, vous développez un prototype d’application simple
@@ -732,7 +862,7 @@ Vous avez perdu 😢</code></pre>
             <h4>Structures de données</h4>
             <aside class="documents">
               <ul>
-                <li><a href="#types-et-instructions">FR 3</a></li>
+                <li><a href="#syntaxe-types-et-instructions">FR 3</a></li>
               </ul>
             </aside>
             <ol>
@@ -750,7 +880,7 @@ Vous avez perdu 😢</code></pre>
                 plusieurs informations : l’espèce de l’animal, l’âge et le nom.
                 Quelle structure de donnée simple vous permet d’associer des
                 clés (<code>"espèce"</code>, <code>"âge"</code>,
-                <code>"nom"</code> avec les valeurs correspondantes
+                <code>"nom"</code>) avec les valeurs correspondantes
                 (<code>"vache"</code>, <code>6</code>, <code>"Marguerite"</code>
                 par exemple) ?
                 <aside class="correction">
@@ -797,7 +927,7 @@ Espèce : vache
             <aside class="documents">
               <ul>
                 <li><a href="#fonctions">FR 4</a></li>
-                <li><a href="#annexe-1-1">Annexe 1</a></li>
+                <li><a href="#annexe-3-1">Annexe 1</a></li>
               </ul>
             </aside>
             <ol>
@@ -809,7 +939,7 @@ Espèce : vache
                 <aside class="correction">
                   Il faut réussir à grouper les animaux par espèce, et il faut
                   que l’on arrive à stocker l’information que les veaux sont
-                  un type de vache
+                  des vaches
                 </aside>
               </li>
               <li>
@@ -932,6 +1062,7 @@ for espece in ("vache", "poule"):
             <aside class="documents">
               <ul>
                 <li><a href="#programmation-objet">FR 5</a></li>
+                <li><a href="#annexe-3-2">Annexe 2</a></li>
               </ul>
             </aside>
             <ol>
@@ -1016,10 +1147,10 @@ for espece in ("vache", "poule"):
             print(f"- {self.nom}, jeune animal")
 
 class Poule(Animal):
-    type = 'poule'
+    espece = 'poule'
 
 class Vache(Animal):
-    type = 'vache'
+    espece = 'vache'
 
 animaux = [
     Vache(5, 'Marguerite'),
@@ -1061,7 +1192,7 @@ animaux = [
 
 
 class Poule(Animal):
-    type = 'poule'
+    espece = 'poule'
 
     def afficher(self):
         if self.age <= 1:
@@ -1071,7 +1202,7 @@ class Poule(Animal):
 
 
 class Vache(Animal):
-    type = 'vache'
+    espece = 'vache'
 
     def afficher(self):
         if self.age <= 2:
@@ -1105,7 +1236,7 @@ Espèce : poule
         print(f'- {self.nom}, {self.age} an(s)')
 
 class Poule(Animal):
-    type = 'poule'
+    espece = 'poule'
 
     def afficher(self):
         if self.age <= 1:
@@ -1114,7 +1245,7 @@ class Poule(Animal):
             super().afficher()
 
 class Vache(Animal):
-    type = 'vache'
+    espece = 'vache'
 
     def afficher(self):
         if self.age <= 2:
@@ -1131,15 +1262,15 @@ animaux = [
     Poule(0, 'Pioupiou'),
 ]
 
-def afficher_animaux(animaux, type):
+def afficher_animaux(animaux, espece):
     for animal in animaux:
-        if type == animal.type:
+        if espece == animal.espece:
             animal.afficher()
 
 print(f'Nombre d’animaux : {len(animaux)}\n')
-for type in ('vache', 'poule'):
-    print(f'Type d’animal : {type}')
-    afficher_animaux(animaux, type)
+for espece in ('vache', 'poule'):
+    print(f'Type d’animal : {espece}')
+    afficher_animaux(animaux, espece)
     print()</code></pre>
                 </aside>
               </li>
@@ -1230,7 +1361,7 @@ for …:
               à installer, grâce aux modules de la bibliothèque standard, il
               vous est possible de manipuler des dates, de faire de la
               trigonométrie, d’accéder aux informations de votre système, ou
-              d’utiliser les protocoles réseaux les plus courants.
+              d’utiliser les protocoles réseau les plus courants.
             </p>
             <p>
               D’autres modules sont fournis en dehors de la bibliothèque
@@ -1421,62 +1552,62 @@ for …:
             <h4 id="annexe-4-1">Exemple de structure du code</h4>
             <figure class="fichier">
               <figcaption><code>script.py</code></figcaption>
-              <pre>from rich import print
-from rich.panel import Panel
+              <pre><code><span class="vert">from</span> rich <span class="vert">import</span> print
+<span class="vert">from</span> rich.panel <span class="vert">import</span> Panel
 
-import funmath
+<span class="vert">import</span> funmath
 
-print(…)  # Titre algèbre
-print(…)  # 2+3
-print(…)  # 2×3
-
-print()
-print(…)  # Titre géométrie
-print(…)  # Pi
-print(…)  # Carré
-print(…)  # Cercle
+print(…)  <span class="gris"># Titre algèbre</span>
+print(…)  <span class="gris"># 2+3</span>
+print(…)  <span class="gris"># 2×3</span>
 
 print()
-print(…)  # Titre temps
-print(…)  # Jours</pre>
+print(…)  <span class="gris"># Titre géométrie</span>
+print(…)  <span class="gris"># Pi</span>
+print(…)  <span class="gris"># Carré</span>
+print(…)  <span class="gris"># Cercle</span>
+
+print()
+print(…)  <span class="gris"># Titre temps</span>
+print(…)  <span class="gris"># Jours</span></code></pre>
             </figure>
             <figure class="fichier">
               <figcaption><code>funmath/__init__.py</code></figcaption>
-              <pre>from .algebre import …
-from .geometrie import …
-from .temps import …</pre>
+              <pre><code><span class="vert">from</span> .algebre <span class="vert">import</span> …
+<span class="vert">from</span> .geometrie <span class="vert">import</span> …
+<span class="vert">from</span> .temps <span class="vert">import</span> …</code></pre>
             </figure>
             <figure class="fichier">
               <figcaption><code>funmath/algebre.py</code></figcaption>
-              <pre>def somme(nombre_1, nombre_2):
+              <pre><code><span class="vert">def</span> somme(nombre_1, nombre_2):
     …
 
-def produit(nombre_1, nombre_2):
-    …</pre>
+<span class="vert">def</span> produit(nombre_1, nombre_2):
+    …</code></pre>
             </figure>
             <figure class="fichier">
               <figcaption><code>funmath/geometrie.py</code></figcaption>
-              <pre>from math import …
+              <pre><code><span class="vert">from</span> math <span class="vert">import</span> …
 
-def aire_carre(longueur):
+<span class="vert">def</span> aire_carre(longueur):
     …
 
-def aire_cercle(rayon):
-    …</pre>
+<span class="vert">def</span> aire_cercle(rayon):
+    …</code></pre>
             </figure>
             <figure class="fichier">
               <figcaption><code>funmath/temps.py</code></figcaption>
-              <pre>from datetime import date
+              <pre><code><span class="vert">from</span> datetime <span class="vert">import</span> date
 
-def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
+<span class="vert">def</span> nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
     date_1 = …
     date_2 = …
     delta = …
-    return …</pre>
+    <span class="vert">return</span> …</code></pre>
             </figure>
           </section>
           <section>
-            <h4>Correction totale</h4>
+            <h4>Correction</h4>
             <figure class="fichier">
               <figcaption><code>script.py</code></figcaption>
               <pre>from rich import print
@@ -1549,7 +1680,7 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
               plateformes en ligne comme Instagram ou Spotify.
             </p>
             <p>
-              Dans ce module, nous aborderons le web avec Python, grâce à
+              Dans ce module, nous aborderons le web avec Python grâce à
               l’utilisation du framework Flask. Nous étudierons la structure
               d’applications web simples, avec un accent particulier mis sur
               certains vecteurs d’attaque et quelques bonnes pratiques de
@@ -1617,15 +1748,16 @@ venv\Scripts\activate.bat # Sous Windows
                   <pre>WARNING: This is a development server.
 Do not use it in a production deployment.
 Use a production WSGI server instead.</pre>
+                  Oui, le serveur de développement peut poser un
+                  <a href="https://flask.palletsprojects.com/en/3.0.x/cli/#run-the-development-server">problème de sécurité</a>
                 </aside>
-                Oui, le serveur de développement peut poser un
-                <a href="https://flask.palletsprojects.com/en/3.0.x/cli/#run-the-development-server">problème de sécurité</a>
               </li>
               <li>
                 Vous commencer à tester le blog dans votre navigateur. Vous
                 vous connectez en utilisant l’identifiant « login » et le mot
                 de passe « password », puis créez un nouvel article. Quel
-                problème gênant apparaît lorsque l’on crée plusieurs articles ?
+                problème gênant apparaît après avoir crée plusieurs articles ?
+                (Nous résoudrons cette limitation plus tard.)
                 <aside class="correction">
                   Le titre des articles créés est toujours « Titre »
                 </aside>
@@ -1650,20 +1782,20 @@ Use a production WSGI server instead.</pre>
                 </aside>
               </li>
               <li>
-                Dans quel fichier est stocké la base de données SQLite
+                Dans quel fichier est stockée la base de données SQLite
                 automatiquement créée au premier affichage du site ? Où le nom
                 de ce fichier est-il configuré ? Que se passe-t-il si vous
                 supprimez le fichier contenant la base de données ?
                 <aside class="correction">
-                  La base est dans « database.db », configuré dans
-                  « blog/__init__.py ». Si le fichier contenant la base de
-                  données est supprimé, il est automatiquement recréé à chaque
-                  requête.
+                  La base est dans « database.db », la configuration du nom est
+                  dans « blog/__init__.py », et si le fichier contenant la base
+                  de données est supprimé, il est automatiquement recréé à
+                  chaque requête
                 </aside>
               </li>
               <li>
-                Comment l’application sait-elle quel fichier HTML elle doit
-                afficher pour une URL donnée ?
+                Comment l’application sait quel fichier HTML elle doit afficher
+                pour une URL donnée ?
                 <aside class="correction">
                   L’URL est dans <code>@app.get()</code>, le nom du template
                   est dans <code>render_template()</code>
@@ -1729,15 +1861,20 @@ Use a production WSGI server instead.</pre>
               <li>
                 La variable <code>session</code> est automatiquement passée
                 dans tous les <em>templates</em>. Quelles autres variables et
-                fonctions sont également passées automatiquement ? Comment
-                passer d’autres variables dans un <em>template</em>, comme par
-                exemple <code>articles</code> pour afficher la liste des
-                articles sur la page d’accueil ?
+                fonctions sont également passées automatiquement ?
                 <aside class="correction">
                   D’après la documentation de Flask : "Inside templates you
                   also have access to the config, request, session and g
                   objects as well as the url_for() and get_flashed_messages()
                   functions."
+                </aside>
+              </li>
+              <li>
+                Comment passer d’autres variables dans un <em>template</em>,
+                comme par exemple <code>articles</code> pour afficher la liste
+                des articles sur la page d’accueil ?
+                <aside class="correction">
+                  On les passe en comme arguments à <code>render_template</code>
                 </aside>
               </li>
             </ol>
@@ -1805,7 +1942,7 @@ connection.commit()</pre>
                 récupérer ou d’effacer l’intégralité des données de la base.
                 Vous lisez plus d’informations sur ce sujet dans la
                 documentation du module <code>sqlite3</code> de la
-                documentation Python, ainsi que sur Wikipédia.
+                documentation Python.
               </li>
               <li>
                 Grâce aux <em>placeholders</em>, il n’y a pas d’injection SQL
@@ -1864,7 +2001,7 @@ connection.commit()</pre>
               <li>
                 Le lien pour créer un article n’est affiché que lorsque l’on
                 est connecté. On ne peut donc pas aller sur la page de création
-                d’un article lorsque l’on n’est pas connecté ! À moins que…
+                d’un article lorsque l’on n’est pas connecté, à moins que…
                 Vous essayez d’aller sur la page
                 <a href="http://localhost:5000/article/add">http://localhost:5000/article/add</a>
                 alors que vous êtes déconnecté·e. Que se passe-t-il ? Comment
@@ -2008,92 +2145,101 @@ Move: r
             <li>
               La structure de votre code doit être <strong>exactement</strong> celle-ci :
 
-              <pre><code>from random import choice
+              <pre><code><span class="vert">from</span> random <span class="vert">import</span> choice
 
 
-def create_board(rows, cols):
-    """Create a board with original position of numbers.
+<span class="vert">def</span> create_board(rows, cols):
+    <span class="gris">"""Create a board with original position of numbers.
 
-    `rows` and `cols` are integers defining the number of rows and columns.
+    `rows` and `cols` are integers defining the number of rows and
+    columns.
 
     Return `(board, blank)`.
 
-    The returned `board` variable is a list of rows, and a row is a list of
-    numbers. The numbers are integers, and the blank position is `None`.
+    The returned `board` variable is a list of rows, and a row is
+    a list of numbers. The numbers are integers, and the blank
+    position is `None`.
 
-    The returned `blank` variable is the `(x, y)` coordinates of the blank
-    position, which is `(cols - 1, rows - 1)`.
+    The returned `blank` variable is the `(x, y)` coordinates of
+    the blank position, which is `(cols - 1, rows - 1)`.
 
-    """
-    pass
+    """</span>
+    <span class="vert">pass</span>
 
 
-def shuffle_board(board, blank):
-    """Shuffle numbers of the board.
+<span class="vert">def</span> shuffle_board(board, blank):
+    <span class="gris">"""Shuffle numbers of the board.
 
     `board` and `blank` are the returned values of `create_board`.
 
     Return the updated `blank` position.
 
-    """
-    pass
+    """</span>
+    <span class="vert">pass</span>
 
 
-def draw_board(board):
-    """Draw the board."""
-    pass
+<span class="vert">def</span> draw_board(board):
+    <span class="gris">"""Draw the board."""</span>
+    <span class="vert">pass</span>
 
 
-def move(board, blank, position):
-    """Swap the content of blank and position coordinates.
+<span class="vert">def</span> move(board, blank, position):
+    <span class="gris">"""Swap the content of blank and position coordinates.
 
-    This function doesn’t check that `blank` and `position` are next to each
-    other.
+    This function doesn’t check that `blank` and `position` are
+    next to each other.
 
     The board is modified in-place.
 
     Return the new `blank` position, which is `position`.
 
-    """
-    pass
+    """</span>
+    <span class="vert">pass</span>
 
 
-def is_solved(board):
-    """Return `True` if the board is solved, else `False`."""
-    pass
+<span class="vert">def</span> is_solved(board):
+    <span class="gris">"""Return `True` if the board is solved, else `False`."""</span>
+    <span class="vert">pass</span>
 
 
-# Create, shuffle and draw board
+<span class="gris"># Create, shuffle and draw board</span>
 rows = 4
 cols = 4
 board, blank = create_board(rows, cols)
 blank = shuffle_board(board, blank)
 draw_board(board)
 
-# Play while the board is not solved
-while not is_solved(board):
-    # Ask for move direction
-    direction = input("Move: ")
+<span class="gris"># Play while the board is not solved</span>
+<span class="vert">while</span> not is_solved(board):
+    <span class="gris"># Ask for move direction</span>
+    direction = input(<span class="rouge">"Move: "</span>)
 
-    # Quit game if direction is "q"
-    pass
+    <span class="gris"># Quit game if direction is "q"</span>
+    <span class="vert">pass</span>
 
-    # Depending on the asked direction, define the new position
-    pass
+    <span class="gris"># Depending on the asked direction, define the new position</span>
+    <span class="vert">pass</span>
 
-    # Move number at found position
-    if position:
+    <span class="gris"># Move number at found position</span>
+    <span class="vert">if</span> position:
         blank = move(board, blank, position)
 
-    # Draw board
+    <span class="gris"># Draw board</span>
     draw_board(board)
 else:
-    # Board is solved, victory!
-    print("!!! Victory !!!")</code></pre>
+    <span class="gris"># Board is solved, victory!</span>
+    print(<span class="rouge">"!!! Victory !!!"</span>)</code></pre>
 
-              Vous devez écrire du code à chaque endroit où la
-              commande <code>pass</code>. Vous devez bien sûr respecter la
+              Vous devez écrire du code à la place de la commande <code>pass</code> à
+              chaque endroit où est utilisée. Vous devez bien sûr respecter la
               documentation et les commentaires.
+            </li>
+            <li>
+              <strong>Vous devez utiliser uniquement des syntaxes et
+              fonctionnalités abordées lors de cette formation.</strong> Si
+              vous souhaitez tout de même aller au-delà, vous devez expliquer
+              par un commentaire détaillé chaque fonctionnalité nouvelle que
+              vous intégrez.
             </li>
           </ul>
           <p>
@@ -2109,12 +2255,12 @@ else:
               Le plateau est une liste de lignes, et une ligne est une liste de
               nombres. Par exemple, pour un plateau de 3 cases par 3 cases,
               votre plateau original est donc
-              <pre><code>board = [ [1, 2, 3], [4, 5, 6], [7, 8, None] ]</code></pre>
+              <pre><code>board = [ [1, 2, 3], [4, 5, 6], [7, 8, <span class="vert">None</span>] ]</code></pre>
               autrement écrit
               <pre><code>board = [
     [1, 2, 3],
     [4, 5, 6],
-    [7, 8, None],
+    [7, 8, <span class="vert">None</span>],
 ]</code></pre>
               On accède à un nombre positionné en <code>(x, y)</code> avec
               <code>board[y][x]</code>. Par exemple, sur notre plateau précédent,
@@ -2129,8 +2275,17 @@ else:
               si besoin. Il est possible de faire cela avec les f-strings de
               Python:
               <pre><code>number = 2
-print(f'{number}')  # 2
-print(f'{number:02n}')  # 02</code></pre>
+print(<span class="rouge">f'<span class="bleu">{number}</span>'</span>)  <span class="gris"># 2</span>
+print(<span class="rouge">f'<span class="bleu">{number:02n}</span>'</span>)  <span class="gris"># 02</span></code></pre>
+            </li>
+            <li>
+              Par défaut, la fonction <code>print</code> saute une ligne après
+              l’affichage. Vous pouvez éviter cela grâce au paramètre
+              <code>end</code> de cette fonction, comme ceci :
+              <pre><code><span class="gris"># Print 1234 56</span>
+print(12, end=<span class="rouge">''</span>)
+print(34, end=<span class="rouge">' '</span>)
+print(56)</code></pre>
             </li>
             <li>
               Mélanger les nombres du plateau ne consiste pas à mettre les
@@ -2140,6 +2295,150 @@ print(f'{number:02n}')  # 02</code></pre>
               beaucoup de permutations au hasard.
             </li>
           </ul>
+          <h4>Correction</h4>
+          <p>
+            Les solutions ne doivent pas contenir de fonctionnalités qui n’ont
+            pas été abordées sans commentaire associé, en particulier :
+          </p>
+          <ul>
+            <li>les <em>list comprehensions</em>,</li>
+            <li><code>match</code>,</li>
+            <li><code>*args</code> et <code>**kwargs</code>,</li>
+            <li><code>enumerate</code>,</li>
+            <li><code>join</code>,</li>
+            <li><code>in</code> dans un test.</li>
+          </ul>
+          <pre style="font-size: 0.6em">from random import choice
+
+
+def create_board(rows, cols):
+    """Create a board with original position of numbers.
+
+    `rows` and `cols` are integers defining the numbers of rows
+    and columns.
+
+    Return `(board, blank)`.
+
+    The returned `board` variable is a list of rows, and a row
+    is a list of numbers. The numbers are integers, and the blank
+    position is `None`.
+
+    The returned `blank` variable is the `(x, y)` coordinates of
+    the blank position, which is `(cols - 1, rows - 1)`.
+
+    """
+    board = []
+    for y in range(rows):
+        row = []
+        for x in range(cols):
+            row.append(1 + x + y * cols)
+        board.append(row)
+    board[-1][-1] = None
+    blank = (cols - 1, rows - 1)
+    return board, blank
+
+
+def shuffle_board(board, blank):
+    """Shuffle numbers of the board.
+
+    `board` and `blank` are the returned values of `create_board`.
+
+    Return the updated `blank` position.
+
+    """
+    cols, rows = len(board[0]), len(board)
+    for _ in range(100):
+        moves = []
+        if blank[0] > 0:
+            moves.append((blank[0] - 1, blank[1]))
+        if blank[0] < cols - 1:
+            moves.append((blank[0] + 1, blank[1]))
+        if blank[1] > 0:
+            moves.append((blank[0], blank[1] - 1))
+        if blank[1] < rows - 1:
+            moves.append((blank[0], blank[1] + 1))
+        blank = move(board, blank, choice(moves))
+    return blank
+
+
+def draw_board(board):
+    """Draw the board."""
+    print()
+    for row in board:
+        for number in row:
+            if number:
+                print(f'{number:02n}', end=' ')
+            else:
+                print('  ', end=' ')
+        print()
+    print()
+
+
+def move(board, blank, position):
+    """Swap the content of blank and position coordinates.
+
+    This function doesn’t check that `blank` and `position` are
+    next to each other.
+
+    The board is modified in-place.
+
+    Return the new `blank` position, which is `position`.
+
+    """
+    board[blank[0]][blank[1]] = board[position[0]][position[1]]
+    board[position[0]][position[1]] = None
+    return position
+
+
+def is_solved(board):
+    """Return `True` if the board is solved, else `False`."""
+    numbers = []
+    for row in board:
+        for number in row:
+            numbers.append(number)
+    solution = []
+    for number in range(1, len(numbers)):
+        solution.append(number)
+    solution.append(None)
+    return numbers == solution
+
+
+# Create, shuffle and draw board
+rows = 4
+cols = 4
+board, blank = create_board(rows, cols)
+blank = shuffle_board(board, blank)
+draw_board(board)
+
+# Play while the board is not solved
+while not is_solved(board):
+    # Ask for move direction
+    direction = input("Move: ")
+
+    # Quit game if direction is "q"
+    if direction == "q":
+        break
+
+    # Depending on the asked direction, define the new position
+    position = None
+    if direction == "u" and blank[0] > 0:
+        position = (blank[0] - 1, blank[1])
+    elif direction == "d" and blank[0] < rows - 1:
+        position = (blank[0] + 1, blank[1])
+    elif direction == "l" and blank[1] > 0:
+        position = (blank[0], blank[1] - 1)
+    elif direction == "r" and blank[1] < cols - 1:
+        position = (blank[0], blank[1] + 1)
+
+    # Move number at found position
+    if position:
+        blank = move(board, blank, position)
+
+    # Draw board
+    draw_board(board)
+else:
+    # Board is solved, victory!
+    print("!!! Victory !!!")</pre>
           <h3>Deuxième rendu : classes</h3>
           <p>
             Lors de cette étape, vous décidez de remplacer les fonctions de
@@ -2175,6 +2474,86 @@ print(f'{number:02n}')  # 02</code></pre>
               interface !
             </li>
           </ul>
+          <h4>Correction</h4>
+          <pre style="font-size: 0.6em">from random import choice
+
+
+class Board:
+    def __init__(self, rows, cols):
+        self.rows = rows
+        self.cols = cols
+        self.cell_size = len(str(rows * cols))
+        self.numbers = []
+        for y in range(rows):
+            row = []
+            for x in range(cols):
+                row.append(1 + x + y * cols)
+            self.numbers.append(row)
+        self.numbers[-1][-1] = None
+        self.shuffle()
+
+
+    def shuffle(self):
+        moves = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+        for _ in range((self.rows * self.cols) ** 2):
+            x, y = choice(moves)
+            self.move(x, y)
+
+
+    def draw(self):
+        print()
+        for row in self.numbers:
+            for number in row:
+                if number:
+                    print(f'{number:0{self.cell_size}n}', end=' ')
+                else:
+                    print(' ' * self.cell_size, end=' ')
+            print()
+        print()
+
+
+    def move(self, x, y):
+        blank_y = 0
+        for row in self.numbers:
+            if None in row:
+                blank_x = row.index(None)
+                break
+            blank_y = blank_y + 1
+        pos_x, pos_y = blank_x + x, blank_y + y
+        if 0 <= pos_x < self.cols and 0 <= pos_y < self.rows:
+            self.numbers[blank_y][blank_x] = (
+                self.numbers[pos_y][pos_x])
+            self.numbers[pos_y][pos_x] = None
+
+
+    def is_solved(self):
+        numbers = []
+        for row in self.numbers:
+            for number in row:
+                numbers.append(number)
+        solution = list(range(1, len(numbers))) + [None]
+        return numbers == solution
+
+
+rows = cols = 4
+board = Board(rows, cols)
+board.draw()
+
+while not board.is_solved():
+    direction = input("Direction : ")
+    if direction == "q":
+        break
+    elif direction == "l":
+        board.move(-1, 0)
+    elif direction == "r":
+        board.move(1, 0)
+    elif direction == "u":
+        board.move(0, -1)
+    elif direction == "d":
+        board.move(0, 1)
+    board.draw()
+else:
+    print("!!! Victory !!!")</pre>
         </section>
       </section>
 
@@ -2195,7 +2574,8 @@ print(f'{number:02n}')  # 02</code></pre>
             d’installer l’interpréteur Python. Il existe plusieurs manières
             pour ce faire, mais la manière recommandée pour ce cours est
             d’installer la version proposée par votre OS. Il existe même une
-            chance pour que CPython soit déjà installé sur votre système.
+            chance pour que l’interpréteur Python soit déjà installé sur votre
+            système.
           </p>
           <p>
             Que vous soyez sous Linux, macOS ou Windows, la façon est la même :
@@ -2276,9 +2656,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 'TextText'</pre>
           </p>
           <p>
-            Il n’est pas besoin de déclarer ses variables, ni de gérer la
-            mémoire : Python s’occupe de tout. Les variables peuvent contenir
-            n’importe quel type de données, on dit donc que
+            Il n’est pas besoin de déclarer ses variables ni de gérer la
+            mémoire : Python s’occupe de tout. Une variable peut contenir
+            n’importe quel type de données au fur et à mesure de l’exécution du
+            programme, on dit donc que
             <strong>Python est un langage typé dynamiquement</strong> (et pas
             un langage typé statiquement, comme C ou Java par exemple). Cela
             dit, le contenu des variables ne peut pas changer de type. Par
@@ -2286,6 +2667,14 @@ Type "help", "copyright", "credits" or "license" for more information.
             caractères. On dit donc que <strong>Python est un langage fortement
             typé</strong> (et pas faiblement typé, comme JavaScript par
             exemple).
+          </p>
+          <p>
+            Comme l’interpréteur Python est responsable de la gestion de la
+            mémoire, on dit qu’il est
+            <em><a href="https://en.wikipedia.org/wiki/Memory_safety">memory-safe</a></em>.
+            Cela signifie qu’un script écrit en Python est protégé contre
+            beaucoup de failles de sécurité basées sur l’accès à la mémoire,
+            comme les <em>buffer overflows</em> et les <em>dangling pointers</em>.
           </p>
           <p>
             Si l’on veut afficher une variable dans une chaîne de caractères,
@@ -2297,7 +2686,7 @@ The number 2 is the result of 1 + 1</pre>
           <p>
             Les chaînes de caractères sont par défaut sur une ligne, mais il
             est possible de définir des blocs de texte sur plusieurs lignes en
-            utilisant <code>&#39&#39&#39</code> (Trois guillemets à la suite) :
+            utilisant <code>&#39&#39&#39</code> (trois guillemets à la suite) :
             <pre><span class="rouge">&gt;&gt;&gt;</span> &#39&#39&#39This is
 <span class="rouge">...</span> a long text&#39&#39&#39
 'This is<span class="bleu">\n</span>a long text'</pre>
@@ -2347,11 +2736,11 @@ print(number * 2)</pre>
           </p>
         </section>
 
-        <section id="#choix-et-configuration-d-un-editeur">
+        <section id="choix-et-configuration-d-un-editeur">
           <h3>Choix et configuration d’un éditeur</h3>
           <p>
-            Le choix d’un éditeur de code est important pour le développement
-            de scripts et d’applications. Un éditeur est un outil puissant
+            <strong>Le choix d’un éditeur de code est important pour le développement
+            de scripts et d’applications.</strong> Un éditeur est un outil puissant
             lorsqu’il est bien utilisé : il peut vous apporter coloration
             syntaxique, détection d’erreurs, interface de débogage, et bien
             d’autres choses encore.
@@ -2370,7 +2759,7 @@ print(number * 2)</pre>
             propose un bon support de Python.
           </p>
           <p>
-            Pour commencez, vous pouvez simplement installer VS Code et
+            Pour commencer, vous pouvez simplement installer VS Code et
             <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">l’extension Python</a>,
             la configuration par défaut devrait vous permettre d’avoir entre
             autres la coloration syntaxique, la vérification des erreurs et la
@@ -2418,11 +2807,11 @@ print(number * 2)</pre>
 
           <h4>Syntaxe de base</h4>
           <p>
-            Python est un langage dont les blocs sont déterminés par
-            l’indentation, c’est-à-dire les espaces en début de ligne.
+            <strong>Python est un langage dont les blocs sont déterminés par
+            l’indentation</strong>, c’est-à-dire les espaces en début de ligne.
             L’ouverture de blocs se fait par un deux-points. On n’utilise donc
-            pas d’accolades pour délimiter les blocs, contrairement à la
-            plupart des langages.
+            pas d’accolades pour délimiter les blocs, contrairement à beaucoup
+            de langages populaires.
           </p>
           <p>
             Pour l’indentation, on utilise généralement 4 espaces. Par défaut,
@@ -2456,9 +2845,9 @@ a = 1 + 2  <span class="gris"># This is a comment too</span>
             données et structures de données communes.
           </p>
           <p>
-            <strong>Pour stocker les nombres</strong>, on peut utiliser deux
-            types principaux : les nombres entiers (<code>int</code>) et les nombres à virgule
-            flottante (<code>float</code>).
+            <strong>Pour stocker les nombres, on peut utiliser deux types
+            principaux : les nombres entiers (<code>int</code>) et les nombres à virgule
+            flottante (<code>float</code>).</strong>
           </p>
           <pre><code>a = 12
 b = 1.2345
@@ -2481,9 +2870,9 @@ c = a * 3</code></pre>
 
           <h4>Chaînes de caractères</h4>
           <p>
-            Les chaînes de caractères (<code>str</code>) représentent des
-            suites de caractères. Le texte est encadré par les guillemets
-            simples ou des guillemets doubles.
+            <strong>Les chaînes de caractères (<code>str</code>) représentent
+            du texte.</strong> Le texte est encadré par les guillemets simples
+            ou des guillemets doubles.
             <a href="https://fr.wikipedia.org/wiki/Unicode">Unicode</a>
             est supporté, ce qui veut dire que vous pouvez mettre n’importe
             quel caractère dans votre chaîne, y compris des émojis.
@@ -2502,9 +2891,8 @@ print(<span class="rouge">f"1 + 1 = <span class="bleu">{1 + 1}</span>"</span>)</
 
           <h4>Conditions et booléens</h4>
           <p>
-            Il est possible d’effectuer des tests de conditions grâce aux
-            mots-clés
-            <code>if</code>, <code>elif</code> et <code>else</code>.
+            <strong>Il est possible d’effectuer des tests de conditions grâce aux
+            mots-clés <code>if</code>, <code>elif</code> et <code>else</code>.</strong>
           </p>
           <pre><code>a = 2
 
@@ -2531,8 +2919,8 @@ print(<span class="rouge">f"1 + 1 = <span class="bleu">{1 + 1}</span>"</span>)</
             temps.
           </p>
           <p>
-            Tous ces opérateurs renvoient vrai ou faux. Ce sont les booléens
-            (<code>bool</code>), que l’on note <code>True</code> et
+            Tous ces opérateurs renvoient « vrai » ou « faux ». Ce sont les
+            booléens (<code>bool</code>), que l’on note <code>True</code> et
             <code>False</code> en Python. Les opérateurs booléens sont notés
             <code>and</code>, <code>or</code> et <code>not</code>, en toutes
             lettres.
@@ -2546,8 +2934,8 @@ print(<span class="rouge">f"1 + 1 = <span class="bleu">{1 + 1}</span>"</span>)</
 
           <h4>Boucles</h4>
           <p>
-            Les mots réservés <code>for</code> et <code>while</code>
-            permettent de construire des boucles.
+            <strong>Les mots réservés <code>for</code> et <code>while</code>
+            permettent de construire des boucles.</strong>
           </p>
           <p>
             La boucle <code>for</code> prend les éléments d’une suite
@@ -2559,10 +2947,10 @@ print(<span class="rouge">f"1 + 1 = <span class="bleu">{1 + 1}</span>"</span>)</
     <span class="gris"># Print 1, then 2, then 3</span>
     print(a)</code></pre>
           <p>
-            Dans d’autres langages, cette boucle s’appelle plutôt une boucle
+            Dans d’autres langages, cette boucle s’appelle parfois une boucle
             <code>foreach</code>. Si l’on veut itérer sur une suite d’indices
             plutôt que d’éléments dans une suite, on peut utiliser la fonction
-            >range(x)</code> qui renvoie une suite de nombres entre 0
+            <code>range(x)</code> qui renvoie une suite de nombres entre 0
             inclus et <code>x</code> exclu.
           </p>
           <pre><code><span class="vert">for</span> a <span class="vert">in</span> range(3):
@@ -2620,9 +3008,9 @@ numbers = (10, 13, -4, 7, 12, 14)
 
           <h4>Séquences</h4>
           <p>
-            En Python, le terme de « séquence » regroupe tous les types qui
+            <strong>En Python, le terme de « séquence » regroupe tous les types qui
             permettent de stocker et accéder à des éléments par rapport à leur
-            indice. Par exemple, les chaînes de caractères sont des séquences.
+            indice.</strong> Par exemple, les chaînes de caractères sont des séquences.
           </p>
           <pre><code>name = <span class="rouge">"Victor"</span>
 print(name[2])  <span class="gris"># Print "c", letter at index 2 (starting from 0)</span></code></pre>
@@ -2646,15 +3034,15 @@ print(len(name))  <span class="gris"># Print "6" because there are 6 letters</sp
           <p>
             Deux types très répandus sont également des séquences : les listes
             (<code>list</code>) et les n-uplets (<code>tuple</code>). Ces deux
-            types permettent de stocker une suite d’éléments arbitraire :
+            types permettent de stocker une suite d’éléments :
           </p>
           <pre><code>a_list = [1, 2, 4]
 a_tuple = (1, 2, 4)
 print(a_list[2])  <span class="gris"># Print 4</span>
 print(len(a_tuple))  <span class="gris"># Print 3</span></code></pre>
           <p>
-            Il existe une différence entre ces deux types : les listes sont
-            modifiables, alors que les n-uplets ne le sont pas.
+            Il existe une différence entre ces deux types : <strong>les listes sont
+            modifiables, alors que les n-uplets ne le sont pas</strong>.
           </p>
           <pre><code>a_list = [<span class="rouge">"a"</span>, <span class="rouge">"b"</span>, <span class="rouge">"e"</span>]
 a_list[2] = <span class="rouge">"c"</span>  <span class="gris"># Replace "e" by "c"</span>
@@ -2686,8 +3074,8 @@ a_list.clear()  <span class="gris"># a_list == []</code></pre></span>
 
           <h4>Dictionnaires</h4>
           <p>
-            Les dictionnaires (<code>dict</code>) permettent d’associer des
-            valeurs à des clés.
+            <strong>Les dictionnaires (<code>dict</code>) permettent d’associer
+            des valeurs à des clés.</strong>
           </p>
           <p>
             Les dictionnaires sont les objets les plus utilisés dans le
@@ -2701,7 +3089,7 @@ print(fruit_color)  <span class="gris"># Print the whole dictionary</span></code
           <p>
             Les dictionnaires sont des itérables : itérer sur un dictionnaire
             retourne les clés, qui sont ordonnées. Par contre, les
-            dictionnaires ne sont pas des séquences : on accède aux valeur par
+            dictionnaires ne sont pas des séquences : on accède aux valeurs par
             une clé, non par un indice.
           </p>
           <p>
@@ -2713,9 +3101,9 @@ print(fruit_color)  <span class="gris"># Print the whole dictionary</span></code
         <section id="fonctions">
           <h3>Fonctions</h3>
           <p>
-            En Python, il est possible de définir des fonctions qui prennent
-            en paramètres des valeurs, qui exécutent du code et qui renvoient
-            potentiellement une nouvelle valeur.
+            <strong>En Python, il est possible de définir des fonctions qui
+            prennent en paramètres des valeurs, qui exécutent du code et qui
+            renvoient potentiellement une nouvelle valeur.</strong>
           </p>
           <pre><code><span class="vert">def</span> divide(numerator, denominator):
     <span class="rouge">"""Return numerator divided by denominator."""</span>
@@ -2894,25 +3282,184 @@ print(pluto.kind)  <span class="gris"># Print "canine"</span></code></pre>
 
         <section id="modules-et-imports">
           <h3>Modules et imports</h3>
-          <todo></todo>
-        </section>
-
-        <section id="bibliothèque standard">
-          <h3>Bibliothèque standard</h3>
           <p>
-            La bibliothèque standard de Python est un ensemble de modules
-            fournis avec l’interpréteur.
+            Lorsque les applications comportent une grande quantité de code, il
+            devient vite indispensable de répartir ce code dans différents
+            dossiers et fichiers. <strong>On utilise alors des imports pour
+            utiliser le code d’un fichier dans un autre fichier.</strong>
+          </p>
+
+          <h4>Modules et paquets</h4>
+          <p>
+            <strong>Les modules contiennent du code qui peut être importé afin
+            d’être utilisé dans d’autres fichiers.</strong>
           </p>
           <p>
-            Python est connu pour être fourni « piles incluses », c’est-à-dire
-            avec une bibliothèque standard très importante qui apporte de
-            nombreuses fonctionnalités sans avoir besoin de modules externes.
+            Les modules sont généralement stockés sous forme de fichiers, qui
+            contiennent du code utilisable par d’autres applications. Afin
+            d’avoir une organisation hiérarchique des modules, on peut les
+            regrouper dans des modules spéciaux appelés paquets. Les paquets se
+            comportent comme des dossiers dans un système de fichiers : ils
+            peuvent contenir des fichiers et des dossiers, qui eux-mêmes
+            peuvent contenir fichiers et dossiers.
+          </p>
+          <p>
+            Lorsqu’il est importé, un module stocké sous forme de fichier est
+            un objet dont les attributs sont les éléments définis à la racine
+            du fichier : classes, fonctions, variables, mais également imports.
+          </p>
+          <p>
+            Lorsqu’un paquet stocké sous forme de fichier est importé, ses
+            attributs sont alors les éléments définis à la racine du fichier
+            <code>__init__.py</code> qu’il contient, s’il existe.
+          </p>
+
+          <h4>Imports absolus</h4>
+          <p>
+            Les imports absolus permettent d’avoir accès :
+          </p>
+          <ul>
+            <li>
+              aux modules de la bibliothèque standard, fournie avec Python,
+            </li>
+            <li>
+              aux modules tiers, en particulier installés avec <code>pip</code>,
+            </li>
+            <li>
+              aux modules situés dans le dossier actuel du terminal (rarement
+              utilisé, sauf pour faire des tests ou lors du développement d’une
+              bibliothèque).
+            </li>
+          </ul>
+          <p>
+            Pour réaliser un import absolu, on utilise l’une des syntaxes
+            suivantes :
+          </p>
+          <pre><code><span class="gris"># "random" is a module that contains the "randint" function</span>
+<span class="vert">import</span> random
+print(random.randint(1, 6))
+
+<span class="gris"># we can import only the function, not the whole module</span>
+<span class="vert">from</span> random <span class="vert">import</span> randint
+print(randint(1, 6))
+
+<span class="gris"># "urllib" is a package that contains the "request" module</span>
+<span class="gris"># "request" contains the "urlopen" function</span>
+<span class="vert">import</span> urllib.request
+urllib.request.urlopen("https://example.com/")
+
+<span class="gris"># or</span>
+<span class="vert">from</span> urllib <span class="vert">import</span> request
+request.urlopen("https://example.com/")
+
+<span class="gris"># or</span>
+<span class="vert">from</span> urllib.request <span class="vert">import</span> urlopen
+urlopen("https://example.com/")</code></pre>
+
+          <h4>Imports relatifs</h4>
+          <p>
+            Les imports relatifs sont utilisés dans des paquets, pour importer
+            d’autres modules au sein du même paquet. On ne les utilise donc pas
+            dans les scripts exécutés par l’interpréteur.
+          </p>
+          <p>
+            Pour les imports relatifs, on utilise devant le nom du module :
+          </p>
+          <ul>
+            <li><code>.</code> (un point) pour importer un fichier dans le dossier actuel,</li>
+            <li><code>..</code> (deux points) pour importer un fichier dans le dossier parent,</li>
+            <li><code>...</code> (trois points) pour importer un fichier dans le dossier parent du dossier parent,</li>
+            <li>etc.</li>
+          </ul>
+          <p>
+            Voici un exemple de bibliothèque :
+          </p>
+          <pre>paint
+├── __init__.py
+├── draw.py
+└── colors
+    ├── __init__.py
+    ├── blue.py
+    └── red.py</pre>
+          <figure class="fichier">
+            <figcaption><code>paint/__init__.py</code></figcaption>
+            <pre><code><span class="gris"># Import draw_circle function from paint/draw.py so that users
+# can use paint.draw_circle instead of paint.draw.draw_circle</span>
+<span class="vert">from</span> .draw <span class="vert">import</span> draw_circle</code></pre>
+          </figure>
+          <figure class="fichier">
+            <figcaption><code>paint/draw.py</code></figcaption>
+            <pre><code><span class="vert">def</span> draw_circle(x, y, r):
+    <span class="vert">pass</span>  <span class="gris"># draw_circle code</span></code></pre>
+          </figure>
+          <figure class="fichier">
+            <figcaption><code>paint/colors/__init__.py</code></figcaption>
+            <pre><code><span class="vert">def</span> set_color(color):
+    <span class="vert">pass</span>  <span class="gris"># set_color code</span></code></pre>
+          </figure>
+          <figure class="fichier">
+            <figcaption><code>paint/colors/blue.py</code></figcaption>
+            <pre><code><span class="gris"># Import set_color from paint/color/__init__.py</span>
+<span class="vert">from</span> . <span class="vert">import</span> set_color
+
+<span class="gris"># Import draw_circle from paint/draw.py</span>
+<span class="vert">from</span> ..draw <span class="vert">import</span> draw_circle
+
+<span class="vert">def</span> set_blue_color():
+    set_color(<span class="rouge">"blue"</span>)
+
+<span class="vert">def</span> draw_blue_circle(x, y, r):
+    set_blue_color()
+    draw_circle(x, y, r)</code></pre>
+          </figure>
+          <figure class="fichier">
+            <figcaption><code>paint/colors/red.py</code></figcaption>
+            <pre><code><span class="gris"># Import set_color from paint/color/__init__.py</span>
+<span class="vert">from</span> . <span class="vert">import</span> set_color
+
+<span class="gris"># Import draw_circle from paint/draw.py</span>
+<span class="vert">from</span> ..draw <span class="vert">import</span> draw_circle
+
+<span class="vert">def</span> set_red_color():
+    set_color(<span class="rouge">"red"</span>)
+
+<span class="vert">def</span> draw_red_circle(x, y, r):
+    set_red_color()
+    draw_circle(x, y, r)</code></pre>
+          </figure>
+          <p>
+            On pourrait alors utiliser cette bibliothèque ainsi :
+          </p>
+          <figure class="fichier">
+            <figcaption><code>app.py</code></figcaption>
+            <pre><code><span class="gris"># Import paint/draw.py module to use draw_circle</span>
+<span class="vert">import</span> paint.draw
+paint.draw.draw_circle(2, 4, 5)
+
+<span class="gris"># Shorter solution as draw_circle is imported in paint/__init__.py</span>
+<span class="vert">import</span> paint
+paint.draw_circle(2, 4, 5)
+
+<span class="gris"># Import draw_blue_circle from paint/colors/blue.py</span>
+<span class="vert">from</span> paint.colors.blue <span class="vert">import</span> draw_blue_circle
+draw_blue_circle(3, 4, 5)</code></pre>
+          </figure>
+        </section>
+
+        <section id="bibliotheque-standard">
+          <h3>Bibliothèque standard</h3>
+          <p>
+            <strong>La bibliothèque standard de Python est un ensemble de modules
+            fournis avec l’interpréteur.</strong> Python est connu pour être
+            fourni « piles incluses », c’est-à-dire avec une bibliothèque
+            standard très importante qui apporte de nombreuses fonctionnalités
+            sans avoir besoin de modules externes.
           </p>
           <p>
             Python intègre des modules très variés, dont les fonctions
-            mathématiques avancées 📐, un support des protocoles réseaux les
-            plus répandus 📶, les dates 📅, la lecture et l’écriture de
-            fichiers 📁…
+            mathématiques avancées, un support des protocoles réseaux les
+            plus répandus, les dates, la lecture et l’écriture de
+            fichiers…
           </p>
           <p>
             L’ensemble de la bibliothèque standard est disponible dans
@@ -2929,7 +3476,7 @@ print(pluto.kind)  <span class="gris"># Print "canine"</span></code></pre>
           <p>
             <strong>La lecture et l’écriture de fichiers textes sont des
             fonctionnalités classiques des langages de programmation.</strong> Python
-            fournit une interface bas-niveau pour cela (avec <code>open()</code>), mais ce
+            fournit une interface bas-niveau pour cela (avec <code>open</code>), mais ce
             fonctionnement n’est pas très pratique ni très moderne.
           </p>
           <p>
@@ -3056,27 +3603,40 @@ print(greatest_common_divisor)  <span class="gris"># That’s 10!</span></code><
             standard.
           </p>
           <p>
+            Une fois l’environnement créé, il est nécessaire de l’activer.
+            Après activation, la commande <code>python3</code> pointera vers
+            votre environnement virtuel, et non plus vers la version installée
+            sur votre système.
+          </p>
+          <p>
+            Vous pourrez alors installer un module tiers grâce à la commande
+            <code>pip install nom_du_projet</code>. Les modules sont
+            automatiquement téléchargés depuis <a href="https://pypi.org/">PyPI</a>.
+          </p>
+          <p>
             Il existe également de nombreux outils externes permettant
-            d’utiliser les environnements virtuels, comme Pipenv ou Poetry.
+            d’utiliser les environnements virtuels, comme Pipenv ou Poetry. Il
+            n’est pas nécessaire d’utiliser de tels outils pour cette
+            formation.
           </p>
           <figure class="console">
             <figcaption>Exemple sous macOS/Linux</figcaption>
-            <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ python3 -m venv .venv
-<span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ source .venv/bin/activate
-(.venv) <span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ which python3
-…/.venv/bin/python3
-(.venv) <span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ pip install …
-(.venv) <span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ deactivate
+            <pre><code><span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ python3 -m venv venv
+<span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ source venv/bin/activate
+(venv) <span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ which python3
+…/venv/bin/python3
+(venv) <span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ pip install …
+(venv) <span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ deactivate
 <span class="vert">alice@laptop</span>:<span class="bleu">~/Project</span>$ </code></pre>
           </figure>
           <figure class="console">
             <figcaption>Exemple sous Windows</figcaption>
-            <pre><code><span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span>python3 -m venv .venv
-<span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span>.venv\Scripts\activate
-(.venv) <span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span>where python3
-…\.venv\bin\python3
-(.venv) <span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span>python3 -m pip install …
-(.venv) <span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span>deactivate
+            <pre><code><span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span>python3 -m venv venv
+<span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span>venv\Scripts\activate
+(venv) <span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span>where python3
+…\venv\bin\python3
+(venv) <span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span>pip install …
+(venv) <span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span>deactivate
 <span class="bleu">C:\Users\Alice\Project</span><span class="vert">></span></code></pre>
           </figure>
           <p>
