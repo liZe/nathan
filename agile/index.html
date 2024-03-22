@@ -616,7 +616,8 @@
                 <tr>
                   <th>Les joueurs</th>
                   <td>
-                    Scindez votre groupe en deux équipes :
+                    Nommez une personne qui sera garante du respect des règles puis
+                    scindez votre groupe en deux équipes :
                     <ul>
                       <li>Équipe 1 : est responsable des spécifications</li>
                       <li>Équipe 2 : est responsable de la réalisation
@@ -1064,8 +1065,7 @@
               <li>
                 Créez les stories dans le logiciel afin de
                 constituer le « Product Backlog » du projet.
-                Vous pouvez trouver les différentes stories dans la fiche
-                de ressources associée.
+                Vous pouvez trouver les différentes stories dans l’annexe associée.
               </li>
               <li>
                 Vérifiez que vous avez bien indiqué également les
@@ -1737,8 +1737,9 @@ if __name__ == "__main__":
             Aussi, le projet n’est montré au client qu’à la toute fin. Ce qui fait que si
             certains besoins n’ont pas été bien compris initialement, <strong>une partie du
             produit peut être remise en question</strong>. On repart alors dans une phase d’exigences,
-            d’analyse, etc… <strong>Le projet prend alors du retard, et il est plus compliqué
-            de maintenir l’équipe de développement dans un état positif</strong>.
+            d’analyse, etc… <strong>Revenir sur les étapes précédentes entraine donc du
+            retard sur le projet et un certain stress sur l’équipe de développement. Il est alors plus compliqué
+            de maintenir cette dernière dans un état positif</strong>.
           </p>
           <p>
             Des évolutions de ce modèle existe, comme par exemple le cycle en V.
@@ -1829,6 +1830,27 @@ if __name__ == "__main__":
             Ainsi, pour la première valeur, on ne dit pas que les processus et les outils
             ne sont pas importants. Mais qu’il est préférable, pour mener à bien un
             projet, d’avoir des individus qui sachent communiquer entre eux.
+          </p>
+          <p>
+            De la même manière pour la seconde valeur, avoir une documentation est important, que
+            ce soit une documentation à destination de l’équipe de développement ou
+            une documentation à destination des utilisateurs et utilisatrices. Cependant,
+            avant d’avoir cette documentation complète, il est mieux d’avoir un logiciel qui fonctionne.
+          </p>
+          <p>
+            Pour la troisième valeur, la négociation est une partie non négligeable, au niveau
+            du prix, des dates, des fonctionnalités… Mais être capable de collaborer avec les clients et
+            de les faire participer à la construction des produits est beaucoup plus intéressant car
+            à travers tous les échanges, il est plus facile de comprendre les besoins et donc
+            de réaliser un produit de qualité et réellement utile.
+          </p>
+          <p>
+            Ensuite, pour la dernière valeur, savoir plannifier les réalisations, connaître l’ordre
+            des tâches est important pour arriver à l’objectif, cependant, être capable d’accepter
+            un changement et d’adapter son plan en fonction est encore plus important.
+            En voulant à tout prix rester sur un plan initial, on risque de passer à côté
+            d’un besoin et cela conduit à créer des produits qui ne répondent plus vraiment
+            aux besoins des clients.
           </p>
           <p>
             Enfin, on retrouve dans les principes du Manifeste les notions d’<strong>itérations,
@@ -2009,7 +2031,7 @@ if __name__ == "__main__":
           </p>
           <p>
             Ça peut être les valeurs de cartes de jeu, auquel cas la
-            méthode va s’appeler « Planning Poker » (le terme peut se
+            méthode va s’appeler « <a href="https://www.slideshare.net/faimetti/planning-poker-v11fr">Planning Poker</a> » (le terme peut se
             trouver même quand ce ne sont pas des valeurs de cartes).
             Ça peut être les valeurs de tailles de t-shirt, d’un
             nombre de doigts (la méthode s’appelle alors « Flying Finger »)…
@@ -2090,8 +2112,12 @@ if __name__ == "__main__":
           </p>
           <p>
             Afin de pouvoir labéliser les stories, il faut que des labels
-            existent. Pour cela, allez dans <code>Manage / Labels</code> et
-            créez les différents labels nécessaires.
+            existent. Les labels sont des sortes de tags qui vont servir à rassembler et identifier
+            les stories.
+          </p>
+          <p>
+            Pour créer les différents labels et pouvoir les utiliser par la suite,
+            allez dans <code>Manage / Labels</code> et créez les différents labels nécessaires.
           </p>
           <figure>
             <figcaption>Création d’un label dans un projet GitLab</figcaption>
@@ -2151,7 +2177,8 @@ if __name__ == "__main__":
           <h4>L’équipe Scrum</h4>
           <p>
             L’équipe Scrum est composée de trois rôles distincts : le Scrum Master,
-            le Product Owner, les développeuses et développeurs.
+            le Product Owner et d’une équipe de développement (composée de développeuses, développeurs,
+            graphistes, designers…).
           </p>
           <p>
             La personne <strong>Scrum Master</strong> a pour missions de :
@@ -2173,7 +2200,7 @@ if __name__ == "__main__":
             Le Product Owner peut déléguer ses tâches, mais <strong>il en reste responsable</strong>.
           </p>
           <p>
-            Les <strong>développeuses et développeurs</strong> ont pour missions de :
+            L’<strong>équipe de développement</strong> a pour missions de :
           </p>
           <ul>
             <li>accomplissent les tâches nécessaires au sprint</li>
@@ -2198,7 +2225,7 @@ if __name__ == "__main__":
             Un sprint dure généralement entre 2 et 4 semaines.
           </p>
           <p>
-            Le premier évènement qui débute un sprint est le <strong>Sprint Plannig</strong>.
+            Le premier évènement qui débute un sprint est le <strong>Sprint Planning</strong>.
             Le Sprint Planning permet de :
           </p>
           <ul>
@@ -2207,7 +2234,7 @@ if __name__ == "__main__":
             <li>définir le Sprint Backlog.</li>
           </ul>
           <p>
-            Toute l’équipe Scrum prend par à cet évènement. Il peut durer
+            Toute l’équipe Scrum prend part à cet évènement. Il peut durer
             au maximun 8 heures.
           </p>
           <p>
@@ -2302,7 +2329,7 @@ if __name__ == "__main__":
           </p>
           <p>
             Elle met l’accent sur l’excellence et la qualité technique et
-            définit aussi des concepts permettant amener de la qualité
+            définit aussi des concepts permettant d’amener de la qualité
             dans le projet aussi d’un point de vue humain.
           </p>
 
@@ -2377,7 +2404,7 @@ if __name__ == "__main__":
             <li>Ne pas écrire plus de code que nécessaire pour faire passer le test correspondant</li>
           </ul>
           <p>
-            Écrivant des tests avant d’écrire le code d’une fonctionnalité permet
+            Écrire des tests avant d’écrire le code d’une fonctionnalité permet
             de définir clairement le fonctionnement attendu.
           </p>
           <p>
