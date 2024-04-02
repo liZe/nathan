@@ -9,15 +9,14 @@
   <body>
     <header>
       <h1>
-        Module B3M05 — PYT<br />
-        Introduction à Python
+        Séquence 3.4 - Bases Python avec un focus sur les aspects sécurité, outils de vulnérabilité
       </h1>
 
       <table>
         <tbody>
           <tr>
             <th>I-manuel</th>
-            <td>B3M05 — Développer des applications numériques</td>
+            <td>B3M1 — Développer des applications numériques</td>
           </tr>
         </tbody>
       </table>
@@ -142,9 +141,9 @@
     </header>
 
     <aside id="sommaire">
-      <h2>Sommaire du module</h2>
+      <h2>Sommaire de la séquence</h2>
       <ul>
-        <li><a href="#video">Vidéo de présentation du module</a></li>
+        <li><a href="#video">Pitch de l’auteur</a></li>
         <li><a href="#quiz">Quiz</a></li>
         <li>
           <a href="#decouverte">Découverte (14h)</a>
@@ -157,12 +156,9 @@
           </ul>
         </li>
         <li>
-          <a href="#atelier">Atelier (14h)</a>
-        </li>
-        <li>
           <a href="#fiches-ressources">Fiches ressources</a>
           <ul>
-            <li><a href="#installation-et-utilisateur-de-l-interpreteur">Installation et utilisation de l’interpréteur</a></li>
+            <li><a href="#installation-et-utilisateur-de-l-interpreteur">Installation et utilisation de l’interpréteur Python</a></li>
             <li><a href="#choix-et-configuration-d-un-editeur">Choix et configuration d’un éditeur</a></li>
             <li><a href="#syntaxe-types-et-instructions">Syntaxe, types et instructions</a></li>
             <li><a href="#fonctions">Fonctions</a></li>
@@ -173,13 +169,16 @@
             <li><a href="#flask">Flask</a></li>
           </ul>
         </li>
+        <li>
+          <a href="#atelier">Atelier (14h)</a>
+        </li>
       </ul>
     </aside>
 
     <main>
 
       <section id="video">
-        <h2>Vidéo de présentation du module</h2>
+        <h2>Pitch de l’auteur</h2>
         <p>
           Python est l’un des langages de programmation les plus populaires
           actuellement. Sa simplicité d’utilisation lui permet d’être
@@ -211,7 +210,7 @@
           développement Python : la création d’une application web.
         </p>
         <p>
-          Tout au long des activités de découverte proposées ce module, nous en
+          Tout au long des activités de découverte proposées dans ce module, nous en
           profiterons pour aborder divers aspects autour de la cybersécurité.
           Quels avantages et inconvénients propose Python par rapport à
           d’autres langages en terme de sécurité ? Comment prévenir certaines
@@ -405,7 +404,7 @@
                 </aside>
               </li>
             </ol>
-            <h4>Effectuez vos premières opérations</h4>
+            <h4>Effectuer vos premières opérations</h4>
             <ol>
               <li>
                 Votre directrice financière indique le coût pour réaliser ce
@@ -441,7 +440,7 @@
                 </aside>
               </li>
             </ol>
-            <h4>Créez un petit compte-rendu</h4>
+            <h4>Créer un petit compte-rendu</h4>
             <ol>
               <li>
                 Pour conclure ce calcul, vous souhaitez afficher sur une ligne
@@ -471,7 +470,7 @@
                 </aside>
               </li>
             </ol>
-            <h4>Créez un petit script</h4>
+            <h4>Créer un petit script</h4>
             <aside class="documents">
               <ul>
                 <li><a href="choix-et-configuration-d-un-editeur">FR 2</a></li>
@@ -519,7 +518,7 @@ print(f"""Budget prévisionnel
             <p>Temps estimé : 3h.</p>
             <p>
               Maintenant que vous savez lancer l’interpréteur Python en mode
-              interactif ou pour exécuter des scripts, il est temps d’entrer
+              interactif et exécuter des scripts, il est temps d’entrer
               plus en profondeur dans les types et structures de base du
               langage.
             </p>
@@ -539,7 +538,7 @@ print(f"""Budget prévisionnel
             <p>
               Cette idée tombe bien ! Pour parfaire vos connaissances en
               Python, quoi de mieux que de se lancer dans le développement d’un
-              petit projet de jeu dans le terminal ?
+              projet de jeu dans le terminal ?
             </p>
             <p>
               Le jeu que vous décidez de développer est un jeu de mémoire. Les
@@ -626,12 +625,10 @@ print(numbers)</pre>
             <h4>Interactivité</h4>
             <ol>
               <li>
-                À la place de mettre un nombre « en dur » dans
-                <code>index</code>, demandez à l’utilisateur le nombre qu’il
-                souhaite en utilisant la fonction
-                <a href="https://docs.python.org/3.12/library/functions.html#input"><code>input</code>
-                décrite dans la documentation</a>. Lancez le programme.
-                Quelle erreur obtenez-vous ?
+                À la place de mettre un nombre en dur dans <code>index</code>, utilisez la fonction
+                <a href="https://docs.python.org/3.12/library/functions.html#input"><code>input</code> décrite dans la documentation</a>
+                pour demander à l'utilisateur d'entrer le nombre qu'il souhaite. Lancez
+                le programme. Quelle erreur obtenez-vous ?
                 <aside class="correction">
                   <pre>letters = ['B', 'A', 'D', 'E', 'F', 'H', 'G', 'C']
 index = input("Quelle est la position … ? ")
@@ -831,7 +828,7 @@ Vous avez perdu 😢</code></pre>
               monde physique, une autre abstraction est également utilisée : la
               programmation orientée objet. Ce paradigme très répandu, que
               Python implémente, permet de regrouper les informations et les
-              comportements d’une entité au même endroit du code.
+              comportements d’une entité au même endroit dans le code.
             </p>
             <p>
               Dans ce module, nous apprendrons à structurer notre code en
@@ -869,17 +866,17 @@ Vous avez perdu 😢</code></pre>
               <li>
                 Dans votre éditeur de code, vous créez un fichier « ferme.py »,
                 qui contiendra votre prototype. La première demande de votre
-                client et de créer une liste d’animaux. Vous créez donc une
+                client est de créer une liste d’animaux. Vous créez donc une
                 liste <code>animaux</code> vide au début de votre fichier.
                 <aside class="correction">
                   <pre>animaux = []</pre>
                 </aside>
               </li>
               <li>
-                D’après la demande du fermier, chaque animal doit avoir
-                plusieurs informations : l’espèce de l’animal, l’âge et le nom.
-                Quelle structure de donnée simple vous permet d’associer des
-                clés (<code>"espèce"</code>, <code>"âge"</code>,
+                Pour répondre à la demande du fermier, plusieurs informations doivent
+                être renseignées pour chaque animal : l’espèce de l’animal, l’âge et le
+                nom. Quelle structure de donnée simple vous permet d’associer des clés
+                (<code>"espèce"</code>, <code>"âge"</code>,
                 <code>"nom"</code>) avec les valeurs correspondantes
                 (<code>"vache"</code>, <code>6</code>, <code>"Marguerite"</code>
                 par exemple) ?
@@ -955,8 +952,8 @@ Espèce : vache
               </li>
               <li>
                 Vous pouvez désormais afficher les vaches et les poules
-                séparément. Imbriquez votre boucle for dans une autre
-                boucle for, qui met <code>"vache"</code>
+                séparément. Imbriquez votre boucle <code>for</code> dans une autre
+                boucle <code>for</code>, qui met <code>"vache"</code>
                 puis <code>"poule"</code> dans une variable <code>espece</code>,
                 qui affiche cette variable, avant d’afficher les informations
                 des animaux correspondant à cette
@@ -1399,7 +1396,7 @@ for …:
             </p>
           </section>
           <section class="questions">
-            <h4>Créez votre première bibliothèque</h4>
+            <h4>Créer votre première bibliothèque</h4>
             <aside class="documents">
               <ul>
                 <li><a href="#modules-et-imports">FR 6</a></li>
@@ -1428,7 +1425,7 @@ for …:
                 et <code>aire_cercle(rayon)</code> qui renvoient la valeur de
                 ces aires. Pour le cercle, vous aurez besoin d’une variable
                 <code>pi</code>, que vous pouvez définir au début de votre
-                fichier approximée à <code>3.14</code>. Dans « script.py »,
+                fichier, approximée à <code>3.14</code>. Dans « script.py »,
                 après la somme et le produit, vous décidez d’afficher pi,
                 l’aire d’un carré de longueur 3 et l’aire d’un cercle de rayon
                 3. Quelles valeurs obtenez-vous ?
@@ -1459,7 +1456,7 @@ for …:
                 modification !
               </li>
             </ol>
-            <h4>Utilisez la bibliothèque standard</h4>
+            <h4>Utiliser la bibliothèque standard</h4>
             <aside class="documents">
               <ul>
                 <li><a href="#bibliotheque-standard">FR 7</a></li>
@@ -1469,14 +1466,14 @@ for …:
             <ol>
               <li>
                 Votre première version est concluante, mais il reste beaucoup
-                de travail ! Vous décidez en particulier d’utiliser la
+                de travail ! Vous décidez d’utiliser la
                 bibliothèque standard pour améliorer et développer de nouvelles
                 fonctionnalités. Votre première amélioration est d’utiliser la
                 valeur de <code>pi</code> venant du module <code>math</code>, à
                 la place de notre approximation. Importez <code>pi</code> dans
                 « funmath/geometrie.py », à la place de la variable
                 <code>pi</code>. Vérifiez que le script fonctionne, avec des
-                valeurs désormais plus précises !
+                valeurs plus précises !
               </li>
               <li>
                 Une nouvelle fonctionnalité à ajouter concerne des opérations
@@ -1485,7 +1482,7 @@ for …:
                 <code>nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2)</code>.
                 Cette fonction renvoie un entier correspondant au nombre de
                 jours entre deux dates. Pour cela, vous utilisez le module
-                <code>datetime</code>, et en particulier la possibilité de
+                <code>datetime</code>, et la possibilité de
                 faire une différence (avec <code>-</code>) entre deux objets
                 <code>datetime.date</code>.
               </li>
@@ -1496,7 +1493,7 @@ for …:
                 dans « funmath/__init__.py ». Combien de jours a duré votre vie ?
               </li>
             </ol>
-            <h4>Utilisez des modules externes</h4>
+            <h4>Utiliser des modules externes</h4>
             <aside class="documents">
               <ul>
                 <li><a href="#environnements-virtuels">FR 8</a></li>
@@ -1701,7 +1698,7 @@ def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
             </p>
           </section>
           <section class="questions">
-            <h4>Récupérez et lancez l’application du stagiaire</h4>
+            <h4>Récupérer et lancer l’application du stagiaire</h4>
             <aside class="documents">
               <ul>
                 <li><a href="#environnements-virtuels">FR 8</a></li>
@@ -1763,16 +1760,16 @@ Use a production WSGI server instead.</pre>
                 </aside>
               </li>
             </ol>
-            <h4>Découvrez le fonctionnement de Flask</h4>
+            <h4>Découvrir le fonctionnement de Flask</h4>
             <ol>
               <li>
-                Trouvez dans quels fichiers se situent différents éléments de
+                Dans quels fichiers se situent les différents éléments de
                 votre application web :
                 <ul>
                   <li>le HTML,</li>
                   <li>le CSS,</li>
                   <li>la liste des URL de l’application et le code qui leur est associé,</li>
-                  <li>le code permettant d’accéder à base de données.</li>
+                  <li>le code permettant d’accéder à base de données ?</li>
                 </ul>
                 <aside class="correction">
                   Le HTML est dans « blog/templates », le CSS est dans
@@ -1788,7 +1785,7 @@ Use a production WSGI server instead.</pre>
                 supprimez le fichier contenant la base de données ?
                 <aside class="correction">
                   La base est dans « database.db », la configuration du nom est
-                  dans « blog/__init__.py », et si le fichier contenant la base
+                  dans « blog/__init__.py ». Si le fichier contenant la base
                   de données est supprimé, il est automatiquement recréé à
                   chaque requête
                 </aside>
@@ -1831,7 +1828,7 @@ Use a production WSGI server instead.</pre>
                 <aside class="correction">
                   Les formulaires sont envoyés avec des requêtes POST, on
                   utilise <code>@app.get()</code> et <code>@app.post()</code>
-                  pour différencier les GET et POST, et les informations du
+                  pour différencier les GET et POST. Les informations du
                   formulaires sont dans <code>request.form</code>
                 </aside>
               </li>
@@ -1878,7 +1875,7 @@ Use a production WSGI server instead.</pre>
                 </aside>
               </li>
             </ol>
-            <h4>Corrigez les problèmes de sécurité</h4>
+            <h4>Corriger les problèmes de sécurité</h4>
             <ol>
               <li>
                 Lors de l’ajout d’un article, on ne peut pas définir le titre.
@@ -1993,7 +1990,7 @@ connection.commit()</pre>
                 et pas des balises. Vous trouvez alors dans
                 « blog/templates/article.html » pourquoi le contenu n’est pas
                 échappé, et vous enlevez cette « fonctionnalité » bien trop
-                dangereuse.
+                dangereuse. Quelle est la fonctionnalité, et pourquoi ?
                 <aside class="correction">
                   On enlève <code>| safe</code> qui n’échappe pas le HTML
                 </aside>
@@ -2055,513 +2052,11 @@ if "person_id" not in session:
         </section>
       </section>
 
-      <section id="atelier">
-        <h2>Atelier</h2>
-        <section class="introduction">
-          <p>Temps estimé : 14h.</p>
-          <p>
-            Cet atelier vise à vous faire développer un jeu de taquin dans le
-            terminal en Python. Vous ne connaissez pas ce jeu ? Vous allez vite
-            comprendre son fonctionnement en lisant
-            <a href="https://fr.wikipedia.org/wiki/Taquin">sa page Wikipédia</a> !
-          </p>
-          <p>
-            Le développement sera à réaliser en 2 étapes distinctes, avec un
-            rendu pour chacune de ces 2 versions.
-          </p>
-        </section>
-        <section class="sujet">
-          <h3>Premier rendu : fonctions</h3>
-          <p>
-            La première étape consiste à créer le jeu à l’aide de fonctions.
-            Vous avez deux contraintes principales pour cette première étape :
-          </p>
-          <ul>
-            <li>
-              L’interface de votre jeu doit <strong>exactement</strong> être celle-ci :
-              <pre>09 02 05 03
-13 01 10   
-14 08 06 04
-12 11 07 15
-
-Move: u
-
-09 02 05   
-13 01 10 03
-14 08 06 04
-12 11 07 15
-
-Move: l
-
-09 02    05
-13 01 10 03
-14 08 06 04
-12 11 07 15</pre>
-
-              À chaque tour, on affiche le plateau et on pose la question de la
-              prochaine direction. L’utilisateur peut appuyer sur <kbd>u</kbd>
-              pour déplacer la case vide en haut, <kbd>d</kbd> pour le
-              bas, <kbd>l</kbd> pour la gauche et <kbd>r</kbd> pour la droite.
-              On peut utiliser <kbd>q</kbd> pour quitter. Une autre valeur
-              saisie ne change rien sur le plateau, tout comme un déplacement
-              impossible.
-
-              (Vous pouvez utiliser d’autres lettres que celles proposées pour
-              les directions si vous le souhaitez.)
-
-              <pre>06 03 05 04
-09 02 11 08
-10 01    12
-13 07 14 15
-
-Move: test
-
-06 03 05 04
-09 02 11 08
-10 01    12
-13 07 14 15
-
-Move: z
-
-06 03 05 04
-09 02 11 08
-10 01    12
-13 07 14 15
-
-Move: r
-
-06 03 05 04
-09 02 11 08
-10 01 12   
-13 07 14 15
-
-Move: r
-
-06 03 05 04
-09 02 11 08
-10 01 12   
-13 07 14 15</pre>
-            </li>
-            <li>
-              La structure de votre code doit être <strong>exactement</strong> celle-ci :
-
-              <pre><code><span class="vert">from</span> random <span class="vert">import</span> choice
-
-
-<span class="vert">def</span> create_board(rows, cols):
-    <span class="gris">"""Create a board with original position of numbers.
-
-    `rows` and `cols` are integers defining the number of rows and
-    columns.
-
-    Return `(board, blank)`.
-
-    The returned `board` variable is a list of rows, and a row is
-    a list of numbers. The numbers are integers, and the blank
-    position is `None`.
-
-    The returned `blank` variable is the `(x, y)` coordinates of
-    the blank position, which is `(cols - 1, rows - 1)`.
-
-    """</span>
-    <span class="vert">pass</span>
-
-
-<span class="vert">def</span> shuffle_board(board, blank):
-    <span class="gris">"""Shuffle numbers of the board.
-
-    `board` and `blank` are the returned values of `create_board`.
-
-    Return the updated `blank` position.
-
-    """</span>
-    <span class="vert">pass</span>
-
-
-<span class="vert">def</span> draw_board(board):
-    <span class="gris">"""Draw the board."""</span>
-    <span class="vert">pass</span>
-
-
-<span class="vert">def</span> move(board, blank, position):
-    <span class="gris">"""Swap the content of blank and position coordinates.
-
-    This function doesn’t check that `blank` and `position` are
-    next to each other.
-
-    The board is modified in-place.
-
-    Return the new `blank` position, which is `position`.
-
-    """</span>
-    <span class="vert">pass</span>
-
-
-<span class="vert">def</span> is_solved(board):
-    <span class="gris">"""Return `True` if the board is solved, else `False`."""</span>
-    <span class="vert">pass</span>
-
-
-<span class="gris"># Create, shuffle and draw board</span>
-rows = 4
-cols = 4
-board, blank = create_board(rows, cols)
-blank = shuffle_board(board, blank)
-draw_board(board)
-
-<span class="gris"># Play while the board is not solved</span>
-<span class="vert">while</span> not is_solved(board):
-    <span class="gris"># Ask for move direction</span>
-    direction = input(<span class="rouge">"Move: "</span>)
-
-    <span class="gris"># Quit game if direction is "q"</span>
-    <span class="vert">pass</span>
-
-    <span class="gris"># Depending on the asked direction, define the new position</span>
-    <span class="vert">pass</span>
-
-    <span class="gris"># Move number at found position</span>
-    <span class="vert">if</span> position:
-        blank = move(board, blank, position)
-
-    <span class="gris"># Draw board</span>
-    draw_board(board)
-else:
-    <span class="gris"># Board is solved, victory!</span>
-    print(<span class="rouge">"!!! Victory !!!"</span>)</code></pre>
-
-              Vous devez écrire du code à la place de la commande <code>pass</code> à
-              chaque endroit où est utilisée. Vous devez bien sûr respecter la
-              documentation et les commentaires.
-            </li>
-            <li>
-              <strong>Vous devez utiliser uniquement des syntaxes et
-              fonctionnalités abordées lors de cette formation.</strong> Si
-              vous souhaitez tout de même aller au-delà, vous devez expliquer
-              par un commentaire détaillé chaque fonctionnalité nouvelle que
-              vous intégrez.
-            </li>
-          </ul>
-          <p>
-            Voici quelques informations qui vous aideront dans votre projet :
-          </p>
-          <ul>
-            <li>
-              Il est possible d’écrire chacune des fonctions avec moins de 15
-              lignes. Si l’une de vos fonctions devient trop grandes, votre
-              algorithme n’est peut-être pas optimal.
-            </li>
-            <li>
-              Le plateau est une liste de lignes, et une ligne est une liste de
-              nombres. Par exemple, pour un plateau de 3 cases par 3 cases,
-              votre plateau original est donc
-              <pre><code>board = [ [1, 2, 3], [4, 5, 6], [7, 8, <span class="vert">None</span>] ]</code></pre>
-              autrement écrit
-              <pre><code>board = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, <span class="vert">None</span>],
-]</code></pre>
-              On accède à un nombre positionné en <code>(x, y)</code> avec
-              <code>board[y][x]</code>. Par exemple, sur notre plateau précédent,
-              <code>board[1][2] == 6</code>.
-            </li>
-            <li>
-              La taille du plateau par défaut est de 4 × 4, mais vous pouvez
-              utiliser une taille de 2 × 2 ou 3 × 3 lors de votre développement !
-            </li>
-            <li>
-              L’affichage des nombres est fait sur 2 chiffres, avec un 0 devant
-              si besoin. Il est possible de faire cela avec les f-strings de
-              Python:
-              <pre><code>number = 2
-print(<span class="rouge">f'<span class="bleu">{number}</span>'</span>)  <span class="gris"># 2</span>
-print(<span class="rouge">f'<span class="bleu">{number:02n}</span>'</span>)  <span class="gris"># 02</span></code></pre>
-            </li>
-            <li>
-              Par défaut, la fonction <code>print</code> saute une ligne après
-              l’affichage. Vous pouvez éviter cela grâce au paramètre
-              <code>end</code> de cette fonction, comme ceci :
-              <pre><code><span class="gris"># Print 1234 56</span>
-print(12, end=<span class="rouge">''</span>)
-print(34, end=<span class="rouge">' '</span>)
-print(56)</code></pre>
-            </li>
-            <li>
-              Mélanger les nombres du plateau ne consiste pas à mettre les
-              nombres dans un ordre aléatoire : certaines combinaisons sont en
-              effet impossibles à résoudre ! La solution la plus simple est
-              sans doute de faire comme avec un vrai jeu, c’est-à-dire de faire
-              beaucoup de permutations au hasard.
-            </li>
-          </ul>
-          <h4>Correction</h4>
-          <p>
-            Les solutions ne doivent pas contenir de fonctionnalités qui n’ont
-            pas été abordées sans commentaire associé, en particulier :
-          </p>
-          <ul>
-            <li>les <em>list comprehensions</em>,</li>
-            <li><code>match</code>,</li>
-            <li><code>*args</code> et <code>**kwargs</code>,</li>
-            <li><code>enumerate</code>,</li>
-            <li><code>join</code>,</li>
-            <li><code>in</code> dans un test.</li>
-          </ul>
-          <pre style="font-size: 0.6em">from random import choice
-
-
-def create_board(rows, cols):
-    """Create a board with original position of numbers.
-
-    `rows` and `cols` are integers defining the numbers of rows
-    and columns.
-
-    Return `(board, blank)`.
-
-    The returned `board` variable is a list of rows, and a row
-    is a list of numbers. The numbers are integers, and the blank
-    position is `None`.
-
-    The returned `blank` variable is the `(x, y)` coordinates of
-    the blank position, which is `(cols - 1, rows - 1)`.
-
-    """
-    board = []
-    for y in range(rows):
-        row = []
-        for x in range(cols):
-            row.append(1 + x + y * cols)
-        board.append(row)
-    board[-1][-1] = None
-    blank = (cols - 1, rows - 1)
-    return board, blank
-
-
-def shuffle_board(board, blank):
-    """Shuffle numbers of the board.
-
-    `board` and `blank` are the returned values of `create_board`.
-
-    Return the updated `blank` position.
-
-    """
-    cols, rows = len(board[0]), len(board)
-    for _ in range(100):
-        moves = []
-        if blank[0] > 0:
-            moves.append((blank[0] - 1, blank[1]))
-        if blank[0] < cols - 1:
-            moves.append((blank[0] + 1, blank[1]))
-        if blank[1] > 0:
-            moves.append((blank[0], blank[1] - 1))
-        if blank[1] < rows - 1:
-            moves.append((blank[0], blank[1] + 1))
-        blank = move(board, blank, choice(moves))
-    return blank
-
-
-def draw_board(board):
-    """Draw the board."""
-    print()
-    for row in board:
-        for number in row:
-            if number:
-                print(f'{number:02n}', end=' ')
-            else:
-                print('  ', end=' ')
-        print()
-    print()
-
-
-def move(board, blank, position):
-    """Swap the content of blank and position coordinates.
-
-    This function doesn’t check that `blank` and `position` are
-    next to each other.
-
-    The board is modified in-place.
-
-    Return the new `blank` position, which is `position`.
-
-    """
-    board[blank[0]][blank[1]] = board[position[0]][position[1]]
-    board[position[0]][position[1]] = None
-    return position
-
-
-def is_solved(board):
-    """Return `True` if the board is solved, else `False`."""
-    numbers = []
-    for row in board:
-        for number in row:
-            numbers.append(number)
-    solution = []
-    for number in range(1, len(numbers)):
-        solution.append(number)
-    solution.append(None)
-    return numbers == solution
-
-
-# Create, shuffle and draw board
-rows = 4
-cols = 4
-board, blank = create_board(rows, cols)
-blank = shuffle_board(board, blank)
-draw_board(board)
-
-# Play while the board is not solved
-while not is_solved(board):
-    # Ask for move direction
-    direction = input("Move: ")
-
-    # Quit game if direction is "q"
-    if direction == "q":
-        break
-
-    # Depending on the asked direction, define the new position
-    position = None
-    if direction == "u" and blank[0] > 0:
-        position = (blank[0] - 1, blank[1])
-    elif direction == "d" and blank[0] < rows - 1:
-        position = (blank[0] + 1, blank[1])
-    elif direction == "l" and blank[1] > 0:
-        position = (blank[0], blank[1] - 1)
-    elif direction == "r" and blank[1] < cols - 1:
-        position = (blank[0], blank[1] + 1)
-
-    # Move number at found position
-    if position:
-        blank = move(board, blank, position)
-
-    # Draw board
-    draw_board(board)
-else:
-    # Board is solved, victory!
-    print("!!! Victory !!!")</pre>
-          <h3>Deuxième rendu : classes</h3>
-          <p>
-            Lors de cette étape, vous décidez de remplacer les fonctions de
-            votre premier rendu par une classe <code>Board</code> comprenant les
-            méthodes <code>__init__</code> (à la place de <code>create_board</code>),
-            <code>shuffle</code>, <code>draw</code>, <code>move</code> et
-            <code>is_solved</code>.
-          </p>
-          <p>
-            L’interface doit rester la même !
-          </p>
-          <p>
-            Voici quelques informations qui vous aideront dans votre projet, et
-            quelques idées d’améliorations facultatives à intégrer :
-          </p>
-          <ul>
-            <li>
-              Votre classe intègre évidemment les données qui étaient dans
-              <code>board</code>, mais elle peut également comporter un
-              attribut <code>blank</code>. Une autre possibilité est de ne plus
-              avoir à garder l’information de <code>blank</code> et à la
-              recalculer au besoin, uniquement dans <code>move</code> !
-            </li>
-            <li>
-              Vous pouvez trouver une solution pour afficher les nombres selon
-              le nombre maximal à afficher. Par exemple, pour une grille 3 × 3
-              (le maximum est 8), on peut afficher les nombres sur un chiffre,
-              et pour une grille 11 × 11 (le maximum est 120), on peut les
-              afficher sur 3 chiffres.
-            </li>
-            <li>
-              Vous pouvez utiliser Rich pour mettre des couleurs dans votre
-              interface !
-            </li>
-          </ul>
-          <h4>Correction</h4>
-          <pre style="font-size: 0.6em">from random import choice
-
-
-class Board:
-    def __init__(self, rows, cols):
-        self.rows = rows
-        self.cols = cols
-        self.cell_size = len(str(rows * cols))
-        self.numbers = []
-        for y in range(rows):
-            row = []
-            for x in range(cols):
-                row.append(1 + x + y * cols)
-            self.numbers.append(row)
-        self.numbers[-1][-1] = None
-        self.shuffle()
-
-
-    def shuffle(self):
-        moves = [(-1, 0), (1, 0), (0, -1), (0, 1)]
-        for _ in range((self.rows * self.cols) ** 2):
-            x, y = choice(moves)
-            self.move(x, y)
-
-
-    def draw(self):
-        print()
-        for row in self.numbers:
-            for number in row:
-                if number:
-                    print(f'{number:0{self.cell_size}n}', end=' ')
-                else:
-                    print(' ' * self.cell_size, end=' ')
-            print()
-        print()
-
-
-    def move(self, x, y):
-        blank_y = 0
-        for row in self.numbers:
-            if None in row:
-                blank_x = row.index(None)
-                break
-            blank_y = blank_y + 1
-        pos_x, pos_y = blank_x + x, blank_y + y
-        if 0 <= pos_x < self.cols and 0 <= pos_y < self.rows:
-            self.numbers[blank_y][blank_x] = (
-                self.numbers[pos_y][pos_x])
-            self.numbers[pos_y][pos_x] = None
-
-
-    def is_solved(self):
-        numbers = []
-        for row in self.numbers:
-            for number in row:
-                numbers.append(number)
-        solution = list(range(1, len(numbers))) + [None]
-        return numbers == solution
-
-
-rows = cols = 4
-board = Board(rows, cols)
-board.draw()
-
-while not board.is_solved():
-    direction = input("Direction : ")
-    if direction == "q":
-        break
-    elif direction == "l":
-        board.move(-1, 0)
-    elif direction == "r":
-        board.move(1, 0)
-    elif direction == "u":
-        board.move(0, -1)
-    elif direction == "d":
-        board.move(0, 1)
-    board.draw()
-else:
-    print("!!! Victory !!!")</pre>
-        </section>
-      </section>
-
       <section id="fiches-ressources">
         <h2>Fiches ressources</h2>
 
         <section id="installation-et-utilisateur-de-l-interpreteur">
-          <h3>Installation et utilisation de l’interpréteur</h3>
+          <h3>Installation et utilisation de l’interpréteur Python</h3>
 
           <h4>Installation</h4>
           <p>
@@ -2656,10 +2151,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 'TextText'</pre>
           </p>
           <p>
-            Il n’est pas besoin de déclarer ses variables ni de gérer la
+            Vous n’avez pas besoin de déclarer ses variables ni de gérer la
             mémoire : Python s’occupe de tout. Une variable peut contenir
             n’importe quel type de données au fur et à mesure de l’exécution du
-            programme, on dit donc que
+            programme, on dit que
             <strong>Python est un langage typé dynamiquement</strong> (et pas
             un langage typé statiquement, comme C ou Java par exemple). Cela
             dit, le contenu des variables ne peut pas changer de type. Par
@@ -2746,8 +2241,8 @@ print(number * 2)</pre>
             d’autres choses encore.
           </p>
           <p>
-            Si vous avez déjà l’habitude d’un éditeur de code généraliste, il y
-            a de grandes chances pour que vous puissiez l’utiliser pour écrire
+            Si vous avez déjà l’habitude d’utiliser un éditeur de code généraliste, il y
+            a de grandes chances pour que vous puissiez également l’utiliser pour écrire
             du Python. N’hésitez pas à consulter la documentation de votre
             éditeur pour en apprendre plus sur la manière de l’utiliser pour
             écrire du code Python.
@@ -2766,7 +2261,7 @@ print(number * 2)</pre>
             possibilité de lancer un script Python.
           </p>
           <p>
-            Si vous souhaitez en apprendre plus pour avoir une utilisation plus
+            Si vous souhaitez en apprendre plus, pour avoir une utilisation plus
             poussé de l’éditeur, vous pouvez suivre
             <a href="https://code.visualstudio.com/docs/python/python-quick-start">le tutoriel Python</a>
             sur le site de VS Code.
@@ -2821,18 +2316,16 @@ print(number * 2)</pre>
             caractères différents !
           </p>
           <p>
-            Les lignes de Python ne se terminent pas par un point-virgule. Il
-            est possible d’en mettre un, mais il est inutile, le saut de ligne
-            indiquant que c’est la fin d’une commande. Ne mettez-pas de
-            points-virgules, personne ne fait cela !
+            Les lignes de Python ne se terminent pas par un point-virgule, il est
+            inutile. Le saut de ligne indique la fin d’une commande. Ne mettez-pas de
+            points-virgules, ce n’est pas dans les usages.
           </p>
           <p>
             Il est possible d’ajouter des commentaires avec le croisillon
-            <kbd>#</kbd>, le caractère du clavier qui ressemble à un dièse (♯).
-            Tout ce qui est derrière un croisillon est un commentaire, jusqu’au
-            bout de la ligne. Pour faire des commentaires sur plusieurs lignes,
-            il est donc nécessaire de mettre un croisillon au début de chaque
-            ligne.
+            <kbd>#</kbd>, la touche du clavier avec le caractère qui ressemble à un
+            dièse (♯). Tout ce qui est derrière un croisillon est un commentaire,
+            jusqu’au bout de la ligne. Pour faire des commentaires sur plusieurs lignes,
+            il est donc nécessaire de mettre un croisillon au début de chaque ligne.
           </p>
           <pre><code><span class="gris"># This is a comment</span>
 a = 1 + 2  <span class="gris"># This is a comment too</span>
@@ -2903,12 +2396,12 @@ print(<span class="rouge">f"1 + 1 = <span class="bleu">{1 + 1}</span>"</span>)</
 <span class="vert">else</span>:
     print(<span class="rouge">"two or more"</span>)</code></pre>
           <p>
-            <code>if</code> permet de tester une condition, son bloc est
+            <code>if</code> permet de tester une condition. Son bloc est
             exécuté si la condition est vraie. <code>elif</code> permet
             également de tester une condition, son bloc est exécuté si toutes
-            les conditions précédentes étaient fausses et que sa condition
-            est vraie. Le bloc <code>else</code> est effectué si toutes les
-            conditions précédentes étaient fausses.
+            les conditions du <code>if</code> et des <code>elif</code> précédents sont
+            fausses, et que sa propre condition est vraie. Le bloc <code>else</code> est
+            effectué si toutes les conditions précédentes sont fausses.
           </p>
           <p>
             L’opérateur <code>==</code> permet de tester une égalité. Il est
@@ -2948,8 +2441,8 @@ print(<span class="rouge">f"1 + 1 = <span class="bleu">{1 + 1}</span>"</span>)</
     print(a)</code></pre>
           <p>
             Dans d’autres langages, cette boucle s’appelle parfois une boucle
-            <code>foreach</code>. Si l’on veut itérer sur une suite d’indices
-            plutôt que d’éléments dans une suite, on peut utiliser la fonction
+            <code>foreach</code>. Si l’on veut itérer sur une suite d’indices plutôt que
+            sur des éléments dans une suite, on peut utiliser la fonction
             <code>range(x)</code> qui renvoie une suite de nombres entre 0
             inclus et <code>x</code> exclu.
           </p>
@@ -3539,10 +3032,9 @@ print(numbers)</code></pre>
             carrées sont à votre disposition !
           </p>
           <p>
-            Le module <code>math</code> est adapté pour des mathématiques de
-            niveau collège, mais ce n’est bien sûr pas ce qui est utilisé pour
-            des utilisations universitaires ou de recherche ! Pour cela, des
-            modules tiers comme <code>numpy</code> ou <code>pandas</code> sauront
+            Le module <code>math</code> est adapté pour des mathématiques de niveau
+            collège, mais ce n’est bien sûr pas pour des utilisations universitaires ou
+            de recherche ! Pour cela, des modules tiers comme <code>numpy</code> ou <code>pandas</code> sauront
             répondre aux utilisations les plus avancées.
           </p>
           <pre><code><span class="vert">import</span> math
@@ -3641,7 +3133,7 @@ print(greatest_common_divisor)  <span class="gris"># That’s 10!</span></code><
           </figure>
           <p>
             Un <a href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment">guide de création et d’utilisation d’environnements virtuels</a>
-            est également à votre disposition si vous souhaitez en apprendre
+            est à votre disposition si vous souhaitez en apprendre
             plus sur l’utilisation des environnements virtuels.
           </p>
         </section>
@@ -3701,6 +3193,508 @@ print(greatest_common_divisor)  <span class="gris"># That’s 10!</span></code><
             décrite plus en détail dans
             <a href="https://flask.palletsprojects.com/en/3.0.x/patterns/sqlite3/">une page dédiée</a>.
           </p>
+        </section>
+      </section>
+
+      <section id="atelier">
+        <h2>Atelier</h2>
+        <section class="introduction">
+          <p>Temps estimé : 14h.</p>
+          <p>
+            Cet atelier vise à vous faire développer un jeu de taquin dans le
+            terminal en Python. Vous ne connaissez pas ce jeu ? Vous allez vite
+            comprendre son fonctionnement en lisant
+            <a href="https://fr.wikipedia.org/wiki/Taquin">sa page Wikipédia</a> !
+          </p>
+          <p>
+            Le développement sera à réaliser en 2 étapes distinctes, avec un
+            rendu pour chacune de ces 2 versions.
+          </p>
+        </section>
+        <section class="sujet">
+          <h3>Premier rendu : fonctions</h3>
+          <p>
+            La première étape consiste à créer le jeu à l’aide de fonctions.
+            Vous avez deux contraintes principales pour cette première étape :
+          </p>
+          <ul>
+            <li>
+              L’interface de votre jeu doit <strong>exactement</strong> être celle-ci :
+              <pre>09 02 05 03
+13 01 10   
+14 08 06 04
+12 11 07 15
+
+Move: u
+
+09 02 05   
+13 01 10 03
+14 08 06 04
+12 11 07 15
+
+Move: l
+
+09 02    05
+13 01 10 03
+14 08 06 04
+12 11 07 15</pre>
+
+              À chaque tour, on affiche le plateau et on pose la question de la
+              prochaine direction. L’utilisateur peut appuyer sur <kbd>u</kbd>
+              pour déplacer la case vide vers le haut, <kbd>d</kbd> pour le
+              bas, <kbd>l</kbd> pour la gauche et <kbd>r</kbd> pour la droite.
+              On peut utiliser <kbd>q</kbd> pour quitter. Une autre valeur
+              saisie ne change rien sur le plateau, tout comme un déplacement
+              impossible.
+
+              (Vous pouvez utiliser d’autres lettres que celles proposées pour
+              les directions si vous le souhaitez.)
+
+              <pre>06 03 05 04
+09 02 11 08
+10 01    12
+13 07 14 15
+
+Move: test
+
+06 03 05 04
+09 02 11 08
+10 01    12
+13 07 14 15
+
+Move: z
+
+06 03 05 04
+09 02 11 08
+10 01    12
+13 07 14 15
+
+Move: r
+
+06 03 05 04
+09 02 11 08
+10 01 12   
+13 07 14 15
+
+Move: r
+
+06 03 05 04
+09 02 11 08
+10 01 12   
+13 07 14 15</pre>
+            </li>
+            <li>
+              La structure de votre code doit être <strong>exactement</strong> celle-ci :
+
+              <pre><code><span class="vert">from</span> random <span class="vert">import</span> choice
+
+
+<span class="vert">def</span> create_board(rows, cols):
+    <span class="gris">"""Create a board with original position of numbers.
+
+    `rows` and `cols` are integers defining the number of rows and
+    columns.
+
+    Return `(board, blank)`.
+
+    The returned `board` variable is a list of rows, and a row is
+    a list of numbers. The numbers are integers, and the blank
+    position is `None`.
+
+    The returned `blank` variable is the `(x, y)` coordinates of
+    the blank position, which is `(cols - 1, rows - 1)`.
+
+    """</span>
+    <span class="vert">pass</span>
+
+
+<span class="vert">def</span> shuffle_board(board, blank):
+    <span class="gris">"""Shuffle numbers of the board.
+
+    `board` and `blank` are the returned values of `create_board`.
+
+    Return the updated `blank` position.
+
+    """</span>
+    <span class="vert">pass</span>
+
+
+<span class="vert">def</span> draw_board(board):
+    <span class="gris">"""Draw the board."""</span>
+    <span class="vert">pass</span>
+
+
+<span class="vert">def</span> move(board, blank, position):
+    <span class="gris">"""Swap the content of blank and position coordinates.
+
+    This function doesn’t check that `blank` and `position` are
+    next to each other.
+
+    The board is modified in-place.
+
+    Return the new `blank` position, which is `position`.
+
+    """</span>
+    <span class="vert">pass</span>
+
+
+<span class="vert">def</span> is_solved(board):
+    <span class="gris">"""Return `True` if the board is solved, else `False`."""</span>
+    <span class="vert">pass</span>
+
+
+<span class="gris"># Create, shuffle and draw board</span>
+rows = 4
+cols = 4
+board, blank = create_board(rows, cols)
+blank = shuffle_board(board, blank)
+draw_board(board)
+
+<span class="gris"># Play while the board is not solved</span>
+<span class="vert">while</span> not is_solved(board):
+    <span class="gris"># Ask for move direction</span>
+    direction = input(<span class="rouge">"Move: "</span>)
+
+    <span class="gris"># Quit game if direction is "q"</span>
+    <span class="vert">pass</span>
+
+    <span class="gris"># Depending on the asked direction, define the new position</span>
+    <span class="vert">pass</span>
+
+    <span class="gris"># Move number at found position</span>
+    <span class="vert">if</span> position:
+        blank = move(board, blank, position)
+
+    <span class="gris"># Draw board</span>
+    draw_board(board)
+else:
+    <span class="gris"># Board is solved, victory!</span>
+    print(<span class="rouge">"!!! Victory !!!"</span>)</code></pre>
+
+              Vous devez écrire du code à la place de la commande <code>pass</code> à
+              chaque endroit où elle est utilisée. Vous devez bien sûr respecter la
+              documentation et les commentaires.
+            </li>
+            <li>
+              <strong>Vous devez utiliser uniquement des syntaxes et
+              fonctionnalités abordées lors de cette formation.</strong> Si
+              vous souhaitez tout de même aller au-delà, vous devez expliquer
+              par un commentaire détaillé chaque fonctionnalité nouvelle que
+              vous intégrez.
+            </li>
+          </ul>
+          <p>
+            Voici quelques informations qui vous aideront dans votre projet :
+          </p>
+          <ul>
+            <li>
+              Il est possible d’écrire chacune des fonctions avec moins de 15
+              lignes. Si l’une de vos fonctions devient trop grandes, votre
+              algorithme n’est peut-être pas optimal.
+            </li>
+            <li>
+              Le plateau est une liste de lignes, et une ligne est une liste de
+              nombres. Par exemple, pour un plateau de 3 cases par 3 cases,
+              votre plateau original est donc
+              <pre><code>board = [ [1, 2, 3], [4, 5, 6], [7, 8, <span class="vert">None</span>] ]</code></pre>
+              autrement écrit
+              <pre><code>board = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, <span class="vert">None</span>],
+]</code></pre>
+              On accède à un nombre positionné en <code>(x, y)</code> avec
+              <code>board[y][x]</code>. Par exemple, sur notre plateau précédent,
+              <code>board[1][2] == 6</code>.
+            </li>
+            <li>
+              La taille du plateau par défaut est de 4 × 4, mais vous pouvez
+              utiliser une taille de 2 × 2 ou 3 × 3 lors de votre développement !
+            </li>
+            <li>
+              L’affichage des nombres est fait sur 2 chiffres, avec un 0 devant
+              si besoin. Il est possible de faire cela avec les f-strings de
+              Python:
+              <pre><code>number = 2
+print(<span class="rouge">f'<span class="bleu">{number}</span>'</span>)  <span class="gris"># 2</span>
+print(<span class="rouge">f'<span class="bleu">{number:02n}</span>'</span>)  <span class="gris"># 02</span></code></pre>
+            </li>
+            <li>
+              Par défaut, la fonction <code>print</code> saute une ligne après
+              l’affichage. Vous pouvez éviter cela grâce au paramètre
+              <code>end</code> de cette fonction, comme ceci :
+              <pre><code><span class="gris"># Print 1234 56</span>
+print(12, end=<span class="rouge">''</span>)
+print(34, end=<span class="rouge">' '</span>)
+print(56)</code></pre>
+            </li>
+            <li>
+              Mélanger les nombres du plateau ne consiste pas à mettre les
+              nombres dans un ordre aléatoire : certaines combinaisons sont en
+              effet impossibles à résoudre ! La solution la plus simple est
+              sans doute de faire comme avec un vrai jeu, c’est-à-dire de faire
+              beaucoup de permutations au hasard.
+            </li>
+          </ul>
+          <h4>Correction</h4>
+          <p>
+            Les solutions ne doivent pas contenir de fonctionnalités qui n’ont
+            pas été abordées sans commentaire associé, en particulier :
+          </p>
+          <ul>
+            <li>les <em>list comprehensions</em>,</li>
+            <li><code>match</code>,</li>
+            <li><code>*args</code> et <code>**kwargs</code>,</li>
+            <li><code>enumerate</code>,</li>
+            <li><code>join</code>,</li>
+            <li><code>in</code> dans un test.</li>
+          </ul>
+          <pre style="font-size: 0.6em">from random import choice
+
+
+def create_board(rows, cols):
+    """Create a board with original position of numbers.
+
+    `rows` and `cols` are integers defining the numbers of rows
+    and columns.
+
+    Return `(board, blank)`.
+
+    The returned `board` variable is a list of rows, and a row
+    is a list of numbers. The numbers are integers, and the blank
+    position is `None`.
+
+    The returned `blank` variable is the `(x, y)` coordinates of
+    the blank position, which is `(cols - 1, rows - 1)`.
+
+    """
+    board = []
+    for y in range(rows):
+        row = []
+        for x in range(cols):
+            row.append(1 + x + y * cols)
+        board.append(row)
+    board[-1][-1] = None
+    blank = (cols - 1, rows - 1)
+    return board, blank
+
+
+def shuffle_board(board, blank):
+    """Shuffle numbers of the board.
+
+    `board` and `blank` are the returned values of `create_board`.
+
+    Return the updated `blank` position.
+
+    """
+    cols, rows = len(board[0]), len(board)
+    for _ in range(100):
+        moves = []
+        if blank[0] > 0:
+            moves.append((blank[0] - 1, blank[1]))
+        if blank[0] < cols - 1:
+            moves.append((blank[0] + 1, blank[1]))
+        if blank[1] > 0:
+            moves.append((blank[0], blank[1] - 1))
+        if blank[1] < rows - 1:
+            moves.append((blank[0], blank[1] + 1))
+        blank = move(board, blank, choice(moves))
+    return blank
+
+
+def draw_board(board):
+    """Draw the board."""
+    print()
+    for row in board:
+        for number in row:
+            if number:
+                print(f'{number:02n}', end=' ')
+            else:
+                print('  ', end=' ')
+        print()
+    print()
+
+
+def move(board, blank, position):
+    """Swap the content of blank and position coordinates.
+
+    This function doesn’t check that `blank` and `position` are
+    next to each other.
+
+    The board is modified in-place.
+
+    Return the new `blank` position, which is `position`.
+
+    """
+    board[blank[0]][blank[1]] = board[position[0]][position[1]]
+    board[position[0]][position[1]] = None
+    return position
+
+
+def is_solved(board):
+    """Return `True` if the board is solved, else `False`."""
+    numbers = []
+    for row in board:
+        for number in row:
+            numbers.append(number)
+    solution = []
+    for number in range(1, len(numbers)):
+        solution.append(number)
+    solution.append(None)
+    return numbers == solution
+
+
+# Create, shuffle and draw board
+rows = 4
+cols = 4
+board, blank = create_board(rows, cols)
+blank = shuffle_board(board, blank)
+draw_board(board)
+
+# Play while the board is not solved
+while not is_solved(board):
+    # Ask for move direction
+    direction = input("Move: ")
+
+    # Quit game if direction is "q"
+    if direction == "q":
+        break
+
+    # Depending on the asked direction, define the new position
+    position = None
+    if direction == "u" and blank[0] > 0:
+        position = (blank[0] - 1, blank[1])
+    elif direction == "d" and blank[0] < rows - 1:
+        position = (blank[0] + 1, blank[1])
+    elif direction == "l" and blank[1] > 0:
+        position = (blank[0], blank[1] - 1)
+    elif direction == "r" and blank[1] < cols - 1:
+        position = (blank[0], blank[1] + 1)
+
+    # Move number at found position
+    if position:
+        blank = move(board, blank, position)
+
+    # Draw board
+    draw_board(board)
+else:
+    # Board is solved, victory!
+    print("!!! Victory !!!")</pre>
+          <h3>Deuxième rendu : classes</h3>
+          <p>
+            Lors de cette étape, vous décidez de remplacer les fonctions de
+            votre premier rendu par une classe <code>Board</code> comprenant les
+            méthodes <code>__init__</code> (à la place de <code>create_board</code>),
+            <code>shuffle</code>, <code>draw</code>, <code>move</code> et
+            <code>is_solved</code>.
+          </p>
+          <p>
+            L’interface doit rester la même !
+          </p>
+          <p>
+            Voici quelques informations qui vous aideront dans votre projet, et
+            quelques idées d’améliorations facultatives à intégrer :
+          </p>
+          <ul>
+            <li>
+              Votre classe intègre évidemment les données qui étaient dans
+              <code>board</code>, mais elle peut également comporter un
+              attribut <code>blank</code>. Une autre possibilité est de ne plus
+              avoir à garder l’information de <code>blank</code> et à la
+              recalculer au besoin, uniquement dans <code>move</code> !
+            </li>
+            <li>
+              Vous pouvez trouver une solution pour afficher les nombres selon
+              le nombre maximal à afficher. Par exemple, pour une grille 3 × 3
+              (le maximum est 8), on peut afficher les nombres sur un chiffre,
+              et pour une grille 11 × 11 (le maximum est 120), on peut les
+              afficher sur 3 chiffres.
+            </li>
+            <li>
+              Vous pouvez utiliser Rich pour mettre des couleurs dans votre
+              interface !
+            </li>
+          </ul>
+          <h4>Correction</h4>
+          <pre style="font-size: 0.6em">from random import choice
+
+
+class Board:
+    def __init__(self, rows, cols):
+        self.rows = rows
+        self.cols = cols
+        self.cell_size = len(str(rows * cols))
+        self.numbers = []
+        for y in range(rows):
+            row = []
+            for x in range(cols):
+                row.append(1 + x + y * cols)
+            self.numbers.append(row)
+        self.numbers[-1][-1] = None
+        self.shuffle()
+
+
+    def shuffle(self):
+        moves = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+        for _ in range((self.rows * self.cols) ** 2):
+            x, y = choice(moves)
+            self.move(x, y)
+
+
+    def draw(self):
+        print()
+        for row in self.numbers:
+            for number in row:
+                if number:
+                    print(f'{number:0{self.cell_size}n}', end=' ')
+                else:
+                    print(' ' * self.cell_size, end=' ')
+            print()
+        print()
+
+
+    def move(self, x, y):
+        blank_y = 0
+        for row in self.numbers:
+            if None in row:
+                blank_x = row.index(None)
+                break
+            blank_y = blank_y + 1
+        pos_x, pos_y = blank_x + x, blank_y + y
+        if 0 <= pos_x < self.cols and 0 <= pos_y < self.rows:
+            self.numbers[blank_y][blank_x] = (
+                self.numbers[pos_y][pos_x])
+            self.numbers[pos_y][pos_x] = None
+
+
+    def is_solved(self):
+        numbers = []
+        for row in self.numbers:
+            for number in row:
+                numbers.append(number)
+        solution = list(range(1, len(numbers))) + [None]
+        return numbers == solution
+
+
+rows = cols = 4
+board = Board(rows, cols)
+board.draw()
+
+while not board.is_solved():
+    direction = input("Direction : ")
+    if direction == "q":
+        break
+    elif direction == "l":
+        board.move(-1, 0)
+    elif direction == "r":
+        board.move(1, 0)
+    elif direction == "u":
+        board.move(0, -1)
+    elif direction == "d":
+        board.move(0, 1)
+    board.draw()
+else:
+    print("!!! Victory !!!")</pre>
         </section>
       </section>
     </main>

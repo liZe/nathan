@@ -249,6 +249,18 @@ main > section {
   break-before: page;
 }
 
+[href="#decouverte"] + ul {
+  counter-reset: etape;
+}
+
+[href="#decouverte"] + ul li {
+  counter-increment: etape;
+}
+
+[href="#decouverte"] + ul li::before {
+  content: 'Étape ' counter(etape) ' – ';
+}
+
 section:is(#decouverte, #atelier) h2::before {
   content: "Partie " counter(partie) " : ";
   counter-increment: partie;
