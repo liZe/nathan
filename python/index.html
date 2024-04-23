@@ -182,7 +182,7 @@
         <p>
           Python est l’un des langages de programmation les plus populaires
           actuellement. Sa simplicité d’utilisation lui permet d’être
-          intensivement utilisé dans de nombreux domaines hors du développement
+          utilisé dans de nombreux domaines hors du développement
           informatique, des petits scripts d’administration système aux plus
           grandes applications de calcul scientifique, en passant par
           l’intelligence artificielle ou l’embarqué.
@@ -220,7 +220,7 @@
           lors du développement d’applications.
         </p>
         <p>
-          Calcul scientifique, web, IA, devOps, automatisation… Quel que soit
+          Calcul scientifique, développement web, IA, devOps, automatisation… Quel que soit
           le type d’utilisation qui vous intéresse, faites de Python un atout
           dans vos possibilités de développement !
         </p>
@@ -332,7 +332,7 @@
           </li>
           <li>
             <p>
-              Comment créer une instance d’une classe <code>Animal</code> ?
+              Comment créer une instance d’une classe nommée <code>Animal</code> ?
             </p>
             <ul>
               <li><code>Animal.__init__(self)</code></li>
@@ -444,9 +444,8 @@
             <ol>
               <li>
                 Pour conclure ce calcul, vous souhaitez afficher sur une ligne
-                la phrase suivante : « Part pour chaque entité : XX € ».
-                Évidemment, vous remplacerez « XX » par le montant de la part,
-                en utilisant la variable <code>part</code>.
+                la phrase suivante : « Part pour chaque entité : XX € »,
+                 « XX » représentant la valeur de la variable <code>part</code>.
                 <aside class="correction">
                   <code>print(f"Part pour chaque entité : {part} €")</code>
                 </aside>
@@ -507,6 +506,12 @@ print(f"""Budget prévisionnel
               <li>
                 Lancez votre script et vérifiez que le résultat correspond à
                 vos attentes !
+                <aside class="correction">
+                  <pre>Budget prévisionnel
+===================
+- Entité 1 : 7860.0 €
+- Entité 2 : 7860.0 €
+- Entité 3 : 7860.0 €</pre>
               </li>
             </ol>
           </section>
@@ -561,6 +566,7 @@ print(f"""Budget prévisionnel
             <h4>Conception et première version</h4>
             <aside class="documents">
               <ul>
+                <li><a href="installation-et-utilisateur-de-l-interpreteur">FR 1</a></li>
                 <li><a href="#syntaxe-types-et-instructions">FR 3</a></li>
               </ul>
             </aside>
@@ -590,7 +596,7 @@ print(f"""Budget prévisionnel
                 et créez un fichier « game.py » comprenant 5 lignes :
                 <ul>
                   <li>
-                    affectez à une variable <code>numbers</code> la suite des
+                    affectez à une variable <code>letters</code> la suite des
                     lettres de A à H, dans l’ordre que vous voulez ;
                   </li>
                   <li>
@@ -599,7 +605,7 @@ print(f"""Budget prévisionnel
                     suite ;
                   </li>
                   <li>
-                    enlevez de <code>numbers</code> la lettre située à la
+                    enlevez de <code>letters</code> la lettre située à la
                     position <code>index</code>, et mettez cette lettre dans
                     une variable <code>letter</code> ;
                   </li>
@@ -607,57 +613,44 @@ print(f"""Budget prévisionnel
                     affichez <code>letter</code> ;
                   </li>
                   <li>
-                    affichez <code>numbers</code>.
+                    affichez <code>letters</code>.
                   </li>
                 </ul>
                 Exécutez votre programme et vérifiez que vous obtenez bien le
                 résultat attendu : d’abord la lettre enlevée, puis la suite des
                 lettres hormis celle enlevée.
                 <aside class="correction">
-                  <pre>letters = ['B', 'A', 'D', 'E', 'F', 'H', 'G', 'C']
+                  <pre>letters = ["B", "A", "D", "E", "F", "H", "G", "C"]
 index = 3
 letter = letters.pop(index)
 print(letter)
-print(numbers)</pre>
+print(letters)</pre>
                 </aside>
               </li>
             </ol>
             <h4>Interactivité</h4>
             <ol>
               <li>
-                À la place de mettre un nombre en dur dans <code>index</code>, utilisez la fonction
-                <a href="https://docs.python.org/3.12/library/functions.html#input"><code>input</code> décrite dans la documentation</a>
-                pour demander à l'utilisateur d'entrer le nombre qu'il souhaite. Lancez
-                le programme. Quelle erreur obtenez-vous ?
+                À la place de définir une valeur en dur dans <code>index</code>,
+                utilisez la fonction <code>input</code> pour demander à l’utilisateur
+                d’entrer le nombre qu’il souhaite. Lancez le programme.
                 <aside class="correction">
-                  <pre>letters = ['B', 'A', 'D', 'E', 'F', 'H', 'G', 'C']
-index = input("Quelle est la position … ? ")
+                  <pre>letters = ["B", "A", "D", "E", "F", "H", "G", "C"]
+index = int(input("Quelle est la position … ? "))
 letter = letters.pop(index)
 print(letter)
-print(numbers)</pre>
-                  On obtient une <code>TypeError</code>
-                </aside>
-              </li>
-              <li>
-                <code>input</code> renvoie une chaîne de caractères, alors que
-                la variable <code>index</code> doit être un entier.
-                Heureusement, il est possible de créer un entier qui correspond
-                à une chaîne de caractères, par exemple comme ceci :
-                <code>int("3")</code>. Utiliser cette méthode pour que
-                <code>index</code> soit un entier.
-                <aside class="correction">
-                  <code>int(input("…"))</code>
+print(letters)</pre>
                 </aside>
               </li>
               <li>
                 Exécutez votre programme et vérifiez que vous obtenez bien le
                 résultat attendu : on demande à l’utilisateur l’index de la
                 lettre à enlever, puis on affiche la lettre enlevée, puis on
-                affiche la suite des lettres hormis celle enlevée. Par
+                affiche la suite des lettres restantes. Par
                 exemple :
                 <pre><code>Quelle est la position de la lettre que vous souhaitez enlever ? 3
 C
-['B', 'H', 'A', 'D', 'F', 'E', 'G']</code></pre>
+["B", "H", "A", "D", "F", "E", "G"]</code></pre>
               </li>
             </ol>
             <h4>Boucle complète</h4>
@@ -668,29 +661,31 @@ C
             </aside>
             <ol>
               <li>
-                Nous allons maintenant répéter la demande et l’affichage tant
+                Nous allons maintenant répéter la demande et l’afficher tant
                 que la suite de nombre n’est pas vide. Quel type de boucle
                 doit-on utiliser ? Exécutez le programme et vérifiez que vous
                 pouvez enlever toutes les lettres de la liste avant que le
                 programme ne s’arrête.
                 <aside class="correction">
-                  On utilise une boucle <code>while</code>
+                  On utilise une boucle <code>while</code>:
+                  <pre>while True:
+    index = int(input("Quelle est la position … ? "))
+    if 0 <= index < len(letters):
+        break
+    print("Nombre incorrect !")</pre>
                 </aside>
               </li>
               <li>
                 Nous voulons maintenant vérifier que le joueur ne saisit pas un
-                nombre trop grand ou inférieur à 0, et lui reposer la question
-                tant que la condition n’est pas vérifiée. Il est possible
-                d’effectuer cela avec une boucle infinie dans laquelle on
-                demande le nombre à l’utilisateur, et on force la sortie de la
-                boucle lorsque la condition est validée. Ajouter cette
+                indice trop grand ou inférieur à 0, et lui reposer la question
+                tant que la condition n’est pas vérifiée. Ajouter cette
                 fonctionnalité.
                 <aside class="correction">
                   <pre>while True:
-    index = int(input('Quelle est la position … ? '))
+    index = int(input("Quelle est la position … ? "))
     if 0 <= index < len(letters):
         break
-    print('Nombre incorrect !')</pre>
+    print("Nombre incorrect !")</pre>
                 </aside>
               </li>
               <li>
@@ -699,23 +694,23 @@ C
                 message lorsque le joueur a perdu, et un autre lorsque le
                 joueur a gagné.
                 <aside class="correction">
-                  <pre>letters = ['B', 'A', 'D', 'E', 'F', 'H', 'G', 'C']
+                  <pre>letters = ["B", "A", "D", "E", "F", "H", "G", "C"]
 previous_letter = None
 while letters:
     while True:
-        index = int(input('Quelle est la position … ? '))
+        index = int(input("Quelle est la position … ? "))
         if 0 <= index < len(letters):
             break
-        print('Nombre incorrect !')
+        print("Nombre incorrect !")
     letter = letters.pop(index)
     print(letter)
     if previous_letter and previous_letter > letter:
-        print('Vous avez perdu 😢')
+        print("Vous avez perdu 😢")
         break
-    print(f'Il reste {len(letters)} lettre(s)')
+    print(f"Il reste {len(letters)} lettre(s)")
     previous_letter = letter
 else:
-    print('Vous avez gagné 😁')</pre>
+    print("Vous avez gagné 😁")</pre>
                 </aside>
               </li>
               <li>
@@ -866,8 +861,9 @@ Vous avez perdu 😢</code></pre>
               <li>
                 Dans votre éditeur de code, vous créez un fichier « ferme.py »,
                 qui contiendra votre prototype. La première demande de votre
-                client est de créer une liste d’animaux. Vous créez donc une
-                liste <code>animaux</code> vide au début de votre fichier.
+                client est de créer une liste d’animaux. Comment pouvez-vous créer
+                une liste vide appelée <code>animaux</code> au début de votre
+                fichier ?
                 <aside class="correction">
                   <pre>animaux = []</pre>
                 </aside>
@@ -908,8 +904,7 @@ Vous avez perdu 😢</code></pre>
                 </aside>
               </li>
               <li>
-                Dans votre prototype, faites une boucle pour parcourir vos
-                animaux. Pour chaque animal, affichez les informations comme suit :
+                Dans votre prototype, affichez pour chaque animal les informations comme suit :
                 <pre>Nom : Marguerite
 Espèce : vache
 Âge : 5 an(s)</pre>
@@ -931,8 +926,8 @@ Espèce : vache
               <li>
                 Le fermier est content de cette première liste. Il aimerait
                 dans le futur pouvoir afficher le nombre total d’animaux,
-                lister d’abord les vaches (y compris le veau), puis les poules,
-                dans deux parties différentes. Quels problèmes cela pose-t-il ?
+                lister en premier les vaches (y compris le veau), puis les poules,
+                dans deux parties distinctes. Quels problèmes cela pose-t-il ?
                 <aside class="correction">
                   Il faut réussir à grouper les animaux par espèce, et il faut
                   que l’on arrive à stocker l’information que les veaux sont
@@ -940,9 +935,8 @@ Espèce : vache
                 </aside>
               </li>
               <li>
-                Il existe différentes solutions pour atteindre cet objectif. La
-                première possibilité que vous testez est de changer l’espèce
-                de Caramel en « vache », afin que l’on ait bien la
+                Pour résoudre ce problème, vous pouvez changer l’espèce
+                de Caramel en « vache » afin que l’on ait bien la
                 même valeur pour les vaches et les veaux (qui sont en réalité
                 des jeunes vaches, bien sûr !) Relancez votre programme, qui
                 doit maintenant dire que Caramel est une vache.
@@ -951,13 +945,8 @@ Espèce : vache
                 </aside>
               </li>
               <li>
-                Vous pouvez désormais afficher les vaches et les poules
-                séparément. Imbriquez votre boucle <code>for</code> dans une autre
-                boucle <code>for</code>, qui met <code>"vache"</code>
-                puis <code>"poule"</code> dans une variable <code>espece</code>,
-                qui affiche cette variable, avant d’afficher les informations
-                des animaux correspondant à cette
-                <code>espece</code>. Vous devez obtenir quelque chose comme :
+                Vous pouvez utiliser une imbrication de boucles pour afficher les vaches
+                et les poules séparément. Vous devez obtenir quelque chose comme :
                 <pre><code>Espèce : vache
 - Marguerite, 5 an(s)
 - Hortense, 7 an(s)
@@ -970,21 +959,21 @@ Espèce : poule
                   <pre>for espece in ("vache", "poule"):
     print(f"Espèce : {espece}")
     for animal in animaux:
-        if animal['espèce'] == espece:
+        if animal["espèce"] == espece:
             print(f"- {animal['nom']}, {animal['âge']} an(s)")
     print()</pre>
                 </aside>
               </li>
               <li>
                 Pour gagner en lisibilité, vous décidez de créer une
-                fonction <code>afficher_animaux(animaux, espece)</code> qui
-                affiche la liste des animaux d’une espèce donnée. À la place de la
-                boucle imbriquée, vous appelez donc cette nouvelle fonction. Le
-                résultat doit être le même.
+                fonction <code>afficher_animaux(animaux, espece)</code> qui affiche la
+                liste des animaux d’une espèce donnée. Dans votre programme, remplacez
+                l’affichage par l’appel de cette fonction. Le résultat doit être le
+                même.
                 <aside class="correction">
                   <pre>def afficher_animaux(animaux, espece):
     for animal in animaux:
-        if animal['espèce'] == espece:
+        if animal["espèce"] == espece:
             print(f"- {animal['nom']}, {animal['âge']} an(s)")
 
 for espèce in ("vache", "poule"):
@@ -1002,22 +991,12 @@ for espèce in ("vache", "poule"):
                 </aside>
               </li>
               <li>
-                Le fermier est ravi ! Un dernier problème persiste cependant :
-                il est difficile de discerner les jeunes animaux des adultes.
-                Vous décidez donc d’afficher la mention « jeune animal » pour
-                les animaux de 2 ans ou moins, à la place de leur âge.
-                <aside class="correction">
-                  <pre>if animal['âge'] <= 2:
-    print(f"- {animal['nom']}, {animal['âge']} an(s)")
-else:
-    print(f"- {animal['nom']}, jeune animal")</pre>
-                </aside>
-              </li>
-              <li>
-                L’affichage d’un animal est maintenant plus complexe, avec une
-                condition. Vous décidez donc de sortir ce code dans une
-                fonction <code>afficher_animal(animal)</code>. Le résultat
-                final est le suivant :
+                Le fermier est ravi ! Un dernier problème persiste cependant : il est
+                difficile de discerner les jeunes animaux des adultes. Vous choisissez donc
+                d’afficher la mention « jeune animal » pour les animaux de 2 ans ou
+                moins, à la place de leur âge. L’affichage d’un animal étant maintenant
+                plus complexe, vous décidez de sortir ce code dans une fonction
+                <code>afficher_animal(animal)</code>. Le résultat final est le suivant :
                 <pre>Nombre d’animaux : 5
 
 Espèce : vache
@@ -1038,14 +1017,14 @@ Espèce : poule
 ]
 
 def afficher_animal(animal):
-    if animal['âge'] <= 2:
-        print(f"- {animal['nom']}, {animal['âge']} an(s)")
+    if animal["âge"] <= 2:
+        print(f"- {animal['nom']}, jeune animal")
     else:
-	print(f"- {animal['nom']}, jeune animal")
+        print(f"- {animal['nom']}, {animal['âge']} an(s)")
 
 def afficher_animaux(animaux, espece):
     for animal in animaux:
-        if animal['espèce'] == espece:
+        if animal["espèce"] == espece:
             afficher_animal(animal)
 
 print(f"Nombre d’animaux : {len(animaux)}\n")
@@ -1083,18 +1062,18 @@ for espece in ("vache", "poule"):
         self.nom = nom
 
 animaux = [
-    Animal("vache", 5, 'Marguerite'),
-    Animal("vache", 7, 'Hortense'),
-    Animal("vache", 1, 'Caramel'),
-    Animal("poule", 3, 'Coco'),
-    Animal("poule", 2, 'Blanche'),
+    Animal("vache", 5, "Marguerite"),
+    Animal("vache", 7, "Hortense"),
+    Animal("vache", 1, "Caramel"),
+    Animal("poule", 3, "Coco"),
+    Animal("poule", 2, "Blanche"),
 ]
 
 def afficher_animal(animal):
     if animal.age <= 2:
-        print(f"- {animal.nom}, {animal.age} an(s)")
+        print(f"- {animal.nom}, jeune animal")
     else:
-	print(f"- {animal.nom}, jeune animal")
+        print(f"- {animal.nom}, {animal.age} an(s)")
 
 def afficher_animaux(animaux, espece):
     for animal in animaux:
@@ -1109,17 +1088,16 @@ for espece in ("vache", "poule"):
                 </aside>
               </li>
               <li>
-                Il va désormais être plus simple de structurer votre code.
-                Transformez la fonction <code>afficher_animal(animal)</code> en
-                méthode <code>afficher(self)</code> de la
-                classe <code>Animal</code>. Modifiez votre code pour qu’il
-                utilise cette méthode.
+                Il va désormais être plus simple de structurer votre code. Redéfinissez
+                votre fonction <code>afficher_animal</code> pour qu’elle appartienne à
+                la classe <code>Animal</code>. Vous pouvez la renommer <code>afficher</code>.
+                Modifiez votre code pour qu’il utilise cette méthode.
                 <aside class="correction">
                   <pre>def afficher(self):
     if self.age <= 2:
-        print(f"- {self.nom}, {self.age} an(s)")
+        print(f"- {self.nom}, jeune animal")
     else:
-        print(f"- {self.nom}, jeune animal")</pre>
+        print(f"- {self.nom}, {self.age} an(s)")</pre>
                 </aside>
               </li>
               <li>
@@ -1130,7 +1108,7 @@ for espece in ("vache", "poule"):
                 classes ne contiendront pour l’instant qu’un attribut de
                 classe : <code>espece</code>, qui est donc obsolète dans la
                 classe <code>Animal</code>. Modifiez votre code pour qu’il
-                utilise ces classes.
+                utilise cette nouvelle abstraction.
                 <aside class="correction">
                   <pre>class Animal:
     def __init__(self, age, nom):
@@ -1139,22 +1117,22 @@ for espece in ("vache", "poule"):
 
     def afficher(self):
         if self.age <= 2:
-            print(f"- {self.nom}, {self.age} an(s)")
-        else:
             print(f"- {self.nom}, jeune animal")
+        else:
+            print(f"- {self.nom}, {self.age} an(s)")
 
 class Poule(Animal):
-    espece = 'poule'
+    espece = "poule"
 
 class Vache(Animal):
-    espece = 'vache'
+    espece = "vache"
 
 animaux = [
-    Vache(5, 'Marguerite'),
-    Vache(7, 'Hortense'),
-    Vache(1, 'Caramel'),
-    Poule(3, 'Coco'),
-    Poule(2, 'Blanche'),
+    Vache(5, "Marguerite"),
+    Vache(7, "Hortense"),
+    Vache(1, "Caramel"),
+    Poule(3, "Coco"),
+    Poule(2, "Blanche"),
 ]</pre>
                 </aside>
               </li>
@@ -1163,19 +1141,15 @@ animaux = [
                 finement.
                 <ul>
                   <li>
-                    Changez <code>Animal.afficher</code> pour qu’il
-                    affiche simplement le nom et l’âge, sans gérer les jeunes
-                    animaux.
+                    Modifiez la méthode <code>afficher</code> de la classe parente pour
+                    prendre en charge les animaux de manière générique, sans gérer les
+                    jeunes animaux.
                   </li>
                   <li>
-                    Créez une méthode <code>Poule.afficher</code> qui affiche
-                    le nom de l’animal et « poussin » si l’animal a 1 an au
-                    plus, ou qui appelle <code>Animal.afficher</code> sinon.
-                  </li>
-                  <li>
-                    Créez une méthode <code>Vache.afficher</code> qui affiche
-                    le nom de l’animal et « veau » si l’animal a 2 ans au plus,
-                    ou qui appelle <code>Animal.afficher</code> sinon.
+                    Ajoutez une méthode aux sous-classes <code>Poule</code> et <code>Vache</code>
+                    pour gérer le cas écheant les jeunes animaux : à la place de l’âge,
+                    on veut afficher « poussin » pour les poules jusqu’à 1 an, et
+                    « veau » pour les vaches jusqu’à 2 ans.
                   </li>
                 </ul>
                 <aside class="correction">
@@ -1185,25 +1159,25 @@ animaux = [
         self.nom = nom
 
     def afficher(self):
-        print(f'- {self.nom}, {self.age} an(s)')
+        print(f"- {self.nom}, {self.age} an(s)")
 
 
 class Poule(Animal):
-    espece = 'poule'
+    espece = "poule"
 
     def afficher(self):
         if self.age <= 1:
-            print(f'- {self.nom}, poussin')
+            print(f"- {self.nom}, poussin")
         else:
             super().afficher()
 
 
 class Vache(Animal):
-    espece = 'vache'
+    espece = "vache"
 
     def afficher(self):
         if self.age <= 2:
-            print(f'- {self.nom}, veau')
+            print(f"- {self.nom}, veau")
         else:
             super().afficher()</code></pre>
                 </aside>
@@ -1230,33 +1204,33 @@ Espèce : poule
         self.nom = nom
 
     def afficher(self):
-        print(f'- {self.nom}, {self.age} an(s)')
+        print(f"- {self.nom}, {self.age} an(s)")
 
 class Poule(Animal):
-    espece = 'poule'
+    espece = "poule"
 
     def afficher(self):
         if self.age <= 1:
-            print(f'- {self.nom}, poussin')
+            print(f"- {self.nom}, poussin")
         else:
             super().afficher()
 
 class Vache(Animal):
-    espece = 'vache'
+    espece = "vache"
 
     def afficher(self):
         if self.age <= 2:
-            print(f'- {self.nom}, veau')
+            print(f"- {self.nom}, veau")
         else:
             super().afficher()
 
 animaux = [
-    Vache(5, 'Marguerite'),
-    Vache(7, 'Hortense'),
-    Vache(1, 'Caramel'),
-    Poule(3, 'Coco'),
-    Poule(2, 'Blanche'),
-    Poule(0, 'Pioupiou'),
+    Vache(5, "Marguerite"),
+    Vache(7, "Hortense"),
+    Vache(1, "Caramel"),
+    Poule(3, "Coco"),
+    Poule(2, "Blanche"),
+    Poule(0, "Pioupiou"),
 ]
 
 def afficher_animaux(animaux, espece):
@@ -1264,9 +1238,9 @@ def afficher_animaux(animaux, espece):
         if espece == animal.espece:
             animal.afficher()
 
-print(f'Nombre d’animaux : {len(animaux)}\n')
-for espece in ('vache', 'poule'):
-    print(f'Type d’animal : {espece}')
+print(f"Nombre d’animaux : {len(animaux)}\n")
+for espece in ("vache", "poule"):
+    print(f"Type d’animal : {espece}")
     afficher_animaux(animaux, espece)
     print()</code></pre>
                 </aside>
@@ -1276,7 +1250,7 @@ for espece in ('vache', 'poule'):
           <section class="annexes">
             <h4 id="annexe-3-1">Structure du code avec fonctions</h4>
             <pre><code>animaux = [
-    {'espèce': 'vache', 'âge': 5, 'nom': 'Marguerite'},
+    {"espèce": "vache", "âge": 5, "nom": "Marguerite"},
     …
 ]
 
@@ -1293,9 +1267,9 @@ def afficher_animaux(animaux, espece):
             afficher_animal(animal)
 
 
-print(f'Nombre…')
+print(f"Nombre…")
 for …:
-    print(f'Espèce…')
+    print(f"Espèce…")
     afficher_animaux(animaux, espece)
     print()</code></pre>
 
@@ -1309,7 +1283,7 @@ for …:
 
 
 class Poule(Animal):
-    espece = 'poule'
+    espece = "poule"
 
     def afficher(self):
         if …:
@@ -1319,7 +1293,7 @@ class Poule(Animal):
 
 
 class Vache(Animal):
-    espece = 'vache'
+    espece = "vache"
 
     def afficher(self):
         if …:
@@ -1329,9 +1303,9 @@ class Vache(Animal):
 
 
 animaux = [
-    Vache(5, 'Marguerite'),
+    Vache(5, "Marguerite"),
     …,
-    Poule(0, 'Pioupiou'),
+    Poule(0, "Pioupiou"),
 ]
 
 def afficher_animaux(animaux, espece):
@@ -1340,9 +1314,9 @@ def afficher_animaux(animaux, espece):
             animal.afficher()
 
 
-print(f'Nombre…')
+print(f"Nombre…")
 for …:
-    print(f'Espèce…')
+    print(f"Espèce…")
     afficher_animaux(animaux, espece)
     print()</code></pre>
           </section>
@@ -1479,18 +1453,19 @@ for …:
                 Une nouvelle fonctionnalité à ajouter concerne des opérations
                 avec les dates. Vous décidez de créer un nouveau fichier
                 « funmath/temps.py » qui contient une fonction
-                <code>nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2)</code>.
-                Cette fonction renvoie un entier correspondant au nombre de
-                jours entre deux dates. Pour cela, vous utilisez le module
-                <code>datetime</code>, et la possibilité de
-                faire une différence (avec <code>-</code>) entre deux objets
+                <code>nombre_jours(annee, mois, jour)</code>. Cette fonction renvoie un
+                entier correspondant au nombre de jours entre une date dans le passé et
+                aujourd’hui. Pour cela, vous utilisez le module
+                <code>datetime</code>, sa fonction <code>today</code>, et la possibilité
+                de faire une différence (avec <code>-</code>) entre deux objets
                 <code>datetime.date</code>.
               </li>
               <li>
                 Dans votre script, vous décidez d’afficher le nombre de jours
                 entre votre date de naissance et aujourd’hui. Vous souhaitez utiliser
-                <code>funmath.nombre_jours</code>, vous ajoutez donc un import
-                dans « funmath/__init__.py ». Combien de jours a duré votre vie ?
+                <code>funmath.nombre_jours</code>, vous ajoutez donc un import dans
+                 « funmath/__init__.py ». Combien de jours se sont écoulés depuis votre
+                 naissance?
               </li>
             </ol>
             <h4>Utiliser des modules externes</h4>
@@ -1596,9 +1571,9 @@ print(…)  <span class="gris"># Jours</span></code></pre>
               <figcaption><code>funmath/temps.py</code></figcaption>
               <pre><code><span class="vert">from</span> datetime <span class="vert">import</span> date
 
-<span class="vert">def</span> nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
-    date_1 = …
-    date_2 = …
+<span class="vert">def</span> nombre_jours(annee, mois, jour):
+    date_passee = …
+    aujourdhui = …
     delta = …
     <span class="vert">return</span> …</code></pre>
             </figure>
@@ -1612,21 +1587,21 @@ from rich.panel import Panel
 
 import funmath
 
-print(Panel.fit('Algèbre', style='red'))
-print(f'[green]2+3[/green] = {funmath.somme(2, 3)}')
-print(f'[green]2×3[/green] = {funmath.produit(2, 3)}')
+print(Panel.fit("Algèbre", style="red"))
+print(f"[green]2+3[/green] = {funmath.somme(2, 3)}")
+print(f"[green]2×3[/green] = {funmath.produit(2, 3)}")
 
 print()
-print(Panel.fit('Géométrie', style='red'))
-print(f'[green]π[/green] = {funmath.pi}')
-print(f'[green]Carré[/green] = {funmath.aire_carre(3)}')
-print(f'[green]Cercle[/green] = {funmath.aire_cercle(3)}')
+print(Panel.fit("Géométrie", style="red"))
+print(f"[green]π[/green] = {funmath.pi}")
+print(f"[green]Carré[/green] = {funmath.aire_carre(3)}")
+print(f"[green]Cercle[/green] = {funmath.aire_cercle(3)}")
 
 print()
-print(Panel.fit('Temps', style='red'))
+print(Panel.fit("Temps", style="red"))
 print(
-    '[green]Jours[/green] = '
-    f'{funmath.nombre_jours(1994, 12, 24, 2024, 2, 29)}'
+    "[green]Jours[/green] = "
+    f"{funmath.nombre_jours(1994, 12, 24)}"
 )</pre>
             </figure>
             <figure class="fichier">
@@ -1655,12 +1630,12 @@ def aire_cercle(rayon):
             </figure>
             <figure class="fichier">
               <figcaption><code>funmath/temps.py</code></figcaption>
-              <pre>from datetime import date
+              <pre>from datetime import date, today
 
-def nombre_jours(annee_1, mois_1, jour_1, annee_2, mois_2, jour_2):
-    date_1 = date(annee_1, mois_1, jour_1)
-    date_2 = date(annee_2, mois_2, jour_2)
-    delta = date_2 - date_1
+def nombre_jours(annee, mois, jour):
+    date_passee = date(annee, mois, jour)
+    aujourdhui = today()
+    delta = aujourdhui - date_passee
     return delta.days</pre>
             </figure>
           </section>
@@ -1847,8 +1822,8 @@ Use a production WSGI server instead.</pre>
                 non. Trouvez dans la <em>Template Designer Documentation</em>
                 de Jinja pourquoi on peut utiliser indifféremment
                 <code>session.person_id</code>
-                et <code>session['person_id']</code> dans Jinja, alors qu’on
-                utilise forcément <code>session['person_id']</code> en Python.
+                et <code>session["person_id"]</code> dans Jinja, alors qu’on
+                utilise forcément <code>session["person_id"]</code> en Python.
                 <aside class="correction">
                   D’après la documentation de Jinja : "You can use a dot (.) to
                   access attributes of a variable in addition to the standard
@@ -1951,7 +1926,7 @@ connection.commit()</pre>
                 <aside class="correction">
                   <pre>cursor.execute(
     "INSERT INTO article (title, content) VALUES (:title, :content)",
-    {'title': request.form["title"], 'content': request.form["content"]}
+    {"title": request.form["title"], "content": request.form["content"]}
 )</pre>
                 </aside>
               </li>
@@ -2229,6 +2204,30 @@ print(number * 2)</pre>
             doit alors utiliser la fonction <code>print()</code> qui affiche
             sur l’écran le résultat du code entre parenthèses.
           </p>
+          <p>
+            <strong>Si l’on souhaite demander une information à l’utilisateur</strong>
+            pour l’utiliser plus tard dans un programme, il est possible d’utiliser la
+            fonction <code>input()</code>. Cette fonction affiche un message explicitant
+            la demande, puis renvoie une chaîne de caractères qui correspond à ce que
+            l’utilisateur a saisi.
+          </p>
+          <figure class="fichier">
+            <figcaption><code>script.py</code></figcaption>
+            <pre>name = input("What is your name? ")
+print(f"Hello {name}!")</pre>
+          </figure>
+          <p>
+            Attention : <code>input()</code> renvoie toujours une chaîne de caractères.
+            Heureusement, il est ensuite possible de créer une valeur d’un autre type
+            qui correspond à cette chaîne de caractères. Par exemple,
+            <code>int("3")</code> renvoie l’entier 3, et <code>float("3.14")</code> renvoie
+            le nombre à virgule flottante 3,14.
+          </p>
+          <figure class="fichier">
+            <figcaption><code>script.py</code></figcaption>
+            <pre>number = float(input("Give me a number: "))
+print(f"{number} + {number} = {number + number}")</pre>
+          </figure>
         </section>
 
         <section id="choix-et-configuration-d-un-editeur">
@@ -2375,7 +2374,7 @@ answer = <span class="rouge">'Coucou 😄 ça va ?'</span></code></pre>
           <p>
             Les <em>f-strings</em> sont des chaînes de caractères avec la
             lettre <code>f</code> devant les guillemets. Elles permettent de
-            pouvoir insérer des variables de n’importe quel type (et même du
+            pouvoir insérer la valeur de variables de n’importe quel type (et même du
             code plus complexe !) directement dans des chaînes de caractères.
           </p>
           <pre><code>name = <span class="rouge">"Victor"</span>
@@ -3508,9 +3507,9 @@ def draw_board(board):
     for row in board:
         for number in row:
             if number:
-                print(f'{number:02n}', end=' ')
+                print(f"{number:02n}", end=" ")
             else:
-                print('  ', end=' ')
+                print("  ", end=" ")
         print()
     print()
 
@@ -3646,18 +3645,24 @@ class Board:
         for row in self.numbers:
             for number in row:
                 if number:
-                    print(f'{number:0{self.cell_size}n}', end=' ')
+                    print(f"{number:0{self.cell_size}n}", end=" ")
                 else:
-                    print(' ' * self.cell_size, end=' ')
+                    print(" " * self.cell_size, end=" ")
             print()
         print()
 
 
     def move(self, x, y):
+        none_found = False
         blank_y = 0
         for row in self.numbers:
-            if None in row:
-                blank_x = row.index(None)
+            blank_x = 0
+            for number in row:
+                if number is None:
+                    none_found = True
+                    break
+                blank_x = blank_x + 1
+            if none_found:
                 break
             blank_y = blank_y + 1
         pos_x, pos_y = blank_x + x, blank_y + y
