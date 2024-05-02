@@ -566,7 +566,7 @@ print(f"""Budget prévisionnel
             <h4>Conception et première version</h4>
             <aside class="documents">
               <ul>
-                <li><a href="installation-et-utilisateur-de-l-interpreteur">FR 1</a></li>
+                <li><a href="#installation-et-utilisateur-de-l-interpreteur">FR 1</a></li>
                 <li><a href="#syntaxe-types-et-instructions">FR 3</a></li>
               </ul>
             </aside>
@@ -633,7 +633,7 @@ print(letters)</pre>
               <li>
                 À la place de définir une valeur en dur dans <code>index</code>,
                 utilisez la fonction <code>input</code> pour demander à l’utilisateur
-                d’entrer le nombre qu’il souhaite. Lancez le programme.
+                d’entrer le nombre qu’il souhaite.
                 <aside class="correction">
                   <pre>letters = ["B", "A", "D", "E", "F", "H", "G", "C"]
 index = int(input("Quelle est la position … ? "))
@@ -668,11 +668,11 @@ C
                 programme ne s’arrête.
                 <aside class="correction">
                   On utilise une boucle <code>while</code>:
-                  <pre>while True:
-    index = int(input("Quelle est la position … ? "))
-    if 0 <= index < len(letters):
-        break
-    print("Nombre incorrect !")</pre>
+                  <pre>while letters:
+    index = int(input("Quelle est la position … ? "))
+    letter = letters.pop(index)
+    print(letter)
+    print(letters)</pre>
                 </aside>
               </li>
               <li>
@@ -692,7 +692,10 @@ C
                 Votre jeu est prêt ! À la place de l’affichage de la liste,
                 affichez le nombre de lettres qu’il reste. Ajoutez également un
                 message lorsque le joueur a perdu, et un autre lorsque le
-                joueur a gagné.
+                joueur a gagné. Vérifiez que résultat correspond aux exemples
+                donnés en annexe. Corrigez les problèmes éventuellement
+                rencontrés.
+
                 <aside class="correction">
                   <pre>letters = ["B", "A", "D", "E", "F", "H", "G", "C"]
 previous_letter = None
@@ -712,10 +715,6 @@ while letters:
 else:
     print("Vous avez gagné 😁")</pre>
                 </aside>
-              </li>
-              <li>
-                Vérifiez que résultat correspond aux exemples donnés en
-                annexe. Corrigez les problèmes éventuellement rencontrés.
               </li>
             </ol>
           </section>
@@ -1104,7 +1103,7 @@ for espece in ("vache", "poule"):
                 Nous allons ajouter les dernières finitions à notre prototype.
                 Afin de pouvoir différencier plus facilement les espèces, nous
                 allons créer les classes <code>Poule</code> et
-                <code>Vache</code> qui héritent de <code>Animal</code>. Ces
+                <code>Vache</code> qui héritent de la classe <code>Animal</code>. Ces
                 classes ne contiendront pour l’instant qu’un attribut de
                 classe : <code>espece</code>, qui est donc obsolète dans la
                 classe <code>Animal</code>. Modifiez votre code pour qu’il
@@ -1198,7 +1197,47 @@ Espèce : poule
 - Blanche, 2 an(s)
 - Pioupiou, poussin</pre>
                 <aside class="correction">
-                  <pre><code>class Animal:
+                  <pre style="font-size: 0.6em"><code>class Animal:
+    def __init__(self, age, nom):
+        self.age = age
+        self.nom = nom
+
+    def afficher(self):
+        print(f"- {self.nom}, {self.age} an(s)")
+
+class Poule(Animal):
+    espece = "poule"
+
+    def afficher(self):
+        if self.age <= 1:
+            print(f"- {self.nom}, poussin")
+        else:
+            super().afficher()
+
+class Vache(Animal):
+    espece = "vache"
+
+    def afficher(self):
+        if self.age <= 2:
+            print(f"- {self.nom}, veau")
+        else:
+            super().afficher()
+
+animaux = [
+    Vache(5, "Marguerite"),
+    Vache(7, "Hortense"),
+    Vache(1, "Caramel"),
+    Poule(3, "Coco"),
+    Poule(2, "Blanche"),
+    Poule(0, "Pioupiou"),
+]
+
+def afficher_animaux(animaux, espece):
+    for animal in animaux:
+        if espece == animal.espece:
+            animal.afficher()
+
+class Animal:
     def __init__(self, age, nom):
         self.age = age
         self.nom = nom
@@ -1239,9 +1278,9 @@ def afficher_animaux(animaux, espece):
             animal.afficher()
 
 print(f"Nombre d’animaux : {len(animaux)}\n")
-for espece in ("vache", "poule"):
-    print(f"Type d’animal : {espece}")
-    afficher_animaux(animaux, espece)
+for type_animal in (Vache, Poule):
+    print(f"Type d’animal : {type_animal.espece}")
+    afficher_animaux(animaux, type_animal.espece)
     print()</code></pre>
                 </aside>
               </li>
@@ -1484,7 +1523,7 @@ for …:
                 nous trouverons bien une bibliothèque tierce. Vous commencez
                 par créer un environnement virtuel. Après activation, vous
                 affichez le chemin complet vers <code>python3</code>. Est-il
-                bien dans votre environnement virutel ?
+                bien dans votre environnement virtuel ?
               </li>
               <li>
                 Après quelques recherches, vous décidez d’utiliser la bibliothèque
@@ -1741,16 +1780,18 @@ Use a production WSGI server instead.</pre>
                 Dans quels fichiers se situent les différents éléments de
                 votre application web :
                 <ul>
-                  <li>le HTML,</li>
-                  <li>le CSS,</li>
+                  <li>le code HTML,</li>
+                  <li>le code CSS,</li>
                   <li>la liste des URL de l’application et le code qui leur est associé,</li>
                   <li>le code permettant d’accéder à base de données ?</li>
                 </ul>
                 <aside class="correction">
-                  Le HTML est dans « blog/templates », le CSS est dans
-                  « blog/static », la liste des URL est dans
-                  « blog/__init__.py », le code de la base de données est dans
-                  « blog/db.py ».
+                  <ul>
+                    <li>le code HTML est dans « blog/templates »</li>
+                    <li>le code CSS est dans « blog/static »</li>
+                    <li>la liste des URL est dans « blog/__init__.py »</li>
+                    <li>le code de la base de données est dans « blog/db.py »</li>
+                  </ul>
                 </aside>
               </li>
               <li>
@@ -1759,22 +1800,25 @@ Use a production WSGI server instead.</pre>
                 de ce fichier est-il configuré ? Que se passe-t-il si vous
                 supprimez le fichier contenant la base de données ?
                 <aside class="correction">
-                  La base est dans « database.db », la configuration du nom est
-                  dans « blog/__init__.py ». Si le fichier contenant la base
-                  de données est supprimé, il est automatiquement recréé à
-                  chaque requête
+                  La base est dans le fichier « database.db » à la racine du
+                  projet, la configuration du nom est dans
+                  « blog/__init__.py ». Si le fichier contenant la base de
+                  données est supprimé, il est automatiquement recréé à chaque
+                  accès à la page d’accueil du site.
                 </aside>
               </li>
               <li>
-                Comment l’application sait quel fichier HTML elle doit afficher
-                pour une URL donnée ?
+                Par quels moyens l’application détermine-t-elle et
+                affiche-t-elle une page HTML pour une URL donnée ?
                 <aside class="correction">
-                  L’URL est dans <code>@app.get()</code>, le nom du template
-                  est dans <code>render_template()</code>
+                  L'application utilise le principe de route pour lire l’URL
+                  avec la méthode <code>@app.get(URL)</code>. Le rendu de la
+                  page se fait à l’aide de la méthode
+                  <code>render_template(NomDuTemplate)</code>.
                 </aside>
               </li>
               <li>
-                Ces fichiers ne sont pas du HTML pur, mais des
+                Ces fichiers ne sont pas du code HTML pur, mais des
                 <em>templates</em> écrits dans un langage proche de HTML,
                 permettant entre autres de faire des conditions, des boucles et
                 d’afficher des variables. D’après la documentation de Flask,
@@ -1784,27 +1828,31 @@ Use a production WSGI server instead.</pre>
                 </aside>
               </li>
               <li>
-                Comment le HTML sait-il quel fichier CSS utiliser ? Quelle
+                Comment le code HTML charge-t-il le fichier CSS ? Quelle
                 fonction est utilisée dans le <em>template</em>
-                « _layout.jinja2 » pour déterminer l’URL vers le fichier CSS ?
+                « _layout.jinja2 » pour générer l’URL vers le fichier CSS ?
                 <aside class="correction">
-                  Le CSS est défini dans
+                  Le CSS est défini dans le fichier
                   <code>blog/templates/_layout.jinja2</code> et son URL est
-                  déterminée par <code>url_for()</code>
+                  générée par la fonction <code>url_for(params)</code>, à
+                  l’aide de ses paramètres
                 </aside>
               </li>
               <li>
                 Certaines pages utilisent des formulaires. Quel type de requête
-                HTTP est effectué lorsque le formulaire est envoyé par le
+                HTTP est utilisé lorsque le formulaire est envoyé par le
                 navigateur ? Comment l’application Flask différencie-t-elle les
-                requêtes POST des requêtes GET pour ses routes ? Comment
+                types de requêtes pour ses routes ? Comment
                 peut-on récupérer les informations du formulaire dans le code
                 Python ?
                 <aside class="correction">
                   Les formulaires sont envoyés avec des requêtes POST, on
                   utilise <code>@app.get()</code> et <code>@app.post()</code>
-                  pour différencier les GET et POST. Les informations du
-                  formulaires sont dans <code>request.form</code>
+                  pour différencier les requêtes GET et POST.
+                  Les informations sont récupérées à l'aide du dictionnaire
+                  <code>request.form</code>, <code>request</code> étant l'objet
+                  créé automatiquement par Flask pour contenir les informations
+                  de la requête
                 </aside>
               </li>
               <li>
@@ -1831,8 +1879,8 @@ Use a production WSGI server instead.</pre>
                 </aside>
               </li>
               <li>
-                La variable <code>session</code> est automatiquement passée
-                dans tous les <em>templates</em>. Quelles autres variables et
+                La variable <code>session</code> est automatiquement transmise
+                à tous les <em>templates</em>. Quelles autres variables et
                 fonctions sont également passées automatiquement ?
                 <aside class="correction">
                   D’après la documentation de Flask : "Inside templates you
@@ -1846,29 +1894,33 @@ Use a production WSGI server instead.</pre>
                 comme par exemple <code>articles</code> pour afficher la liste
                 des articles sur la page d’accueil ?
                 <aside class="correction">
-                  On les passe en comme arguments à <code>render_template</code>
+                  On les passe comme arguments à <code>render_template(template_name, arg1, arg2…)</code>
                 </aside>
               </li>
             </ol>
             <h4>Corriger les problèmes de sécurité</h4>
             <ol>
               <li>
-                Lors de l’ajout d’un article, on ne peut pas définir le titre.
-                Nous allons remédier à cela !
+                <p>
+                  Lors de l’ajout d’un article, on ne peut pas définir le titre.
+                  Nous allons remédier à cela !
+                </p>
                 <ul>
                   <li>
-                    Dans « blog/templates/add_article.html_», vous ajoutez un
+                    Dans « blog/templates/add_article.html_», ajoutez un
                     label « Titre » contenant un <code>&lt;input name="title" /&gt;</code>.
                   </li>
                   <li>
                     Dans la fonction <code>add_article_post</code> du fichier
-                    « blog/__init__.py », vous récupérez le titre du formulaire
-                    et vous le mettez dans la requête SQL à la place de
-                    « Titre ».
+                    « blog/__init__.py », récupérez le titre du formulaire, et
+                    remplacez dans la requête SQL l’élément « Titre » par la
+                    valeur du formulaire.
                   </li>
                 </ul>
-                Vous vérifiez que tout fonctionne correctement. C’est mieux
-                comme ça !
+                <p>
+                  Vérifiez que tout fonctionne correctement. C’est mieux
+                  comme cela !
+                </p>
                 <aside class="correction">
                   <pre>&lt;form method="post"&gt;
   &lt;label&gt;
@@ -1910,9 +1962,9 @@ connection.commit()</pre>
               <li>
                 Ce problème de sécurité est une injection SQL ! Elle peut
                 permettre à un utilisateur malintentionné d’exécuter n’importe
-                quel SQL dans la base de données, et donc potentiellement de
-                récupérer ou d’effacer l’intégralité des données de la base.
-                Vous lisez plus d’informations sur ce sujet dans la
+                quelle commande SQL dans la base de données, et donc potentiellement de
+                récupérer ou d’effacer l’intégralité des données de votre base de données.
+                Vous trouverez plus d’informations sur ce sujet dans la
                 documentation du module <code>sqlite3</code> de la
                 documentation Python.
               </li>
@@ -1921,7 +1973,7 @@ connection.commit()</pre>
                 possible avec la route <code>article</code> par exemple.
                 Utilisez des <em>placeholders</em> dans la route
                 <code>add_article_post</code> à la place de
-                la <em>f-string</em>, et vérifiez qu’il n’est plus possible
+                la <em>f-string</em>. Vérifiez qu’il n’est plus possible
                 d’effectuer une injection SQL.
                 <aside class="correction">
                   <pre>cursor.execute(
@@ -1932,14 +1984,15 @@ connection.commit()</pre>
               </li>
               <li>
                 Vous vous rendez-compte d’une fonctionnalité très pratique :
-                vous pouvez mettre du HTML dans vos articles ! Créez un article
-                avec <code>&lt;span style="color: blue">Coucou&lt;/span></code>
-                comme contenu. Affichez l’article, et découvrez votre œuvre
-                d’art !
+                vous pouvez insérer du HTML dans vos articles !
+
+                À l'aide du formulaire, créez un article avec dans le champ
+                « contenu » le code HTML <code>&lt;span style="color: blue">Coucou&lt;/span></code>.
+                Affichez l’article, et découvrez votre œuvre d’art !
               </li>
               <li>
                 Cette fonctionnalité est pratique, mais très dangereuse… Créez
-                un article avec comme contenu
+                maintenant un article avec comme contenu
                 <code>&lt;script&gt;alert('hacker')&lt;/script&gt;</code>, puis
                 affichez cet article. Que se passe-t-il alors ? Comment cela
                 est-il possible ?
@@ -1957,17 +2010,21 @@ connection.commit()</pre>
                 Flask, ainsi que sur Wikipédia.
               </li>
               <li>
-                Par défaut, Flask et Jinja vous protègent des XSS lorsque vous
-                rendez des fichiers HTML. Vous vérifiez cela en créant un
-                nouvel article avec
-                <code>&lt;span style="color: blue"&gt;Coucou&lt;/span&gt;</code>
-                comme titre : le HTML est échappé, on obtient du texte normal
-                et pas des balises. Vous trouvez alors dans
-                « blog/templates/article.html » pourquoi le contenu n’est pas
-                échappé, et vous enlevez cette « fonctionnalité » bien trop
-                dangereuse. Quelle est la fonctionnalité, et pourquoi ?
+                Par défaut, Flask et Jinja vous protègent des failles de type
+                XSS lorsque vous rendez des pages HTML.
+
+                Pour vérifiez cela, créez à nouveau un article avec cette fois
+                le code HTML <code>&lt;span style="color: blue"&gt;Coucou&lt;/span&gt;</code> dans
+                le champ « titre » du formulaire. Le code HTML est cette
+                fois-ci échappé, on obtient du texte normal et pas l’interprétation des balises.
+                Vous trouvez alors dans « blog/templates/article.html »
+                pourquoi le contenu n’est pas échappé, et vous enlevez cette
+                « fonctionnalité » bien trop dangereuse. Quelle est la
+                fonctionnalité, et pourquoi ?
                 <aside class="correction">
-                  On enlève <code>| safe</code> qui n’échappe pas le HTML
+                  On enlève le filtre <code>| safe</code> qui n’échappe pas le
+                  code HTML. Ce filtre est à utiliser uniquement sur les champs
+                  dont on a le contrôle
                 </aside>
               </li>
               <li>
@@ -1979,8 +2036,9 @@ connection.commit()</pre>
                 alors que vous êtes déconnecté·e. Que se passe-t-il ? Comment
                 cela est-il possible ?
                 <aside class="correction">
-                  Les liens ne sont pas affichés, mais rien dans le code Python
-                  n’empêche une personne déconnectée d’accéder à cette URL
+                  Le lien « ajouter un article » n'est pas disponible, mais rien
+                  n’empêche dans notre code qu’une personne déconnectée accède à
+                  cette URL
                 </aside>
               </li>
               <li>
@@ -1989,12 +2047,12 @@ connection.commit()</pre>
                 cacher les URL aux personnes déconnectées pour leur interdire
                 d’y accéder ! Dans <code>add_article</code>, vos décidez donc
                 de renvoyer une erreur HTTP 403 (<em>Forbidden</em>) lorsque
-                l’utilisateur n’est pas connecté. Vous pouvez vous inspirer de
+                l’utilisateur n’est pas connecté. Vous pouvez vous inspirer du code implémenté dans la fonction
                 <code>article</code> pour savoir comment renvoyer une erreur
                 HTTP, et de <code>logout</code> pour vérifier si l’utilisateur
-                est connecté. Vous allez sur
+                est connecté. Allez sur
                 <a href="http://localhost:5000/article/add">http://localhost:5000/article/add</a>
-                et l’erreur apparaît !
+                et vérifiez si l’erreur apparaît !
                 <aside class="correction">
                   <pre># Return 403 error if user is not connected
 if "person_id" not in session:
@@ -2016,7 +2074,7 @@ if "person_id" not in session:
                 </aside>
               </li>
               <li>
-                Vous pouvez corriger ce problème de la même manière que pour
+                Vous pouvez corriger ce problème de la même manière que pour la fonction
                 <code>add_article</code>. Quelle fonction doit être corrigée ?
                 <aside class="correction">
                   La fonction <code>add_article_post()</code>
@@ -2144,7 +2202,9 @@ Type "help", "copyright", "credits" or "license" for more information.
             <em><a href="https://en.wikipedia.org/wiki/Memory_safety">memory-safe</a></em>.
             Cela signifie qu’un script écrit en Python est protégé contre
             beaucoup de failles de sécurité basées sur l’accès à la mémoire,
-            comme les <em>buffer overflows</em> et les <em>dangling pointers</em>.
+            comme les dépassements de mémoire (<em>buffer overflows</em>)
+            et les pointeurs flottant sur de mauvaises données
+            (<em>dangling pointers</em>).
           </p>
           <p>
             Si l’on veut afficher une variable dans une chaîne de caractères,
@@ -2205,8 +2265,8 @@ print(number * 2)</pre>
             sur l’écran le résultat du code entre parenthèses.
           </p>
           <p>
-            <strong>Si l’on souhaite demander une information à l’utilisateur</strong>
-            pour l’utiliser plus tard dans un programme, il est possible d’utiliser la
+            <strong>Si le programme a besoin de faire interagir l’utilisateur
+            avec de la saisie des données,</strong> il est possible d'utiliser la
             fonction <code>input()</code>. Cette fonction affiche un message explicitant
             la demande, puis renvoie une chaîne de caractères qui correspond à ce que
             l’utilisateur a saisi.
@@ -2380,6 +2440,13 @@ answer = <span class="rouge">'Coucou 😄 ça va ?'</span></code></pre>
           <pre><code>name = <span class="rouge">"Victor"</span>
 question = <span class="rouge">f"Comment ça va <span class="bleu">{name}</span> ?"</span>
 print(<span class="rouge">f"1 + 1 = <span class="bleu">{1 + 1}</span>"</span>)</code></pre>
+
+          <h4>Absence de valeur</h4>
+          <p>
+            <strong>L’absence de valeur dans une variable est
+            représentée par le mot-clé <code>None</code>.</strong>
+          </p>
+          <pre><code>value = <span class="vert">None</span></code></pre>
 
           <h4>Conditions et booléens</h4>
           <p>
